@@ -21,7 +21,7 @@ namespace Unstable
     }
     class blabla
     {
-        public void Hit()
+        public void ZrobCos(int x)
         {
             
         }

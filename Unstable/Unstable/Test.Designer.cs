@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Test));
             this.aktualizatorGracz = new System.Windows.Forms.Timer(this.components);
-            this.aktualizatorMob = new System.Windows.Forms.Timer(this.components);
-            this.aktualizatorAtak = new System.Windows.Forms.Timer(this.components);
             this.poleGry = new System.Windows.Forms.Panel();
             this.zbroja = new System.Windows.Forms.PictureBox();
             this.mob = new System.Windows.Forms.PictureBox();
             this.gracz = new System.Windows.Forms.PictureBox();
+            this.aktualizatorMob = new System.Windows.Forms.Timer(this.components);
+            this.aktualizatorAtak = new System.Windows.Forms.Timer(this.components);
             this.poleGry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.zbroja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mob)).BeginInit();
@@ -47,49 +47,36 @@
             // 
             this.aktualizatorGracz.Tick += new System.EventHandler(this.aktualizatorGracz_Tick);
             // 
-            // aktualizatorMob
-            // 
-            this.aktualizatorMob.Tick += new System.EventHandler(this.aktualizatorMob_Tick);
-            // 
-            // aktualizatorAtak
-            // 
-            this.aktualizatorAtak.Tick += new System.EventHandler(this.aktualizatorAtak_Tick);
-            // 
             // poleGry
             // 
             this.poleGry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.poleGry.BackColor = System.Drawing.Color.Transparent;
-            this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.poleGry.CausesValidation = false;
+            this.poleGry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("poleGry.BackgroundImage")));
             this.poleGry.Controls.Add(this.zbroja);
             this.poleGry.Controls.Add(this.mob);
             this.poleGry.Controls.Add(this.gracz);
-            this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.poleGry.Location = new System.Drawing.Point(0, -2);
             this.poleGry.Name = "poleGry";
-            this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(784, 566);
             this.poleGry.TabIndex = 1;
             // 
             // zbroja
             // 
-            this.zbroja.BackColor = System.Drawing.Color.Transparent;
             this.zbroja.Image = ((System.Drawing.Image)(resources.GetObject("zbroja.Image")));
-            this.zbroja.Location = new System.Drawing.Point(69, 188);
-            this.zbroja.Margin = new System.Windows.Forms.Padding(0);
+            this.zbroja.Location = new System.Drawing.Point(71, 198);
             this.zbroja.MaximumSize = new System.Drawing.Size(64, 64);
             this.zbroja.MinimumSize = new System.Drawing.Size(64, 64);
             this.zbroja.Name = "zbroja";
             this.zbroja.Size = new System.Drawing.Size(64, 64);
             this.zbroja.TabIndex = 2;
             this.zbroja.TabStop = false;
+            this.zbroja.Click += new System.EventHandler(this.zbroja_Click);
             // 
             // mob
             // 
             this.mob.BackColor = System.Drawing.Color.Transparent;
-            this.mob.Image = global::Unstable.Properties.Resources.StandWhiteManBrownHairBlueEyes1;
-            this.mob.Location = new System.Drawing.Point(400, 188);
-            this.mob.Margin = new System.Windows.Forms.Padding(10);
+            this.mob.Image = ((System.Drawing.Image)(resources.GetObject("mob.Image")));
+            this.mob.Location = new System.Drawing.Point(650, 71);
             this.mob.MaximumSize = new System.Drawing.Size(64, 64);
             this.mob.MinimumSize = new System.Drawing.Size(64, 64);
             this.mob.Name = "mob";
@@ -100,16 +87,23 @@
             // gracz
             // 
             this.gracz.BackColor = System.Drawing.Color.Transparent;
+            this.gracz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gracz.BackgroundImage")));
             this.gracz.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gracz.Image = global::Unstable.Properties.Resources.StandWhiteManBrownHairBlueEyes;
-            this.gracz.Location = new System.Drawing.Point(247, 188);
-            this.gracz.Margin = new System.Windows.Forms.Padding(10);
+            this.gracz.Location = new System.Drawing.Point(71, 71);
             this.gracz.MaximumSize = new System.Drawing.Size(64, 64);
             this.gracz.MinimumSize = new System.Drawing.Size(64, 64);
             this.gracz.Name = "gracz";
             this.gracz.Size = new System.Drawing.Size(64, 64);
             this.gracz.TabIndex = 0;
             this.gracz.TabStop = false;
+            // 
+            // aktualizatorMob
+            // 
+            this.aktualizatorMob.Tick += new System.EventHandler(this.aktualizatorMob_Tick);
+            // 
+            // aktualizatorAtak
+            // 
+            this.aktualizatorAtak.Tick += new System.EventHandler(this.aktualizatorAtak_Tick);
             // 
             // Test
             // 
@@ -136,12 +130,13 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox gracz;
         private System.Windows.Forms.Timer aktualizatorGracz;
         private System.Windows.Forms.Panel poleGry;
         private System.Windows.Forms.PictureBox mob;
         private System.Windows.Forms.Timer aktualizatorMob;
         private System.Windows.Forms.Timer aktualizatorAtak;
         private System.Windows.Forms.PictureBox zbroja;
-        private System.Windows.Forms.PictureBox gracz;
     }
 }
