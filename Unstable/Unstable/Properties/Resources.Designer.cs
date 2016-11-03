@@ -63,46 +63,6 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap MovingDownWhiteManBrownHair {
-            get {
-                object obj = ResourceManager.GetObject("MovingDownWhiteManBrownHair", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MovingUpWhiteManBrownHair {
-            get {
-                object obj = ResourceManager.GetObject("MovingUpWhiteManBrownHair", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MovingWhiteManBrownHairLeft {
-            get {
-                object obj = ResourceManager.GetObject("MovingWhiteManBrownHairLeft", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MovingWhiteManBrownHairRight {
-            get {
-                object obj = ResourceManager.GetObject("MovingWhiteManBrownHairRight", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap StandBlackManBlackHairBlueEyes {
             get {
                 object obj = ResourceManager.GetObject("StandBlackManBlackHairBlueEyes", resourceCulture);
@@ -236,26 +196,6 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap StandWhiteManBrownHairBlueEyes2 {
             get {
                 object obj = ResourceManager.GetObject("StandWhiteManBrownHairBlueEyes2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StandWhiteManBrownHairBlueEyesNew {
-            get {
-                object obj = ResourceManager.GetObject("StandWhiteManBrownHairBlueEyesNew", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap StandWhiteManBrownHairBlueEyesNew1 {
-            get {
-                object obj = ResourceManager.GetObject("StandWhiteManBrownHairBlueEyesNew1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
