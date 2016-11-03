@@ -18,9 +18,10 @@ namespace Unstable
         {
             InitializeComponent();
 
-            daneLauncher=dane;
+            daneLauncher = dane;
 
             aktualizator.Enabled = true;
+
         }
 
         private void buttonNowaGra_Click(object sender, EventArgs e)
