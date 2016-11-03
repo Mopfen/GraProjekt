@@ -11,6 +11,13 @@ C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.NowaGra.r
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.MenuGlowne.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.WczytajGrę.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Test.resources
-D:\Yey\Nowy folder\Unstable\Unstable\bin\Debug\Unstable.exe.config
-D:\Yey\Nowy folder\Unstable\Unstable\obj\Debug\Unstable.exe
-D:\Yey\Nowy folder\Unstable\Unstable\obj\Debug\Unstable.pdb
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Mapa1.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable - OK\Unstable\bin\Debug\Unstable.exe.config
+C:\Users\Squadak\Desktop\C#\Tests\Unstable - OK\Unstable\obj\Debug\Unstable.exe
+C:\Users\Squadak\Desktop\C#\Tests\Unstable - OK\Unstable\obj\Debug\Unstable.pdb
+C:\Users\Squadak\Desktop\Unstable - OK\Unstable\bin\Debug\Unstable.exe.config
+C:\Users\Squadak\Desktop\Unstable - OK\Unstable\obj\Debug\Unstable.exe
+C:\Users\Squadak\Desktop\Unstable - OK\Unstable\obj\Debug\Unstable.pdb
+D:\Yey\GraProjekt\Unstable\Unstable\bin\Debug\Unstable.exe.config
+D:\Yey\GraProjekt\Unstable\Unstable\obj\Debug\Unstable.exe
+D:\Yey\GraProjekt\Unstable\Unstable\obj\Debug\Unstable.pdb

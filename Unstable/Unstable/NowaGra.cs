@@ -45,10 +45,10 @@ namespace Unstable
         }
         private void buttonGoTest_Click(object sender, EventArgs e)
         {
-            Test formaTest = new Test();
+            Mapa1 formaMapa1 = new Mapa1(daneLauncher);
 
             this.Close();
-            formaTest.Show();
+            formaMapa1.Show();
         }
 
         private void button_KolorWłosów_Click(object sender, EventArgs e)
