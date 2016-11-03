@@ -12,7 +12,8 @@ namespace Unstable
 {
     public partial class MenuGlowne : Form
     {
-        Launcher daneLauncher;
+        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
+        Launcher daneLauncher; // 
 
         public MenuGlowne(Launcher dane)
         {
@@ -20,7 +21,10 @@ namespace Unstable
 
             daneLauncher = dane;
 
-            aktualizator.Enabled = true;
+            daneLauncher.music.SoundLocation = "SoundtrackMenu.wav";
+            daneLauncher.music.PlayLooping();
+
+            //aktualizator.Enabled = true;
 
         }
 

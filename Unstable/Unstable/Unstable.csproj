@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameOver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameOver.Designer.cs">
+      <DependentUpon>GameOver.cs</DependentUpon>
+    </Compile>
     <Compile Include="Gracz.cs" />
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
@@ -59,12 +65,19 @@
     <Compile Include="Mapa1.Designer.cs">
       <DependentUpon>Mapa1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapaStartowa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapaStartowa.Designer.cs">
+      <DependentUpon>MapaStartowa.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuGlowne.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuGlowne.Designer.cs">
       <DependentUpon>MenuGlowne.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mob.cs" />
     <Compile Include="NowaGra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,11 +91,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Test.cs">
+    <Compile Include="Statystyki.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
+    <Compile Include="Statystyki.Designer.cs">
+      <DependentUpon>Statystyki.cs</DependentUpon>
     </Compile>
     <Compile Include="Uniwersalne.cs" />
     <Compile Include="WczytajGrę.cs">
@@ -91,11 +104,17 @@
     <Compile Include="WczytajGrę.Designer.cs">
       <DependentUpon>WczytajGrę.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GameOver.resx">
+      <DependentUpon>GameOver.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mapa1.resx">
       <DependentUpon>Mapa1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapaStartowa.resx">
+      <DependentUpon>MapaStartowa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGlowne.resx">
       <DependentUpon>MenuGlowne.cs</DependentUpon>
@@ -108,8 +127,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
+    <EmbeddedResource Include="Statystyki.resx">
+      <DependentUpon>Statystyki.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WczytajGrę.resx">
       <DependentUpon>WczytajGrę.cs</DependentUpon>
@@ -182,7 +201,32 @@
     <None Include="Models\Player\MovingUpWhiteManBrownHair.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\Backgrounds\TłoNowaGraNew.gif" />
+    <None Include="Models\Player\whiteRedStand.gif" />
+    <None Include="Models\Player\yellowRedStand.gif" />
+    <None Include="Models\Player\yellowBlondeStand.gif" />
+    <None Include="Models\Player\yellowBrownStand.png" />
+    <None Include="Models\Player\yellowBlackStand.png" />
+    <None Include="Models\Player\blackBlackStand.png" />
+    <None Include="Models\Player\whiteBrownAttackingRight.gif" />
+    <None Include="Models\Player\whiteBrownAttackingLeft.gif" />
+    <None Include="Models\Player\blackBrownStand.png" />
+    <None Include="Models\Player\pinkBlackStand.png" />
+    <None Include="Models\Player\pinkBrownStand.png" />
+    <None Include="Models\Player\redBlackStand.png" />
+    <None Include="Models\Player\redBrownStand.png" />
+    <None Include="Models\Player\whiteBlackStand.png" />
+    <None Include="Models\Player\blackBlondeStand.gif" />
+    <None Include="Models\Player\blackRedStand.gif" />
+    <None Include="Models\Player\pinkBlondeStand.gif" />
+    <None Include="Models\Player\pinkRedStand.gif" />
+    <None Include="Models\Player\redBlondeStand.gif" />
+    <None Include="Models\Player\redRedStand.gif" />
+    <None Include="Models\Player\whiteBlondeStand.gif" />
+    <Content Include="Models\Player\whiteBrownMovingDown.gif" />
+    <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
+    <Content Include="Models\Player\whiteBrownMovingRight.gif" />
+    <Content Include="Models\Player\whiteBrownMovingUp.gif" />
+    <Content Include="Models\Player\whiteBrownStand.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

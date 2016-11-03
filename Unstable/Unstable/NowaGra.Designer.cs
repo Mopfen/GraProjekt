@@ -42,6 +42,7 @@
             this.aktualizator = new System.Windows.Forms.Timer(this.components);
             this.gracz = new System.Windows.Forms.PictureBox();
             this.buttonGoTest = new System.Windows.Forms.Button();
+            this.buttonBeta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,7 +147,6 @@
             // gracz
             // 
             this.gracz.BackColor = System.Drawing.Color.Transparent;
-            this.gracz.Image = global::Unstable.Properties.Resources.StandWhiteManBrownHairBlueEyes1;
             this.gracz.Location = new System.Drawing.Point(299, 82);
             this.gracz.Name = "gracz";
             this.gracz.Size = new System.Drawing.Size(64, 64);
@@ -164,6 +164,16 @@
             this.buttonGoTest.UseVisualStyleBackColor = true;
             this.buttonGoTest.Click += new System.EventHandler(this.buttonGoTest_Click);
             // 
+            // buttonBeta
+            // 
+            this.buttonBeta.Location = new System.Drawing.Point(672, 394);
+            this.buttonBeta.Name = "buttonBeta";
+            this.buttonBeta.Size = new System.Drawing.Size(75, 23);
+            this.buttonBeta.TabIndex = 14;
+            this.buttonBeta.Text = "Beta";
+            this.buttonBeta.UseVisualStyleBackColor = true;
+            this.buttonBeta.Click += new System.EventHandler(this.buttonBeta_Click);
+            // 
             // NowaGra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +181,7 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.buttonBeta);
             this.Controls.Add(this.buttonGoTest);
             this.Controls.Add(this.buttonKolorSkóry_);
             this.Controls.Add(this.button_KolorSkóry);
@@ -208,5 +219,6 @@
         private System.Windows.Forms.Button buttonKolorSkóry_;
         private System.Windows.Forms.Timer aktualizator;
         private System.Windows.Forms.Button buttonGoTest;
+        private System.Windows.Forms.Button buttonBeta;
     }
 }

@@ -117,26 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="aktualizatorGracz.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="aktualizatorMob.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>162, 17</value>
-  </metadata>
-  <metadata name="aktualizatorAtak.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>303, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="zbroja.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        R0lGODlhQABAAIECAEcgBHEzBv///////yH+EUNyZWF0ZWQgd2l0aCBHSU1QACH/C05FVFNDQVBFMi4w
-        AwEBAAAh+QQBCgACACwAAAAAQABAAAAIyQAFCBxIsKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPH
-        jyBDihxJsqTJkyhTqlzJsqXLlzBjypyZMoDNAAtv4lR5E4DNnAF8/jSpU+jQg0V1ktTJdCfSpjdPQn2q
-        lCXUoACMMm0ZtKlPrTZ9cgXblaxYq117ql3LNWxWsG+NurxK9yXdq3bvNs1rtC/buWmxvv3blixToXb9
-        Jg3rlCXctT0B692LdvLWtpaP0tzMubPnz6BDix5NurTp06hTq17NurXr15sDAgA7
-</value>
-  </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>39</value>
-  </metadata>
 </root>

@@ -118,76 +118,82 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="StandRedManBrownHairBlueEyes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandRedManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBrownMovingUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownMovingUp.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandBlackManBrownHairBlueEyes2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandBlackManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBrownMovingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownMovingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandRedManBlackHairBlueEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandRedManBlackHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pinkBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\pinkBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MovingUpWhiteManBrownHair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\MovingUpWhiteManBrownHair.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="redRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\redRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MovingDownWhiteManBrownHair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\MovingDownWhiteManBrownHair.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blackBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\blackBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandBlackManBlackHairBlueEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandBlackManBlackHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yellowBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\yellowBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandYellowManBlackHairBlueEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandYellowManBlackHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yellowBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\yellowBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandPinkManBlackHairBlueEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandPinkManBlackHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBrownAttackingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownAttackingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandPinkManBrownHairBlueEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandPinkManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandPinkManBrownHairBlueEyes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandPinkManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="redBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\redBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandWhiteManBlackHairBlueEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandWhiteManBlackHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blackRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\blackRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandRedManBrownHairBlueEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandRedManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="redBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\redBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandYellowManBrownHairBlueEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandYellowManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pinkBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\pinkBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandWhiteManBrownHairBlueEyesNew1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandWhiteManBrownHairBlueEyesNew.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yellowRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\yellowRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandBlackManBrownHairBlueEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandBlackManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blackBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\blackBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandYellowManBrownHairBlueEyes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandYellowManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pinkRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\pinkRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandWhiteManBrownHairBlueEyes2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandWhiteManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pinkBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\pinkBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MovingWhiteManBrownHairRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\MovingWhiteManBrownHairRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBrownMovingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownMovingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandBlackManBrownHairBlueEyes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandBlackManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blackBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\blackBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandWhiteManBrownHairBlueEyesNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandWhiteManBrownHairBlueEyesNew.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandWhiteManBrownHairBlueEyes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandWhiteManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBrownAttackingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownAttackingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MovingWhiteManBrownHairLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\MovingWhiteManBrownHairLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="redBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\redBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StandWhiteManBrownHairBlueEyes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\StandWhiteManBrownHairBlueEyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBrownMovingDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownMovingDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TłoNowaGraNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Backgrounds\TłoNowaGraNew.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="yellowBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\yellowBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
