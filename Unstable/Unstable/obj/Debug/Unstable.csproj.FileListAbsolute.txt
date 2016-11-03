@@ -1,0 +1,16 @@
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\Unstable.exe.config
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\Unstable.exe
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\Unstable.pdb
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.csprojResolveAssemblyReference.cache
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Launcher.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Properties.Resources.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.csproj.GenerateResource.Cache
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.exe
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.pdb
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.NowaGra.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.MenuGlowne.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.WczytajGrę.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Test.resources
+D:\Yey\Nowy folder\Unstable\Unstable\bin\Debug\Unstable.exe.config
+D:\Yey\Nowy folder\Unstable\Unstable\obj\Debug\Unstable.exe
+D:\Yey\Nowy folder\Unstable\Unstable\obj\Debug\Unstable.pdb
