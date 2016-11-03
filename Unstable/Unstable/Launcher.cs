@@ -13,6 +13,8 @@ namespace Unstable
     public partial class Launcher : Form
     {
         #region zmienneGracz
+        internal PictureBox gracz;
+
         internal bool up=false; //
         internal bool down =false; //
         internal bool left =false; //
@@ -23,16 +25,29 @@ namespace Unstable
         internal bool zmianaKierunkuLeftGracz = false; // 
         internal bool zmianaKierunkuRightGracz = false; // zmienne odpowiadające za zmianę grafiki gracza
 
+        internal bool attackUpGracz = false; //
+        internal bool attackDownGracz = false; //
+        internal bool attackLeftGracz = false; //
+        internal bool attackRightGracz = false; // zmienne odpowiadające za kierunek ataku
+
         internal bool attack;
 
-        internal int stopMoving = 0; //ALPHA
+        internal int stopMoving = 0; //Zlicza czas przetrzymania gracza podczas ataku
         #endregion
+        internal PictureBox mob;
+        internal Panel poleGry;
+
+        internal Launcher[] daneMob = new Launcher[10];
+
+
+
 
         System.Media.SoundPlayer music = new System.Media.SoundPlayer();
 
         public Launcher()
         {
             InitializeComponent();
+            DoubleBuffered = true;
         }
 
         private void Launcher_Load(object sender, EventArgs e)

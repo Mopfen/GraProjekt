@@ -35,6 +35,7 @@ namespace Unstable
 
         Launcher daneLauncher;
         #endregion
+        bool x = false;
 
         public Mapa1(Launcher dane)
         {
@@ -44,10 +45,17 @@ namespace Unstable
             
             timerGracz.Enabled = true;
             timerAtakGracz.Enabled = true;
+
+            daneLauncher.daneMob[0] = new Launcher();
+
+            daneLauncher.gracz=gracz;
+            daneLauncher.poleGry = poleGry;
+            daneLauncher.daneMob[0].mob = mob;
         }
 
         private void Mapa1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.X) { x = true; }
             if (e.KeyCode == Keys.Up) { daneLauncher.up = true; }
             if (e.KeyCode == Keys.Down) { daneLauncher.down = true; }
             if (e.KeyCode == Keys.Left) { daneLauncher.left = true; }
@@ -70,20 +78,18 @@ namespace Unstable
         }
         private void timerGracz_Tick(object sender, EventArgs e)
         {
-            Tuple<bool,bool,bool,bool> daneMetody = Gracz.RuchGracza(daneLauncher.up, daneLauncher.down, daneLauncher.left, daneLauncher.right,
-                daneLauncher.zmianaKierunkuUpGracz, daneLauncher.zmianaKierunkuDownGracz,
-                daneLauncher.zmianaKierunkuLeftGracz, daneLauncher.zmianaKierunkuRightGracz,
-                gracz, mob, poleGry);
-            daneLauncher.zmianaKierunkuUpGracz = daneMetody.Item1;
-            daneLauncher.zmianaKierunkuDownGracz = daneMetody.Item2;
-            daneLauncher.zmianaKierunkuLeftGracz = daneMetody.Item3;
-            daneLauncher.zmianaKierunkuRightGracz = daneMetody.Item4;
+            Gracz metodaGracz = new Unstable.Gracz(daneLauncher);
+            metodaGracz.RuchGracza();
+
+            if(x==true)
+            {
+                //for (int i = 0; i < 9; i++) daneLauncher.daneMob[i].mob = gracz;
+            }
         }
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
-            Tuple<bool,int> daneMetody = Gracz.AtakGracza(daneLauncher.attack, daneLauncher.stopMoving, timerGracz);
-            daneLauncher.attack = daneMetody.Item1;
-            daneLauncher.stopMoving = daneMetody.Item2;
+            Gracz metodaGracz = new Unstable.Gracz(daneLauncher);
+            metodaGracz.AtakGracza(timerGracz);
         }
     }
 }
