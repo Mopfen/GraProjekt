@@ -63,6 +63,16 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Beczka {
+            get {
+                object obj = ResourceManager.GetObject("Beczka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blackBlackStand {
             get {
                 object obj = ResourceManager.GetObject("blackBlackStand", resourceCulture);
@@ -96,6 +106,26 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap blackRedStand {
             get {
                 object obj = ResourceManager.GetObject("blackRedStand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OkienkoStatystyki {
+            get {
+                object obj = ResourceManager.GetObject("OkienkoStatystyki", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelStatystyk {
+            get {
+                object obj = ResourceManager.GetObject("PanelStatystyk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +213,26 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap StrzałaLeft {
+            get {
+                object obj = ResourceManager.GetObject("StrzałaLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap StrzałaRight {
+            get {
+                object obj = ResourceManager.GetObject("StrzałaRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap whiteBlackStand {
             get {
                 object obj = ResourceManager.GetObject("whiteBlackStand", resourceCulture);
@@ -256,6 +306,26 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap whiteBrownMovingUp {
             get {
                 object obj = ResourceManager.GetObject("whiteBrownMovingUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whiteBrownShotingLeft {
+            get {
+                object obj = ResourceManager.GetObject("whiteBrownShotingLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whiteBrownShotingRight {
+            get {
+                object obj = ResourceManager.GetObject("whiteBrownShotingRight", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

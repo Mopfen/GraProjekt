@@ -15,23 +15,31 @@ namespace Unstable
     /// <summary> Odpowiada za uruchomienie i działanie programu. Przechowuje większość zmiennych, na których pracuje program. </summary>
     public partial class Launcher : Form
     {
-        #region zmienneGracz
-        internal PictureBox gracz; // zmienna odpowiadająca za wygląd gracza
-        internal PictureBox underGracz; // zmienna niwelująca rozmycie podczas poruszania się gracza
+        #region zmiennePostaci
+        internal Launcher[] daneGracz = new Launcher[1]; // przechowuje informacje o graczu
+        internal Launcher[] daneMob = new Launcher[5]; // tablica przechowująca dane o kilku mobach
 
-        internal int hpGracz; //
-        internal int hpGraczMax; // zmienne odpowiadające za ilość punktów życia gracza
+        internal PictureBox obraz; // zmienna odpowiadająca za wygląd obiektu
+        internal PictureBox antyRozmycie; // zmienna niwelująca rozmycie podczas poruszania się obiektu
 
-        internal int manaGracz;
-        internal int manaGraczMax;
+        internal bool alive = true; // zmienna określa, czy postać żyje lub strzała istnieje
 
-        internal int siłaAtakuGracz = 0; // zmienna odpowiadająca za liczbę obrażeń zadawanych przez gracza
+        internal int hp; //
+        internal int hpMax; // zmienne odpowiadające za ilość punktów życia postaci
 
-        internal int lvGracz = 1; // zmienna określa poziom doświadczenia gracza
+        internal int mana;
+        internal int manaMax;
+
+        internal bool rodzajAtaku = true; // zmienna określa tryb walki gracza (true - miecz, false - łuk)
+
+        internal int[] siłaAtakuZwarcie = { 0, 0 }; // zmienna odpowiadająca za liczbę obrażeń zadawanych przez postać podczas walki wręcz
+        internal int[] siłaAtakuDystans = { 0, 0 }; // zmienna odpowiadająca za liczbę obrażeń zadawanych przez postać podczas walki strzeleckiej
+
+        internal int lv = 1; // zmienna określa poziom doświadczenia postaci
         internal int exp = 0; //
         internal int expMax = 5; // zmienne określają ilość doświadczenia gracza
 
-        internal int siła = 19; //
+        internal int siła = 1; //
         internal int zręczność = 1; //
         internal int inteligencja = 1; //
         internal int wytrzymałość = 1; //
@@ -42,56 +50,25 @@ namespace Unstable
         internal bool up = false; //
         internal bool down = false; //
         internal bool left = false; //
-        internal bool right = false; // zmienne odpowiadające za ruch gracza
+        internal bool right = false; // zmienne odpowiadające za ruch postaci
         
-        internal bool zmianaKierunkuUpGracz = false; //
-        internal bool zmianaKierunkuDownGracz = false; //
-        internal bool zmianaKierunkuLeftGracz = false; // 
-        internal bool zmianaKierunkuRightGracz = false; // 
-        internal bool zmianaKierunkuLeftSkosGracz = false; //
-        internal bool zmianaKierunkuRightSkosGracz = false; // zmienne odpowiadające za zmianę grafiki gracza podczas ruchu
+        internal bool zmianaKierunkuUp = false; //
+        internal bool zmianaKierunkuDown = false; //
+        internal bool zmianaKierunkuLeft = false; // 
+        internal bool zmianaKierunkuRight = false; // zmienne odpowiadające za zmianę grafiki postaci podczas ruchu 
 
-        internal bool przeszkodaGracz = false; // zmienna sprawdza, czy na drodze gracza jest przeszkoda
+        internal bool przeszkoda = false; // zmienna sprawdza, czy na drodze postaci jest przeszkoda
 
-        internal bool attackGracz; // zmienna odpowiadająca za wykonanie ataku przez gracza
+        internal bool attack; // zmienna odpowiadająca za wykonanie ataku przez postać
 
-        internal bool wykonanoAtakGracz = false; // zmienna odpowiadająca za sprawdzenie, czy atak został wykonany
+        internal bool wykonanoAtak = false; // zmienna odpowiadająca za sprawdzenie, czy atak został wykonany
 
-        internal int stopMovingGracz = 0; // zlicza czas przetrzymania gracza podczas ataku
+        internal int stopMoving = 0; // zlicza czas przetrzymania postaci podczas ataku
+
+        internal Label labelhp; // pokazuje stan zdrowia moba
+
         #endregion
-        #region zmienneMob
-        internal Launcher[] daneMob = new Launcher[10]; // tablica przechowująca dane o kilku mobach
-        internal PictureBox mob; // zmienna odpowiadająca za wygląd moba
-        internal PictureBox underMob; // zmienna niwelująca rozmycie podczas poruszania się moba
-
-        internal bool istniejeMob = false; // zmienna określa, czy mob istnieje
-
-        internal int hpMob; //
-        internal int hpMobMax; // zmienne odpowiadające za ilość punktów życia moba
-
-        internal Label labelhpMob;
-
-        internal int lvMob = 1; // zmienna okresla poziom moba
-
-        internal bool upMob = false; //
-        internal bool downMob = false; //
-        internal bool leftMob = false; //
-        internal bool rightMob = false; // zmienne odpowiadające za ruch moba
-
-        internal bool zmianaKierunkuUpMob = false; //
-        internal bool zmianaKierunkuDownMob = false; //
-        internal bool zmianaKierunkuLeftMob = false; // 
-        internal bool zmianaKierunkuRightMob = false; // 
-        internal bool zmianaKierunkuLeftSkosMob = false; //
-        internal bool zmianaKierunkuRightSkosMob = false; // zmienne odpowiadające za zmianę grafiki moba podczas ruchu
-
-        internal bool attackMob = false; // zmienna odpowiadająca za wykonanie ataku przez moba
-
-        internal bool wykonanoAtakMob = false; // zmienna odpowiadająca za sprawdzenie, czy atak został wykonany
-
-        internal short stopMovingMob = 0; // zlicza czas przetrzymania moba podczas ataku
-        #endregion
-        #region zmienneWygląduPostaci
+        #region zmienneWygląduObiektów
         internal PictureBox whiteBrownStand = new PictureBox();
         internal PictureBox whiteBrownMovingUp = new PictureBox();
         internal PictureBox whiteBrownMovingDown = new PictureBox();
@@ -101,6 +78,8 @@ namespace Unstable
         internal PictureBox whiteBrownAttackingDown = new PictureBox();
         internal PictureBox whiteBrownAttackingLeft = new PictureBox();
         internal PictureBox whiteBrownAttackingRight = new PictureBox();
+        internal PictureBox whiteBrownShotingLeft = new PictureBox();
+        internal PictureBox whiteBrownShotingRight = new PictureBox();
 
         internal PictureBox whiteBlackStand = new PictureBox();
         internal PictureBox whiteBlondeStand = new PictureBox();
@@ -126,12 +105,18 @@ namespace Unstable
         internal PictureBox redBlondeStand = new PictureBox();
         internal PictureBox redRedStand = new PictureBox();
 
+
+        internal PictureBox strzałaLeft = new PictureBox();
+        internal PictureBox strzałaRight = new PictureBox();
+
         #endregion
         #region zmienneLauncher
         #endregion
         #region zmiennePozostałe
         internal Panel poleGry; // zmienna odpowiadająca za właściwości pola gry
         internal Label hitLog;
+        internal Launcher[] daneStrzała = new Launcher[2];
+        internal Launcher[] danePrzeszkoda = new Launcher[20];
 
         internal System.Media.SoundPlayer music = new System.Media.SoundPlayer(); // zmienna odpowiadająca za muzykę w tle
         #endregion
@@ -140,6 +125,8 @@ namespace Unstable
         public Launcher()
         {
             InitializeComponent();
+
+            DoubleBuffered = true;
         }
 
         private void Launcher_Load(object sender, EventArgs e)
@@ -151,10 +138,18 @@ namespace Unstable
         {
             MenuGlowne formaMenuGlowne = new MenuGlowne(this);
 
-            for (int i=0;i<9;i++)
-            {
+            daneGracz[0] = new Launcher();
+            daneStrzała[0] = new Launcher(); daneStrzała[0].alive = false;
+            daneStrzała[1] = new Launcher(); daneStrzała[1].alive = false;
+            for (int i = 0; i < 5; i++)
+                {
                 daneMob[i] = new Launcher();
-                daneMob[i].istniejeMob = false;
+                daneMob[i].alive = false;
+            }
+            for (int i = 0; i < 20; i++)
+            {
+                danePrzeszkoda[i] = new Launcher();
+                danePrzeszkoda[i].alive = false;
             }
 
             wczytajDaneObrazkiWhiteBrownHuman();
@@ -177,6 +172,7 @@ namespace Unstable
             wczytajDaneObrazkiRedBlackHuman();
             wczytajDaneObrazkiRedBlondeHuman();
             wczytajDaneObrazkiRedRedHuman();
+            wczytajDaneObrazkiInne();
 
             this.Hide();
             formaMenuGlowne.Show();
@@ -203,6 +199,8 @@ namespace Unstable
 
             whiteBrownAttackingRight.Image = global::Unstable.Properties.Resources.whiteBrownAttackingRight;
             whiteBrownAttackingLeft.Image = global::Unstable.Properties.Resources.whiteBrownAttackingLeft;
+            whiteBrownShotingLeft.Image = global::Unstable.Properties.Resources.whiteBrownShotingLeft;
+            whiteBrownShotingRight.Image = global::Unstable.Properties.Resources.whiteBrownShotingRight;
         }
         private void wczytajDaneObrazkiWhiteBlackHuman()
         {
@@ -279,6 +277,11 @@ namespace Unstable
         private void wczytajDaneObrazkiRedRedHuman()
         {
             redRedStand.Image = global::Unstable.Properties.Resources.redRedStand;
+        }
+        private void wczytajDaneObrazkiInne()
+        {
+            strzałaLeft.Image = global::Unstable.Properties.Resources.StrzałaLeft;
+            strzałaRight.Image = global::Unstable.Properties.Resources.StrzałaRight;
         }
     }
 }

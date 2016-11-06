@@ -20,26 +20,51 @@ namespace Unstable
 
             daneLauncher = dane;
 
-            //DoubleBuffered = true;
+            this.poleGry.Location = new System.Drawing.Point(3, -3);
+
+
+            DoubleBuffered = true;
 
             timerGracz.Enabled = true;
             timerAtakGracz.Enabled = true;
             timerStatystyki.Enabled = true;
             timerMob.Enabled = true;
             timerAtakMob.Enabled = true;
+            timerStrzałaGracz.Enabled = true;
 
             //for(int i=0;i<9;i++) daneLauncher.daneMob[i] = new Launcher();
 
-            daneLauncher.gracz = gracz;
-            daneLauncher.underGracz = underGracz;
+            daneLauncher.daneGracz[0].obraz = gracz;
+            daneLauncher.daneGracz[0].antyRozmycie = underGracz;
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
 
-            daneLauncher.hpGracz = 100;
-            daneLauncher.hpGraczMax = 100;
+            daneLauncher.daneGracz[0].siła = 20;
+            daneLauncher.daneGracz[0].zręczność = 20;
+            daneLauncher.daneGracz[0].hp = 100;
+            daneLauncher.daneGracz[0].hpMax = 100;
 
-            daneLauncher.daneMob[0].hpMob = 100;
-            daneLauncher.daneMob[0].hpMobMax = 100;
+            daneLauncher.daneGracz[0].lv = daneLauncher.daneMob[0].lv = 1;
+
+            daneLauncher.daneMob[0].hp = 100;
+            daneLauncher.daneMob[0].hpMax = 100;
+
+            daneLauncher.daneStrzała[0].obraz = strzałaGracz;
+            daneLauncher.daneStrzała[0].obraz.Visible = false;
+
+            for (int i = 0; i < 12; i++) daneLauncher.danePrzeszkoda[i].alive = true;
+            daneLauncher.danePrzeszkoda[0].obraz = beczka1;
+            daneLauncher.danePrzeszkoda[1].obraz = beczka2;
+            daneLauncher.danePrzeszkoda[2].obraz = beczka3;
+            daneLauncher.danePrzeszkoda[3].obraz = beczka4;
+            daneLauncher.danePrzeszkoda[4].obraz = beczka5;
+            daneLauncher.danePrzeszkoda[5].obraz = beczka6;
+            daneLauncher.danePrzeszkoda[6].obraz = beczka7;
+            daneLauncher.danePrzeszkoda[7].obraz = beczka8;
+            daneLauncher.danePrzeszkoda[8].obraz = beczki1;
+            daneLauncher.danePrzeszkoda[9].obraz = beczki2;
+            daneLauncher.danePrzeszkoda[10].obraz = ściana1;
+            daneLauncher.danePrzeszkoda[11].obraz = ściana2;
 
             daneLauncher.music.SoundLocation = "Soundtrack1.wav";
             daneLauncher.music.PlayLooping();
@@ -47,71 +72,47 @@ namespace Unstable
 
         private void MapaStartowa_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up) { daneLauncher.up = true; }
-            if (e.KeyCode == Keys.Down) { daneLauncher.down = true; }
-            if (e.KeyCode == Keys.Left) { daneLauncher.left = true; }
-            if (e.KeyCode == Keys.Right) { daneLauncher.right = true; }
-            if (e.KeyCode == Keys.Space) daneLauncher.attackGracz = true;
-            if (e.KeyCode == Keys.Escape)
-            {
-                MenuGlowne formaMenuGlowne = new MenuGlowne(daneLauncher);
-
-                this.Close();
-                formaMenuGlowne.Show();
-            }
+            MetodyMap metodaMap = new MetodyMap(daneLauncher);
+            metodaMap.KeyDownMetoda(this, e);
             if (e.KeyCode == Keys.Z)
             {
-                if(daneLauncher.gracz.Bounds.IntersectsWith(wyjścieMapa1.Bounds))
+                if (daneLauncher.daneGracz[0].obraz.Bounds.IntersectsWith(wyjścieMapa1.Bounds))
                 {
                     Mapa1 mapMapa1 = new Mapa1(daneLauncher);
                     this.Close();
                     mapMapa1.Show();
                 }
             }
-            if(e.KeyCode==Keys.C)
-            {
-                Statystyki formaStatystyki = new Statystyki(daneLauncher);
-                formaStatystyki.ShowDialog();
-            }
         }
         private void MapaStartowa_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up) { daneLauncher.up = false; daneLauncher.zmianaKierunkuUpGracz = false; }
-            if (e.KeyCode == Keys.Down) { daneLauncher.down = false; daneLauncher.zmianaKierunkuDownGracz = false; }
-            if (e.KeyCode == Keys.Left) { daneLauncher.left = false; daneLauncher.zmianaKierunkuLeftGracz = false; }
-            if (e.KeyCode == Keys.Right) { daneLauncher.right = false; daneLauncher.zmianaKierunkuRightGracz = false; }
+            MetodyMap metodaMap = new MetodyMap(daneLauncher);
+            metodaMap.KeyUpMetoda(e);
         }
         private void timerGracz_Tick(object sender, EventArgs e)
         {
-            Gracz metodaGracz = new Gracz(daneLauncher);
-            metodaGracz.RuchGracza();
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            for(int i=0;i<12;i++)
+            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz[0], daneLauncher.danePrzeszkoda[i]);
+
+            MetodyMap metodaMap = new MetodyMap(daneLauncher);
+            metodaMap.timerGraczMetoda();
         }
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
-            Gracz metodaGracz = new Unstable.Gracz(daneLauncher);
-            metodaGracz.AtakGracza(timerGracz);
+            MetodyMap metodaMap = new MetodyMap(daneLauncher);
+            metodaMap.timerAtakGraczMetoda(timerGracz);
         }
-
         private void timerStatystyki_Tick(object sender, EventArgs e)
         {
-            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
-            GameOver formaGameOver = new GameOver(daneLauncher, this);
-            labelHpGracz.Text = Convert.ToString("HP: " + daneLauncher.hpGracz + "/" + daneLauncher.hpGraczMax);
-
-            Tuple<bool, int> czyMobZabity = metodaUniwersalne.śmierćMoba();
-            if (czyMobZabity.Item1 == true)
-            {
-                daneLauncher.daneMob[czyMobZabity.Item2].istniejeMob = false;
-            }
-            if (metodaUniwersalne.śmierćGracza() == true)
-            {
-                daneLauncher.music.SoundLocation = "GameOver.wav";
-                daneLauncher.music.Play();
-                formaGameOver.Show();
-                timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerStatystyki.Enabled = false;
-            }
+            MetodyMap metodaMap = new MetodyMap(daneLauncher);
+            metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
         }
 
-        
+        private void timerStrzałaGracz_Tick(object sender, EventArgs e)
+        {
+            MetodyMap metodaMap = new MetodyMap(daneLauncher);
+            metodaMap.timerStrzałaGraczMetoda(0,8,2,10);
+        }
     }
 }

@@ -13,19 +13,12 @@ namespace Unstable
     public partial class GameOver : Form
     {
         Launcher daneLauncher;
-        Mapa1 daneMapa1;
-        MapaStartowa daneMapaStartowa;
-        public GameOver(Launcher dane, Mapa1 mapa1)
+        Form daneForma;
+        public GameOver(Launcher dane, Form forma)
         {
             InitializeComponent();
             daneLauncher = dane;
-            daneMapa1 = mapa1;
-        }
-        public GameOver(Launcher dane, MapaStartowa mapaStartowa)
-        {
-            InitializeComponent();
-            daneLauncher = dane;
-            daneMapaStartowa = mapaStartowa;
+            daneForma = forma;
         }
 
         private void GameOver_KeyDown(object sender, KeyEventArgs e)
@@ -33,7 +26,7 @@ namespace Unstable
             if (e.KeyCode == Keys.Escape)
             {
                 this.Close();
-                daneMapa1.Close();
+                daneForma.Close();
                 daneLauncher.Show();
             }
         }

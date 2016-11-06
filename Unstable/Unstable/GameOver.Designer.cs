@@ -52,6 +52,7 @@
             this.Controls.Add(this.Tekst);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GameOver";
+            this.Opacity = 0.5D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameOver";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameOver_KeyDown);

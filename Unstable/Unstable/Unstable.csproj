@@ -77,6 +77,7 @@
     <Compile Include="MenuGlowne.Designer.cs">
       <DependentUpon>MenuGlowne.cs</DependentUpon>
     </Compile>
+    <Compile Include="MetodyMap.cs" />
     <Compile Include="Mob.cs" />
     <Compile Include="NowaGra.cs">
       <SubType>Form</SubType>
@@ -222,10 +223,17 @@
     <None Include="Models\Player\redBlondeStand.gif" />
     <None Include="Models\Player\redRedStand.gif" />
     <None Include="Models\Player\whiteBlondeStand.gif" />
+    <None Include="Models\Backgrounds\OkienkoStatystyki.png" />
+    <None Include="Models\Backgrounds\PanelStatystyk.png" />
+    <None Include="Models\Others\StrzałaRight.gif" />
+    <None Include="Models\Others\StrzałaLeft.gif" />
+    <None Include="Models\Objekty\Beczka.gif" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />
     <Content Include="Models\Player\whiteBrownMovingUp.gif" />
+    <None Include="Models\Player\whiteBrownShotingLeft.gif" />
+    <None Include="Models\Player\whiteBrownShotingRight.gif" />
     <Content Include="Models\Player\whiteBrownStand.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
