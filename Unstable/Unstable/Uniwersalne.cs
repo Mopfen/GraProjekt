@@ -58,6 +58,19 @@ namespace Unstable
             return wartośćAtaku;
         }
 
+        internal void hpMaxGracz()
+        {
+            daneLauncher.daneGracz[0].hpMax = (daneLauncher.daneGracz[0].lv * 10 + daneLauncher.daneGracz[0].wytrzymałość * 5);
+        }
+        internal void manaMaxGracz()
+        {
+            daneLauncher.daneGracz[0].manaMax = (daneLauncher.daneGracz[0].lv * 10 + daneLauncher.daneGracz[0].inteligencja * 5);
+        }
+        internal void szansaKrytykGracz()
+        {
+            daneLauncher.daneGracz[0].szansaKryta = Convert.ToInt16(((daneLauncher.daneGracz[0].szczęście * 10) / daneLauncher.daneGracz[0].lv));
+        }
+
         /// <summary>
         /// Metoda sprawdzająca, czy strzała trafiła jakiś obiekt. Jeżeli tak, wykonuje okresloną czynność.
         /// </summary>
@@ -93,7 +106,10 @@ namespace Unstable
                 }
             }
         }
-
+        /// <summary>
+        /// Metoda sprawdza, czy gracz zginął
+        /// </summary>
+        /// <returns></returns>
         internal bool śmierćGracza()
         {
             if (daneLauncher.daneGracz[0].hp <= 0)
@@ -103,6 +119,10 @@ namespace Unstable
             }
             return false;
         }
+        /// <summary>
+        /// Metoda sprawdza, czy mob został zabity. Jeśli tak, to wykonuje ustalone operacje
+        /// </summary>
+        /// <returns></returns>
         internal Tuple<bool,int> śmierćMoba()
         {
             int i = 0;
@@ -146,8 +166,16 @@ namespace Unstable
                             dmgZwarcieGracz1();
                             dmgZwarcieGracz2();
                             int dmg = losuj(daneLauncher.daneGracz[0].siłaAtakuZwarcie[0], daneLauncher.daneGracz[0].siłaAtakuZwarcie[1]);
+                            if(losuj(0,100)<=daneLauncher.daneGracz[0].szansaKryta)
+                            {
+                                dmg *= 2;
+                                daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
+                            }
+                            else
+                            {
+                                daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
+                            }
                             obiekt[i].hp -= dmg;
-                            daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
                         }
                         if(obiekt==daneLauncher.danePrzeszkoda)
                         {
@@ -161,7 +189,11 @@ namespace Unstable
 
         #endregion
         #region poruszanieSię
-
+        /// <summary>
+        /// Metoda sprawdza, czy na drodze postaci znajduje się przeszkoda. Jeśli tak, nie pozwala jej iść dalej.
+        /// </summary>
+        /// <param name="idący">Idąca postać</param>
+        /// <param name="obiekt">Istniejąca przeszkoda</param>
         internal void przeszkodaNaDrodze(Launcher idący, Launcher obiekt)
         {
             if(obiekt.alive==true)
@@ -169,21 +201,35 @@ namespace Unstable
                 if (idący.up == true & idący.obraz.Top - obiekt.obraz.Top >= (obiekt.obraz.Height-4) & idący.obraz.Top - obiekt.obraz.Bottom < 4 & (obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width) & obiekt.obraz.Left - idący.obraz.Left < idący.obraz.Width)) { idący.obraz.Top += 4; idący.przeszkoda = true; }
                 if (idący.down == true & obiekt.obraz.Bottom - idący.obraz.Bottom >= (obiekt.obraz.Height - 4) & obiekt.obraz.Top - idący.obraz.Bottom < 4 & (obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width) & obiekt.obraz.Left - idący.obraz.Left < idący.obraz.Width)) { idący.obraz.Top -= 4; idący.przeszkoda = true; }
                 if (idący.left == true & idący.obraz.Left - obiekt.obraz.Left >= (obiekt.obraz.Width - 4) & idący.obraz.Left - obiekt.obraz.Right < 0 & (obiekt.obraz.Top - idący.obraz.Top >= (-obiekt.obraz.Height) & obiekt.obraz.Top - idący.obraz.Top < idący.obraz.Height)) { idący.obraz.Left += 2; idący.przeszkoda = true; }
-                if (idący.right == true & obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width - 4) & obiekt.obraz.Left - idący.obraz.Right < 0 & (obiekt.obraz.Top - idący.obraz.Top >= (-obiekt.obraz.Height) & obiekt.obraz.Top - idący.obraz.Top < idący.obraz.Height)) { idący.obraz.Left -= 2; idący.przeszkoda = true; }
+                if (idący.right == true & obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width + 4) & obiekt.obraz.Left - idący.obraz.Right < 0 & (obiekt.obraz.Top - idący.obraz.Top >= (-obiekt.obraz.Height) & obiekt.obraz.Top - idący.obraz.Top < idący.obraz.Height)) { idący.obraz.Left -= 2; idący.przeszkoda = true; }
             }    
         }
-
+        
         #endregion
         #region użytkowe
+        /// <summary>
+        /// Metoda wyliczająca, ile procent liczby1 stanowi liczba2
+        /// </summary>
+        /// <param name="liczba1">Liczba1 = 100% z liczby1</param>
+        /// <param name="liczba2">Liczba2 = x% z liczby1</param>
+        /// <returns></returns>
         internal int wyliczProcent(int liczba1, int liczba2)
         {
             return (liczba1 * 100) / liczba2;
         }
+
+        /// <summary>
+        /// Metoda losuje liczby z danego przedziału
+        /// </summary>
+        /// <param name="min">Wartość minimalna do wylosowania</param>
+        /// <param name="max">Wartość maksymalna do wylosowania</param>
+        /// <returns></returns>
         internal int losuj(int min,int max)
         {
             Random random = new Random();
             return random.Next(min, max+1);
-        }        
+        }     
+           
         /// <summary>
         /// Metoda sprawdza czy forma jest aktualnie otwarta
         /// (Zaczerpnięta ze strony http://stackoverflow.com/questions/3861602/how-to-check-if-a-windows-form-is-already-open-and-close-it-if-it-is)
@@ -205,16 +251,36 @@ namespace Unstable
         }
         #endregion
 
-        internal bool levelUp()
+        /// <summary>
+        /// Metoda wykonująca operacje po osiągnięciu wyższego poziomu przez gracza
+        /// </summary>
+        internal void levelUp()
         {
-            if(daneLauncher.daneGracz[0].exp >=daneLauncher.daneGracz[0].expMax)
+            while (daneLauncher.daneGracz[0].exp >=daneLauncher.daneGracz[0].expMax)
             {
+                //daneLauncher.lvUpSound.Play();
                 daneLauncher.daneGracz[0].lv++;
                 daneLauncher.daneGracz[0].exp -= daneLauncher.expMax;
                 daneLauncher.daneGracz[0].expMax += 5;
-                return true;
+                daneLauncher.daneGracz[0].statystykiDoRozdania += 4;
+                liczStatystyki();
+                daneLauncher.daneGracz[0].hp = daneLauncher.daneGracz[0].hpMax;
+                daneLauncher.daneGracz[0].mana = daneLauncher.daneGracz[0].manaMax;
             }
-            return false;
+        }
+
+        /// <summary>
+        /// Metoda oblicza statytyki gracza
+        /// </summary>
+        internal void liczStatystyki()
+        {
+            dmgZwarcieGracz1();
+            dmgZwarcieGracz2();
+            dmgDystansGracz1();
+            dmgDystansGracz2();
+            hpMaxGracz();
+            manaMaxGracz();
+            szansaKrytykGracz();
         }
 
     }

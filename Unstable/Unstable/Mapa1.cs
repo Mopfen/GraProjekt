@@ -44,21 +44,25 @@ namespace Unstable
             daneLauncher.daneMob[0].labelhp = labelHpMob0;
             daneLauncher.hitLog = hitLog;
 
-            daneLauncher.daneGracz[0].hp = 100;
-            daneLauncher.daneGracz[0].hpMax = 100;
-            daneLauncher.daneGracz[0].mana = 100;
-            daneLauncher.daneGracz[0].manaMax = 100;
-
             daneLauncher.daneMob[0].hp = 100;
             daneLauncher.daneMob[0].hpMax = 100;
 
             daneLauncher.daneStrzała[0].obraz = strzałaGracz;
             daneLauncher.daneStrzała[0].obraz.Visible = false;
 
+            daneLauncher.rozdajStatystyki = rozdajStatystyki;
+
+            daneLauncher.timerStatystyki = timerStatystyki;
+
             daneLauncher.music.SoundLocation = "Soundtrack1.wav";
             daneLauncher.music.PlayLooping();
         }
 
+        private void rozdajStatystyki_Click(object sender, EventArgs e)
+        {
+            Statystyki formaStatystyki = new Statystyki(daneLauncher);
+            formaStatystyki.ShowDialog();
+        }
         private void Mapa1_KeyDown(object sender, KeyEventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
@@ -99,7 +103,7 @@ namespace Unstable
         private void timerAtakMob_Tick(object sender, EventArgs e)
         {
             Mob metodaMob = new Mob(daneLauncher);
-            metodaMob.AtakMoba(timerMob, 0,5);
+            metodaMob.AtakMoba(timerMob, 0,1);
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)

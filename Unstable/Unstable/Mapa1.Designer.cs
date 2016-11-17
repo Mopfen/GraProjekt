@@ -42,6 +42,7 @@
             this.labelManaGracz = new System.Windows.Forms.Label();
             this.labelHpGracz = new System.Windows.Forms.Label();
             this.poleGry = new System.Windows.Forms.Panel();
+            this.rozdajStatystyki = new System.Windows.Forms.PictureBox();
             this.strzałaGracz = new System.Windows.Forms.PictureBox();
             this.labelHpMob0 = new System.Windows.Forms.Label();
             this.gracz = new System.Windows.Forms.PictureBox();
@@ -51,6 +52,7 @@
             this.timerStrzałaGracz = new System.Windows.Forms.Timer(this.components);
             this.panelStatystyk.SuspendLayout();
             this.poleGry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mob)).BeginInit();
@@ -159,6 +161,7 @@
             this.poleGry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("poleGry.BackgroundImage")));
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
+            this.poleGry.Controls.Add(this.rozdajStatystyki);
             this.poleGry.Controls.Add(this.strzałaGracz);
             this.poleGry.Controls.Add(this.labelHpMob0);
             this.poleGry.Controls.Add(this.gracz);
@@ -166,16 +169,30 @@
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.underMob);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -25);
+            this.poleGry.Location = new System.Drawing.Point(3, -47);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 2;
             // 
+            // rozdajStatystyki
+            // 
+            this.rozdajStatystyki.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rozdajStatystyki.Image = global::Unstable.Properties.Resources.rozdajStatystyki;
+            this.rozdajStatystyki.Location = new System.Drawing.Point(3, 410);
+            this.rozdajStatystyki.MaximumSize = new System.Drawing.Size(32, 32);
+            this.rozdajStatystyki.MinimumSize = new System.Drawing.Size(32, 32);
+            this.rozdajStatystyki.Name = "rozdajStatystyki";
+            this.rozdajStatystyki.Size = new System.Drawing.Size(32, 32);
+            this.rozdajStatystyki.TabIndex = 33;
+            this.rozdajStatystyki.TabStop = false;
+            this.rozdajStatystyki.Visible = false;
+            this.rozdajStatystyki.Click += new System.EventHandler(this.rozdajStatystyki_Click);
+            // 
             // strzałaGracz
             // 
             this.strzałaGracz.Image = global::Unstable.Properties.Resources.StrzałaRight;
-            this.strzałaGracz.Location = new System.Drawing.Point(3, 435);
+            this.strzałaGracz.Location = new System.Drawing.Point(9, 15);
             this.strzałaGracz.MaximumSize = new System.Drawing.Size(32, 12);
             this.strzałaGracz.MinimumSize = new System.Drawing.Size(32, 12);
             this.strzałaGracz.Name = "strzałaGracz";
@@ -200,7 +217,7 @@
             this.gracz.BackColor = System.Drawing.Color.Transparent;
             this.gracz.Cursor = System.Windows.Forms.Cursors.Default;
             this.gracz.Image = global::Unstable.Properties.Resources.whiteBrownStand;
-            this.gracz.Location = new System.Drawing.Point(17, 188);
+            this.gracz.Location = new System.Drawing.Point(168, 188);
             this.gracz.Margin = new System.Windows.Forms.Padding(10);
             this.gracz.MaximumSize = new System.Drawing.Size(64, 64);
             this.gracz.MinimumSize = new System.Drawing.Size(64, 64);
@@ -213,7 +230,7 @@
             // 
             this.mob.BackColor = System.Drawing.Color.Transparent;
             this.mob.Image = global::Unstable.Properties.Resources.whiteBrownStand;
-            this.mob.Location = new System.Drawing.Point(678, 188);
+            this.mob.Location = new System.Drawing.Point(411, 188);
             this.mob.Margin = new System.Windows.Forms.Padding(10);
             this.mob.MaximumSize = new System.Drawing.Size(64, 64);
             this.mob.MinimumSize = new System.Drawing.Size(64, 64);
@@ -268,6 +285,7 @@
             this.panelStatystyk.PerformLayout();
             this.poleGry.ResumeLayout(false);
             this.poleGry.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mob)).EndInit();
@@ -297,5 +315,6 @@
         private System.Windows.Forms.Label hitLog;
         private System.Windows.Forms.PictureBox strzałaGracz;
         private System.Windows.Forms.Timer timerStrzałaGracz;
+        private System.Windows.Forms.PictureBox rozdajStatystyki;
     }
 }

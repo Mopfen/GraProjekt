@@ -37,7 +37,7 @@
             this.labelWyt = new System.Windows.Forms.Label();
             this.labelPż = new System.Windows.Forms.Label();
             this.labelSzc = new System.Windows.Forms.Label();
-            this.labelSzansa = new System.Windows.Forms.Label();
+            this.labelSzansaKryt = new System.Windows.Forms.Label();
             this.labelSiłaGracz = new System.Windows.Forms.Label();
             this.labelZręcznośćGracz = new System.Windows.Forms.Label();
             this.labelInteligencjaGracz = new System.Windows.Forms.Label();
@@ -47,13 +47,19 @@
             this.labelDmgDystansGracz = new System.Windows.Forms.Label();
             this.labelManaGracz = new System.Windows.Forms.Label();
             this.labelHpGracz = new System.Windows.Forms.Label();
-            this.labelKrtytykGracz = new System.Windows.Forms.Label();
-            this.buttonAddSił = new System.Windows.Forms.Button();
-            this.buttonAddZrę = new System.Windows.Forms.Button();
-            this.buttonAddInt = new System.Windows.Forms.Button();
-            this.buttonAddWyt = new System.Windows.Forms.Button();
-            this.buttonAddSzc = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
+            this.labelKrytykGracz = new System.Windows.Forms.Label();
+            this.alaButtonExit = new System.Windows.Forms.PictureBox();
+            this.alaButtonAddSił = new System.Windows.Forms.PictureBox();
+            this.alaButtonAddWyt = new System.Windows.Forms.PictureBox();
+            this.alaButtonAddSzc = new System.Windows.Forms.PictureBox();
+            this.alaButtonAddInt = new System.Windows.Forms.PictureBox();
+            this.alaButtonAddZrę = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddSił)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddWyt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddSzc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddInt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddZrę)).BeginInit();
             this.SuspendLayout();
             // 
             // labelSił
@@ -164,17 +170,17 @@
             this.labelSzc.TabIndex = 8;
             this.labelSzc.Text = "Szc:";
             // 
-            // labelSzansa
+            // labelSzansaKryt
             // 
-            this.labelSzansa.AutoSize = true;
-            this.labelSzansa.BackColor = System.Drawing.Color.Transparent;
-            this.labelSzansa.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSzansa.ForeColor = System.Drawing.Color.White;
-            this.labelSzansa.Location = new System.Drawing.Point(150, 258);
-            this.labelSzansa.Name = "labelSzansa";
-            this.labelSzansa.Size = new System.Drawing.Size(215, 30);
-            this.labelSzansa.TabIndex = 9;
-            this.labelSzansa.Text = "Szansa traf. kryt.:";
+            this.labelSzansaKryt.AutoSize = true;
+            this.labelSzansaKryt.BackColor = System.Drawing.Color.Transparent;
+            this.labelSzansaKryt.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSzansaKryt.ForeColor = System.Drawing.Color.White;
+            this.labelSzansaKryt.Location = new System.Drawing.Point(150, 258);
+            this.labelSzansaKryt.Name = "labelSzansaKryt";
+            this.labelSzansaKryt.Size = new System.Drawing.Size(215, 30);
+            this.labelSzansaKryt.TabIndex = 9;
+            this.labelSzansaKryt.Text = "Szansa traf. kryt.:";
             // 
             // labelSiłaGracz
             // 
@@ -284,84 +290,90 @@
             this.labelHpGracz.TabIndex = 18;
             this.labelHpGracz.Text = "xxxxxxx/xxxxxxx";
             // 
-            // labelKrtytykGracz
+            // labelKrytykGracz
             // 
-            this.labelKrtytykGracz.AutoSize = true;
-            this.labelKrtytykGracz.BackColor = System.Drawing.Color.Transparent;
-            this.labelKrtytykGracz.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelKrtytykGracz.ForeColor = System.Drawing.Color.White;
-            this.labelKrtytykGracz.Location = new System.Drawing.Point(363, 258);
-            this.labelKrtytykGracz.Name = "labelKrtytykGracz";
-            this.labelKrtytykGracz.Size = new System.Drawing.Size(75, 30);
-            this.labelKrtytykGracz.TabIndex = 19;
-            this.labelKrtytykGracz.Text = "XXX%";
+            this.labelKrytykGracz.AutoSize = true;
+            this.labelKrytykGracz.BackColor = System.Drawing.Color.Transparent;
+            this.labelKrytykGracz.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKrytykGracz.ForeColor = System.Drawing.Color.White;
+            this.labelKrytykGracz.Location = new System.Drawing.Point(363, 258);
+            this.labelKrytykGracz.Name = "labelKrytykGracz";
+            this.labelKrytykGracz.Size = new System.Drawing.Size(75, 30);
+            this.labelKrytykGracz.TabIndex = 19;
+            this.labelKrytykGracz.Text = "XXX%";
             // 
-            // buttonAddSił
+            // alaButtonExit
             // 
-            this.buttonAddSił.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddSił.Location = new System.Drawing.Point(2, 56);
-            this.buttonAddSił.Name = "buttonAddSił";
-            this.buttonAddSił.Size = new System.Drawing.Size(16, 16);
-            this.buttonAddSił.TabIndex = 20;
-            this.buttonAddSił.TabStop = false;
-            this.buttonAddSił.UseVisualStyleBackColor = true;
-            this.buttonAddSił.Visible = false;
+            this.alaButtonExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonExit.Image = global::Unstable.Properties.Resources.Zamknij24x24;
+            this.alaButtonExit.Location = new System.Drawing.Point(423, 3);
+            this.alaButtonExit.MaximumSize = new System.Drawing.Size(24, 24);
+            this.alaButtonExit.MinimumSize = new System.Drawing.Size(24, 24);
+            this.alaButtonExit.Name = "alaButtonExit";
+            this.alaButtonExit.Size = new System.Drawing.Size(24, 24);
+            this.alaButtonExit.TabIndex = 25;
+            this.alaButtonExit.TabStop = false;
+            this.alaButtonExit.Click += new System.EventHandler(this.alaButtonExit_Click);
             // 
-            // buttonAddZrę
+            // alaButtonAddSił
             // 
-            this.buttonAddZrę.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddZrę.Location = new System.Drawing.Point(2, 108);
-            this.buttonAddZrę.Name = "buttonAddZrę";
-            this.buttonAddZrę.Size = new System.Drawing.Size(16, 16);
-            this.buttonAddZrę.TabIndex = 21;
-            this.buttonAddZrę.TabStop = false;
-            this.buttonAddZrę.UseVisualStyleBackColor = true;
-            this.buttonAddZrę.Visible = false;
+            this.alaButtonAddSił.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonAddSił.Image = global::Unstable.Properties.Resources.Plus16x16;
+            this.alaButtonAddSił.Location = new System.Drawing.Point(2, 56);
+            this.alaButtonAddSił.Name = "alaButtonAddSił";
+            this.alaButtonAddSił.Size = new System.Drawing.Size(16, 16);
+            this.alaButtonAddSił.TabIndex = 26;
+            this.alaButtonAddSił.TabStop = false;
+            this.alaButtonAddSił.Visible = false;
+            this.alaButtonAddSił.Click += new System.EventHandler(this.alaButtonAddSił_Click);
             // 
-            // buttonAddInt
+            // alaButtonAddWyt
             // 
-            this.buttonAddInt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddInt.Location = new System.Drawing.Point(2, 160);
-            this.buttonAddInt.Name = "buttonAddInt";
-            this.buttonAddInt.Size = new System.Drawing.Size(16, 16);
-            this.buttonAddInt.TabIndex = 22;
-            this.buttonAddInt.TabStop = false;
-            this.buttonAddInt.UseVisualStyleBackColor = true;
-            this.buttonAddInt.Visible = false;
+            this.alaButtonAddWyt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonAddWyt.Image = global::Unstable.Properties.Resources.Plus16x16;
+            this.alaButtonAddWyt.Location = new System.Drawing.Point(2, 212);
+            this.alaButtonAddWyt.Name = "alaButtonAddWyt";
+            this.alaButtonAddWyt.Size = new System.Drawing.Size(16, 16);
+            this.alaButtonAddWyt.TabIndex = 27;
+            this.alaButtonAddWyt.TabStop = false;
+            this.alaButtonAddWyt.Visible = false;
+            this.alaButtonAddWyt.Click += new System.EventHandler(this.alaButtonAddWyt_Click);
             // 
-            // buttonAddWyt
+            // alaButtonAddSzc
             // 
-            this.buttonAddWyt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddWyt.Location = new System.Drawing.Point(2, 212);
-            this.buttonAddWyt.Name = "buttonAddWyt";
-            this.buttonAddWyt.Size = new System.Drawing.Size(16, 16);
-            this.buttonAddWyt.TabIndex = 23;
-            this.buttonAddWyt.TabStop = false;
-            this.buttonAddWyt.UseVisualStyleBackColor = true;
-            this.buttonAddWyt.Visible = false;
+            this.alaButtonAddSzc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonAddSzc.Image = global::Unstable.Properties.Resources.Plus16x16;
+            this.alaButtonAddSzc.Location = new System.Drawing.Point(2, 264);
+            this.alaButtonAddSzc.Name = "alaButtonAddSzc";
+            this.alaButtonAddSzc.Size = new System.Drawing.Size(16, 16);
+            this.alaButtonAddSzc.TabIndex = 28;
+            this.alaButtonAddSzc.TabStop = false;
+            this.alaButtonAddSzc.Visible = false;
+            this.alaButtonAddSzc.Click += new System.EventHandler(this.alaButtonAddSzc_Click);
             // 
-            // buttonAddSzc
+            // alaButtonAddInt
             // 
-            this.buttonAddSzc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddSzc.Location = new System.Drawing.Point(2, 264);
-            this.buttonAddSzc.Name = "buttonAddSzc";
-            this.buttonAddSzc.Size = new System.Drawing.Size(16, 16);
-            this.buttonAddSzc.TabIndex = 24;
-            this.buttonAddSzc.TabStop = false;
-            this.buttonAddSzc.UseVisualStyleBackColor = true;
-            this.buttonAddSzc.Visible = false;
+            this.alaButtonAddInt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonAddInt.Image = global::Unstable.Properties.Resources.Plus16x16;
+            this.alaButtonAddInt.Location = new System.Drawing.Point(2, 160);
+            this.alaButtonAddInt.Name = "alaButtonAddInt";
+            this.alaButtonAddInt.Size = new System.Drawing.Size(16, 16);
+            this.alaButtonAddInt.TabIndex = 29;
+            this.alaButtonAddInt.TabStop = false;
+            this.alaButtonAddInt.Visible = false;
+            this.alaButtonAddInt.Click += new System.EventHandler(this.alaButtonAddInt_Click);
             // 
-            // buttonExit
+            // alaButtonAddZrę
             // 
-            this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonExit.Location = new System.Drawing.Point(423, 3);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(24, 24);
-            this.buttonExit.TabIndex = 25;
-            this.buttonExit.TabStop = false;
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Visible = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.alaButtonAddZrę.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonAddZrę.Image = global::Unstable.Properties.Resources.Plus16x16;
+            this.alaButtonAddZrę.Location = new System.Drawing.Point(2, 108);
+            this.alaButtonAddZrę.Name = "alaButtonAddZrę";
+            this.alaButtonAddZrę.Size = new System.Drawing.Size(16, 16);
+            this.alaButtonAddZrę.TabIndex = 30;
+            this.alaButtonAddZrę.TabStop = false;
+            this.alaButtonAddZrę.Visible = false;
+            this.alaButtonAddZrę.Click += new System.EventHandler(this.alaButtonAddZrę_Click);
             // 
             // Statystyki
             // 
@@ -370,13 +382,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Unstable.Properties.Resources.OkienkoStatystyki;
             this.ClientSize = new System.Drawing.Size(450, 600);
-            this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.buttonAddSzc);
-            this.Controls.Add(this.buttonAddWyt);
-            this.Controls.Add(this.buttonAddInt);
-            this.Controls.Add(this.buttonAddZrę);
-            this.Controls.Add(this.buttonAddSił);
-            this.Controls.Add(this.labelKrtytykGracz);
+            this.Controls.Add(this.alaButtonAddSzc);
+            this.Controls.Add(this.alaButtonAddWyt);
+            this.Controls.Add(this.alaButtonAddInt);
+            this.Controls.Add(this.alaButtonAddZrę);
+            this.Controls.Add(this.alaButtonAddSił);
+            this.Controls.Add(this.alaButtonExit);
+            this.Controls.Add(this.labelKrytykGracz);
             this.Controls.Add(this.labelHpGracz);
             this.Controls.Add(this.labelManaGracz);
             this.Controls.Add(this.labelDmgDystansGracz);
@@ -386,7 +398,7 @@
             this.Controls.Add(this.labelInteligencjaGracz);
             this.Controls.Add(this.labelZręcznośćGracz);
             this.Controls.Add(this.labelSiłaGracz);
-            this.Controls.Add(this.labelSzansa);
+            this.Controls.Add(this.labelSzansaKryt);
             this.Controls.Add(this.labelSzc);
             this.Controls.Add(this.labelPż);
             this.Controls.Add(this.labelWyt);
@@ -403,6 +415,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Statystyki";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Statystyki_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddSił)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddWyt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddSzc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddInt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddZrę)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,7 +437,7 @@
         private System.Windows.Forms.Label labelWyt;
         private System.Windows.Forms.Label labelPż;
         private System.Windows.Forms.Label labelSzc;
-        private System.Windows.Forms.Label labelSzansa;
+        private System.Windows.Forms.Label labelSzansaKryt;
         private System.Windows.Forms.Label labelSiłaGracz;
         private System.Windows.Forms.Label labelZręcznośćGracz;
         private System.Windows.Forms.Label labelInteligencjaGracz;
@@ -429,12 +447,12 @@
         private System.Windows.Forms.Label labelDmgDystansGracz;
         private System.Windows.Forms.Label labelManaGracz;
         private System.Windows.Forms.Label labelHpGracz;
-        private System.Windows.Forms.Label labelKrtytykGracz;
-        private System.Windows.Forms.Button buttonAddSił;
-        private System.Windows.Forms.Button buttonAddZrę;
-        private System.Windows.Forms.Button buttonAddInt;
-        private System.Windows.Forms.Button buttonAddWyt;
-        private System.Windows.Forms.Button buttonAddSzc;
-        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label labelKrytykGracz;
+        private System.Windows.Forms.PictureBox alaButtonExit;
+        private System.Windows.Forms.PictureBox alaButtonAddSił;
+        private System.Windows.Forms.PictureBox alaButtonAddWyt;
+        private System.Windows.Forms.PictureBox alaButtonAddSzc;
+        private System.Windows.Forms.PictureBox alaButtonAddInt;
+        private System.Windows.Forms.PictureBox alaButtonAddZrę;
     }
 }

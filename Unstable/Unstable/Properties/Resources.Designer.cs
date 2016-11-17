@@ -113,6 +113,16 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OkienkoEkwipunek {
+            get {
+                object obj = ResourceManager.GetObject("OkienkoEkwipunek", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OkienkoStatystyki {
             get {
                 object obj = ResourceManager.GetObject("OkienkoStatystyki", resourceCulture);
@@ -173,6 +183,16 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Plus16x16 {
+            get {
+                object obj = ResourceManager.GetObject("Plus16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap redBlackStand {
             get {
                 object obj = ResourceManager.GetObject("redBlackStand", resourceCulture);
@@ -206,6 +226,16 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap redRedStand {
             get {
                 object obj = ResourceManager.GetObject("redRedStand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rozdajStatystyki {
+            get {
+                object obj = ResourceManager.GetObject("rozdajStatystyki", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +416,16 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap yellowRedStand {
             get {
                 object obj = ResourceManager.GetObject("yellowRedStand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zamknij24x24 {
+            get {
+                object obj = ResourceManager.GetObject("Zamknij24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

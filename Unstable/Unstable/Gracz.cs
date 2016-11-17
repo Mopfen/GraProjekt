@@ -19,16 +19,6 @@ namespace Unstable
         /// <summary> Metoda odpowiedzialna za ruch gracza.</summary>
         public void RuchGracza()
         {
-            /*for (int i = 0; i < 4; i++)
-            {
-                if (daneLauncher.daneMob[i].alive == true)
-                {
-                    if (daneLauncher.daneGracz[0].up == true & daneLauncher.daneGracz[0].obraz.Top - daneLauncher.daneMob[i].obraz.Top >= (60) & daneLauncher.daneGracz[0].obraz.Top - daneLauncher.daneMob[i].obraz.Bottom < 4 & (daneLauncher.daneMob[i].obraz.Left - daneLauncher.daneGracz[0].obraz.Left >= (-64) & daneLauncher.daneMob[i].obraz.Left - daneLauncher.daneGracz[0].obraz.Left < daneLauncher.daneGracz[0].obraz.Width)) { daneLauncher.daneGracz[0].obraz.Top += 4; daneLauncher.daneGracz[0].przeszkoda = true; } //
-                    if (daneLauncher.daneGracz[0].down == true & daneLauncher.daneMob[i].obraz.Bottom - daneLauncher.daneGracz[0].obraz.Bottom >= (60) & daneLauncher.daneMob[i].obraz.Top - daneLauncher.daneGracz[0].obraz.Bottom < 4 & (daneLauncher.daneMob[i].obraz.Left - daneLauncher.daneGracz[0].obraz.Left >= (-64) & daneLauncher.daneMob[i].obraz.Left - daneLauncher.daneGracz[0].obraz.Left < daneLauncher.daneGracz[0].obraz.Width)) { daneLauncher.daneGracz[0].obraz.Top -= 4; daneLauncher.daneGracz[0].przeszkoda = true; } // 
-                    if (daneLauncher.daneGracz[0].left== true & daneLauncher.daneGracz[0].obraz.Left - daneLauncher.daneMob[i].obraz.Left >= (60) & daneLauncher.daneGracz[0].obraz.Left - daneLauncher.daneMob[i].obraz.Right < 0 & (daneLauncher.daneMob[i].obraz.Top - daneLauncher.daneGracz[0].obraz.Top >= (-64) & daneLauncher.daneMob[i].obraz.Top - daneLauncher.daneGracz[0].obraz.Top < daneLauncher.daneGracz[0].obraz.Height)) { daneLauncher.daneGracz[0].obraz.Left += 2; daneLauncher.daneGracz[0].przeszkoda = true; } //
-                    if (daneLauncher.daneGracz[0].right == true & daneLauncher.daneMob[i].obraz.Left - daneLauncher.daneGracz[0].obraz.Left >= (-60) & daneLauncher.daneMob[i].obraz.Left - daneLauncher.daneGracz[0].obraz.Right < 0 & (daneLauncher.daneMob[i].obraz.Top - daneLauncher.daneGracz[0].obraz.Top >= (-64) & daneLauncher.daneMob[i].obraz.Top - daneLauncher.daneGracz[0].obraz.Top < daneLauncher.daneGracz[0].obraz.Height)) { daneLauncher.daneGracz[0].obraz.Left -= 2; daneLauncher.daneGracz[0].przeszkoda = true; } // zapobieganie nachodzeniu na inny obiekt
-                }
-            }*/
             if ((daneLauncher.daneGracz[0].up == false & daneLauncher.daneGracz[0].down == false & daneLauncher.daneGracz[0].left == false & daneLauncher.daneGracz[0].right == false)) { daneLauncher.daneGracz[0].obraz.Image = daneLauncher.whiteBrownStand.Image; } // obraz postaci, gdy się nie rusza
             if (daneLauncher.daneGracz[0].antyRozmycie.Top != daneLauncher.daneGracz[0].obraz.Top | daneLauncher.daneGracz[0].antyRozmycie.Left != daneLauncher.daneGracz[0].obraz.Left) { daneLauncher.daneGracz[0].antyRozmycie.Top = daneLauncher.daneGracz[0].obraz.Top; daneLauncher.daneGracz[0].antyRozmycie.Left = daneLauncher.daneGracz[0].obraz.Left; } // niweluje rozmycie tła podczas poruszania się postaci
 

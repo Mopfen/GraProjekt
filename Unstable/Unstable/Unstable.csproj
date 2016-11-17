@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ekwipunek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ekwipunek.Designer.cs">
+      <DependentUpon>Ekwipunek.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameOver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="WczytajGrę.Designer.cs">
       <DependentUpon>WczytajGrę.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ekwipunek.resx">
+      <DependentUpon>Ekwipunek.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GameOver.resx">
       <DependentUpon>GameOver.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +237,10 @@
     <None Include="Models\Others\StrzałaRight.gif" />
     <None Include="Models\Others\StrzałaLeft.gif" />
     <None Include="Models\Objekty\Beczka.gif" />
+    <None Include="Models\Others\rozdajStatystyki.png" />
+    <None Include="Models\Others\Zamknij24x24.png" />
+    <None Include="Models\Others\Plus16x16.png" />
+    <None Include="Models\Backgrounds\OkienkoEkwipunek.png" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />

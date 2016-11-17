@@ -39,10 +39,10 @@ namespace Unstable
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
 
-            daneLauncher.daneGracz[0].siła = 20;
+            daneLauncher.daneGracz[0].siła = 10;
             daneLauncher.daneGracz[0].zręczność = 20;
-            daneLauncher.daneGracz[0].hp = 100;
-            daneLauncher.daneGracz[0].hpMax = 100;
+            daneLauncher.daneGracz[0].hp = daneLauncher.daneGracz[0].hpMax;
+            daneLauncher.daneGracz[0].mana = daneLauncher.daneGracz[0].manaMax;
 
             daneLauncher.daneGracz[0].lv = daneLauncher.daneMob[0].lv = 1;
 
@@ -66,10 +66,21 @@ namespace Unstable
             daneLauncher.danePrzeszkoda[10].obraz = ściana1;
             daneLauncher.danePrzeszkoda[11].obraz = ściana2;
 
+            daneLauncher.rozdajStatystyki = rozdajStatystyki;
+
+            daneLauncher.timerStatystyki = timerStatystyki;
+
             daneLauncher.music.SoundLocation = "Soundtrack1.wav";
             daneLauncher.music.PlayLooping();
+
+            
         }
 
+        private void rozdajStatystyki_Click(object sender, EventArgs e)
+        {
+            Statystyki formaStatystyki = new Statystyki(daneLauncher);
+            formaStatystyki.ShowDialog();
+        }
         private void MapaStartowa_KeyDown(object sender, KeyEventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
@@ -78,6 +89,8 @@ namespace Unstable
             {
                 if (daneLauncher.daneGracz[0].obraz.Bounds.IntersectsWith(wyjścieMapa1.Bounds))
                 {
+                    daneLauncher.daneStrzała[0].Visible = false;
+                    daneLauncher.daneStrzała[0].alive = false;
                     Mapa1 mapMapa1 = new Mapa1(daneLauncher);
                     this.Close();
                     mapMapa1.Show();

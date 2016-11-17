@@ -35,16 +35,22 @@ namespace Unstable
                 forma.Close();
                 formaMenuGlowne.Show();
             }
-            if (e.KeyCode == Keys.C)
-            {
-                Statystyki formaStatystyki = new Statystyki(daneLauncher);
-                formaStatystyki.ShowDialog();
-            }
             if (e.KeyCode == Keys.X)
             {
                 if (daneLauncher.daneGracz[0].rodzajAtaku == true) daneLauncher.daneGracz[0].rodzajAtaku = false;
                 else daneLauncher.daneGracz[0].rodzajAtaku = true;
             }
+            if (e.KeyCode == Keys.C)
+            {
+                Statystyki formaStatystyki = new Statystyki(daneLauncher);
+                formaStatystyki.ShowDialog();
+            }
+            if (e.KeyCode == Keys.I)
+            {
+                Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
+                formaEkwipunek.ShowDialog();
+            }
+
         }
         /// <summary>
         /// Metoda wykonująca czynności po puszczeniu ustalonych klawiszy
@@ -79,15 +85,21 @@ namespace Unstable
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
+            //Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher); - BUG
             GameOver formaGameOver = new GameOver(daneLauncher, forma);
             labelHpGracz.Text = Convert.ToString("PŻ: " + daneLauncher.daneGracz[0].hp + "/" + daneLauncher.daneGracz[0].hpMax);
             labelManaGracz.Text = Convert.ToString("Mana: " + daneLauncher.daneGracz[0].mana + "/" + daneLauncher.daneGracz[0].manaMax);
             labelLvGracz.Text = Convert.ToString("Poziom: " + daneLauncher.daneGracz[0].lv);
             labelExpGracz.Text = Convert.ToString("Dosw: " + daneLauncher.daneGracz[0].exp + "/" + daneLauncher.daneGracz[0].expMax);
 
-            if (metodaUniwersalne.levelUp() == true)
+            metodaUniwersalne.levelUp();
+            if (daneLauncher.daneGracz[0].statystykiDoRozdania > 0)
             {
-
+                daneLauncher.rozdajStatystyki.Visible = true;
+            }
+            else
+            {
+                daneLauncher.rozdajStatystyki.Visible = false;
             }
             Tuple<bool, int> czyMobZabity = metodaUniwersalne.śmierćMoba();
             if (czyMobZabity.Item1 == true)
@@ -102,10 +114,10 @@ namespace Unstable
                 formaGameOver.Show();
                 timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerStatystyki.Enabled = false;
             }
-            if (metodaUniwersalne.CheckOpened(formaStatystyki.Name))
+            if (metodaUniwersalne.CheckOpened(formaStatystyki.Name) /*| metodaUniwersalne.CheckOpened(formaEkwipunek.Name)*/)
             {
                 daneLauncher.daneGracz[0].up = daneLauncher.daneGracz[0].down = daneLauncher.daneGracz[0].left = daneLauncher.daneGracz[0].right = daneLauncher.daneGracz[0].zmianaKierunkuUp = daneLauncher.daneGracz[0].zmianaKierunkuDown = daneLauncher.daneGracz[0].zmianaKierunkuLeft = daneLauncher.daneGracz[0].zmianaKierunkuRight = false;
-                timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = false;
+                timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerStatystyki.Enabled = false;
             }
             else
             {

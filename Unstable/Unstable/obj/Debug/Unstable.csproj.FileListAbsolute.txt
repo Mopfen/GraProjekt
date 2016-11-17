@@ -14,3 +14,4 @@ C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Mapa1.res
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.GameOver.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.MapaStartowa.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Statystyki.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Ekwipunek.resources

@@ -46,10 +46,11 @@ namespace Unstable
         }
         private void buttonGoTest_Click(object sender, EventArgs e)
         {
-            Mapa1 formaMapa1 = new Mapa1(daneLauncher);
-
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            metodaUniwersalne.liczStatystyki();
+            MapaStartowa formaMapaStartowa = new MapaStartowa(daneLauncher);
             this.Close();
-            formaMapa1.Show();
+            formaMapaStartowa.Show();
         }
 
         private void button_KolorWłosów_Click(object sender, EventArgs e)
@@ -134,13 +135,6 @@ namespace Unstable
                     }
                     break;
             }
-        }
-
-        private void buttonBeta_Click(object sender, EventArgs e)
-        {
-            MapaStartowa formaMapaStartowa = new MapaStartowa(daneLauncher);
-            this.Close();
-            formaMapaStartowa.Show();
         }
     }
 }

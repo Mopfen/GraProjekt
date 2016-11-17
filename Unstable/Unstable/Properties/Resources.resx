@@ -127,8 +127,14 @@
   <data name="PanelStatystyk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Backgrounds\PanelStatystyk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Beczka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Objekty\Beczka.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pinkBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\pinkBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rozdajStatystyki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\rozdajStatystyki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="whiteBrownShotingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\whiteBrownShotingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -153,6 +159,9 @@
   </data>
   <data name="redBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\redBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plus16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\Plus16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OkienkoStatystyki" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Backgrounds\OkienkoStatystyki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,6 +193,9 @@
   <data name="yellowBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\yellowBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Zamknij24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\Zamknij24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="whiteBrownAttackingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\whiteBrownAttackingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,7 +226,7 @@
   <data name="whiteBrownMovingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\whiteBrownMovingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Beczka" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Objekty\Beczka.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="OkienkoEkwipunek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\OkienkoEkwipunek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

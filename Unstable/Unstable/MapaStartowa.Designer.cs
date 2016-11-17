@@ -59,6 +59,7 @@
             this.ściana2 = new System.Windows.Forms.PictureBox();
             this.gracz = new System.Windows.Forms.PictureBox();
             this.poleGry = new System.Windows.Forms.Panel();
+            this.rozdajStatystyki = new System.Windows.Forms.PictureBox();
             this.panelStatystyk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wyjścieMapa1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).BeginInit();
@@ -77,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ściana2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             this.poleGry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).BeginInit();
             this.SuspendLayout();
             // 
             // timerGracz
@@ -197,7 +199,7 @@
             // strzałaGracz
             // 
             this.strzałaGracz.Image = global::Unstable.Properties.Resources.StrzałaRight;
-            this.strzałaGracz.Location = new System.Drawing.Point(3, 430);
+            this.strzałaGracz.Location = new System.Drawing.Point(9, 15);
             this.strzałaGracz.MaximumSize = new System.Drawing.Size(32, 12);
             this.strzałaGracz.MinimumSize = new System.Drawing.Size(32, 12);
             this.strzałaGracz.Name = "strzałaGracz";
@@ -287,9 +289,9 @@
             // 
             // beczki1
             // 
-            this.beczki1.Location = new System.Drawing.Point(247, 146);
+            this.beczki1.Location = new System.Drawing.Point(247, 137);
             this.beczki1.Name = "beczki1";
-            this.beczki1.Size = new System.Drawing.Size(511, 160);
+            this.beczki1.Size = new System.Drawing.Size(511, 169);
             this.beczki1.TabIndex = 29;
             this.beczki1.TabStop = false;
             // 
@@ -314,7 +316,7 @@
             this.gracz.BackColor = System.Drawing.Color.Transparent;
             this.gracz.Cursor = System.Windows.Forms.Cursors.Default;
             this.gracz.Image = global::Unstable.Properties.Resources.whiteBrownStand;
-            this.gracz.Location = new System.Drawing.Point(28, 55);
+            this.gracz.Location = new System.Drawing.Point(536, 55);
             this.gracz.Margin = new System.Windows.Forms.Padding(10);
             this.gracz.MaximumSize = new System.Drawing.Size(64, 64);
             this.gracz.MinimumSize = new System.Drawing.Size(64, 64);
@@ -330,6 +332,7 @@
             this.poleGry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("poleGry.BackgroundImage")));
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
+            this.poleGry.Controls.Add(this.rozdajStatystyki);
             this.poleGry.Controls.Add(this.gracz);
             this.poleGry.Controls.Add(this.ściana2);
             this.poleGry.Controls.Add(this.beczki2);
@@ -347,11 +350,25 @@
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.wyjścieMapa1);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -3);
+            this.poleGry.Location = new System.Drawing.Point(3, -58);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 7;
+            // 
+            // rozdajStatystyki
+            // 
+            this.rozdajStatystyki.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rozdajStatystyki.Image = global::Unstable.Properties.Resources.rozdajStatystyki;
+            this.rozdajStatystyki.Location = new System.Drawing.Point(17, 410);
+            this.rozdajStatystyki.MaximumSize = new System.Drawing.Size(32, 32);
+            this.rozdajStatystyki.MinimumSize = new System.Drawing.Size(32, 32);
+            this.rozdajStatystyki.Name = "rozdajStatystyki";
+            this.rozdajStatystyki.Size = new System.Drawing.Size(32, 32);
+            this.rozdajStatystyki.TabIndex = 32;
+            this.rozdajStatystyki.TabStop = false;
+            this.rozdajStatystyki.Visible = false;
+            this.rozdajStatystyki.Click += new System.EventHandler(this.rozdajStatystyki_Click);
             // 
             // MapaStartowa
             // 
@@ -388,6 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ściana2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
             this.poleGry.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -422,5 +440,6 @@
         private System.Windows.Forms.PictureBox ściana2;
         private System.Windows.Forms.PictureBox gracz;
         private System.Windows.Forms.Panel poleGry;
+        private System.Windows.Forms.PictureBox rozdajStatystyki;
     }
 }

@@ -30,6 +30,8 @@ namespace Unstable
         internal int mana;
         internal int manaMax;
 
+        internal short szansaKryta;
+
         internal bool rodzajAtaku = true; // zmienna określa tryb walki gracza (true - miecz, false - łuk)
 
         internal int[] siłaAtakuZwarcie = { 0, 0 }; // zmienna odpowiadająca za liczbę obrażeń zadawanych przez postać podczas walki wręcz
@@ -38,6 +40,7 @@ namespace Unstable
         internal int lv = 1; // zmienna określa poziom doświadczenia postaci
         internal int exp = 0; //
         internal int expMax = 5; // zmienne określają ilość doświadczenia gracza
+        internal int statystykiDoRozdania = 0;
 
         internal int siła = 1; //
         internal int zręczność = 1; //
@@ -46,7 +49,7 @@ namespace Unstable
         internal int szczęście = 1; //
         internal int obronaGracz = 0; //
         internal int odpornośćGracz = 0; // statystyki gracza
-        
+
         internal bool up = false; //
         internal bool down = false; //
         internal bool left = false; //
@@ -110,23 +113,43 @@ namespace Unstable
         internal PictureBox strzałaRight = new PictureBox();
 
         #endregion
+        #region ZmienneEkwipunku
+        internal Launcher[] danePlecakSlot = new Launcher[47]; // tablica przechowująca informacje o przedmiocie na danym slocie w ekwipunku
+      
+        internal int pozycjaTop;
+        internal int pozycjaLeft;
+        internal Point Lokacja = new Point(0, 0);
+
+        internal bool hełm = false; //
+        internal bool zbroja = false; //
+        internal bool spodnie = false; //
+        internal bool buty = false; //
+        internal bool miecz = false; //
+        internal bool łuk = false; // zmienne sprawdzające, czy przedmiot jest daną rzeczą
+        internal short id = 0; // określa id przedmiotu
+        #endregion
         #region zmienneLauncher
         #endregion
         #region zmiennePozostałe
         internal Panel poleGry; // zmienna odpowiadająca za właściwości pola gry
-        internal Label hitLog;
-        internal Launcher[] daneStrzała = new Launcher[2];
-        internal Launcher[] danePrzeszkoda = new Launcher[20];
+        internal Label hitLog; // zmienna odpowiadająca za wyświetlanie informacji przez hitLog
+        internal PictureBox rozdajStatystyki; // zmienna odpowiadająca za przechowywanie ilości statystyk do rozdania
+        internal Launcher[] daneStrzała = new Launcher[2]; // tablica przechowuje informacje o strzałach wystrzelonych przez postać
+        internal Launcher[] danePrzeszkoda = new Launcher[20]; // tablica przechowująca informacje o przeszkodach
+        internal Timer timerStatystyki; // zmienna odpowiadająca za działanie timera
+
 
         internal System.Media.SoundPlayer music = new System.Media.SoundPlayer(); // zmienna odpowiadająca za muzykę w tle
+        internal System.Media.SoundPlayer lvUpSound = new System.Media.SoundPlayer(); // zmienna odpowiadająca za muzykę w tle
         #endregion
-        
+
 
         public Launcher()
         {
             InitializeComponent();
 
             DoubleBuffered = true;
+            lvUpSound.SoundLocation = "lvUp.wav";
         }
 
         private void Launcher_Load(object sender, EventArgs e)
@@ -139,17 +162,24 @@ namespace Unstable
             MenuGlowne formaMenuGlowne = new MenuGlowne(this);
 
             daneGracz[0] = new Launcher();
-            daneStrzała[0] = new Launcher(); daneStrzała[0].alive = false;
-            daneStrzała[1] = new Launcher(); daneStrzała[1].alive = false;
-            for (int i = 0; i < 5; i++)
-                {
-                daneMob[i] = new Launcher();
-                daneMob[i].alive = false;
-            }
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i <= 46; i++)
             {
-                danePrzeszkoda[i] = new Launcher();
-                danePrzeszkoda[i].alive = false;
+                if(i<2)
+                {
+                    daneStrzała[i] = new Launcher(); daneStrzała[0].alive = false;
+                }
+                if(i<5)
+                {
+                    daneMob[i] = new Launcher();
+                    daneMob[i].alive = false;
+                }
+                if(i<20)
+                {
+                    danePrzeszkoda[i] = new Launcher();
+                    danePrzeszkoda[i].alive = false;
+                }
+                danePlecakSlot[i] = new Launcher();
+                danePlecakSlot[i].alive = false;
             }
 
             wczytajDaneObrazkiWhiteBrownHuman();
