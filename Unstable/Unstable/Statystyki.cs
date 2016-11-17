@@ -47,40 +47,40 @@ namespace Unstable
 
         private void alaButtonAddSił_Click(object sender, EventArgs e)
         {
-            daneLauncher.daneGracz[0].siła++;
-            daneLauncher.daneGracz[0].statystykiDoRozdania--;
+            daneLauncher.daneGracz.siła++;
+            daneLauncher.daneGracz.statystykiDoRozdania--;
             sprawdzPrzyciski();
             aktualizuj();
         }
 
         private void alaButtonAddZrę_Click(object sender, EventArgs e)
         {
-            daneLauncher.daneGracz[0].zręczność++;
-            daneLauncher.daneGracz[0].statystykiDoRozdania--;
+            daneLauncher.daneGracz.zręczność++;
+            daneLauncher.daneGracz.statystykiDoRozdania--;
             sprawdzPrzyciski();
             aktualizuj();
         }
 
         private void alaButtonAddInt_Click(object sender, EventArgs e)
         {
-            daneLauncher.daneGracz[0].inteligencja++;
-            daneLauncher.daneGracz[0].statystykiDoRozdania--;
+            daneLauncher.daneGracz.inteligencja++;
+            daneLauncher.daneGracz.statystykiDoRozdania--;
             sprawdzPrzyciski();
             aktualizuj();
         }
 
         private void alaButtonAddWyt_Click(object sender, EventArgs e)
         {
-            daneLauncher.daneGracz[0].wytrzymałość++;
-            daneLauncher.daneGracz[0].statystykiDoRozdania--;
+            daneLauncher.daneGracz.wytrzymałość++;
+            daneLauncher.daneGracz.statystykiDoRozdania--;
             sprawdzPrzyciski();
             aktualizuj();
         }
 
         private void alaButtonAddSzc_Click(object sender, EventArgs e)
         {
-            daneLauncher.daneGracz[0].szczęście++;
-            daneLauncher.daneGracz[0].statystykiDoRozdania--;
+            daneLauncher.daneGracz.szczęście++;
+            daneLauncher.daneGracz.statystykiDoRozdania--;
             sprawdzPrzyciski();
             aktualizuj();
         }
@@ -90,20 +90,20 @@ namespace Unstable
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             metodaUniwersalne.liczStatystyki();
 
-            labelSiłaGracz.Text = Convert.ToString(daneLauncher.daneGracz[0].siła);
-            labelZręcznośćGracz.Text = Convert.ToString(daneLauncher.daneGracz[0].zręczność);
-            labelInteligencjaGracz.Text = Convert.ToString(daneLauncher.daneGracz[0].inteligencja);
-            labelWytrzymałośćGracz.Text = Convert.ToString(daneLauncher.daneGracz[0].wytrzymałość);
-            labelSzczęścieGracz.Text = Convert.ToString(daneLauncher.daneGracz[0].szczęście);
-            labelDmgZwarcieGracz.Text = Convert.ToString(daneLauncher.daneGracz[0].siłaAtakuZwarcie[0] + "-" + daneLauncher.daneGracz[0].siłaAtakuZwarcie[1]);
-            labelDmgDystansGracz.Text = Convert.ToString(daneLauncher.daneGracz[0].siłaAtakuDystans[0] + "-" + daneLauncher.daneGracz[0].siłaAtakuDystans[1]);
-            labelHpGracz.Text = Convert.ToString(daneLauncher.daneGracz[0].hp + "/" + daneLauncher.daneGracz[0].hpMax);
-            labelManaGracz.Text = Convert.ToString(daneLauncher.daneGracz[0].mana + "/" + daneLauncher.daneGracz[0].manaMax);
-            labelKrytykGracz.Text = Convert.ToString(daneLauncher.daneGracz[0].szansaKryta + "%");
+            labelSiłaGracz.Text = Convert.ToString(daneLauncher.daneGracz.siła);
+            labelZręcznośćGracz.Text = Convert.ToString(daneLauncher.daneGracz.zręczność);
+            labelInteligencjaGracz.Text = Convert.ToString(daneLauncher.daneGracz.inteligencja);
+            labelWytrzymałośćGracz.Text = Convert.ToString(daneLauncher.daneGracz.wytrzymałość);
+            labelSzczęścieGracz.Text = Convert.ToString(daneLauncher.daneGracz.szczęście);
+            labelDmgZwarcieGracz.Text = Convert.ToString(daneLauncher.daneGracz.siłaAtakuZwarcie[0] + "-" + daneLauncher.daneGracz.siłaAtakuZwarcie[1]);
+            labelDmgDystansGracz.Text = Convert.ToString(daneLauncher.daneGracz.siłaAtakuDystans[0] + "-" + daneLauncher.daneGracz.siłaAtakuDystans[1]);
+            labelHpGracz.Text = Convert.ToString(daneLauncher.daneGracz.hp + "/" + daneLauncher.daneGracz.hpMax);
+            labelManaGracz.Text = Convert.ToString(daneLauncher.daneGracz.mana + "/" + daneLauncher.daneGracz.manaMax);
+            labelKrytykGracz.Text = Convert.ToString(daneLauncher.daneGracz.szansaKryta + "%");
         }
         private void sprawdzPrzyciski()
         {
-            if (daneLauncher.daneGracz[0].statystykiDoRozdania > 0)
+            if (daneLauncher.daneGracz.statystykiDoRozdania > 0)
             {
                 alaButtonAddSił.Visible = alaButtonAddZrę.Visible = alaButtonAddInt.Visible = alaButtonAddWyt.Visible = alaButtonAddSzc.Visible = true;
             }

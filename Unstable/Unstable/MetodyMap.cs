@@ -23,11 +23,11 @@ namespace Unstable
         /// </summary>
         internal void KeyDownMetoda(Form forma, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up) { daneLauncher.daneGracz[0].up = true; }
-            if (e.KeyCode == Keys.Down) { daneLauncher.daneGracz[0].down = true; }
-            if (e.KeyCode == Keys.Left) { daneLauncher.daneGracz[0].left = true; }
-            if (e.KeyCode == Keys.Right) { daneLauncher.daneGracz[0].right = true; }
-            if (e.KeyCode == Keys.Space) daneLauncher.daneGracz[0].attack = true;
+            if (e.KeyCode == Keys.Up) { daneLauncher.daneGracz.up = true; }
+            if (e.KeyCode == Keys.Down) { daneLauncher.daneGracz.down = true; }
+            if (e.KeyCode == Keys.Left) { daneLauncher.daneGracz.left = true; }
+            if (e.KeyCode == Keys.Right) { daneLauncher.daneGracz.right = true; }
+            if (e.KeyCode == Keys.Space) daneLauncher.daneGracz.attack = true;
             if (e.KeyCode == Keys.Escape)
             {
                 MenuGlowne formaMenuGlowne = new MenuGlowne(daneLauncher);
@@ -37,8 +37,8 @@ namespace Unstable
             }
             if (e.KeyCode == Keys.X)
             {
-                if (daneLauncher.daneGracz[0].rodzajAtaku == true) daneLauncher.daneGracz[0].rodzajAtaku = false;
-                else daneLauncher.daneGracz[0].rodzajAtaku = true;
+                if (daneLauncher.daneGracz.rodzajAtaku == true) daneLauncher.daneGracz.rodzajAtaku = false;
+                else daneLauncher.daneGracz.rodzajAtaku = true;
             }
             if (e.KeyCode == Keys.C)
             {
@@ -57,10 +57,10 @@ namespace Unstable
         /// </summary>
         internal void KeyUpMetoda(KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up) { daneLauncher.daneGracz[0].up = false; daneLauncher.daneGracz[0].zmianaKierunkuUp = false; }
-            if (e.KeyCode == Keys.Down) { daneLauncher.daneGracz[0].down = false; daneLauncher.daneGracz[0].zmianaKierunkuDown = false; }
-            if (e.KeyCode == Keys.Left) { daneLauncher.daneGracz[0].left = false; daneLauncher.daneGracz[0].zmianaKierunkuLeft = false; }
-            if (e.KeyCode == Keys.Right) { daneLauncher.daneGracz[0].right = false; daneLauncher.daneGracz[0].zmianaKierunkuRight = false; }
+            if (e.KeyCode == Keys.Up) { daneLauncher.daneGracz.up = false; daneLauncher.daneGracz.zmianaKierunkuUp = false; }
+            if (e.KeyCode == Keys.Down) { daneLauncher.daneGracz.down = false; daneLauncher.daneGracz.zmianaKierunkuDown = false; }
+            if (e.KeyCode == Keys.Left) { daneLauncher.daneGracz.left = false; daneLauncher.daneGracz.zmianaKierunkuLeft = false; }
+            if (e.KeyCode == Keys.Right) { daneLauncher.daneGracz.right = false; daneLauncher.daneGracz.zmianaKierunkuRight = false; }
         } 
         /// <summary>
         /// Metoda wykonująca czynności w timerGracz
@@ -85,15 +85,15 @@ namespace Unstable
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
-            //Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher); - BUG
+            //Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher); // - BUG
             GameOver formaGameOver = new GameOver(daneLauncher, forma);
-            labelHpGracz.Text = Convert.ToString("PŻ: " + daneLauncher.daneGracz[0].hp + "/" + daneLauncher.daneGracz[0].hpMax);
-            labelManaGracz.Text = Convert.ToString("Mana: " + daneLauncher.daneGracz[0].mana + "/" + daneLauncher.daneGracz[0].manaMax);
-            labelLvGracz.Text = Convert.ToString("Poziom: " + daneLauncher.daneGracz[0].lv);
-            labelExpGracz.Text = Convert.ToString("Dosw: " + daneLauncher.daneGracz[0].exp + "/" + daneLauncher.daneGracz[0].expMax);
+            labelHpGracz.Text = Convert.ToString("PŻ: " + daneLauncher.daneGracz.hp + "/" + daneLauncher.daneGracz.hpMax);
+            labelManaGracz.Text = Convert.ToString("Mana: " + daneLauncher.daneGracz.mana + "/" + daneLauncher.daneGracz.manaMax);
+            labelLvGracz.Text = Convert.ToString("Poziom: " + daneLauncher.daneGracz.lv);
+            labelExpGracz.Text = Convert.ToString("Dosw: " + daneLauncher.daneGracz.exp + "/" + daneLauncher.daneGracz.expMax);
 
             metodaUniwersalne.levelUp();
-            if (daneLauncher.daneGracz[0].statystykiDoRozdania > 0)
+            if (daneLauncher.daneGracz.statystykiDoRozdania > 0)
             {
                 daneLauncher.rozdajStatystyki.Visible = true;
             }
@@ -104,11 +104,11 @@ namespace Unstable
             Tuple<bool, int> czyMobZabity = metodaUniwersalne.śmierćMoba();
             if (czyMobZabity.Item1 == true)
             {
-                daneLauncher.daneMob[czyMobZabity.Item2].alive = false;
+                daneLauncher.daneMob[czyMobZabity.Item2].exists = false;
             }
             if (metodaUniwersalne.śmierćGracza() == true)
             {
-                daneLauncher.daneGracz[0].alive = false;
+                daneLauncher.daneGracz.exists = false;
                 daneLauncher.music.SoundLocation = "GameOver.wav";
                 daneLauncher.music.Play();
                 formaGameOver.Show();
@@ -116,14 +116,14 @@ namespace Unstable
             }
             if (metodaUniwersalne.CheckOpened(formaStatystyki.Name) /*| metodaUniwersalne.CheckOpened(formaEkwipunek.Name)*/)
             {
-                daneLauncher.daneGracz[0].up = daneLauncher.daneGracz[0].down = daneLauncher.daneGracz[0].left = daneLauncher.daneGracz[0].right = daneLauncher.daneGracz[0].zmianaKierunkuUp = daneLauncher.daneGracz[0].zmianaKierunkuDown = daneLauncher.daneGracz[0].zmianaKierunkuLeft = daneLauncher.daneGracz[0].zmianaKierunkuRight = false;
+                daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
                 timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerStatystyki.Enabled = false;
             }
             else
             {
-                if (daneLauncher.daneGracz[0].alive == true)
+                if (daneLauncher.daneGracz.exists == true)
                 {
-                    if (daneLauncher.daneGracz[0].wykonanoAtak == false) timerGracz.Enabled = true;
+                    if (daneLauncher.daneGracz.wykonanoAtak == false) timerGracz.Enabled = true;
                     if (daneLauncher.daneMob[0].wykonanoAtak == false) timerMob.Enabled = true;
                     timerAtakGracz.Enabled = timerAtakMob.Enabled = true;
                 }

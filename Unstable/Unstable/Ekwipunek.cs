@@ -89,8 +89,12 @@ namespace Unstable
                 ruchPlecakSlot[i] = false;
             }
 
-            daneLauncher.danePlecakSlot[1].alive = true;
-            daneLauncher.danePlecakSlot[2].alive = true;
+            daneLauncher.danePlecakSlot[1].exists = true;
+            daneLauncher.danePlecakSlot[2].exists = true;
+
+            daneLauncher.danePlecakSlot[1].miecz = true;
+            daneLauncher.danePlecakSlot[1].dmgZwarcie[0] = 1;
+            daneLauncher.danePlecakSlot[1].dmgZwarcie[1] = 3;
         }
 
         private void Statystyki_KeyDown(object sender, KeyEventArgs e)
@@ -106,14 +110,6 @@ namespace Unstable
             zamknijFormę();
         }
 
-        private void plecakSlot1_Click(object sender, EventArgs e)
-        {
-            akcjaNaSlocie(1);
-        }
-        private void plecakSlot2_Click(object sender, EventArgs e)
-        {
-            akcjaNaSlocie(2);
-        }
         private void timerRuch_Tick(object sender, EventArgs e)
         {
             for(int i =1;i<41;i++)
@@ -126,33 +122,40 @@ namespace Unstable
                 }
             }
         }
+
         private void akcjaNaSlocie(int numerSlotu)
         {
             if (ruchPlecakSlot[numerSlotu] == true)
             {
+                bool przestaw = true;
                 bool przestawiono = false;
                 for (int i = 1; i <= 46; i++)
                 {
                     if (i != numerSlotu)
                     {
-                        if (daneLauncher.danePlecakSlot[numerSlotu].obraz.Bounds.IntersectsWith(daneLauncher.danePlecakSlot[i].obraz.Bounds))
+                        if (daneLauncher.danePlecakSlot[numerSlotu].obraz.Left<daneLauncher.danePlecakSlot[i].obraz.Right & daneLauncher.danePlecakSlot[numerSlotu].obraz.Left> daneLauncher.danePlecakSlot[i].obraz.Left & daneLauncher.danePlecakSlot[numerSlotu].obraz.Top < daneLauncher.danePlecakSlot[i].obraz.Bottom & daneLauncher.danePlecakSlot[numerSlotu].obraz.Top > daneLauncher.danePlecakSlot[i].obraz.Top)
                         {
-                            if(daneLauncher.danePlecakSlot[i].Location==new Point(311, 40))
+                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 311, 40, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].hełm, daneLauncher.danePlecakSlot[i].hełm);
+                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 311, 106, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].zbroja, daneLauncher.danePlecakSlot[i].zbroja);
+                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 311, 170, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].spodnie, daneLauncher.danePlecakSlot[i].spodnie);
+                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 311, 236, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].buty, daneLauncher.danePlecakSlot[i].buty);
+                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 247, 170, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].miecz, daneLauncher.danePlecakSlot[i].miecz);
+                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 380, 170, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].łuk, daneLauncher.danePlecakSlot[i].łuk);
+
+                            if (przestaw == true)
                             {
-                             
+                                ruchPlecakSlot[numerSlotu] = false;
+                                daneLauncher.danePlecakSlot[numerSlotu].pozycjaLeft = daneLauncher.danePlecakSlot[numerSlotu].obraz.Left = daneLauncher.danePlecakSlot[i].obraz.Left;
+                                daneLauncher.danePlecakSlot[numerSlotu].pozycjaTop = daneLauncher.danePlecakSlot[numerSlotu].obraz.Top = daneLauncher.danePlecakSlot[i].obraz.Top;
+                                daneLauncher.danePlecakSlot[i].pozycjaLeft = daneLauncher.danePlecakSlot[i].obraz.Left = staraLokacja.Left;
+                                daneLauncher.danePlecakSlot[i].pozycjaTop = daneLauncher.danePlecakSlot[i].obraz.Top = staraLokacja.Top;
+                                przestawiono = true;
+                                aktualizujDaneWyposażenia();
                             }
-
-
-                            ruchPlecakSlot[numerSlotu] = false;
-                            daneLauncher.danePlecakSlot[numerSlotu].pozycjaLeft = daneLauncher.danePlecakSlot[numerSlotu].obraz.Left = daneLauncher.danePlecakSlot[i].obraz.Left;
-                            daneLauncher.danePlecakSlot[numerSlotu].pozycjaTop = daneLauncher.danePlecakSlot[numerSlotu].obraz.Top = daneLauncher.danePlecakSlot[i].obraz.Top;
-                            daneLauncher.danePlecakSlot[i].pozycjaLeft = daneLauncher.danePlecakSlot[i].obraz.Left = staraLokacja.Left;
-                            daneLauncher.danePlecakSlot[i].pozycjaTop = daneLauncher.danePlecakSlot[i].obraz.Top = staraLokacja.Top;
-                            przestawiono = true;
                         }
                     }
                 }
-                if(przestawiono==false)
+                if (przestawiono == false)
                 {
                     ruchPlecakSlot[numerSlotu] = false;
                     daneLauncher.danePlecakSlot[numerSlotu].obraz.Left = staraLokacja.Left;
@@ -160,62 +163,96 @@ namespace Unstable
                 }
             }
             else
-                if(daneLauncher.danePlecakSlot[numerSlotu].alive==true)
+            {
+                if (daneLauncher.danePlecakSlot[numerSlotu].exists == true)
                 {
                     staraLokacja.Left = daneLauncher.danePlecakSlot[numerSlotu].obraz.Left;
                     staraLokacja.Top = daneLauncher.danePlecakSlot[numerSlotu].obraz.Top;
                     ruchPlecakSlot[numerSlotu] = true;
                 }
+            }
         }
-        private void zapiszPozycje()
+
+        private bool czyPrzestawienieMożliwe(int numerSlotu, int i, int LocationX, int LocationY, PictureBox staraLokacja, bool przestaw, bool elementWyposażenia1, bool elementWyposażenia2)
         {
-            daneLauncher.danePlecakSlot[1].Lokacja = plecakSlot1.Location;
-            daneLauncher.danePlecakSlot[2].Lokacja = plecakSlot2.Location;
-            daneLauncher.danePlecakSlot[3].Lokacja = plecakSlot3.Location;
-            daneLauncher.danePlecakSlot[4].Lokacja = plecakSlot4.Location;
-            daneLauncher.danePlecakSlot[5].Lokacja = plecakSlot5.Location;
-            daneLauncher.danePlecakSlot[6].Lokacja = plecakSlot6.Location;
-            daneLauncher.danePlecakSlot[7].Lokacja = plecakSlot7.Location;
-            daneLauncher.danePlecakSlot[8].Lokacja = plecakSlot8.Location;
-            daneLauncher.danePlecakSlot[9].Lokacja = plecakSlot9.Location;
-            daneLauncher.danePlecakSlot[10].Lokacja = plecakSlot10.Location;
-            daneLauncher.danePlecakSlot[11].Lokacja = plecakSlot11.Location;
-            daneLauncher.danePlecakSlot[12].Lokacja = plecakSlot12.Location;
-            daneLauncher.danePlecakSlot[13].Lokacja = plecakSlot13.Location;
-            daneLauncher.danePlecakSlot[14].Lokacja = plecakSlot14.Location;
-            daneLauncher.danePlecakSlot[15].Lokacja = plecakSlot15.Location;
-            daneLauncher.danePlecakSlot[16].Lokacja = plecakSlot16.Location;
-            daneLauncher.danePlecakSlot[17].Lokacja = plecakSlot17.Location;
-            daneLauncher.danePlecakSlot[18].Lokacja = plecakSlot18.Location;
-            daneLauncher.danePlecakSlot[19].Lokacja = plecakSlot19.Location;
-            daneLauncher.danePlecakSlot[20].Lokacja = plecakSlot20.Location;
-            daneLauncher.danePlecakSlot[21].Lokacja = plecakSlot21.Location;
-            daneLauncher.danePlecakSlot[22].Lokacja = plecakSlot22.Location;
-            daneLauncher.danePlecakSlot[23].Lokacja = plecakSlot23.Location;
-            daneLauncher.danePlecakSlot[24].Lokacja = plecakSlot24.Location;
-            daneLauncher.danePlecakSlot[25].Lokacja = plecakSlot25.Location;
-            daneLauncher.danePlecakSlot[26].Lokacja = plecakSlot26.Location;
-            daneLauncher.danePlecakSlot[27].Lokacja = plecakSlot27.Location;
-            daneLauncher.danePlecakSlot[28].Lokacja = plecakSlot28.Location;
-            daneLauncher.danePlecakSlot[29].Lokacja = plecakSlot29.Location;
-            daneLauncher.danePlecakSlot[30].Lokacja = plecakSlot30.Location;
-            daneLauncher.danePlecakSlot[31].Lokacja = plecakSlot31.Location;
-            daneLauncher.danePlecakSlot[32].Lokacja = plecakSlot32.Location;
-            daneLauncher.danePlecakSlot[33].Lokacja = plecakSlot33.Location;
-            daneLauncher.danePlecakSlot[34].Lokacja = plecakSlot34.Location;
-            daneLauncher.danePlecakSlot[35].Lokacja = plecakSlot35.Location;
-            daneLauncher.danePlecakSlot[36].Lokacja = plecakSlot36.Location;
-            daneLauncher.danePlecakSlot[37].Lokacja = plecakSlot37.Location;
-            daneLauncher.danePlecakSlot[38].Lokacja = plecakSlot38.Location;
-            daneLauncher.danePlecakSlot[39].Lokacja = plecakSlot39.Location;
-            daneLauncher.danePlecakSlot[40].Lokacja = plecakSlot40.Location;
-            daneLauncher.danePlecakSlot[41].Lokacja = hełm.Location;
-            daneLauncher.danePlecakSlot[42].Lokacja = zbroja.Location;
-            daneLauncher.danePlecakSlot[43].Lokacja = spodnie.Location;
-            daneLauncher.danePlecakSlot[44].Lokacja = buty.Location;
-            daneLauncher.danePlecakSlot[45].Lokacja = miecz.Location;
-            daneLauncher.danePlecakSlot[46].Lokacja = łuk.Location;
+            if (przestaw == true & daneLauncher.danePlecakSlot[i].obraz.Location == new Point(LocationX, LocationY))
+            {
+                if (elementWyposażenia1 == false)
+                {
+                    return false;
+                }
+            }
+            if (przestaw == true & staraLokacja.Location == new Point(LocationX, LocationY))
+            {
+                if (elementWyposażenia2 == false & daneLauncher.danePlecakSlot[i].exists==true)
+                {
+                    return false;
+                }
+            }
+            if (przestaw==false)
+            {
+                return false;
+            }
+            return true;
         }
+
+        private void aktualizujDaneWyposażenia()
+        {
+            for(int i=1;i<=46;i++)
+            {
+                if(daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311,40) & daneLauncher.danePlecakSlot[i].exists == true)
+                {
+                    // statystyki hełmu
+                }
+                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 106) & daneLauncher.danePlecakSlot[i].exists == true)
+                {
+                    // statystyki zbroji
+                }
+                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 170) & daneLauncher.danePlecakSlot[i].exists == true)
+                {
+                    // statystyki spodni
+                }
+                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 236) & daneLauncher.danePlecakSlot[i].exists == true)
+                {
+                    // statystyki butów
+                }
+                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(247, 170))
+                {
+                    if(daneLauncher.danePlecakSlot[i].exists==true)
+                    {
+                        daneLauncher.daneBonusyGracz.dmgZwarcie[0] = daneLauncher.danePlecakSlot[i].dmgZwarcie[0];
+                        daneLauncher.daneBonusyGracz.dmgZwarcie[1] = daneLauncher.danePlecakSlot[i].dmgZwarcie[1];
+
+                        daneLauncher.daneGracz.posiadaMiecz = true;
+                    }
+                    else
+                    {
+                        daneLauncher.daneBonusyGracz.dmgZwarcie[0] = 0;
+                        daneLauncher.daneBonusyGracz.dmgZwarcie[1] = 0;
+
+                        daneLauncher.daneGracz.posiadaMiecz = false;
+                    }
+                    
+                }
+                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(380, 170) & daneLauncher.danePlecakSlot[i].exists==true)
+                {
+
+                    // statystyki łuku
+
+                    daneLauncher.daneGracz.posiadaŁuk = true;
+                }
+            }
+        }
+
+        private void zapiszDane()
+        {
+            for(int i=1;i<=46;i++)
+            {
+                daneLauncher.danePlecakSlot[i].Lokacja = Sloty[i].Location;
+            }
+            aktualizujDaneWyposażenia();
+        }
+
         private void zamknijFormę()
         {
             for (int i = 1; i < 40; i++)
@@ -223,15 +260,215 @@ namespace Unstable
                 if (ruchPlecakSlot[i] == true)
                 {
                     ruchPlecakSlot[i] = false;
-                    daneLauncher.danePlecakSlot[i].Left = staraLokacja.Left;
-                    daneLauncher.danePlecakSlot[i].Top = staraLokacja.Top;
+                    daneLauncher.danePlecakSlot[i].obraz.Left = staraLokacja.Left;
+                    daneLauncher.danePlecakSlot[i].obraz.Top = staraLokacja.Top;
                 }
             }
-            zapiszPozycje();
+            zapiszDane();
             daneLauncher.timerStatystyki.Enabled = true;
             this.Close();
         }
 
+        #region KlikanieNaPrzedmioty
+        private void plecakSlot1_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(1);
+        }
 
+        private void plecakSlot2_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(2);
+        }
+
+        private void plecakSlot3_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(3);
+        }
+
+        private void plecakSlot4_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(4);
+        }
+
+        private void plecakSlot5_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(5);
+        }
+
+        private void plecakSlot6_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(6);
+        }
+
+        private void plecakSlot7_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(7);
+        }
+
+        private void plecakSlot8_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(8);
+        }
+
+        private void plecakSlot9_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(9);
+        }
+
+        private void plecakSlot10_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(10);
+        }
+
+        private void plecakSlot11_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(11);
+        }
+
+        private void plecakSlot12_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(12);
+        }
+
+        private void plecakSlot13_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(13);
+        }
+
+        private void plecakSlot14_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(14);
+        }
+
+        private void plecakSlot15_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(15);
+        }
+
+        private void plecakSlot16_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(16);
+        }
+
+        private void plecakSlot17_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(17);
+        }
+
+        private void plecakSlot18_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(18);
+        }
+
+        private void plecakSlot19_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(19);
+        }
+
+        private void plecakSlot20_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(20);
+        }
+
+        private void plecakSlot21_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(21);
+        }
+
+        private void plecakSlot22_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(22);
+        }
+
+        private void plecakSlot23_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(23);
+        }
+
+        private void plecakSlot24_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(24);
+        }
+
+        private void plecakSlot25_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(25);
+        }
+
+        private void plecakSlot26_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(26);
+        }
+
+        private void plecakSlot27_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(27);
+        }
+
+        private void plecakSlot28_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(28);
+        }
+
+        private void plecakSlot29_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(29);
+        }
+
+        private void plecakSlot30_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(30);
+        }
+
+        private void plecakSlot31_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(31);
+        }
+
+        private void plecakSlot32_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(32);
+        }
+
+        private void plecakSlot33_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(33);
+        }
+
+        private void plecakSlot34_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(34);
+        }
+
+        private void plecakSlot35_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(35);
+        }
+
+        private void plecakSlot36_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(36);
+        }
+
+        private void plecakSlot37_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(37);
+        }
+
+        private void plecakSlot38_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(38);
+        }
+
+        private void plecakSlot39_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(39);
+        }
+
+        private void plecakSlot40_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(40);
+        }
+        #endregion
     }
 }

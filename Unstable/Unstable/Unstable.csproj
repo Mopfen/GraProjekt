@@ -241,6 +241,9 @@
     <None Include="Models\Others\Zamknij24x24.png" />
     <None Include="Models\Others\Plus16x16.png" />
     <None Include="Models\Backgrounds\OkienkoEkwipunek.png" />
+    <None Include="Models\Items\ZardzewiałyMiecz.gif" />
+    <None Include="Models\Items\CzerwonaMiksturaMała.gif" />
+    <None Include="Models\Items\BrakItemu.gif" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />

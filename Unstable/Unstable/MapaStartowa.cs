@@ -34,17 +34,17 @@ namespace Unstable
 
             //for(int i=0;i<9;i++) daneLauncher.daneMob[i] = new Launcher();
 
-            daneLauncher.daneGracz[0].obraz = gracz;
-            daneLauncher.daneGracz[0].antyRozmycie = underGracz;
+            daneLauncher.daneGracz.obraz = gracz;
+            daneLauncher.daneGracz.antyRozmycie = underGracz;
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
 
-            daneLauncher.daneGracz[0].siła = 10;
-            daneLauncher.daneGracz[0].zręczność = 20;
-            daneLauncher.daneGracz[0].hp = daneLauncher.daneGracz[0].hpMax;
-            daneLauncher.daneGracz[0].mana = daneLauncher.daneGracz[0].manaMax;
+            daneLauncher.daneGracz.siła = 10;
+            daneLauncher.daneGracz.zręczność = 20;
+            daneLauncher.daneGracz.hp = daneLauncher.daneGracz.hpMax;
+            daneLauncher.daneGracz.mana = daneLauncher.daneGracz.manaMax;
 
-            daneLauncher.daneGracz[0].lv = daneLauncher.daneMob[0].lv = 1;
+            daneLauncher.daneGracz.lv = daneLauncher.daneMob[0].lv = 1;
 
             daneLauncher.daneMob[0].hp = 100;
             daneLauncher.daneMob[0].hpMax = 100;
@@ -52,7 +52,7 @@ namespace Unstable
             daneLauncher.daneStrzała[0].obraz = strzałaGracz;
             daneLauncher.daneStrzała[0].obraz.Visible = false;
 
-            for (int i = 0; i < 12; i++) daneLauncher.danePrzeszkoda[i].alive = true;
+            for (int i = 0; i < 12; i++) daneLauncher.danePrzeszkoda[i].exists = true;
             daneLauncher.danePrzeszkoda[0].obraz = beczka1;
             daneLauncher.danePrzeszkoda[1].obraz = beczka2;
             daneLauncher.danePrzeszkoda[2].obraz = beczka3;
@@ -87,10 +87,10 @@ namespace Unstable
             metodaMap.KeyDownMetoda(this, e);
             if (e.KeyCode == Keys.Z)
             {
-                if (daneLauncher.daneGracz[0].obraz.Bounds.IntersectsWith(wyjścieMapa1.Bounds))
+                if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(wyjścieMapa1.Bounds))
                 {
-                    daneLauncher.daneStrzała[0].Visible = false;
-                    daneLauncher.daneStrzała[0].alive = false;
+                    daneLauncher.daneStrzała[0].obraz.Visible = false;
+                    daneLauncher.daneStrzała[0].exists = false;
                     Mapa1 mapMapa1 = new Mapa1(daneLauncher);
                     this.Close();
                     mapMapa1.Show();
@@ -106,7 +106,7 @@ namespace Unstable
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             for(int i=0;i<12;i++)
-            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz[0], daneLauncher.danePrzeszkoda[i]);
+            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
 
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.timerGraczMetoda();

@@ -146,6 +146,7 @@
             // gracz
             // 
             this.gracz.BackColor = System.Drawing.Color.Transparent;
+            this.gracz.Image = global::Unstable.Properties.Resources.whiteBrownStand;
             this.gracz.Location = new System.Drawing.Point(299, 82);
             this.gracz.Name = "gracz";
             this.gracz.Size = new System.Drawing.Size(64, 64);

@@ -35,10 +35,10 @@ namespace Unstable
 
             //for(int i=0;i<9;i++) daneLauncher.daneMob[i] = new Launcher();
 
-            daneLauncher.daneGracz[0].obraz=gracz;
-            daneLauncher.daneGracz[0].antyRozmycie = underGracz;
+            daneLauncher.daneGracz.obraz=gracz;
+            daneLauncher.daneGracz.antyRozmycie = underGracz;
             daneLauncher.poleGry = poleGry;
-            daneLauncher.daneMob[0].alive = true;
+            daneLauncher.daneMob[0].exists = true;
             daneLauncher.daneMob[0].antyRozmycie = underMob;
             daneLauncher.daneMob[0].obraz = mob;
             daneLauncher.daneMob[0].labelhp = labelHpMob0;
@@ -76,7 +76,7 @@ namespace Unstable
         private void timerGracz_Tick(object sender, EventArgs e)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
-            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz[0], daneLauncher.daneMob[0]);
+            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneMob[0]);
 
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.timerGraczMetoda();

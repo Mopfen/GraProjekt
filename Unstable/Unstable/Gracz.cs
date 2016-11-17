@@ -19,66 +19,66 @@ namespace Unstable
         /// <summary> Metoda odpowiedzialna za ruch gracza.</summary>
         public void RuchGracza()
         {
-            if ((daneLauncher.daneGracz[0].up == false & daneLauncher.daneGracz[0].down == false & daneLauncher.daneGracz[0].left == false & daneLauncher.daneGracz[0].right == false)) { daneLauncher.daneGracz[0].obraz.Image = daneLauncher.whiteBrownStand.Image; } // obraz postaci, gdy się nie rusza
-            if (daneLauncher.daneGracz[0].antyRozmycie.Top != daneLauncher.daneGracz[0].obraz.Top | daneLauncher.daneGracz[0].antyRozmycie.Left != daneLauncher.daneGracz[0].obraz.Left) { daneLauncher.daneGracz[0].antyRozmycie.Top = daneLauncher.daneGracz[0].obraz.Top; daneLauncher.daneGracz[0].antyRozmycie.Left = daneLauncher.daneGracz[0].obraz.Left; } // niweluje rozmycie tła podczas poruszania się postaci
+            if ((daneLauncher.daneGracz.up == false & daneLauncher.daneGracz.down == false & daneLauncher.daneGracz.left == false & daneLauncher.daneGracz.right == false)) { daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownStand.Image; } // obraz postaci, gdy się nie rusza
+            if (daneLauncher.daneGracz.antyRozmycie.Top != daneLauncher.daneGracz.obraz.Top | daneLauncher.daneGracz.antyRozmycie.Left != daneLauncher.daneGracz.obraz.Left) { daneLauncher.daneGracz.antyRozmycie.Top = daneLauncher.daneGracz.obraz.Top; daneLauncher.daneGracz.antyRozmycie.Left = daneLauncher.daneGracz.obraz.Left; } // niweluje rozmycie tła podczas poruszania się postaci
 
-            if (daneLauncher.daneGracz[0].up == true & daneLauncher.daneGracz[0].obraz.Top > daneLauncher.poleGry.Top+2 & daneLauncher.daneGracz[0].wykonanoAtak == false & daneLauncher.daneGracz[0].przeszkoda==false) { if (daneLauncher.daneGracz[0].zmianaKierunkuUp == false) { daneLauncher.daneGracz[0].obraz.Image = daneLauncher.whiteBrownMovingUp.Image; daneLauncher.daneGracz[0].zmianaKierunkuUp = true; } if (daneLauncher.daneGracz[0].left == true | daneLauncher.daneGracz[0].right == true) daneLauncher.daneGracz[0].zmianaKierunkuDown = daneLauncher.daneGracz[0].zmianaKierunkuLeft = daneLauncher.daneGracz[0].zmianaKierunkuRight = false; daneLauncher.daneGracz[0].obraz.Top -= 4; } // ruch w górę
+            if (daneLauncher.daneGracz.up == true & daneLauncher.daneGracz.obraz.Top > daneLauncher.poleGry.Top+2 & daneLauncher.daneGracz.wykonanoAtak == false & daneLauncher.daneGracz.przeszkoda==false) { if (daneLauncher.daneGracz.zmianaKierunkuUp == false) { daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownMovingUp.Image; daneLauncher.daneGracz.zmianaKierunkuUp = true; } if (daneLauncher.daneGracz.left == true | daneLauncher.daneGracz.right == true) daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false; daneLauncher.daneGracz.obraz.Top -= 4; } // ruch w górę
             else
-            if (daneLauncher.daneGracz[0].down == true & daneLauncher.daneGracz[0].obraz.Bottom < daneLauncher.poleGry.Bottom & daneLauncher.daneGracz[0].wykonanoAtak == false & daneLauncher.daneGracz[0].przeszkoda == false) { if (daneLauncher.daneGracz[0].zmianaKierunkuDown == false) { daneLauncher.daneGracz[0].obraz.Image = daneLauncher.whiteBrownMovingDown.Image; daneLauncher.daneGracz[0].zmianaKierunkuDown = true; } if (daneLauncher.daneGracz[0].left == true | daneLauncher.daneGracz[0].right == true) daneLauncher.daneGracz[0].zmianaKierunkuUp = daneLauncher.daneGracz[0].zmianaKierunkuLeft = daneLauncher.daneGracz[0].zmianaKierunkuRight = false; daneLauncher.daneGracz[0].obraz.Top += 4; } // ruch w dół
+            if (daneLauncher.daneGracz.down == true & daneLauncher.daneGracz.obraz.Bottom < daneLauncher.poleGry.Bottom & daneLauncher.daneGracz.wykonanoAtak == false & daneLauncher.daneGracz.przeszkoda == false) { if (daneLauncher.daneGracz.zmianaKierunkuDown == false) { daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownMovingDown.Image; daneLauncher.daneGracz.zmianaKierunkuDown = true; } if (daneLauncher.daneGracz.left == true | daneLauncher.daneGracz.right == true) daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false; daneLauncher.daneGracz.obraz.Top += 4; } // ruch w dół
             else 
-            if (daneLauncher.daneGracz[0].left == true & daneLauncher.daneGracz[0].obraz.Left > daneLauncher.poleGry.Left & daneLauncher.daneGracz[0].wykonanoAtak == false & daneLauncher.daneGracz[0].przeszkoda == false) { if (daneLauncher.daneGracz[0].zmianaKierunkuLeft == false) { daneLauncher.daneGracz[0].obraz.Image = daneLauncher.whiteBrownMovingLeft.Image; daneLauncher.daneGracz[0].zmianaKierunkuLeft = true; } if (daneLauncher.daneGracz[0].up == true | daneLauncher.daneGracz[0].down == true) daneLauncher.daneGracz[0].zmianaKierunkuUp = daneLauncher.daneGracz[0].zmianaKierunkuDown = daneLauncher.daneGracz[0].zmianaKierunkuRight = false; daneLauncher.daneGracz[0].obraz.Left -= 4; } // ruch w lewo
+            if (daneLauncher.daneGracz.left == true & daneLauncher.daneGracz.obraz.Left > daneLauncher.poleGry.Left & daneLauncher.daneGracz.wykonanoAtak == false & daneLauncher.daneGracz.przeszkoda == false) { if (daneLauncher.daneGracz.zmianaKierunkuLeft == false) { daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownMovingLeft.Image; daneLauncher.daneGracz.zmianaKierunkuLeft = true; } if (daneLauncher.daneGracz.up == true | daneLauncher.daneGracz.down == true) daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuRight = false; daneLauncher.daneGracz.obraz.Left -= 4; } // ruch w lewo
             else
-            if (daneLauncher.daneGracz[0].right == true & daneLauncher.daneGracz[0].obraz.Right < daneLauncher.poleGry.Right & daneLauncher.daneGracz[0].wykonanoAtak == false & daneLauncher.daneGracz[0].przeszkoda == false) { if (daneLauncher.daneGracz[0].zmianaKierunkuRight == false) { daneLauncher.daneGracz[0].obraz.Image = daneLauncher.whiteBrownMovingRight.Image; daneLauncher.daneGracz[0].zmianaKierunkuRight = true; } if (daneLauncher.daneGracz[0].up == true | daneLauncher.daneGracz[0].down == true) daneLauncher.daneGracz[0].zmianaKierunkuUp = daneLauncher.daneGracz[0].zmianaKierunkuDown = daneLauncher.daneGracz[0].zmianaKierunkuLeft = false; daneLauncher.daneGracz[0].obraz.Left += 4; } // ruch w prawo
-            daneLauncher.daneGracz[0].przeszkoda = false;
+            if (daneLauncher.daneGracz.right == true & daneLauncher.daneGracz.obraz.Right < daneLauncher.poleGry.Right & daneLauncher.daneGracz.wykonanoAtak == false & daneLauncher.daneGracz.przeszkoda == false) { if (daneLauncher.daneGracz.zmianaKierunkuRight == false) { daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownMovingRight.Image; daneLauncher.daneGracz.zmianaKierunkuRight = true; } if (daneLauncher.daneGracz.up == true | daneLauncher.daneGracz.down == true) daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = false; daneLauncher.daneGracz.obraz.Left += 4; } // ruch w prawo
+            daneLauncher.daneGracz.przeszkoda = false;
         }
         /// <summary> Metoda odpowiedzialna za wykonywanie ataku przez gracza.</summary>
         public void AtakGracza(Timer timerGracz)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
-            if (daneLauncher.daneGracz[0].attack == true & (daneLauncher.daneGracz[0].left == true | daneLauncher.daneGracz[0].right == true) & daneLauncher.daneGracz[0].wykonanoAtak == false)
+            if (daneLauncher.daneGracz.attack == true & (daneLauncher.daneGracz.left == true | daneLauncher.daneGracz.right == true) & daneLauncher.daneGracz.wykonanoAtak == false)
             {
-                if(daneLauncher.daneGracz[0].rodzajAtaku==true)
+                if(daneLauncher.daneGracz.rodzajAtaku==true)
                 {
-                    if (daneLauncher.daneGracz[0].left == true) daneLauncher.daneGracz[0].obraz.Image = daneLauncher.whiteBrownAttackingLeft.Image;
-                    if (daneLauncher.daneGracz[0].right == true) daneLauncher.daneGracz[0].obraz.Image = daneLauncher.whiteBrownAttackingRight.Image;
+                    if (daneLauncher.daneGracz.left == true) daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownAttackingLeft.Image;
+                    if (daneLauncher.daneGracz.right == true) daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownAttackingRight.Image;
                     metodaUniwersalne.atakwCelObok(daneLauncher.daneMob, 1);
                     metodaUniwersalne.atakwCelObok(daneLauncher.danePrzeszkoda, 8);
                 }
                 else
                 {
-                    if(daneLauncher.daneStrzała[0].alive==false)
+                    if(daneLauncher.daneStrzała[0].exists==false)
                     {
-                        if (daneLauncher.daneGracz[0].left == true)
+                        if (daneLauncher.daneGracz.left == true)
                         {
-                            daneLauncher.daneGracz[0].obraz.Image = daneLauncher.whiteBrownShotingLeft.Image;
-                            daneLauncher.daneStrzała[0].alive = true;
+                            daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownShotingLeft.Image;
+                            daneLauncher.daneStrzała[0].exists = true;
                             daneLauncher.daneStrzała[0].obraz.Image = daneLauncher.strzałaLeft.Image;
-                            daneLauncher.daneStrzała[0].obraz.Left = (daneLauncher.daneGracz[0].obraz.Left - daneLauncher.daneStrzała[0].obraz.Width);
-                            daneLauncher.daneStrzała[0].obraz.Top = (daneLauncher.daneGracz[0].obraz.Top + daneLauncher.daneGracz[0].obraz.Height / 2);
+                            daneLauncher.daneStrzała[0].obraz.Left = (daneLauncher.daneGracz.obraz.Left - daneLauncher.daneStrzała[0].obraz.Width);
+                            daneLauncher.daneStrzała[0].obraz.Top = (daneLauncher.daneGracz.obraz.Top + daneLauncher.daneGracz.obraz.Height / 2);
                         }
-                        if (daneLauncher.daneGracz[0].right == true)
+                        if (daneLauncher.daneGracz.right == true)
                         {
-                            daneLauncher.daneGracz[0].obraz.Image = daneLauncher.whiteBrownShotingRight.Image;
-                            daneLauncher.daneStrzała[0].alive = true;
+                            daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownShotingRight.Image;
+                            daneLauncher.daneStrzała[0].exists = true;
                             daneLauncher.daneStrzała[0].obraz.Image = daneLauncher.strzałaRight.Image;
-                            daneLauncher.daneStrzała[0].obraz.Left = (daneLauncher.daneGracz[0].obraz.Right);
-                            daneLauncher.daneStrzała[0].obraz.Top = (daneLauncher.daneGracz[0].obraz.Top + daneLauncher.daneGracz[0].obraz.Height / 2);
+                            daneLauncher.daneStrzała[0].obraz.Left = (daneLauncher.daneGracz.obraz.Right);
+                            daneLauncher.daneStrzała[0].obraz.Top = (daneLauncher.daneGracz.obraz.Top + daneLauncher.daneGracz.obraz.Height / 2);
                         }
-                        daneLauncher.daneGracz[0].stopMoving = -5;
+                        daneLauncher.daneGracz.stopMoving = -5;
                     }
                 }
                 
-                daneLauncher.daneGracz[0].zmianaKierunkuLeft=daneLauncher.daneGracz[0].zmianaKierunkuRight = false;
-                daneLauncher.daneGracz[0].wykonanoAtak = true;
+                daneLauncher.daneGracz.zmianaKierunkuLeft=daneLauncher.daneGracz.zmianaKierunkuRight = false;
+                daneLauncher.daneGracz.wykonanoAtak = true;
             }
-            if (daneLauncher.daneGracz[0].wykonanoAtak == true) { timerGracz.Enabled = false; daneLauncher.daneGracz[0].stopMoving++; }
-            if (daneLauncher.daneGracz[0].stopMoving == 5)
+            if (daneLauncher.daneGracz.wykonanoAtak == true) { timerGracz.Enabled = false; daneLauncher.daneGracz.stopMoving++; }
+            if (daneLauncher.daneGracz.stopMoving == 5)
             {
                 timerGracz.Enabled = true;
-                daneLauncher.daneGracz[0].wykonanoAtak = false;
-                daneLauncher.daneGracz[0].stopMoving = 0;
+                daneLauncher.daneGracz.wykonanoAtak = false;
+                daneLauncher.daneGracz.stopMoving = 0;
             }
-            daneLauncher.daneGracz[0].attack = false;
+            daneLauncher.daneGracz.attack = false;
         }
 
         public void StrzalaGracz(int ilośćMobow,int ilośćPrzeszkod,int indeksPierwszejŚciany,int ilośćŚcian)
@@ -87,12 +87,12 @@ namespace Unstable
             bool stop = false; // zmienna określa, kiedy strzała w coś trafi
             for (int i = indeksPierwszejŚciany; i < ilośćŚcian + indeksPierwszejŚciany; i++)
             {
-                if (daneLauncher.danePrzeszkoda[i].alive == true)
+                if (daneLauncher.danePrzeszkoda[i].exists == true)
                 {
                     if (daneLauncher.daneStrzała[0].obraz.Bounds.IntersectsWith(daneLauncher.danePrzeszkoda[i].obraz.Bounds)) stop = true;
                 }
             }       
-            if (daneLauncher.daneStrzała[0].alive == true & daneLauncher.daneGracz[0].stopMoving >= 0)
+            if (daneLauncher.daneStrzała[0].exists == true & daneLauncher.daneGracz.stopMoving >= 0)
             {
                 daneLauncher.daneStrzała[0].obraz.Visible = true;
                 metodaUniwersalne.strzałaTrafienie(daneLauncher.daneMob,ilośćMobow);
@@ -105,7 +105,7 @@ namespace Unstable
                     }
                     else
                     {
-                        daneLauncher.daneStrzała[0].alive = false;
+                        daneLauncher.daneStrzała[0].exists = false;
                         daneLauncher.daneStrzała[0].obraz.Visible = false;
                     }
                 }
@@ -117,7 +117,7 @@ namespace Unstable
                     }
                     else
                     {
-                        daneLauncher.daneStrzała[0].alive = false;
+                        daneLauncher.daneStrzała[0].exists = false;
                         daneLauncher.daneStrzała[0].obraz.Visible = false;
                     }
                 }

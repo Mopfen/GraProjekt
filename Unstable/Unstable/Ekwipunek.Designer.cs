@@ -134,7 +134,7 @@
             // plecakSlot1
             // 
             this.plecakSlot1.BackColor = System.Drawing.Color.Transparent;
-            this.plecakSlot1.Image = global::Unstable.Properties.Resources.Beczka;
+            this.plecakSlot1.Image = global::Unstable.Properties.Resources.ZardzewiałyMiecz;
             this.plecakSlot1.Location = new System.Drawing.Point(19, 332);
             this.plecakSlot1.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot1.MinimumSize = new System.Drawing.Size(48, 48);
@@ -147,7 +147,7 @@
             // plecakSlot2
             // 
             this.plecakSlot2.BackColor = System.Drawing.Color.Transparent;
-            this.plecakSlot2.Image = global::Unstable.Properties.Resources.rozdajStatystyki;
+            this.plecakSlot2.Image = global::Unstable.Properties.Resources.CzerwonaMiksturaMała;
             this.plecakSlot2.Location = new System.Drawing.Point(71, 332);
             this.plecakSlot2.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot2.MinimumSize = new System.Drawing.Size(48, 48);
@@ -160,6 +160,7 @@
             // plecakSlot8
             // 
             this.plecakSlot8.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot8.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot8.Location = new System.Drawing.Point(383, 332);
             this.plecakSlot8.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot8.MinimumSize = new System.Drawing.Size(48, 48);
@@ -167,10 +168,12 @@
             this.plecakSlot8.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot8.TabIndex = 3;
             this.plecakSlot8.TabStop = false;
+            this.plecakSlot8.Click += new System.EventHandler(this.plecakSlot8_Click);
             // 
             // plecakSlot7
             // 
             this.plecakSlot7.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot7.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot7.Location = new System.Drawing.Point(331, 332);
             this.plecakSlot7.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot7.MinimumSize = new System.Drawing.Size(48, 48);
@@ -178,10 +181,12 @@
             this.plecakSlot7.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot7.TabIndex = 2;
             this.plecakSlot7.TabStop = false;
+            this.plecakSlot7.Click += new System.EventHandler(this.plecakSlot7_Click);
             // 
             // plecakSlot12
             // 
             this.plecakSlot12.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot12.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot12.Location = new System.Drawing.Point(175, 384);
             this.plecakSlot12.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot12.MinimumSize = new System.Drawing.Size(48, 48);
@@ -189,10 +194,12 @@
             this.plecakSlot12.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot12.TabIndex = 5;
             this.plecakSlot12.TabStop = false;
+            this.plecakSlot12.Click += new System.EventHandler(this.plecakSlot12_Click);
             // 
             // plecakSlot11
             // 
             this.plecakSlot11.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot11.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot11.Location = new System.Drawing.Point(123, 384);
             this.plecakSlot11.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot11.MinimumSize = new System.Drawing.Size(48, 48);
@@ -200,10 +207,12 @@
             this.plecakSlot11.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot11.TabIndex = 4;
             this.plecakSlot11.TabStop = false;
+            this.plecakSlot11.Click += new System.EventHandler(this.plecakSlot11_Click);
             // 
             // plecakSlot22
             // 
             this.plecakSlot22.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot22.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot22.Location = new System.Drawing.Point(280, 437);
             this.plecakSlot22.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot22.MinimumSize = new System.Drawing.Size(48, 48);
@@ -211,10 +220,12 @@
             this.plecakSlot22.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot22.TabIndex = 7;
             this.plecakSlot22.TabStop = false;
+            this.plecakSlot22.Click += new System.EventHandler(this.plecakSlot22_Click);
             // 
             // plecakSlot21
             // 
             this.plecakSlot21.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot21.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot21.Location = new System.Drawing.Point(228, 437);
             this.plecakSlot21.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot21.MinimumSize = new System.Drawing.Size(48, 48);
@@ -222,10 +233,12 @@
             this.plecakSlot21.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot21.TabIndex = 6;
             this.plecakSlot21.TabStop = false;
+            this.plecakSlot21.Click += new System.EventHandler(this.plecakSlot21_Click);
             // 
             // plecakSlot4
             // 
             this.plecakSlot4.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot4.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot4.Location = new System.Drawing.Point(175, 332);
             this.plecakSlot4.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot4.MinimumSize = new System.Drawing.Size(48, 48);
@@ -233,10 +246,12 @@
             this.plecakSlot4.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot4.TabIndex = 9;
             this.plecakSlot4.TabStop = false;
+            this.plecakSlot4.Click += new System.EventHandler(this.plecakSlot4_Click);
             // 
             // plecakSlot3
             // 
             this.plecakSlot3.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot3.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot3.Location = new System.Drawing.Point(123, 332);
             this.plecakSlot3.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot3.MinimumSize = new System.Drawing.Size(48, 48);
@@ -244,10 +259,12 @@
             this.plecakSlot3.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot3.TabIndex = 8;
             this.plecakSlot3.TabStop = false;
+            this.plecakSlot3.Click += new System.EventHandler(this.plecakSlot3_Click);
             // 
             // plecakSlot6
             // 
             this.plecakSlot6.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot6.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot6.Location = new System.Drawing.Point(280, 332);
             this.plecakSlot6.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot6.MinimumSize = new System.Drawing.Size(48, 48);
@@ -255,10 +272,12 @@
             this.plecakSlot6.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot6.TabIndex = 11;
             this.plecakSlot6.TabStop = false;
+            this.plecakSlot6.Click += new System.EventHandler(this.plecakSlot6_Click);
             // 
             // plecakSlot5
             // 
             this.plecakSlot5.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot5.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot5.Location = new System.Drawing.Point(228, 332);
             this.plecakSlot5.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot5.MinimumSize = new System.Drawing.Size(48, 48);
@@ -266,10 +285,12 @@
             this.plecakSlot5.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot5.TabIndex = 10;
             this.plecakSlot5.TabStop = false;
+            this.plecakSlot5.Click += new System.EventHandler(this.plecakSlot5_Click);
             // 
             // plecakSlot10
             // 
             this.plecakSlot10.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot10.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot10.Location = new System.Drawing.Point(71, 386);
             this.plecakSlot10.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot10.MinimumSize = new System.Drawing.Size(48, 48);
@@ -277,10 +298,12 @@
             this.plecakSlot10.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot10.TabIndex = 13;
             this.plecakSlot10.TabStop = false;
+            this.plecakSlot10.Click += new System.EventHandler(this.plecakSlot10_Click);
             // 
             // plecakSlot9
             // 
             this.plecakSlot9.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot9.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot9.Location = new System.Drawing.Point(19, 386);
             this.plecakSlot9.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot9.MinimumSize = new System.Drawing.Size(48, 48);
@@ -288,10 +311,12 @@
             this.plecakSlot9.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot9.TabIndex = 12;
             this.plecakSlot9.TabStop = false;
+            this.plecakSlot9.Click += new System.EventHandler(this.plecakSlot9_Click);
             // 
             // plecakSlot18
             // 
             this.plecakSlot18.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot18.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot18.Location = new System.Drawing.Point(71, 437);
             this.plecakSlot18.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot18.MinimumSize = new System.Drawing.Size(48, 48);
@@ -299,10 +324,12 @@
             this.plecakSlot18.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot18.TabIndex = 15;
             this.plecakSlot18.TabStop = false;
+            this.plecakSlot18.Click += new System.EventHandler(this.plecakSlot18_Click);
             // 
             // plecakSlot17
             // 
             this.plecakSlot17.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot17.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot17.Location = new System.Drawing.Point(19, 437);
             this.plecakSlot17.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot17.MinimumSize = new System.Drawing.Size(48, 48);
@@ -310,10 +337,12 @@
             this.plecakSlot17.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot17.TabIndex = 14;
             this.plecakSlot17.TabStop = false;
+            this.plecakSlot17.Click += new System.EventHandler(this.plecakSlot17_Click);
             // 
             // plecakSlot28
             // 
             this.plecakSlot28.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot28.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot28.Location = new System.Drawing.Point(175, 488);
             this.plecakSlot28.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot28.MinimumSize = new System.Drawing.Size(48, 48);
@@ -321,10 +350,12 @@
             this.plecakSlot28.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot28.TabIndex = 17;
             this.plecakSlot28.TabStop = false;
+            this.plecakSlot28.Click += new System.EventHandler(this.plecakSlot28_Click);
             // 
             // plecakSlot27
             // 
             this.plecakSlot27.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot27.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot27.Location = new System.Drawing.Point(123, 488);
             this.plecakSlot27.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot27.MinimumSize = new System.Drawing.Size(48, 48);
@@ -332,10 +363,12 @@
             this.plecakSlot27.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot27.TabIndex = 16;
             this.plecakSlot27.TabStop = false;
+            this.plecakSlot27.Click += new System.EventHandler(this.plecakSlot27_Click);
             // 
             // plecakSlot26
             // 
             this.plecakSlot26.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot26.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot26.Location = new System.Drawing.Point(71, 488);
             this.plecakSlot26.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot26.MinimumSize = new System.Drawing.Size(48, 48);
@@ -343,10 +376,12 @@
             this.plecakSlot26.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot26.TabIndex = 19;
             this.plecakSlot26.TabStop = false;
+            this.plecakSlot26.Click += new System.EventHandler(this.plecakSlot26_Click);
             // 
             // plecakSlot25
             // 
             this.plecakSlot25.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot25.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot25.Location = new System.Drawing.Point(19, 488);
             this.plecakSlot25.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot25.MinimumSize = new System.Drawing.Size(48, 48);
@@ -354,10 +389,12 @@
             this.plecakSlot25.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot25.TabIndex = 18;
             this.plecakSlot25.TabStop = false;
+            this.plecakSlot25.Click += new System.EventHandler(this.plecakSlot25_Click);
             // 
             // plecakSlot14
             // 
             this.plecakSlot14.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot14.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot14.Location = new System.Drawing.Point(280, 386);
             this.plecakSlot14.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot14.MinimumSize = new System.Drawing.Size(48, 48);
@@ -365,10 +402,12 @@
             this.plecakSlot14.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot14.TabIndex = 21;
             this.plecakSlot14.TabStop = false;
+            this.plecakSlot14.Click += new System.EventHandler(this.plecakSlot14_Click);
             // 
             // plecakSlot13
             // 
             this.plecakSlot13.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot13.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot13.Location = new System.Drawing.Point(228, 386);
             this.plecakSlot13.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot13.MinimumSize = new System.Drawing.Size(48, 48);
@@ -376,10 +415,12 @@
             this.plecakSlot13.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot13.TabIndex = 20;
             this.plecakSlot13.TabStop = false;
+            this.plecakSlot13.Click += new System.EventHandler(this.plecakSlot13_Click);
             // 
             // plecakSlot16
             // 
             this.plecakSlot16.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot16.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot16.Location = new System.Drawing.Point(383, 386);
             this.plecakSlot16.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot16.MinimumSize = new System.Drawing.Size(48, 48);
@@ -387,10 +428,12 @@
             this.plecakSlot16.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot16.TabIndex = 23;
             this.plecakSlot16.TabStop = false;
+            this.plecakSlot16.Click += new System.EventHandler(this.plecakSlot16_Click);
             // 
             // plecakSlot15
             // 
             this.plecakSlot15.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot15.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot15.Location = new System.Drawing.Point(331, 386);
             this.plecakSlot15.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot15.MinimumSize = new System.Drawing.Size(48, 48);
@@ -398,10 +441,12 @@
             this.plecakSlot15.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot15.TabIndex = 22;
             this.plecakSlot15.TabStop = false;
+            this.plecakSlot15.Click += new System.EventHandler(this.plecakSlot15_Click);
             // 
             // plecakSlot20
             // 
             this.plecakSlot20.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot20.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot20.Location = new System.Drawing.Point(175, 437);
             this.plecakSlot20.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot20.MinimumSize = new System.Drawing.Size(48, 48);
@@ -409,10 +454,12 @@
             this.plecakSlot20.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot20.TabIndex = 25;
             this.plecakSlot20.TabStop = false;
+            this.plecakSlot20.Click += new System.EventHandler(this.plecakSlot20_Click);
             // 
             // plecakSlot19
             // 
             this.plecakSlot19.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot19.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot19.Location = new System.Drawing.Point(123, 437);
             this.plecakSlot19.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot19.MinimumSize = new System.Drawing.Size(48, 48);
@@ -420,10 +467,12 @@
             this.plecakSlot19.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot19.TabIndex = 24;
             this.plecakSlot19.TabStop = false;
+            this.plecakSlot19.Click += new System.EventHandler(this.plecakSlot19_Click);
             // 
             // plecakSlot24
             // 
             this.plecakSlot24.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot24.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot24.Location = new System.Drawing.Point(383, 437);
             this.plecakSlot24.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot24.MinimumSize = new System.Drawing.Size(48, 48);
@@ -431,10 +480,12 @@
             this.plecakSlot24.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot24.TabIndex = 27;
             this.plecakSlot24.TabStop = false;
+            this.plecakSlot24.Click += new System.EventHandler(this.plecakSlot24_Click);
             // 
             // plecakSlot23
             // 
             this.plecakSlot23.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot23.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot23.Location = new System.Drawing.Point(331, 437);
             this.plecakSlot23.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot23.MinimumSize = new System.Drawing.Size(48, 48);
@@ -442,10 +493,12 @@
             this.plecakSlot23.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot23.TabIndex = 26;
             this.plecakSlot23.TabStop = false;
+            this.plecakSlot23.Click += new System.EventHandler(this.plecakSlot23_Click);
             // 
             // plecakSlot30
             // 
             this.plecakSlot30.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot30.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot30.Location = new System.Drawing.Point(280, 488);
             this.plecakSlot30.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot30.MinimumSize = new System.Drawing.Size(48, 48);
@@ -453,10 +506,12 @@
             this.plecakSlot30.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot30.TabIndex = 29;
             this.plecakSlot30.TabStop = false;
+            this.plecakSlot30.Click += new System.EventHandler(this.plecakSlot30_Click);
             // 
             // plecakSlot29
             // 
             this.plecakSlot29.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot29.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot29.Location = new System.Drawing.Point(228, 488);
             this.plecakSlot29.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot29.MinimumSize = new System.Drawing.Size(48, 48);
@@ -464,10 +519,12 @@
             this.plecakSlot29.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot29.TabIndex = 28;
             this.plecakSlot29.TabStop = false;
+            this.plecakSlot29.Click += new System.EventHandler(this.plecakSlot29_Click);
             // 
             // plecakSlot32
             // 
             this.plecakSlot32.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot32.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot32.Location = new System.Drawing.Point(383, 491);
             this.plecakSlot32.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot32.MinimumSize = new System.Drawing.Size(48, 48);
@@ -475,10 +532,12 @@
             this.plecakSlot32.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot32.TabIndex = 31;
             this.plecakSlot32.TabStop = false;
+            this.plecakSlot32.Click += new System.EventHandler(this.plecakSlot32_Click);
             // 
             // plecakSlot31
             // 
             this.plecakSlot31.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot31.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot31.Location = new System.Drawing.Point(331, 491);
             this.plecakSlot31.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot31.MinimumSize = new System.Drawing.Size(48, 48);
@@ -486,10 +545,12 @@
             this.plecakSlot31.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot31.TabIndex = 30;
             this.plecakSlot31.TabStop = false;
+            this.plecakSlot31.Click += new System.EventHandler(this.plecakSlot31_Click);
             // 
             // plecakSlot34
             // 
             this.plecakSlot34.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot34.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot34.Location = new System.Drawing.Point(71, 540);
             this.plecakSlot34.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot34.MinimumSize = new System.Drawing.Size(48, 48);
@@ -497,10 +558,12 @@
             this.plecakSlot34.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot34.TabIndex = 33;
             this.plecakSlot34.TabStop = false;
+            this.plecakSlot34.Click += new System.EventHandler(this.plecakSlot34_Click);
             // 
             // plecakSlot33
             // 
             this.plecakSlot33.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot33.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot33.Location = new System.Drawing.Point(19, 540);
             this.plecakSlot33.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot33.MinimumSize = new System.Drawing.Size(48, 48);
@@ -508,10 +571,12 @@
             this.plecakSlot33.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot33.TabIndex = 32;
             this.plecakSlot33.TabStop = false;
+            this.plecakSlot33.Click += new System.EventHandler(this.plecakSlot33_Click);
             // 
             // plecakSlot36
             // 
             this.plecakSlot36.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot36.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot36.Location = new System.Drawing.Point(175, 542);
             this.plecakSlot36.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot36.MinimumSize = new System.Drawing.Size(48, 48);
@@ -519,10 +584,12 @@
             this.plecakSlot36.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot36.TabIndex = 35;
             this.plecakSlot36.TabStop = false;
+            this.plecakSlot36.Click += new System.EventHandler(this.plecakSlot36_Click);
             // 
             // plecakSlot35
             // 
             this.plecakSlot35.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot35.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot35.Location = new System.Drawing.Point(123, 542);
             this.plecakSlot35.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot35.MinimumSize = new System.Drawing.Size(48, 48);
@@ -530,10 +597,12 @@
             this.plecakSlot35.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot35.TabIndex = 34;
             this.plecakSlot35.TabStop = false;
+            this.plecakSlot35.Click += new System.EventHandler(this.plecakSlot35_Click);
             // 
             // plecakSlot38
             // 
             this.plecakSlot38.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot38.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot38.Location = new System.Drawing.Point(280, 542);
             this.plecakSlot38.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot38.MinimumSize = new System.Drawing.Size(48, 48);
@@ -541,10 +610,12 @@
             this.plecakSlot38.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot38.TabIndex = 37;
             this.plecakSlot38.TabStop = false;
+            this.plecakSlot38.Click += new System.EventHandler(this.plecakSlot38_Click);
             // 
             // plecakSlot37
             // 
             this.plecakSlot37.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot37.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot37.Location = new System.Drawing.Point(228, 542);
             this.plecakSlot37.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot37.MinimumSize = new System.Drawing.Size(48, 48);
@@ -552,10 +623,12 @@
             this.plecakSlot37.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot37.TabIndex = 36;
             this.plecakSlot37.TabStop = false;
+            this.plecakSlot37.Click += new System.EventHandler(this.plecakSlot37_Click);
             // 
             // plecakSlot40
             // 
             this.plecakSlot40.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot40.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot40.Location = new System.Drawing.Point(383, 540);
             this.plecakSlot40.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot40.MinimumSize = new System.Drawing.Size(48, 48);
@@ -563,10 +636,12 @@
             this.plecakSlot40.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot40.TabIndex = 39;
             this.plecakSlot40.TabStop = false;
+            this.plecakSlot40.Click += new System.EventHandler(this.plecakSlot40_Click);
             // 
             // plecakSlot39
             // 
             this.plecakSlot39.BackColor = System.Drawing.Color.Transparent;
+            this.plecakSlot39.Image = global::Unstable.Properties.Resources.BrakItemu;
             this.plecakSlot39.Location = new System.Drawing.Point(331, 540);
             this.plecakSlot39.MaximumSize = new System.Drawing.Size(48, 48);
             this.plecakSlot39.MinimumSize = new System.Drawing.Size(48, 48);
@@ -574,6 +649,7 @@
             this.plecakSlot39.Size = new System.Drawing.Size(48, 48);
             this.plecakSlot39.TabIndex = 38;
             this.plecakSlot39.TabStop = false;
+            this.plecakSlot39.Click += new System.EventHandler(this.plecakSlot39_Click);
             // 
             // stanZłota
             // 

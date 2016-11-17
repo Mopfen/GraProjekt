@@ -23,34 +23,34 @@ namespace Unstable
         {
             double dmg = 0;
 
-            dmg += daneLauncher.daneGracz[0].siła *0.8;
+            dmg += daneLauncher.daneBonusyGracz.dmg[0] + daneLauncher.daneGracz.siła *0.8;
 
-            daneLauncher.daneGracz[0].siłaAtakuZwarcie[0] = (int)dmg;
+            daneLauncher.daneGracz.siłaAtakuZwarcie[0] = (int)dmg;
         }
         internal void dmgZwarcieGracz2()
         {
             int dmg = 0;
 
-            dmg += daneLauncher.daneGracz[0].siła;
+            dmg += daneLauncher.daneBonusyGracz.dmg[1] + daneLauncher.daneGracz.siła;
 
-            daneLauncher.daneGracz[0].siłaAtakuZwarcie[1] = dmg;
+            daneLauncher.daneGracz.siłaAtakuZwarcie[1] = dmg;
         }
 
         internal void dmgDystansGracz1()
         {
             double dmg = 0;
 
-            dmg += daneLauncher.daneGracz[0].zręczność * 0.8;
+            dmg += daneLauncher.daneGracz.zręczność * 0.8;
 
-            daneLauncher.daneGracz[0].siłaAtakuDystans[0] = (int)dmg;
+            daneLauncher.daneGracz.siłaAtakuDystans[0] = (int)dmg;
         }
         internal void dmgDystansGracz2()
         {
             int dmg = 0;
 
-            dmg += daneLauncher.daneGracz[0].zręczność;
+            dmg += daneLauncher.daneGracz.zręczność;
 
-            daneLauncher.daneGracz[0].siłaAtakuDystans[1] = dmg;
+            daneLauncher.daneGracz.siłaAtakuDystans[1] = dmg;
         }
 
         internal int dmgZwarcieMob(int wartośćAtaku)
@@ -60,15 +60,15 @@ namespace Unstable
 
         internal void hpMaxGracz()
         {
-            daneLauncher.daneGracz[0].hpMax = (daneLauncher.daneGracz[0].lv * 10 + daneLauncher.daneGracz[0].wytrzymałość * 5);
+            daneLauncher.daneGracz.hpMax = (daneLauncher.daneGracz.lv * 10 + daneLauncher.daneGracz.wytrzymałość * 5);
         }
         internal void manaMaxGracz()
         {
-            daneLauncher.daneGracz[0].manaMax = (daneLauncher.daneGracz[0].lv * 10 + daneLauncher.daneGracz[0].inteligencja * 5);
+            daneLauncher.daneGracz.manaMax = (daneLauncher.daneGracz.lv * 10 + daneLauncher.daneGracz.inteligencja * 5);
         }
         internal void szansaKrytykGracz()
         {
-            daneLauncher.daneGracz[0].szansaKryta = Convert.ToInt16(((daneLauncher.daneGracz[0].szczęście * 10) / daneLauncher.daneGracz[0].lv));
+            daneLauncher.daneGracz.szansaKryta = Convert.ToInt16(((daneLauncher.daneGracz.szczęście * 10) / daneLauncher.daneGracz.lv));
         }
 
         /// <summary>
@@ -76,30 +76,44 @@ namespace Unstable
         /// </summary>
         /// <param name="obiekt">W jaki obiekt ma trafić strzała</param>
         /// <param name="ilosc">Ilość możliwych obiektów (maks. idenks)</param>
-        internal void strzałaTrafienie(Launcher []obiekt, int ilosc)
+        internal void strzałaTrafienie(Launcher.ZmiennePostaci []obiekt, int ilosc)
         {
             for (int i = 0; i < ilosc; i++)
             {
-                if (obiekt[i].alive == true)
+                if (obiekt[i].exists == true)
                 {
                     if (daneLauncher.daneStrzała[0].obraz.Bounds.IntersectsWith(obiekt[i].obraz.Bounds))
                     {
-                        if (obiekt == daneLauncher.daneMob)
+                        if (obiekt[i].exists == true)
                         {
-                            if (daneLauncher.daneMob[i].alive == true)
-                            {
-                                daneLauncher.daneStrzała[0].alive = false;
-                                daneLauncher.daneStrzała[0].obraz.Visible = false;
-                                int dmg = losuj(daneLauncher.daneGracz[0].siłaAtakuDystans[0], daneLauncher.daneGracz[0].siłaAtakuDystans[1]);
-                                obiekt[i].hp -= dmg;
-                                daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
-                            }
-                        }
-                        if (obiekt == daneLauncher.danePrzeszkoda)
-                        {
-                            daneLauncher.daneStrzała[0].alive = false;
+                            daneLauncher.daneStrzała[0].exists = false;
                             daneLauncher.daneStrzała[0].obraz.Visible = false;
-                            obiekt[i].alive = false;
+                            int dmg = losuj(daneLauncher.daneGracz.siłaAtakuDystans[0], daneLauncher.daneGracz.siłaAtakuDystans[1]);
+                            obiekt[i].hp -= dmg;
+                            daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
+                        }  
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Metoda sprawdzająca, czy strzała trafiła jakiś obiekt. Jeżeli tak, wykonuje okresloną czynność.
+        /// </summary>
+        /// <param name="obiekt">W jaki obiekt ma trafić strzała</param>
+        /// <param name="ilosc">Ilość możliwych obiektów (maks. idenks)</param>
+        internal void strzałaTrafienie(Launcher.ZmienneObiektów []obiekt, int ilosc)
+        {
+            for (int i = 0; i < ilosc; i++)
+            {
+                if (obiekt[i].exists == true)
+                {
+                    if (daneLauncher.daneStrzała[0].obraz.Bounds.IntersectsWith(obiekt[i].obraz.Bounds))
+                    {
+                        if (obiekt[i].exists == true)
+                        {
+                            daneLauncher.daneStrzała[0].exists = false;
+                            daneLauncher.daneStrzała[0].obraz.Visible = false;
+                            obiekt[i].exists = false;
                             obiekt[i].obraz.Visible = false;
                         }
                     }
@@ -112,9 +126,9 @@ namespace Unstable
         /// <returns></returns>
         internal bool śmierćGracza()
         {
-            if (daneLauncher.daneGracz[0].hp <= 0)
+            if (daneLauncher.daneGracz.hp <= 0)
             {
-                daneLauncher.daneGracz[0].hp = 0;
+                daneLauncher.daneGracz.hp = 0;
                 return true;
             }
             return false;
@@ -130,14 +144,14 @@ namespace Unstable
             Tuple<bool, int> wynik = new Tuple<bool, int>(zabity, i);
             for (i = 0; i < 4; i++)
             {
-                if(daneLauncher.daneMob[i].alive==true)
+                if(daneLauncher.daneMob[i].exists==true)
                 {
                     if (daneLauncher.daneMob[i].hp <= 0)
                     {
                         daneLauncher.daneMob[i].hp = 0;
                         zabity = true;
                         daneLauncher.hitLog.Text = "Mob zostaje zabity!\n" + daneLauncher.hitLog.Text;
-                        if (daneLauncher.daneGracz[0].lv == daneLauncher.daneMob[i].lv) daneLauncher.daneGracz[0].exp +=5;
+                        if (daneLauncher.daneGracz.lv == daneLauncher.daneMob[i].lv) daneLauncher.daneGracz.exp +=5;
                         daneLauncher.daneMob[i].obraz.Visible=false;
                         daneLauncher.daneMob[i].labelhp.Visible = false;
                         wynik = new Tuple<bool, int>(zabity, i);
@@ -152,36 +166,49 @@ namespace Unstable
         /// </summary>
         /// <param name="obiekt">Obiekt, w który kierowany jest atak</param>
         /// <param name="ilosc">Ilość możliwych obiektów (maks. idenks)</param>
-        internal void atakwCelObok(Launcher []obiekt, int ilosc)
+        internal void atakwCelObok(Launcher.ZmiennePostaci []obiekt, int ilosc)
         {
             for (int i = 0; i < ilosc; i++)
             {
-                if (obiekt[i].alive == true)
+                if (obiekt[i].exists == true)
                 {
-                    if ((daneLauncher.daneGracz[0].left == true & (daneLauncher.daneGracz[0].obraz.Left - obiekt[i].obraz.Left >= (60) & daneLauncher.daneGracz[0].obraz.Left - obiekt[i].obraz.Right < 8 & (obiekt[i].obraz.Top - daneLauncher.daneGracz[0].obraz.Top >= (-64) & obiekt[i].obraz.Top - daneLauncher.daneGracz[0].obraz.Top < daneLauncher.daneGracz[0].obraz.Height)) |
-                     (daneLauncher.daneGracz[0].right == true & (obiekt[i].obraz.Left - daneLauncher.daneGracz[0].obraz.Left >= (-60) & obiekt[i].obraz.Left - daneLauncher.daneGracz[0].obraz.Right < 8 & (obiekt[i].obraz.Top - daneLauncher.daneGracz[0].obraz.Top >= (-64) & obiekt[i].obraz.Top - daneLauncher.daneGracz[0].obraz.Top < daneLauncher.daneGracz[0].obraz.Height)))))
+                    if ((daneLauncher.daneGracz.left == true & (daneLauncher.daneGracz.obraz.Left - obiekt[i].obraz.Left >= (60) & daneLauncher.daneGracz.obraz.Left - obiekt[i].obraz.Right < 8 & (obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)) |
+                     (daneLauncher.daneGracz.right == true & (obiekt[i].obraz.Left - daneLauncher.daneGracz.obraz.Left >= (-60) & obiekt[i].obraz.Left - daneLauncher.daneGracz.obraz.Right < 8 & (obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)))))
                     {
-                        if(obiekt==daneLauncher.daneMob)
+                        dmgZwarcieGracz1();
+                        dmgZwarcieGracz2();
+                        int dmg = losuj(daneLauncher.daneGracz.siłaAtakuZwarcie[0], daneLauncher.daneGracz.siłaAtakuZwarcie[1]);
+                        if(losuj(0,100)<=daneLauncher.daneGracz.szansaKryta)
                         {
-                            dmgZwarcieGracz1();
-                            dmgZwarcieGracz2();
-                            int dmg = losuj(daneLauncher.daneGracz[0].siłaAtakuZwarcie[0], daneLauncher.daneGracz[0].siłaAtakuZwarcie[1]);
-                            if(losuj(0,100)<=daneLauncher.daneGracz[0].szansaKryta)
-                            {
-                                dmg *= 2;
-                                daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
-                            }
-                            else
-                            {
-                                daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
-                            }
-                            obiekt[i].hp -= dmg;
+                            dmg *= 2;
+                            daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
                         }
-                        if(obiekt==daneLauncher.danePrzeszkoda)
+                        else
                         {
-                            obiekt[i].alive = false;
-                            obiekt[i].obraz.Visible = false;
+                            daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
                         }
+                        obiekt[i].hp -= dmg;
+                    }
+
+                }
+            }
+        }
+        /// <summary>
+        /// Metoda sprawdza czy obok gracza znajduje się jakiś obiekt. Jeżeli tak, to wykonuje atak.
+        /// </summary>
+        /// <param name="obiekt">Obiekt, w który kierowany jest atak</param>
+        /// <param name="ilosc">Ilość możliwych obiektów (maks. idenks)</param>
+        internal void atakwCelObok(Launcher.ZmienneObiektów[] obiekt, int ilosc)
+        {
+            for (int i = 0; i < ilosc; i++)
+            {
+                if (obiekt[i].exists == true)
+                {
+                    if ((daneLauncher.daneGracz.left == true & (daneLauncher.daneGracz.obraz.Left - obiekt[i].obraz.Left >= (60) & daneLauncher.daneGracz.obraz.Left - obiekt[i].obraz.Right < 8 & (obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)) |
+                     (daneLauncher.daneGracz.right == true & (obiekt[i].obraz.Left - daneLauncher.daneGracz.obraz.Left >= (-60) & obiekt[i].obraz.Left - daneLauncher.daneGracz.obraz.Right < 8 & (obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)))))
+                    {
+                        obiekt[i].exists = false;
+                        obiekt[i].obraz.Visible = false;
                     }
                 }
             }
@@ -194,9 +221,9 @@ namespace Unstable
         /// </summary>
         /// <param name="idący">Idąca postać</param>
         /// <param name="obiekt">Istniejąca przeszkoda</param>
-        internal void przeszkodaNaDrodze(Launcher idący, Launcher obiekt)
+        internal void przeszkodaNaDrodze(Launcher.ZmiennePostaci idący, Launcher.ZmienneObiektów obiekt)
         {
-            if(obiekt.alive==true)
+            if(obiekt.exists==true)
             {
                 if (idący.up == true & idący.obraz.Top - obiekt.obraz.Top >= (obiekt.obraz.Height-4) & idący.obraz.Top - obiekt.obraz.Bottom < 4 & (obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width) & obiekt.obraz.Left - idący.obraz.Left < idący.obraz.Width)) { idący.obraz.Top += 4; idący.przeszkoda = true; }
                 if (idący.down == true & obiekt.obraz.Bottom - idący.obraz.Bottom >= (obiekt.obraz.Height - 4) & obiekt.obraz.Top - idący.obraz.Bottom < 4 & (obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width) & obiekt.obraz.Left - idący.obraz.Left < idący.obraz.Width)) { idący.obraz.Top -= 4; idący.przeszkoda = true; }
@@ -204,7 +231,22 @@ namespace Unstable
                 if (idący.right == true & obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width + 4) & obiekt.obraz.Left - idący.obraz.Right < 0 & (obiekt.obraz.Top - idący.obraz.Top >= (-obiekt.obraz.Height) & obiekt.obraz.Top - idący.obraz.Top < idący.obraz.Height)) { idący.obraz.Left -= 2; idący.przeszkoda = true; }
             }    
         }
-        
+        /// <summary>
+        /// Metoda sprawdza, czy na drodze postaci znajduje się przeszkoda. Jeśli tak, nie pozwala jej iść dalej.
+        /// </summary>
+        /// <param name="idący">Idąca postać</param>
+        /// <param name="obiekt">Istniejąca przeszkoda</param>
+        internal void przeszkodaNaDrodze(Launcher.ZmiennePostaci idący, Launcher.ZmiennePostaci obiekt)
+        {
+            if (obiekt.exists == true)
+            {
+                if (idący.up == true & idący.obraz.Top - obiekt.obraz.Top >= (obiekt.obraz.Height - 4) & idący.obraz.Top - obiekt.obraz.Bottom < 4 & (obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width) & obiekt.obraz.Left - idący.obraz.Left < idący.obraz.Width)) { idący.obraz.Top += 4; idący.przeszkoda = true; }
+                if (idący.down == true & obiekt.obraz.Bottom - idący.obraz.Bottom >= (obiekt.obraz.Height - 4) & obiekt.obraz.Top - idący.obraz.Bottom < 4 & (obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width) & obiekt.obraz.Left - idący.obraz.Left < idący.obraz.Width)) { idący.obraz.Top -= 4; idący.przeszkoda = true; }
+                if (idący.left == true & idący.obraz.Left - obiekt.obraz.Left >= (obiekt.obraz.Width - 4) & idący.obraz.Left - obiekt.obraz.Right < 0 & (obiekt.obraz.Top - idący.obraz.Top >= (-obiekt.obraz.Height) & obiekt.obraz.Top - idący.obraz.Top < idący.obraz.Height)) { idący.obraz.Left += 2; idący.przeszkoda = true; }
+                if (idący.right == true & obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width + 4) & obiekt.obraz.Left - idący.obraz.Right < 0 & (obiekt.obraz.Top - idący.obraz.Top >= (-obiekt.obraz.Height) & obiekt.obraz.Top - idący.obraz.Top < idący.obraz.Height)) { idący.obraz.Left -= 2; idący.przeszkoda = true; }
+            }
+        }
+
         #endregion
         #region użytkowe
         /// <summary>
@@ -256,16 +298,16 @@ namespace Unstable
         /// </summary>
         internal void levelUp()
         {
-            while (daneLauncher.daneGracz[0].exp >=daneLauncher.daneGracz[0].expMax)
+            while (daneLauncher.daneGracz.exp >=daneLauncher.daneGracz.expMax)
             {
                 //daneLauncher.lvUpSound.Play();
-                daneLauncher.daneGracz[0].lv++;
-                daneLauncher.daneGracz[0].exp -= daneLauncher.expMax;
-                daneLauncher.daneGracz[0].expMax += 5;
-                daneLauncher.daneGracz[0].statystykiDoRozdania += 4;
+                daneLauncher.daneGracz.lv++;
+                daneLauncher.daneGracz.exp -= daneLauncher.daneGracz.expMax;
+                daneLauncher.daneGracz.expMax += 5;
+                daneLauncher.daneGracz.statystykiDoRozdania += 4;
                 liczStatystyki();
-                daneLauncher.daneGracz[0].hp = daneLauncher.daneGracz[0].hpMax;
-                daneLauncher.daneGracz[0].mana = daneLauncher.daneGracz[0].manaMax;
+                daneLauncher.daneGracz.hp = daneLauncher.daneGracz.hpMax;
+                daneLauncher.daneGracz.mana = daneLauncher.daneGracz.manaMax;
             }
         }
 

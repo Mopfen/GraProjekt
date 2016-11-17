@@ -113,6 +113,26 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BrakItemu {
+            get {
+                object obj = ResourceManager.GetObject("BrakItemu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CzerwonaMiksturaMała {
+            get {
+                object obj = ResourceManager.GetObject("CzerwonaMiksturaMała", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OkienkoEkwipunek {
             get {
                 object obj = ResourceManager.GetObject("OkienkoEkwipunek", resourceCulture);
@@ -426,6 +446,16 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap Zamknij24x24 {
             get {
                 object obj = ResourceManager.GetObject("Zamknij24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ZardzewiałyMiecz {
+            get {
+                object obj = ResourceManager.GetObject("ZardzewiałyMiecz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
