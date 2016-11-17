@@ -23,7 +23,7 @@ namespace Unstable
         {
             double dmg = 0;
 
-            dmg += daneLauncher.daneBonusyGracz.dmg[0] + daneLauncher.daneGracz.siła *0.8;
+            dmg += daneLauncher.daneBonusyGracz.dmgZwarcie[0] + daneLauncher.daneGracz.siła *0.8;
 
             daneLauncher.daneGracz.siłaAtakuZwarcie[0] = (int)dmg;
         }
@@ -31,7 +31,7 @@ namespace Unstable
         {
             int dmg = 0;
 
-            dmg += daneLauncher.daneBonusyGracz.dmg[1] + daneLauncher.daneGracz.siła;
+            dmg += daneLauncher.daneBonusyGracz.dmgZwarcie[1] + daneLauncher.daneGracz.siła;
 
             daneLauncher.daneGracz.siłaAtakuZwarcie[1] = dmg;
         }
