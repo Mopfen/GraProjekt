@@ -64,16 +64,24 @@ namespace Unstable
             Sloty.Add(plecakSlot38);
             Sloty.Add(plecakSlot39);
             Sloty.Add(plecakSlot40);
-            Sloty.Add(hełm);
-            Sloty.Add(zbroja);
-            Sloty.Add(spodnie);
-            Sloty.Add(buty);
-            Sloty.Add(miecz);
-            Sloty.Add(łuk);
+            Sloty.Add(PlecakSlot41);
+            Sloty.Add(PlecakSlot42);
+            Sloty.Add(PlecakSlot43);
+            Sloty.Add(PlecakSlot44);
+            Sloty.Add(PlecakSlot45);
+            Sloty.Add(PlecakSlot46);
 
             for (int i=1;i<=46;i++)
             {
                 daneLauncher.danePlecakSlot[i].obraz = Sloty[i];
+                if(daneLauncher.danePlecakSlot[i].id==1)
+                {
+                    daneLauncher.danePlecakSlot[i].obraz.Image = daneLauncher.ZardzewiałyMiecz.Image;
+                }
+                if(daneLauncher.danePlecakSlot[i].id==1000)
+                {
+                    daneLauncher.danePlecakSlot[i].obraz.Image = daneLauncher.MieczSquadaka.Image;
+                }
             }
 
             if(daneLauncher.danePlecakSlot[1].Lokacja != new Point(0, 0))
@@ -88,13 +96,12 @@ namespace Unstable
             {
                 ruchPlecakSlot[i] = false;
             }
+            daneLauncher.statystykiPrzedmiotu = labelStatystykiPrzedmiotu;
 
-            daneLauncher.danePlecakSlot[1].exists = true;
+            zapiszDane();
+
             daneLauncher.danePlecakSlot[2].exists = true;
-
-            daneLauncher.danePlecakSlot[1].miecz = true;
-            daneLauncher.danePlecakSlot[1].dmgZwarcie[0] = 1;
-            daneLauncher.danePlecakSlot[1].dmgZwarcie[1] = 3;
+            daneLauncher.danePlecakSlot[2].id = 2;
         }
 
         private void Statystyki_KeyDown(object sender, KeyEventArgs e)
@@ -103,6 +110,8 @@ namespace Unstable
             {
                 zamknijFormę();
             }
+            Komendy.MieczProgramisty metodaKomendy = new Komendy.MieczProgramisty(daneLauncher);
+            metodaKomendy.WczytajKomendę(e);
         }
 
         private void alaButtonExit_Click(object sender, EventArgs e)
@@ -112,7 +121,7 @@ namespace Unstable
 
         private void timerRuch_Tick(object sender, EventArgs e)
         {
-            for(int i =1;i<41;i++)
+            for(int i =1;i<=46;i++)
             {
                 if(ruchPlecakSlot[i]==true)
                 {
@@ -121,6 +130,16 @@ namespace Unstable
                     daneLauncher.danePlecakSlot[i].obraz.Top = Cursor.Position.Y - 140;
                 }
             }
+            if (daneLauncher.statystykiPokazywane == false)
+            {
+                daneLauncher.statystykiPrzedmiotu.Text = "Statystyki przedmiotu:\n\n";
+            }
+            if (daneLauncher.komenda == "squadak")
+            {
+                zapiszDane();
+            }
+            Komendy.MieczProgramisty metodaKomendy = new Komendy.MieczProgramisty(daneLauncher);
+            metodaKomendy.WykonajKomendę(this);
         }
 
         private void akcjaNaSlocie(int numerSlotu)
@@ -171,6 +190,26 @@ namespace Unstable
                     ruchPlecakSlot[numerSlotu] = true;
                 }
             }
+        }
+
+        private void pokazStatystyki(int numerSlotu)
+        {
+            daneLauncher.statystykiPrzedmiotu.Text = "Statystyki przedmiotu:\n\n";
+            string nazwa="";
+            string obrażenia="";
+
+            if (daneLauncher.danePlecakSlot[numerSlotu].id == 1) nazwa = "Zardzewiały Miecz";
+            if (daneLauncher.danePlecakSlot[numerSlotu].id == 2) nazwa = "Czerwona Mikstura(M)";
+            if (daneLauncher.danePlecakSlot[numerSlotu].id == 1000) nazwa = "Miecz Squadaka";
+
+            if (daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[0] != 0 & daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[1] != 0) obrażenia = Convert.ToString(daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[0] + "-" + daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[1]);
+
+            if(daneLauncher.danePlecakSlot[numerSlotu].exists==true)
+            {
+                daneLauncher.statystykiPrzedmiotu.Text += nazwa+"\n";
+                if (obrażenia != "") daneLauncher.statystykiPrzedmiotu.Text +="Obrażenia: " + obrażenia + "\n";
+            }
+            daneLauncher.statystykiPokazywane = true;
         }
 
         private bool czyPrzestawienieMożliwe(int numerSlotu, int i, int LocationX, int LocationY, PictureBox staraLokacja, bool przestaw, bool elementWyposażenia1, bool elementWyposażenia2)
@@ -266,6 +305,8 @@ namespace Unstable
             }
             zapiszDane();
             daneLauncher.timerStatystyki.Enabled = true;
+            timerRuch.Enabled = false;
+            Sloty.Clear();
             this.Close();
         }
 
@@ -469,6 +510,272 @@ namespace Unstable
         {
             akcjaNaSlocie(40);
         }
+
+        private void plecakSlot41_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(41);
+        }
+
+        private void plecakSlot42_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(42);
+        }
+
+        private void plecakSlot43_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(43);
+        }
+
+        private void plecakSlot44_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(44);
+        }
+
+        private void plecakSlot45_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(45);
+        }
+
+        private void plecakSlot46_Click(object sender, EventArgs e)
+        {
+            akcjaNaSlocie(46);
+        }
+
+        private void plecakSlot1_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(1);
+        }
+
+        private void plecakSlot2_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(2);
+        }
+
+        private void plecakSlot3_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(3);
+        }
+
+        private void plecakSlot4_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(4);
+        }
+
+        private void plecakSlot5_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(5);
+        }
+
+        private void plecakSlot6_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(6);
+        }
+
+        private void plecakSlot7_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(7);
+        }
+
+        private void plecakSlot8_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(8);
+        }
+
+        private void plecakSlot9_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(9);
+        }
+
+        private void plecakSlot10_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(10);
+        }
+
+        private void plecakSlot11_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(11);
+        }
+
+        private void plecakSlot12_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(12);
+        }
+
+        private void plecakSlot13_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(13);
+        }
+
+        private void plecakSlot14_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(14);
+        }
+
+        private void plecakSlot15_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(15);
+        }
+
+        private void plecakSlot16_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(16);
+        }
+
+        private void plecakSlot17_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(17);
+        }
+
+        private void plecakSlot18_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(18);
+        }
+
+        private void plecakSlot19_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(19);
+        }
+
+        private void plecakSlot20_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(20);
+        }
+
+        private void plecakSlot21_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(21);
+        }
+
+        private void plecakSlot22_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(22);
+        }
+
+        private void plecakSlot23_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(23);
+        }
+
+        private void plecakSlot24_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(24);
+        }
+
+        private void plecakSlot25_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(25);
+        }
+
+        private void plecakSlot26_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(26);
+        }
+
+        private void plecakSlot27_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(27);
+        }
+
+        private void plecakSlot28_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(28);
+        }
+
+        private void plecakSlot29_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(29);
+        }
+
+        private void plecakSlot30_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(30);
+        }
+
+        private void plecakSlot31_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(31);
+        }
+
+        private void plecakSlot32_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(32);
+        }
+
+        private void plecakSlot33_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(33);
+        }
+
+        private void plecakSlot34_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(34);
+        }
+
+        private void plecakSlot35_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(35);
+        }
+
+        private void plecakSlot36_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(36);
+        }
+
+        private void plecakSlot37_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(37);
+        }
+
+        private void plecakSlot38_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(38);
+        }
+
+        private void plecakSlot39_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(39);
+        }
+
+        private void plecakSlot40_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(40);
+        }
+
+        private void plecakSlot41_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(41);
+        }
+
+        private void plecakSlot42_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(42);
+        }
+
+        private void plecakSlot43_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(43);
+        }
+
+        private void plecakSlot44_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(44);
+        }
+
+        private void plecakSlot45_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(45);
+        }
+
+        private void plecakSlot46_MouseHover(object sender, EventArgs e)
+        {
+            pokazStatystyki(46);
+        }
+
+        private void plecakSlot_MouseLeave(object sender, EventArgs e)
+        {
+            daneLauncher.statystykiPokazywane = false;
+        }
+
         #endregion
     }
 }

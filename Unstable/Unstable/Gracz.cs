@@ -37,14 +37,14 @@ namespace Unstable
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             if (daneLauncher.daneGracz.attack == true & (daneLauncher.daneGracz.left == true | daneLauncher.daneGracz.right == true) & daneLauncher.daneGracz.wykonanoAtak == false)
             {
-                if(daneLauncher.daneGracz.rodzajAtaku==true)
+                if(daneLauncher.daneGracz.rodzajAtaku==true & daneLauncher.daneGracz.posiadaMiecz==true)
                 {
                     if (daneLauncher.daneGracz.left == true) daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownAttackingLeft.Image;
                     if (daneLauncher.daneGracz.right == true) daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownAttackingRight.Image;
                     metodaUniwersalne.atakwCelObok(daneLauncher.daneMob, 1);
                     metodaUniwersalne.atakwCelObok(daneLauncher.danePrzeszkoda, 8);
                 }
-                else
+                if(daneLauncher.daneGracz.rodzajAtaku==false & daneLauncher.daneGracz.posiadaŁuk==true)
                 {
                     if(daneLauncher.daneStrzała[0].exists==false)
                     {

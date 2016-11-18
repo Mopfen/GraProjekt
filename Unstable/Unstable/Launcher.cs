@@ -88,7 +88,7 @@ namespace Unstable
         {
             internal PictureBox obraz; // zmienna odpowiadająca za wygląd przedmiotu
 
-            internal bool exists = true; // zmienna określa, czy przedmiot istnieje
+            internal bool exists = false; // zmienna określa, czy przedmiot istnieje
 
             internal bool naWyposażeniu = false;
 
@@ -167,15 +167,22 @@ namespace Unstable
         internal PictureBox strzałaRight = new PictureBox();
 
         internal PictureBox BrakItemu = new PictureBox();
+        internal PictureBox ZardzewiałyMiecz = new PictureBox();
+        internal PictureBox MieczSquadaka = new PictureBox();
 
         #endregion
         #region zmiennePozostałe
         internal Panel poleGry; // zmienna odpowiadająca za właściwości pola gry
         internal Label hitLog; // zmienna odpowiadająca za wyświetlanie informacji przez hitLog
+        internal Label statystykiPrzedmiotu; // zmienna odpowiadająca za wyświetlanie informacji o statystykach przedmiotów
         internal PictureBox rozdajStatystyki; // zmienna odpowiadająca za przechowywanie ilości statystyk do rozdania
+
+        internal bool statystykiPokazywane = false; // zmienna odpowiadająca za sprawdzenie, czy statystyki przedmiotu w ekwipunku są aktualnie wyświetlane
 
         internal Timer timerStatystyki; // zmienna odpowiadająca za działanie timera
 
+        internal string komenda = ""; // zmienna przechowująca dane komendy
+        internal bool komendaOK = true; // zmienna sprawdza, czy iżytkownik podaje poprawny ciąg znaków komendy
 
         internal System.Media.SoundPlayer music = new System.Media.SoundPlayer(); // zmienna odpowiadająca za muzykę w tle
         internal System.Media.SoundPlayer lvUpSound = new System.Media.SoundPlayer(); // zmienna odpowiadająca za muzykę w tle
@@ -183,9 +190,11 @@ namespace Unstable
 
         internal Launcher.ZmiennePostaci daneGracz = new Launcher.ZmiennePostaci(); // obiekt przechowująca informacje o graczu
         internal Launcher.ZmiennePostaci []daneMob = new Launcher.ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o mobach
-        internal Launcher.ZmienneObiektów[] danePrzeszkoda = new Launcher.ZmienneObiektów[20]; // tablica obiektów przechowujących informacje o przeszkodach
+        internal Launcher.ZmienneObiektów []danePrzeszkoda = new Launcher.ZmienneObiektów[20]; // tablica obiektów przechowujących informacje o przeszkodach
         internal Launcher.ZmienneObiektów []daneStrzała = new Launcher.ZmienneObiektów[2]; // tablica obiekótw przechowujących informacje o strzałach wystrzelonych przez postać
-        internal Launcher.ZmienneEkwipunku[] danePlecakSlot = new Launcher.ZmienneEkwipunku[47]; // tablica obiektów przechowujących informacje o przedmiocie na danym slocie w ekwipunku
+        internal Launcher.ZmienneEkwipunku []danePlecakSlot = new Launcher.ZmienneEkwipunku[47]; // tablica obiektów przechowujących informacje o przedmiocie na danym slocie w ekwipunku
+        internal Launcher.ZmienneEkwipunku[] daneDrop = new Launcher.ZmienneEkwipunku[5]; // tablica obiektów przechowujących infromacje o przedmiocie do podniesienia
+        internal Launcher.ZmienneEkwipunku daneDropKomenda = new Launcher.ZmienneEkwipunku(); // Obiekt przechowuje informacje o przedmiocie wygenerowanym przez komendę
         internal Launcher.ZmienneBonusów daneBonusyGracz = new Launcher.ZmienneBonusów(); // obiekt przechowujący informacje o bonusach gracza
         internal Launcher.ZmienneBonusów []daneBonusyMob = new Launcher.ZmienneBonusów[5]; // tablica obiektów przechowujących informacje o bonusach mobów
 
@@ -219,6 +228,8 @@ namespace Unstable
                     daneMob[i].exists = false;
 
                     daneBonusyMob[i] = new Launcher.ZmienneBonusów();
+
+                    daneDrop[i] = new Launcher.ZmienneEkwipunku();
                 }
                 if(i<20)
                 {
@@ -343,6 +354,8 @@ namespace Unstable
             strzałaRight.Image = global::Unstable.Properties.Resources.StrzałaRight;
 
             BrakItemu.Image = global::Unstable.Properties.Resources.BrakItemu;
+            ZardzewiałyMiecz.Image = global::Unstable.Properties.Resources.ZardzewiałyMiecz;
+            MieczSquadaka.Image = global::Unstable.Properties.Resources.MieczSquadaka;
         }
         private void wczytajWszystkieDane()
         {

@@ -50,6 +50,11 @@ namespace Unstable
                 Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
                 formaEkwipunek.ShowDialog();
             }
+            if (e.KeyCode == Keys.Z)
+            {
+                Uniwersalne metodyUniwersalne = new Uniwersalne(daneLauncher);
+                metodyUniwersalne.podnieśDrop();
+            }
 
         }
         /// <summary>
@@ -57,7 +62,10 @@ namespace Unstable
         /// </summary>
         internal void KeyUpMetoda(KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up) { daneLauncher.daneGracz.up = false; daneLauncher.daneGracz.zmianaKierunkuUp = false; }
+            if (e.KeyCode == Keys.Up)
+            {
+                daneLauncher.daneGracz.up = false; daneLauncher.daneGracz.zmianaKierunkuUp = false;
+            }
             if (e.KeyCode == Keys.Down) { daneLauncher.daneGracz.down = false; daneLauncher.daneGracz.zmianaKierunkuDown = false; }
             if (e.KeyCode == Keys.Left) { daneLauncher.daneGracz.left = false; daneLauncher.daneGracz.zmianaKierunkuLeft = false; }
             if (e.KeyCode == Keys.Right) { daneLauncher.daneGracz.right = false; daneLauncher.daneGracz.zmianaKierunkuRight = false; }

@@ -47,7 +47,10 @@ namespace Unstable
         private void buttonGoTest_Click(object sender, EventArgs e)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
             metodaUniwersalne.liczStatystyki();
+            formaEkwipunek.Show();
+            formaEkwipunek.Close();
             MapaStartowa formaMapaStartowa = new MapaStartowa(daneLauncher);
             this.Close();
             formaMapaStartowa.Show();

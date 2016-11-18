@@ -49,6 +49,13 @@ namespace Unstable
             daneLauncher.daneMob[0].hp = 100;
             daneLauncher.daneMob[0].hpMax = 100;
 
+            daneLauncher.daneDrop[0].exists = true;
+            daneLauncher.daneDrop[0].obraz = drop1;
+            daneLauncher.daneDrop[0].id = 1;
+            daneLauncher.daneDrop[0].miecz = true;
+            daneLauncher.daneDrop[0].dmgZwarcie[0] = 1;
+            daneLauncher.daneDrop[0].dmgZwarcie[1] = 3;
+
             daneLauncher.daneStrzała[0].obraz = strzałaGracz;
             daneLauncher.daneStrzała[0].obraz.Visible = false;
 

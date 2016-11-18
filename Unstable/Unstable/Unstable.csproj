@@ -59,6 +59,7 @@
       <DependentUpon>GameOver.cs</DependentUpon>
     </Compile>
     <Compile Include="Gracz.cs" />
+    <Compile Include="Komendy.cs" />
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +245,7 @@
     <None Include="Models\Items\ZardzewiałyMiecz.gif" />
     <None Include="Models\Items\CzerwonaMiksturaMała.gif" />
     <None Include="Models\Items\BrakItemu.gif" />
+    <None Include="Models\Items\MieczSquadaka.gif" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />

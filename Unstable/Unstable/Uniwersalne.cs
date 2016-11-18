@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -325,5 +326,110 @@ namespace Unstable
             szansaKrytykGracz();
         }
 
+        /// <summary>
+        /// Metoda sprawdza, czy obok postaci jest przedmiot do podniesienia. Jeżeli tak, to dodaje go do ekwipunku
+        /// </summary>
+        internal void podnieśDrop()
+        {
+            bool podniesiono = false;
+            while (true)
+            {
+                podniesiono = sprawdzDostepnySlot(19, 332); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(71, 332); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(123, 332); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(175, 332); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(228, 332); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(280, 332); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(331, 332); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(383, 332); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(19, 386); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(71, 386); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(123, 386); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(175, 386); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(228, 386); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(280, 386); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(331, 386); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(383, 386); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(19, 437); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(71, 437); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(123, 437); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(175, 437); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(228, 437); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(280, 437); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(331, 437); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(383, 437); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(19, 488); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(71, 488); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(123, 488); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(175, 488); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(228, 488); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(280, 488); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(331, 488); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(383, 488); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(19, 540); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(71, 540); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(123, 540); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(175, 540); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(228, 540); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(280, 540); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(331, 540); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(383, 540); if (podniesiono == true) break;
+                // komunikat brak miejsca w eq
+                break;
+            }
+        }
+        
+        /// <summary>
+        /// Metoda wyposaża automatycznie gracza w przedmiot, który został wywołałny komendą.
+        /// </summary>
+        /// <param name="LokacjaX"></param>
+        /// <param name="LokacjaY"></param>
+        internal void NałóżPrzedmiotKomendy(int LokacjaX, int LokacjaY)
+        {
+            for (int i = 1; i <= 46; i++)
+            {
+                if (daneLauncher.danePlecakSlot[i].Lokacja == new System.Drawing.Point(LokacjaX, LokacjaY))
+                {
+                    Launcher.ZmienneEkwipunku resetuj = new Launcher.ZmienneEkwipunku();
+                    Point kopiaLokacji = new Point();
+                    kopiaLokacji = daneLauncher.danePlecakSlot[i].Lokacja;
+                    daneLauncher.danePlecakSlot[i] = daneLauncher.daneDropKomenda;
+                    daneLauncher.daneDropKomenda.obraz.Visible = false;
+                    daneLauncher.daneDropKomenda = resetuj;
+                    daneLauncher.danePlecakSlot[i].Lokacja = kopiaLokacji;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Metoda sprawdza, czy w ekwipunku jest wolne miejsce na dodatkowy przedmiot. Jest używana w metodzie podnieśDrop().
+        /// </summary>
+        private bool sprawdzDostepnySlot(int LokacjaX, int LokacjaY)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (daneLauncher.daneDrop[i].exists == true)
+                {
+                    if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(daneLauncher.daneDrop[i].obraz.Bounds))
+                    {
+                        for (int j = 1; j <= 46; j++)
+                        {
+                            if (daneLauncher.danePlecakSlot[j].Lokacja == new System.Drawing.Point(LokacjaX, LokacjaY) & daneLauncher.danePlecakSlot[j].exists == false)
+                            {
+                                Launcher.ZmienneEkwipunku resetuj = new Launcher.ZmienneEkwipunku();
+                                Point kopiaLokacji = new Point();
+                                kopiaLokacji = daneLauncher.danePlecakSlot[j].Lokacja;
+                                daneLauncher.danePlecakSlot[j] = daneLauncher.daneDrop[i];
+                                daneLauncher.daneDrop[i].obraz.Visible = false;
+                                daneLauncher.daneDrop[i] = resetuj;
+                                daneLauncher.danePlecakSlot[j].Lokacja = kopiaLokacji;
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+        }
     }
 }
