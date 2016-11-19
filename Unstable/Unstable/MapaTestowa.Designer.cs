@@ -1,6 +1,6 @@
 ﻿namespace Unstable
 {
-    partial class Mapa1
+    partial class MapaTestowa
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mapa1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapaTestowa));
             this.timerGracz = new System.Windows.Forms.Timer(this.components);
             this.timerAtakGracz = new System.Windows.Forms.Timer(this.components);
             this.timerStatystyki = new System.Windows.Forms.Timer(this.components);
@@ -62,25 +62,30 @@
             // 
             // timerGracz
             // 
+            this.timerGracz.Enabled = true;
             this.timerGracz.Interval = 50;
             this.timerGracz.Tick += new System.EventHandler(this.timerGracz_Tick);
             // 
             // timerAtakGracz
             // 
+            this.timerAtakGracz.Enabled = true;
             this.timerAtakGracz.Tick += new System.EventHandler(this.timerAtakGracz_Tick);
             // 
             // timerStatystyki
             // 
+            this.timerStatystyki.Enabled = true;
             this.timerStatystyki.Interval = 1;
             this.timerStatystyki.Tick += new System.EventHandler(this.timerStatystyki_Tick);
             // 
             // timerMob
             // 
+            this.timerMob.Enabled = true;
             this.timerMob.Interval = 1;
             this.timerMob.Tick += new System.EventHandler(this.timerMob_Tick);
             // 
             // timerAtakMob
             // 
+            this.timerAtakMob.Enabled = true;
             this.timerAtakMob.Tick += new System.EventHandler(this.timerAtakMob_Tick);
             // 
             // panelStatystyk
@@ -169,7 +174,7 @@
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.underMob);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -47);
+            this.poleGry.Location = new System.Drawing.Point(3, -25);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
@@ -262,10 +267,11 @@
             // 
             // timerStrzałaGracz
             // 
+            this.timerStrzałaGracz.Enabled = true;
             this.timerStrzałaGracz.Interval = 1;
             this.timerStrzałaGracz.Tick += new System.EventHandler(this.timerStrzałaGracz_Tick);
             // 
-            // Mapa1
+            // MapaTestowa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -276,7 +282,7 @@
             this.Controls.Add(this.poleGry);
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.Name = "Mapa1";
+            this.Name = "MapaTestowa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mapa1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Mapa1_KeyDown);

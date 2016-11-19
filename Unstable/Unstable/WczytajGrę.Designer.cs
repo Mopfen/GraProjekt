@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WczytajGrę));
             this.buttonWróć = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -47,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Unstable.Properties.Resources.TłoNowaGra;
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.buttonWróć);
             this.MaximumSize = new System.Drawing.Size(800, 600);

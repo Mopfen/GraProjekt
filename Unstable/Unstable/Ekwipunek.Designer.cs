@@ -81,6 +81,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PlecakSlot46 = new System.Windows.Forms.PictureBox();
             this.labelStatystykiPrzedmiotu = new System.Windows.Forms.Label();
+            this.antyRozmycie = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot8)).BeginInit();
@@ -130,6 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PlecakSlot45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlecakSlot46)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antyRozmycie)).BeginInit();
             this.SuspendLayout();
             // 
             // plecakSlot1
@@ -871,7 +873,7 @@
             // labelStatystykiPrzedmiotu
             // 
             this.labelStatystykiPrzedmiotu.AutoSize = true;
-            this.labelStatystykiPrzedmiotu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.labelStatystykiPrzedmiotu.BackColor = System.Drawing.Color.Transparent;
             this.labelStatystykiPrzedmiotu.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelStatystykiPrzedmiotu.Location = new System.Drawing.Point(14, 38);
             this.labelStatystykiPrzedmiotu.MaximumSize = new System.Drawing.Size(200, 250);
@@ -881,10 +883,22 @@
             this.labelStatystykiPrzedmiotu.TabIndex = 50;
             this.labelStatystykiPrzedmiotu.Text = "Statystyki przedmiotu:";
             // 
+            // antyRozmycie
+            // 
+            this.antyRozmycie.BackColor = System.Drawing.Color.Transparent;
+            this.antyRozmycie.Location = new System.Drawing.Point(383, 106);
+            this.antyRozmycie.MaximumSize = new System.Drawing.Size(48, 48);
+            this.antyRozmycie.MinimumSize = new System.Drawing.Size(48, 48);
+            this.antyRozmycie.Name = "antyRozmycie";
+            this.antyRozmycie.Size = new System.Drawing.Size(48, 48);
+            this.antyRozmycie.TabIndex = 51;
+            this.antyRozmycie.TabStop = false;
+            // 
             // Ekwipunek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.BackgroundImage = global::Unstable.Properties.Resources.OkienkoEkwipunek;
             this.ClientSize = new System.Drawing.Size(450, 600);
             this.Controls.Add(this.labelStatystykiPrzedmiotu);
@@ -935,9 +949,10 @@
             this.Controls.Add(this.plecakSlot11);
             this.Controls.Add(this.plecakSlot8);
             this.Controls.Add(this.plecakSlot7);
-            this.Controls.Add(this.plecakSlot2);
             this.Controls.Add(this.plecakSlot1);
+            this.Controls.Add(this.plecakSlot2);
             this.Controls.Add(this.staraLokacja);
+            this.Controls.Add(this.antyRozmycie);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ekwipunek";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -992,6 +1007,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PlecakSlot45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlecakSlot46)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.antyRozmycie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1053,5 +1069,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox PlecakSlot46;
         private System.Windows.Forms.Label labelStatystykiPrzedmiotu;
+        private System.Windows.Forms.PictureBox antyRozmycie;
     }
 }

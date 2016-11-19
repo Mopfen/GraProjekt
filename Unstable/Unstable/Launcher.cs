@@ -23,13 +23,13 @@ namespace Unstable
 
             internal bool exists = true; // zmienna określa, czy postać żyje
 
-            internal int hp; //
-            internal int hpMax; // zmienne odpowiadające za ilość punktów życia postaci
+            internal int hp=25; //
+            internal int hpMax=25; // zmienne odpowiadające za ilość punktów życia postaci
 
-            internal int mana; //
-            internal int manaMax; // zmienne odpowiadają za ilość punktów many postaci
+            internal int mana=25; //
+            internal int manaMax=25; // zmienne odpowiadają za ilość punktów many postaci
 
-            internal short szansaKryta; // zmienna opowiada za procentową szansę na krytyczne uderzenie postaci
+            internal short szansaKryta=0; // zmienna opowiada za procentową szansę na krytyczne uderzenie postaci
 
             internal bool posiadaMiecz = false; // zmienna określa, czy postać posiada miecz
             internal bool posiadaŁuk = false; // zmienna określa, czy postać posiada łuk
@@ -92,9 +92,7 @@ namespace Unstable
 
             internal bool naWyposażeniu = false;
 
-            internal int pozycjaTop; //
-            internal int pozycjaLeft; //
-            internal Point Lokacja = new Point(0, 0); // zmienne określają pozycję przedmiotu w ekwipunku
+            internal Point Lokacja = new Point(0, 0); // zmienna określa pozycję przedmiotu w ekwipunku
 
             internal bool hełm = false; //
             internal bool zbroja = false; //
@@ -188,15 +186,15 @@ namespace Unstable
         internal System.Media.SoundPlayer lvUpSound = new System.Media.SoundPlayer(); // zmienna odpowiadająca za muzykę w tle
         #endregion
 
-        internal Launcher.ZmiennePostaci daneGracz = new Launcher.ZmiennePostaci(); // obiekt przechowująca informacje o graczu
-        internal Launcher.ZmiennePostaci []daneMob = new Launcher.ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o mobach
-        internal Launcher.ZmienneObiektów []danePrzeszkoda = new Launcher.ZmienneObiektów[20]; // tablica obiektów przechowujących informacje o przeszkodach
-        internal Launcher.ZmienneObiektów []daneStrzała = new Launcher.ZmienneObiektów[2]; // tablica obiekótw przechowujących informacje o strzałach wystrzelonych przez postać
-        internal Launcher.ZmienneEkwipunku []danePlecakSlot = new Launcher.ZmienneEkwipunku[47]; // tablica obiektów przechowujących informacje o przedmiocie na danym slocie w ekwipunku
-        internal Launcher.ZmienneEkwipunku[] daneDrop = new Launcher.ZmienneEkwipunku[5]; // tablica obiektów przechowujących infromacje o przedmiocie do podniesienia
-        internal Launcher.ZmienneEkwipunku daneDropKomenda = new Launcher.ZmienneEkwipunku(); // Obiekt przechowuje informacje o przedmiocie wygenerowanym przez komendę
-        internal Launcher.ZmienneBonusów daneBonusyGracz = new Launcher.ZmienneBonusów(); // obiekt przechowujący informacje o bonusach gracza
-        internal Launcher.ZmienneBonusów []daneBonusyMob = new Launcher.ZmienneBonusów[5]; // tablica obiektów przechowujących informacje o bonusach mobów
+        internal ZmiennePostaci daneGracz = new ZmiennePostaci(); // obiekt przechowująca informacje o graczu
+        internal ZmiennePostaci []daneMob = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o mobach
+        internal ZmienneObiektów []danePrzeszkoda = new ZmienneObiektów[100]; // tablica obiektów przechowujących informacje o przeszkodach
+        internal ZmienneObiektów []daneStrzała = new ZmienneObiektów[2]; // tablica obiekótw przechowujących informacje o strzałach wystrzelonych przez postać
+        internal ZmienneEkwipunku []danePlecakSlot = new ZmienneEkwipunku[47]; // tablica obiektów przechowujących informacje o przedmiocie na danym slocie w ekwipunku
+        internal ZmienneEkwipunku[] daneDrop = new ZmienneEkwipunku[5]; // tablica obiektów przechowujących infromacje o przedmiocie do podniesienia
+        internal ZmienneEkwipunku daneDropKomenda = new ZmienneEkwipunku(); // Obiekt przechowuje informacje o przedmiocie wygenerowanym przez komendę
+        internal ZmienneBonusów daneBonusyGracz = new ZmienneBonusów(); // obiekt przechowujący informacje o bonusach gracza
+        internal ZmienneBonusów []daneBonusyMob = new ZmienneBonusów[5]; // tablica obiektów przechowujących informacje o bonusach mobów
 
         public Launcher()
         {
@@ -216,28 +214,30 @@ namespace Unstable
             MenuGlowne formaMenuGlowne = new MenuGlowne(this);
 
             #region PrzypisanieDanychDoObiektówTablicowych
-            for (int i = 0; i <= 46; i++)
+            for (int i = 0; i <= 99; i++)
             {
                 if(i<2)
                 {
-                    daneStrzała[i] = new Launcher.ZmienneObiektów(); daneStrzała[0].exists = false;
+                    daneStrzała[i] = new ZmienneObiektów();
+                    daneStrzała[i].exists = false;
                 }
                 if(i<5)
                 {
-                    daneMob[i] = new Launcher.ZmiennePostaci();
+                    daneMob[i] = new ZmiennePostaci();
                     daneMob[i].exists = false;
 
-                    daneBonusyMob[i] = new Launcher.ZmienneBonusów();
+                    daneBonusyMob[i] = new ZmienneBonusów();
 
-                    daneDrop[i] = new Launcher.ZmienneEkwipunku();
+                    daneDrop[i] = new ZmienneEkwipunku();
                 }
-                if(i<20)
+                if(i<47)
                 {
-                    danePrzeszkoda[i] = new Launcher.ZmienneObiektów();
-                    danePrzeszkoda[i].exists = false;
-                }
-                danePlecakSlot[i] = new Launcher.ZmienneEkwipunku();
-                danePlecakSlot[i].exists = false;
+                    danePlecakSlot[i] = new ZmienneEkwipunku();
+                    danePlecakSlot[i].exists = false;
+                }   
+               
+                danePrzeszkoda[i] = new ZmienneObiektów();
+                danePrzeszkoda[i].exists = false;
             }
 
             #endregion
@@ -272,82 +272,102 @@ namespace Unstable
             whiteBrownShotingLeft.Image = global::Unstable.Properties.Resources.whiteBrownShotingLeft;
             whiteBrownShotingRight.Image = global::Unstable.Properties.Resources.whiteBrownShotingRight;
         }
+
         private void wczytajDaneObrazkiWhiteBlackHuman()
         {
             whiteBlackStand.Image = global::Unstable.Properties.Resources.whiteBlackStand;
         }
+
         private void wczytajDaneObrazkiWhiteBlondeHuman()
         {
             whiteBlondeStand.Image = global::Unstable.Properties.Resources.whiteBlondeStand;
         }
+
         private void wczytajDaneObrazkiWhiteRedHuman()
         {
             whiteRedStand.Image = global::Unstable.Properties.Resources.whiteRedStand;
         }
+
         private void wczytajDaneObrazkiBlackBrownHuman()
         {
             blackBrownStand.Image = global::Unstable.Properties.Resources.blackBrownStand;
         }
+
         private void wczytajDaneObrazkiBlackBlackHuman()
         {
             blackBlackStand.Image = global::Unstable.Properties.Resources.blackBlackStand;
         }
+
         private void wczytajDaneObrazkiBlackBlondeHuman()
         {
             blackBlondeStand.Image = global::Unstable.Properties.Resources.blackBlondeStand;
         }
+
         private void wczytajDaneObrazkiBlackRedHuman()
         {
             blackRedStand.Image = global::Unstable.Properties.Resources.blackRedStand;
         }
+
         private void wczytajDaneObrazkiPinkBrownHuman()
         {
             pinkBrownStand.Image = global::Unstable.Properties.Resources.pinkBrownStand;
         }
+
         private void wczytajDaneObrazkiPinkBlackHuman()
         {
             pinkBlackStand.Image = global::Unstable.Properties.Resources.pinkBlackStand;
         }
+
         private void wczytajDaneObrazkiPinkBlondeHuman()
         {
             pinkBlondeStand.Image = global::Unstable.Properties.Resources.pinkBlondeStand;
         }
+
         private void wczytajDaneObrazkiPinkRedHuman()
         {
             pinkRedStand.Image = global::Unstable.Properties.Resources.pinkRedStand;
         }
+
         private void wczytajDaneObrazkiYellowBrownHuman()
         {
             yellowBrownStand.Image = global::Unstable.Properties.Resources.yellowBrownStand;
         }
+
         private void wczytajDaneObrazkiYellowBlackHuman()
         {
             yellowBlackStand.Image = global::Unstable.Properties.Resources.yellowBlackStand;
         }
+
         private void wczytajDaneObrazkiYellowBlondeHuman()
         {
             yellowBlondeStand.Image = global::Unstable.Properties.Resources.yellowBlondeStand;
         }
+
         private void wczytajDaneObrazkiYellowRedHuman()
         {
             yellowRedStand.Image = global::Unstable.Properties.Resources.yellowRedStand;
         }
+
         private void wczytajDaneObrazkiRedBrownHuman()
         {
             redBrownStand.Image = global::Unstable.Properties.Resources.redBrownStand;
         }
+
         private void wczytajDaneObrazkiRedBlackHuman()
         {
             redBlackStand.Image = global::Unstable.Properties.Resources.redBlackStand;
         }
+
         private void wczytajDaneObrazkiRedBlondeHuman()
         {
             redBlondeStand.Image = global::Unstable.Properties.Resources.redBlondeStand;
         }
+
         private void wczytajDaneObrazkiRedRedHuman()
         {
             redRedStand.Image = global::Unstable.Properties.Resources.redRedStand;
         }
+
         private void wczytajDaneObrazkiInne()
         {
             strzałaLeft.Image = global::Unstable.Properties.Resources.StrzałaLeft;
@@ -357,6 +377,7 @@ namespace Unstable
             ZardzewiałyMiecz.Image = global::Unstable.Properties.Resources.ZardzewiałyMiecz;
             MieczSquadaka.Image = global::Unstable.Properties.Resources.MieczSquadaka;
         }
+
         private void wczytajWszystkieDane()
         {
             wczytajDaneObrazkiWhiteBrownHuman();

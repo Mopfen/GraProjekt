@@ -24,7 +24,7 @@ namespace Unstable
         {
             double dmg = 0;
 
-            dmg += daneLauncher.daneBonusyGracz.dmgZwarcie[0] + daneLauncher.daneGracz.siła *0.8;
+            dmg += 1 + daneLauncher.daneBonusyGracz.dmgZwarcie[0] + daneLauncher.daneGracz.siła *0.8;
 
             daneLauncher.daneGracz.siłaAtakuZwarcie[0] = (int)dmg;
         }
@@ -32,7 +32,7 @@ namespace Unstable
         {
             int dmg = 0;
 
-            dmg += daneLauncher.daneBonusyGracz.dmgZwarcie[1] + daneLauncher.daneGracz.siła;
+            dmg += 2 + daneLauncher.daneBonusyGracz.dmgZwarcie[1] + daneLauncher.daneGracz.siła;
 
             daneLauncher.daneGracz.siłaAtakuZwarcie[1] = dmg;
         }
@@ -41,7 +41,7 @@ namespace Unstable
         {
             double dmg = 0;
 
-            dmg += daneLauncher.daneGracz.zręczność * 0.8;
+            dmg += 1 + daneLauncher.daneGracz.zręczność * 0.8;
 
             daneLauncher.daneGracz.siłaAtakuDystans[0] = (int)dmg;
         }
@@ -49,7 +49,7 @@ namespace Unstable
         {
             int dmg = 0;
 
-            dmg += daneLauncher.daneGracz.zręczność;
+            dmg += 2 + daneLauncher.daneGracz.zręczność;
 
             daneLauncher.daneGracz.siłaAtakuDystans[1] = dmg;
         }
@@ -61,7 +61,7 @@ namespace Unstable
 
         internal void hpMaxGracz()
         {
-            daneLauncher.daneGracz.hpMax = (daneLauncher.daneGracz.lv * 10 + daneLauncher.daneGracz.wytrzymałość * 5);
+            daneLauncher.daneGracz.hpMax = (10 + daneLauncher.daneGracz.lv * 10 + daneLauncher.daneGracz.wytrzymałość * 5);
         }
         internal void manaMaxGracz()
         {
@@ -224,13 +224,14 @@ namespace Unstable
         /// <param name="obiekt">Istniejąca przeszkoda</param>
         internal void przeszkodaNaDrodze(Launcher.ZmiennePostaci idący, Launcher.ZmienneObiektów obiekt)
         {
-            if(obiekt.exists==true)
+            if (obiekt.exists == true)
             {
-                if (idący.up == true & idący.obraz.Top - obiekt.obraz.Top >= (obiekt.obraz.Height-4) & idący.obraz.Top - obiekt.obraz.Bottom < 4 & (obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width) & obiekt.obraz.Left - idący.obraz.Left < idący.obraz.Width)) { idący.obraz.Top += 4; idący.przeszkoda = true; }
-                if (idący.down == true & obiekt.obraz.Bottom - idący.obraz.Bottom >= (obiekt.obraz.Height - 4) & obiekt.obraz.Top - idący.obraz.Bottom < 4 & (obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width) & obiekt.obraz.Left - idący.obraz.Left < idący.obraz.Width)) { idący.obraz.Top -= 4; idący.przeszkoda = true; }
-                if (idący.left == true & idący.obraz.Left - obiekt.obraz.Left >= (obiekt.obraz.Width - 4) & idący.obraz.Left - obiekt.obraz.Right < 0 & (obiekt.obraz.Top - idący.obraz.Top >= (-obiekt.obraz.Height) & obiekt.obraz.Top - idący.obraz.Top < idący.obraz.Height)) { idący.obraz.Left += 2; idący.przeszkoda = true; }
-                if (idący.right == true & obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width + 4) & obiekt.obraz.Left - idący.obraz.Right < 0 & (obiekt.obraz.Top - idący.obraz.Top >= (-obiekt.obraz.Height) & obiekt.obraz.Top - idący.obraz.Top < idący.obraz.Height)) { idący.obraz.Left -= 2; idący.przeszkoda = true; }
-            }    
+                if (idący.obraz.Bounds.IntersectsWith(obiekt.obraz.Bounds))
+                {
+                    idący.obraz.Location = idący.antyRozmycie.Location;
+                    idący.przeszkoda = true;
+                }
+            }
         }
         /// <summary>
         /// Metoda sprawdza, czy na drodze postaci znajduje się przeszkoda. Jeśli tak, nie pozwala jej iść dalej.
@@ -241,10 +242,11 @@ namespace Unstable
         {
             if (obiekt.exists == true)
             {
-                if (idący.up == true & idący.obraz.Top - obiekt.obraz.Top >= (obiekt.obraz.Height - 4) & idący.obraz.Top - obiekt.obraz.Bottom < 4 & (obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width) & obiekt.obraz.Left - idący.obraz.Left < idący.obraz.Width)) { idący.obraz.Top += 4; idący.przeszkoda = true; }
-                if (idący.down == true & obiekt.obraz.Bottom - idący.obraz.Bottom >= (obiekt.obraz.Height - 4) & obiekt.obraz.Top - idący.obraz.Bottom < 4 & (obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width) & obiekt.obraz.Left - idący.obraz.Left < idący.obraz.Width)) { idący.obraz.Top -= 4; idący.przeszkoda = true; }
-                if (idący.left == true & idący.obraz.Left - obiekt.obraz.Left >= (obiekt.obraz.Width - 4) & idący.obraz.Left - obiekt.obraz.Right < 0 & (obiekt.obraz.Top - idący.obraz.Top >= (-obiekt.obraz.Height) & obiekt.obraz.Top - idący.obraz.Top < idący.obraz.Height)) { idący.obraz.Left += 2; idący.przeszkoda = true; }
-                if (idący.right == true & obiekt.obraz.Left - idący.obraz.Left >= (-obiekt.obraz.Width + 4) & obiekt.obraz.Left - idący.obraz.Right < 0 & (obiekt.obraz.Top - idący.obraz.Top >= (-obiekt.obraz.Height) & obiekt.obraz.Top - idący.obraz.Top < idący.obraz.Height)) { idący.obraz.Left -= 2; idący.przeszkoda = true; }
+                if (idący.obraz.Bounds.IntersectsWith(obiekt.obraz.Bounds))
+                {
+                    idący.obraz.Location = idący.antyRozmycie.Location;
+                    idący.przeszkoda = true;
+                }
             }
         }
 
@@ -416,12 +418,11 @@ namespace Unstable
                         {
                             if (daneLauncher.danePlecakSlot[j].Lokacja == new System.Drawing.Point(LokacjaX, LokacjaY) & daneLauncher.danePlecakSlot[j].exists == false)
                             {
-                                Launcher.ZmienneEkwipunku resetuj = new Launcher.ZmienneEkwipunku();
                                 Point kopiaLokacji = new Point();
                                 kopiaLokacji = daneLauncher.danePlecakSlot[j].Lokacja;
                                 daneLauncher.danePlecakSlot[j] = daneLauncher.daneDrop[i];
                                 daneLauncher.daneDrop[i].obraz.Visible = false;
-                                daneLauncher.daneDrop[i] = resetuj;
+                                daneLauncher.daneDrop[i] = new Launcher.ZmienneEkwipunku();
                                 daneLauncher.danePlecakSlot[j].Lokacja = kopiaLokacji;
                                 return true;
                             }

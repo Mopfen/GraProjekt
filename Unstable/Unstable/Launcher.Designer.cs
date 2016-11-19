@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.buttonStart = new System.Windows.Forms.Button();
             this.obrazek = new System.Windows.Forms.PictureBox();
             this.buttonExit = new System.Windows.Forms.Button();
@@ -76,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Unstable.Properties.Resources.TłoNowaGra;
             this.ClientSize = new System.Drawing.Size(240, 90);
             this.ControlBox = false;
             this.Controls.Add(this.buttonExit);

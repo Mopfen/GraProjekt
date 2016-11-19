@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NowaGra));
             this.buttonWróć = new System.Windows.Forms.Button();
             this.testNick = new System.Windows.Forms.Label();
             this.labelWygląd = new System.Windows.Forms.Label();
@@ -169,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Unstable.Properties.Resources.TłoNowaGra;
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.buttonGoTest);
             this.Controls.Add(this.buttonKolorSkóry_);

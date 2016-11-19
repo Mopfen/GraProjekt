@@ -1,6 +1,6 @@
 ﻿namespace Unstable
 {
-    partial class MapaStartowa
+    partial class _01Piwnica
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapaStartowa));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_01Piwnica));
             this.timerGracz = new System.Windows.Forms.Timer(this.components);
             this.timerAtakGracz = new System.Windows.Forms.Timer(this.components);
             this.timerStatystyki = new System.Windows.Forms.Timer(this.components);
@@ -85,15 +85,18 @@
             // 
             // timerGracz
             // 
+            this.timerGracz.Enabled = true;
             this.timerGracz.Interval = 50;
             this.timerGracz.Tick += new System.EventHandler(this.timerGracz_Tick);
             // 
             // timerAtakGracz
             // 
+            this.timerAtakGracz.Enabled = true;
             this.timerAtakGracz.Tick += new System.EventHandler(this.timerAtakGracz_Tick);
             // 
             // timerStatystyki
             // 
+            this.timerStatystyki.Enabled = true;
             this.timerStatystyki.Interval = 1;
             this.timerStatystyki.Tick += new System.EventHandler(this.timerStatystyki_Tick);
             // 
@@ -103,6 +106,7 @@
             // 
             // timerStrzałaGracz
             // 
+            this.timerStrzałaGracz.Enabled = true;
             this.timerStrzałaGracz.Interval = 1;
             this.timerStrzałaGracz.Tick += new System.EventHandler(this.timerStrzałaGracz_Tick);
             // 
@@ -318,7 +322,7 @@
             this.gracz.BackColor = System.Drawing.Color.Transparent;
             this.gracz.Cursor = System.Windows.Forms.Cursors.Default;
             this.gracz.Image = global::Unstable.Properties.Resources.whiteBrownStand;
-            this.gracz.Location = new System.Drawing.Point(318, 310);
+            this.gracz.Location = new System.Drawing.Point(28, 55);
             this.gracz.Margin = new System.Windows.Forms.Padding(10);
             this.gracz.MaximumSize = new System.Drawing.Size(64, 64);
             this.gracz.MinimumSize = new System.Drawing.Size(64, 64);
@@ -334,9 +338,9 @@
             this.poleGry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("poleGry.BackgroundImage")));
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
+            this.poleGry.Controls.Add(this.gracz);
             this.poleGry.Controls.Add(this.drop1);
             this.poleGry.Controls.Add(this.rozdajStatystyki);
-            this.poleGry.Controls.Add(this.gracz);
             this.poleGry.Controls.Add(this.ściana2);
             this.poleGry.Controls.Add(this.beczki2);
             this.poleGry.Controls.Add(this.beczki1);
@@ -353,7 +357,7 @@
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.wyjścieMapa1);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -25);
+            this.poleGry.Location = new System.Drawing.Point(3, -36);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
@@ -382,7 +386,7 @@
             this.rozdajStatystyki.Visible = false;
             this.rozdajStatystyki.Click += new System.EventHandler(this.rozdajStatystyki_Click);
             // 
-            // MapaStartowa
+            // _01Piwnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -393,7 +397,7 @@
             this.Controls.Add(this.poleGry);
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.Name = "MapaStartowa";
+            this.Name = "_01Piwnica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MapaStartowa";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapaStartowa_KeyDown);

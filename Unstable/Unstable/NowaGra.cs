@@ -44,16 +44,18 @@ namespace Unstable
         {
 
         }
+
         private void buttonGoTest_Click(object sender, EventArgs e)
         {
+            PrzywrócUstawieniaPoczątkowe();
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
             metodaUniwersalne.liczStatystyki();
             formaEkwipunek.Show();
             formaEkwipunek.Close();
-            MapaStartowa formaMapaStartowa = new MapaStartowa(daneLauncher);
+            _01Piwnica forma_01Piwnica = new _01Piwnica(daneLauncher);
             this.Close();
-            formaMapaStartowa.Show();
+            forma_01Piwnica.Show();
         }
 
         private void button_KolorWłosów_Click(object sender, EventArgs e)
@@ -137,6 +139,38 @@ namespace Unstable
                         case 3: this.gracz.Image = daneLauncher.redRedStand.Image; break;
                     }
                     break;
+            }
+        }
+
+        private void PrzywrócUstawieniaPoczątkowe()
+        {
+            daneLauncher.daneGracz = new Launcher.ZmiennePostaci();
+            daneLauncher.daneBonusyGracz = new Launcher.ZmienneBonusów();
+
+            for (int i = 0; i <= 99; i++)
+            {
+                if (i < 2)
+                {
+                    daneLauncher.daneStrzała[i] = new Launcher.ZmienneObiektów();
+                    daneLauncher.daneStrzała[i].exists = false;
+                }
+                if (i < 5)
+                {
+                    daneLauncher.daneMob[i] = new Launcher.ZmiennePostaci();
+                    daneLauncher.daneMob[i].exists = false;
+
+                    daneLauncher.daneBonusyMob[i] = new Launcher.ZmienneBonusów();
+
+                    daneLauncher.daneDrop[i] = new Launcher.ZmienneEkwipunku();
+                }
+                if (i < 47)
+                {
+                    daneLauncher.danePlecakSlot[i] = new Launcher.ZmienneEkwipunku();
+                    daneLauncher.danePlecakSlot[i].exists = false;
+                }
+
+                daneLauncher.danePrzeszkoda[i] = new Launcher.ZmienneObiektów();
+                daneLauncher.danePrzeszkoda[i].exists = false;
             }
         }
     }

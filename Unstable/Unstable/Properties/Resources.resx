@@ -151,6 +151,9 @@
   <data name="StrzałaLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Others\StrzałaLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MieczSquadaka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Items\MieczSquadaka.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="whiteBrownMovingDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\whiteBrownMovingDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,9 +181,6 @@
   <data name="whiteBrownShotingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\whiteBrownShotingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BrakItemu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Items\BrakItemu.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="yellowRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\yellowRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,11 +190,11 @@
   <data name="blackBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\blackBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TłoNowaGra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\TłoNowaGra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CzerwonaMiksturaMała" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Items\CzerwonaMiksturaMała.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="whiteBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="yellowBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\yellowBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,6 +205,9 @@
   <data name="whiteBrownAttackingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\whiteBrownAttackingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="whiteBrownMovingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownMovingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="blackBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\blackBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,8 +217,8 @@
   <data name="yellowBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\yellowBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="whiteBrownMovingUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownMovingUp.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BrakItemu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Items\BrakItemu.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="whiteBrownAttackingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\whiteBrownAttackingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,13 +235,16 @@
   <data name="ZardzewiałyMiecz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Items\ZardzewiałyMiecz.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="whiteBrownMovingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownMovingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OkienkoEkwipunek" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Backgrounds\OkienkoEkwipunek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MieczSquadaka" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Items\MieczSquadaka.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBrownMovingUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownMovingUp.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="01Parter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\01Parter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

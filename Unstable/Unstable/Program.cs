@@ -19,12 +19,4 @@ namespace Unstable
             Application.Run(new Launcher());
         }
     }
-    class blabla
-    {
-        public void Hit()
-        {
-            
-        }
-    }
-
 }

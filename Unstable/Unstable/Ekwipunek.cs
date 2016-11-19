@@ -16,6 +16,7 @@ namespace Unstable
         List<PictureBox> Sloty = new List<PictureBox>();
    
         Launcher daneLauncher;
+
         public Ekwipunek(Launcher dane)
         {
             InitializeComponent();
@@ -125,9 +126,10 @@ namespace Unstable
             {
                 if(ruchPlecakSlot[i]==true)
                 {
+                    if (antyRozmycie.Location != daneLauncher.danePlecakSlot[i].obraz.Location) { antyRozmycie.Location = daneLauncher.danePlecakSlot[i].obraz.Location; } // niweluje rozmycie tła podczas poruszania przedmiotem
                     daneLauncher.danePlecakSlot[i].obraz.BringToFront();
-                    daneLauncher.danePlecakSlot[i].obraz.Left = Cursor.Position.X - 590;
-                    daneLauncher.danePlecakSlot[i].obraz.Top = Cursor.Position.Y - 140;
+                    daneLauncher.danePlecakSlot[i].obraz.Left = Cursor.Position.X - 600;
+                    daneLauncher.danePlecakSlot[i].obraz.Top = Cursor.Position.Y - 150;
                 }
             }
             if (daneLauncher.statystykiPokazywane == false)
@@ -152,7 +154,7 @@ namespace Unstable
                 {
                     if (i != numerSlotu)
                     {
-                        if (daneLauncher.danePlecakSlot[numerSlotu].obraz.Left<daneLauncher.danePlecakSlot[i].obraz.Right & daneLauncher.danePlecakSlot[numerSlotu].obraz.Left> daneLauncher.danePlecakSlot[i].obraz.Left & daneLauncher.danePlecakSlot[numerSlotu].obraz.Top < daneLauncher.danePlecakSlot[i].obraz.Bottom & daneLauncher.danePlecakSlot[numerSlotu].obraz.Top > daneLauncher.danePlecakSlot[i].obraz.Top)
+                        if (daneLauncher.danePlecakSlot[numerSlotu].obraz.Bounds.IntersectsWith(daneLauncher.danePlecakSlot[i].obraz.Bounds))
                         {
                             przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 311, 40, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].hełm, daneLauncher.danePlecakSlot[i].hełm);
                             przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 311, 106, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].zbroja, daneLauncher.danePlecakSlot[i].zbroja);
@@ -164,10 +166,8 @@ namespace Unstable
                             if (przestaw == true)
                             {
                                 ruchPlecakSlot[numerSlotu] = false;
-                                daneLauncher.danePlecakSlot[numerSlotu].pozycjaLeft = daneLauncher.danePlecakSlot[numerSlotu].obraz.Left = daneLauncher.danePlecakSlot[i].obraz.Left;
-                                daneLauncher.danePlecakSlot[numerSlotu].pozycjaTop = daneLauncher.danePlecakSlot[numerSlotu].obraz.Top = daneLauncher.danePlecakSlot[i].obraz.Top;
-                                daneLauncher.danePlecakSlot[i].pozycjaLeft = daneLauncher.danePlecakSlot[i].obraz.Left = staraLokacja.Left;
-                                daneLauncher.danePlecakSlot[i].pozycjaTop = daneLauncher.danePlecakSlot[i].obraz.Top = staraLokacja.Top;
+                                daneLauncher.danePlecakSlot[numerSlotu].Lokacja = daneLauncher.danePlecakSlot[numerSlotu].obraz.Location = daneLauncher.danePlecakSlot[i].obraz.Location;
+                                daneLauncher.danePlecakSlot[i].Lokacja = daneLauncher.danePlecakSlot[i].obraz.Location = staraLokacja.Location;
                                 przestawiono = true;
                                 aktualizujDaneWyposażenia();
                             }

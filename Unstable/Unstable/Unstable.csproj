@@ -66,17 +66,23 @@
     <Compile Include="Launcher.Designer.cs">
       <DependentUpon>Launcher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mapa1.cs">
+    <Compile Include="MapaTestowa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mapa1.Designer.cs">
-      <DependentUpon>Mapa1.cs</DependentUpon>
+    <Compile Include="MapaTestowa.Designer.cs">
+      <DependentUpon>MapaTestowa.cs</DependentUpon>
     </Compile>
-    <Compile Include="MapaStartowa.cs">
+    <Compile Include="_01Parter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MapaStartowa.Designer.cs">
-      <DependentUpon>MapaStartowa.cs</DependentUpon>
+    <Compile Include="_01Parter.Designer.cs">
+      <DependentUpon>_01Parter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_01Piwnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_01Piwnica.Designer.cs">
+      <DependentUpon>_01Piwnica.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuGlowne.cs">
       <SubType>Form</SubType>
@@ -121,11 +127,14 @@
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mapa1.resx">
-      <DependentUpon>Mapa1.cs</DependentUpon>
+    <EmbeddedResource Include="MapaTestowa.resx">
+      <DependentUpon>MapaTestowa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MapaStartowa.resx">
-      <DependentUpon>MapaStartowa.cs</DependentUpon>
+    <EmbeddedResource Include="_01Parter.resx">
+      <DependentUpon>_01Parter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_01Piwnica.resx">
+      <DependentUpon>_01Piwnica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGlowne.resx">
       <DependentUpon>MenuGlowne.cs</DependentUpon>
@@ -246,6 +255,8 @@
     <None Include="Models\Items\CzerwonaMiksturaMała.gif" />
     <None Include="Models\Items\BrakItemu.gif" />
     <None Include="Models\Items\MieczSquadaka.gif" />
+    <None Include="Models\Backgrounds\01PietroPierwsze.png" />
+    <None Include="Models\Backgrounds\01Parter.png" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />

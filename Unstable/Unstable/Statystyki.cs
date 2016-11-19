@@ -30,13 +30,6 @@ namespace Unstable
                 daneLauncher.timerStatystyki.Enabled = true;
                 this.Close();
             }
-            //if (e.KeyCode == Keys.I)
-            //{
-            //    daneLauncher.timerStatystyki.Enabled = true;
-            //    this.Close();
-            //    Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
-            //    formaEkwipunek.ShowDialog();
-            //}
         }
 
         private void alaButtonExit_Click(object sender, EventArgs e)
