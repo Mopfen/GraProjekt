@@ -62,10 +62,7 @@ namespace Unstable
         /// </summary>
         internal void KeyUpMetoda(KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up)
-            {
-                daneLauncher.daneGracz.up = false; daneLauncher.daneGracz.zmianaKierunkuUp = false;
-            }
+            if (e.KeyCode == Keys.Up) { daneLauncher.daneGracz.up = false; daneLauncher.daneGracz.zmianaKierunkuUp = false;}
             if (e.KeyCode == Keys.Down) { daneLauncher.daneGracz.down = false; daneLauncher.daneGracz.zmianaKierunkuDown = false; }
             if (e.KeyCode == Keys.Left) { daneLauncher.daneGracz.left = false; daneLauncher.daneGracz.zmianaKierunkuLeft = false; }
             if (e.KeyCode == Keys.Right) { daneLauncher.daneGracz.right = false; daneLauncher.daneGracz.zmianaKierunkuRight = false; }
@@ -75,8 +72,11 @@ namespace Unstable
         /// </summary>
         internal void timerGraczMetoda()
         {
-            Gracz metodaGracz = new Gracz(daneLauncher);
-            metodaGracz.RuchGracza();
+            ZmianaWygladu metodaZmianaWygladu = new ZmianaWygladu(daneLauncher);
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+
+            metodaZmianaWygladu.ZmieńWygląd(daneLauncher.daneGracz);
+            metodaUniwersalne.RuchPostaci(daneLauncher.daneGracz);
         }
         /// <summary>
         /// Metoda wykonująca czynności w timerAtakGracz
@@ -86,6 +86,39 @@ namespace Unstable
             Gracz metodaGracz = new Unstable.Gracz(daneLauncher);
             metodaGracz.AtakGracza(timerGracz);
         }
+
+        internal void timerMobMetoda(int indeks)
+        {
+            ZmianaWygladu metodaZmianaWygladu = new ZmianaWygladu(daneLauncher);
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+
+            metodaZmianaWygladu.ZmieńWygląd(daneLauncher.daneMob[indeks]);
+            metodaUniwersalne.RuchPostaci(daneLauncher.daneMob[indeks]);
+        }
+
+        internal void timerAtakMobMetoda()
+        {
+
+        }
+        /// <summary>
+        /// Metoda wykonująca czynności w timerNPC
+        /// </summary>
+        /// <param name="timerNPC"></param>
+        /// <param name="ilość"></param>
+        internal void timerNPCMetoda(int indeks)
+        {
+            ZmianaWygladu metodaZmianaWygladu = new ZmianaWygladu(daneLauncher);
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+
+            metodaZmianaWygladu.ZmieńWygląd(daneLauncher.daneNPC[indeks]);
+            metodaUniwersalne.RuchPostaci(daneLauncher.daneNPC[indeks]);
+        }
+
+        internal void timerAtakNPCMetoda()
+        {
+
+        }
+
         /// <summary>
         /// Metoda wykonująca czynności w timerStatystyki
         /// </summary>
@@ -117,8 +150,8 @@ namespace Unstable
             if (metodaUniwersalne.śmierćGracza() == true)
             {
                 daneLauncher.daneGracz.exists = false;
-                daneLauncher.music.SoundLocation = "GameOver.wav";
-                daneLauncher.music.Play();
+                //daneLauncher.music.SoundLocation = "GameOver.wav";
+                //daneLauncher.music.Play();
                 formaGameOver.Show();
                 timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerStatystyki.Enabled = false;
             }
@@ -137,10 +170,11 @@ namespace Unstable
                 }
             }
         }
-        internal void timerStrzałaGraczMetoda(int ilośćMobow,int ilośćPrzeszkod,int ilośćŚcian, int indeksPierwszejŚciany)
+
+        internal void timerStrzałaGraczMetoda(int ilośćMobow, int ilośćPrzeszkod, int indeksPierwszejPrzeszkody, int ilośćŚcian, int indeksPierwszejŚciany)
         {
             Gracz metodaGracz = new Gracz(daneLauncher);
-            metodaGracz.StrzalaGracz(ilośćMobow,ilośćPrzeszkod,ilośćŚcian,indeksPierwszejŚciany);
+            metodaGracz.StrzalaGracz(ilośćMobow, ilośćPrzeszkod, indeksPierwszejPrzeszkody, ilośćŚcian,indeksPierwszejŚciany);
         }
     }
 }

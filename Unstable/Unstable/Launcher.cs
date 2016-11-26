@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Unstable
 {
@@ -21,7 +22,7 @@ namespace Unstable
             internal PictureBox obraz; // zmienna odpowiadająca za wygląd postaci
             internal PictureBox antyRozmycie; // zmienna niwelująca rozmycie podczas poruszania się obiektu
 
-            internal bool exists = true; // zmienna określa, czy postać żyje
+            internal bool exists = false; // zmienna określa, czy postać żyje
 
             internal int hp=25; //
             internal int hpMax=25; // zmienne odpowiadające za ilość punktów życia postaci
@@ -70,6 +71,9 @@ namespace Unstable
 
             internal int stopMoving = 0; // zlicza czas przetrzymania postaci podczas ataku
 
+            internal bool[] dotartoDoX = new bool[10]; //
+            internal bool[] dotartoDoY = new bool[10]; // zmienne określają, czy potać dotarła do danego punktu
+
             internal Label labelhp; // pokazuje stan zdrowia postaci
         }
         /// <summary>
@@ -79,7 +83,7 @@ namespace Unstable
         {
             internal PictureBox obraz; // zmienna odpowiadająca za wygląd obiektu
 
-            internal bool exists = true; // zmienna określa, czy obiekt istnieje
+            internal bool exists = false; // zmienna określa, czy obiekt istnieje
         }
         /// <summary>
         /// Klasa przechowuje zmienne, na których opiera się każdy przedmiot
@@ -109,6 +113,8 @@ namespace Unstable
             internal short szansaKryta = 0; // zmienna przechowuje dane o statystyce przedmiotu: Szansa na krytyczne uderzenie
 
             internal short id = 0; // określa id przedmiotu
+
+            internal int numerLokacji = 0; // określa numer lokacji, w której znajduje się przedmiot
         }
         /// <summary>
         /// Klasa przechowuje zmienne, na których opierają się bonusy postaci
@@ -121,6 +127,29 @@ namespace Unstable
             internal int hp = 0; // zmienna przechowuje dane o bonusie: Punkty Życia
             internal int mana = 0; // zmienna przechowuje dane o bonusie: Punkty Many
             internal short szansaKryta = 0; // zmienna przechowuje dane o bonusie: Szansa na krytyczne uderzenie
+        }
+        /// <summary>
+        /// Klasa przechowuje zmienne, na których opierają się misje
+        /// </summary>
+        internal class ZmienneMisji
+        {
+            /// <summary>
+            /// Zmienna określa stan misji. 0 - nieaktywna, 1 - aktywna, 2 - zakończona sukcesem, 3 - zakończona niepowodzeniem
+            /// </summary>
+            internal short stan = 0;
+            internal short etap = 0; // Zmienna określa etap, na którym znajduje się misja
+
+            internal int exp = 0; // zmienna określa, ile punktów doświadczenia dostaje się za pomyślne ukończenie misji
+            internal int gold = 0; // zmienna określa, ile złota dostaje się za pomyślne ukończenie misji
+        }
+        /// <summary>
+        /// Klasa przechowuje zmienne, które określają szczegóły na temat mapy, na której się obecnie znajduje gracz
+        /// </summary>
+        internal class ZmienneMap
+        {
+            internal bool[] częśćMapyOdwiedzona = new bool[20]; // tablica przechowuje informacje o tym, czy dana część mapy została już odwiedzona
+            internal short numerLokacji = 0; // zmienna określa, w której częsci mapy gracz aktualnie się znajduje
+            internal short gdzieOstatnio = 0; // zmienna określa, w której częsci mapy gracz był ostatnio
         }
 
         #region zmienneWygląduObiektów
@@ -177,31 +206,44 @@ namespace Unstable
 
         internal bool statystykiPokazywane = false; // zmienna odpowiadająca za sprawdzenie, czy statystyki przedmiotu w ekwipunku są aktualnie wyświetlane
 
-        internal Timer timerStatystyki; // zmienna odpowiadająca za działanie timera
+        internal System.Windows.Forms.Timer timerStatystyki; // zmienna odpowiadająca za działanie timera
 
         internal string komenda = ""; // zmienna przechowująca dane komendy
         internal bool komendaOK = true; // zmienna sprawdza, czy iżytkownik podaje poprawny ciąg znaków komendy
 
-        internal System.Media.SoundPlayer music = new System.Media.SoundPlayer(); // zmienna odpowiadająca za muzykę w tle
-        internal System.Media.SoundPlayer lvUpSound = new System.Media.SoundPlayer(); // zmienna odpowiadająca za muzykę w tle
+        internal int numerMapy = 0; // zmienna określa na jakiej mapie znajduje się gracz
+
+        internal bool muzykaMenu = false; // zmienna sprawdza, czy muzka w menu jest odtwarzana
+
+        internal bool danoOdpowiedź1 = false; //
+        internal bool danoOdpowiedź2 = false; //
+        internal bool danoOdpowiedź3 = false; // zmiene sprawdzają, której odpowiedzi dokonał gracz
+
+        internal Thread wątekMuzyka; // zmienna umozliwia wykonywanie wątku odtwarzającego muzykę w tle
+        
         #endregion
 
         internal ZmiennePostaci daneGracz = new ZmiennePostaci(); // obiekt przechowująca informacje o graczu
         internal ZmiennePostaci []daneMob = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o mobach
+        internal ZmiennePostaci[] daneNPC = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o NPC
         internal ZmienneObiektów []danePrzeszkoda = new ZmienneObiektów[100]; // tablica obiektów przechowujących informacje o przeszkodach
         internal ZmienneObiektów []daneStrzała = new ZmienneObiektów[2]; // tablica obiekótw przechowujących informacje o strzałach wystrzelonych przez postać
         internal ZmienneEkwipunku []danePlecakSlot = new ZmienneEkwipunku[47]; // tablica obiektów przechowujących informacje o przedmiocie na danym slocie w ekwipunku
         internal ZmienneEkwipunku[] daneDrop = new ZmienneEkwipunku[5]; // tablica obiektów przechowujących infromacje o przedmiocie do podniesienia
-        internal ZmienneEkwipunku daneDropKomenda = new ZmienneEkwipunku(); // Obiekt przechowuje informacje o przedmiocie wygenerowanym przez komendę
+        internal ZmienneEkwipunku daneDropKomenda = new ZmienneEkwipunku(); // obiekt przechowuje informacje o przedmiocie wygenerowanym przez komendę
         internal ZmienneBonusów daneBonusyGracz = new ZmienneBonusów(); // obiekt przechowujący informacje o bonusach gracza
         internal ZmienneBonusów []daneBonusyMob = new ZmienneBonusów[5]; // tablica obiektów przechowujących informacje o bonusach mobów
+        internal ZmienneMisji[]daneQuest = new ZmienneMisji[100]; // tablica obiektów przechowujących informacje na temat misji
+        internal ZmienneMap []daneMapa = new ZmienneMap[100]; // tablica obiektów przechowujących szczegóły o mapie, na której znajduje się obecnie gracz
 
         public Launcher()
         {
             InitializeComponent();
 
             DoubleBuffered = true;
-            lvUpSound.SoundLocation = "lvUp.wav";
+
+            music.settings.setMode("loop", true);
+            music.Ctlcontrols.play();
         }
 
         private void Launcher_Load(object sender, EventArgs e)
@@ -211,6 +253,7 @@ namespace Unstable
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+
             MenuGlowne formaMenuGlowne = new MenuGlowne(this);
 
             #region PrzypisanieDanychDoObiektówTablicowych
@@ -219,12 +262,12 @@ namespace Unstable
                 if(i<2)
                 {
                     daneStrzała[i] = new ZmienneObiektów();
-                    daneStrzała[i].exists = false;
                 }
                 if(i<5)
                 {
                     daneMob[i] = new ZmiennePostaci();
-                    daneMob[i].exists = false;
+
+                    daneNPC[i] = new ZmiennePostaci();
 
                     daneBonusyMob[i] = new ZmienneBonusów();
 
@@ -233,11 +276,22 @@ namespace Unstable
                 if(i<47)
                 {
                     danePlecakSlot[i] = new ZmienneEkwipunku();
-                    danePlecakSlot[i].exists = false;
                 }   
                
                 danePrzeszkoda[i] = new ZmienneObiektów();
-                danePrzeszkoda[i].exists = false;
+                daneQuest[i] = new ZmienneMisji();
+                daneMapa[i] = new ZmienneMap();
+
+                for(int j=0;j<=19;j++)
+                {
+                    if (i<5 & j < 10)
+                    {
+                        daneNPC[i].dotartoDoX[j] = false;
+                        daneNPC[i].dotartoDoY[j] = false;
+                    }
+                    daneMapa[i].częśćMapyOdwiedzona[j] = false;
+                }
+                
             }
 
             #endregion

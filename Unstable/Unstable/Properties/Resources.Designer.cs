@@ -63,6 +63,16 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _01Dziedziniec {
+            get {
+                object obj = ResourceManager.GetObject("01Dziedziniec", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _01Parter {
             get {
                 object obj = ResourceManager.GetObject("01Parter", resourceCulture);
@@ -143,6 +153,44 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Drzwi {
+            get {
+                object obj = ResourceManager.GetObject("Drzwi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream GameOver {
+            get {
+                return ResourceManager.GetStream("GameOver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kukła {
+            get {
+                object obj = ResourceManager.GetObject("Kukła", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream lvUp {
+            get {
+                return ResourceManager.GetStream("lvUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MieczSquadaka {
             get {
                 object obj = ResourceManager.GetObject("MieczSquadaka", resourceCulture);
@@ -166,6 +214,26 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap OkienkoStatystyki {
             get {
                 object obj = ResourceManager.GetObject("OkienkoStatystyki", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelDialogu {
+            get {
+                object obj = ResourceManager.GetObject("PanelDialogu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelDialogu1 {
+            get {
+                object obj = ResourceManager.GetObject("PanelDialogu1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -277,6 +345,24 @@ namespace Unstable.Properties {
             get {
                 object obj = ResourceManager.GetObject("rozdajStatystyki", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Soundtrack1 {
+            get {
+                return ResourceManager.GetStream("Soundtrack1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream SoundtrackMenu {
+            get {
+                return ResourceManager.GetStream("SoundtrackMenu", resourceCulture);
             }
         }
         

@@ -72,6 +72,16 @@
     <Compile Include="MapaTestowa.Designer.cs">
       <DependentUpon>MapaTestowa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Muzyka.cs" />
+    <Compile Include="NPC.cs" />
+    <Compile Include="Wątki.cs" />
+    <Compile Include="ZmianaWygladu.cs" />
+    <Compile Include="_01Dziedziniec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_01Dziedziniec.Designer.cs">
+      <DependentUpon>_01Dziedziniec.cs</DependentUpon>
+    </Compile>
     <Compile Include="_01Parter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MapaTestowa.resx">
       <DependentUpon>MapaTestowa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_01Dziedziniec.resx">
+      <DependentUpon>_01Dziedziniec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_01Parter.resx">
       <DependentUpon>_01Parter.cs</DependentUpon>
@@ -257,6 +270,14 @@
     <None Include="Models\Items\MieczSquadaka.gif" />
     <None Include="Models\Backgrounds\01PietroPierwsze.png" />
     <None Include="Models\Backgrounds\01Parter.png" />
+    <None Include="Models\Backgrounds\PanelDialogu.png" />
+    <None Include="bin\Debug\Soundtrack1.wav" />
+    <None Include="bin\Debug\GameOver.wav" />
+    <None Include="bin\Debug\lvUp.wav" />
+    <None Include="bin\Debug\SoundtrackMenu.wav" />
+    <None Include="Models\Objekty\Drzwi.png" />
+    <None Include="Models\Backgrounds\01Dziedziniec.png" />
+    <None Include="Models\Objekty\Kukła.gif" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />
@@ -264,6 +285,25 @@
     <None Include="Models\Player\whiteBrownShotingLeft.gif" />
     <None Include="Models\Player\whiteBrownShotingRight.gif" />
     <Content Include="Models\Player\whiteBrownStand.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

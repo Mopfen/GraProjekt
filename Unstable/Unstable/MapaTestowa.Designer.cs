@@ -80,7 +80,7 @@
             // timerMob
             // 
             this.timerMob.Enabled = true;
-            this.timerMob.Interval = 1;
+            this.timerMob.Interval = 50;
             this.timerMob.Tick += new System.EventHandler(this.timerMob_Tick);
             // 
             // timerAtakMob
@@ -174,7 +174,7 @@
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.underMob);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -25);
+            this.poleGry.Location = new System.Drawing.Point(3, -47);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);

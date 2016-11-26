@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Unstable
 {
@@ -24,11 +25,14 @@ namespace Unstable
 
             DoubleBuffered = true;
 
+            daneLauncher.numerMapy = 1;
+
             #region Test
             timerGracz.Interval = 1;
 
             #endregion
             #region WczytajDaneMapy
+            daneLauncher.daneMapa[1].numerLokacji = 0;
             this.poleGry.Location = new System.Drawing.Point(3, -3);
             daneLauncher.daneGracz.obraz = gracz;
             daneLauncher.daneGracz.antyRozmycie = underGracz;
@@ -41,10 +45,18 @@ namespace Unstable
             daneLauncher.daneDrop[0].miecz = true;
             daneLauncher.daneDrop[0].dmgZwarcie[0] = 3;
             daneLauncher.daneDrop[0].dmgZwarcie[1] = 5;
+            daneLauncher.daneDrop[0].numerLokacji = daneLauncher.daneMapa[1].numerLokacji;
 
             daneLauncher.daneStrzała[0].obraz = strzałaGracz;
             daneLauncher.daneStrzała[0].obraz.Visible = false;
 
+            #region UstawGracza
+            if (daneLauncher.daneMapa[1].gdzieOstatnio == 1)
+            {
+                daneLauncher.daneGracz.obraz.Location = new Point(525, 22);
+            }
+
+            #endregion
             #region Przeszkody
             przeszkody.Add(beczka1);
             przeszkody.Add(beczka2);
@@ -61,16 +73,30 @@ namespace Unstable
 
             for (int i = 0; i <= 11; i++)
             {
-                daneLauncher.danePrzeszkoda[i].exists = true;
-                daneLauncher.danePrzeszkoda[i].obraz = przeszkody[i];                
+                if(daneLauncher.daneMapa[1].częśćMapyOdwiedzona[0]==false)
+                {
+                    Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+                    daneLauncher.danePrzeszkoda[i].exists = true;
+                    daneLauncher.wątekMuzyka = new Thread(metodaMuzyka.Soundtrack1);
+                    daneLauncher.wątekMuzyka.Start();
+                }
+                daneLauncher.danePrzeszkoda[i].obraz = przeszkody[i];
+                if(daneLauncher.danePrzeszkoda[i].exists==false)
+                {
+                    daneLauncher.danePrzeszkoda[i].obraz.Visible = false;
+                }                
             }
+            daneLauncher.daneMapa[1].częśćMapyOdwiedzona[0] = true;
+            daneLauncher.daneMapa[1].gdzieOstatnio = 0;
+
+            #endregion
+            #region ZatrzymajGracza
+            daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = false;
 
             #endregion
 
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
             daneLauncher.timerStatystyki = timerStatystyki;
-            daneLauncher.music.SoundLocation = "Soundtrack1.wav";
-            daneLauncher.music.PlayLooping();
 
             #endregion
         }
@@ -81,13 +107,13 @@ namespace Unstable
             formaStatystyki.ShowDialog();
         }
 
-        private void MapaStartowa_KeyDown(object sender, KeyEventArgs e)
+        private void TheKeyDown(object sender, KeyEventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.KeyDownMetoda(this, e);
             if (e.KeyCode == Keys.Z)
             {
-                if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(wyjścieMapa1.Bounds))
+                if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(wyjścieParter.Bounds))
                 {
                     daneLauncher.daneStrzała[0].obraz.Visible = false;
                     daneLauncher.daneStrzała[0].exists = false;
@@ -101,7 +127,7 @@ namespace Unstable
             }
         }
 
-        private void MapaStartowa_KeyUp(object sender, KeyEventArgs e)
+        private void TheKeyUp(object sender, KeyEventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.KeyUpMetoda(e);
@@ -111,8 +137,10 @@ namespace Unstable
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             for(int i=0;i<=11;i++)
-            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
-
+            {
+                metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
+            }
+            
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.timerGraczMetoda();
         }
@@ -132,7 +160,7 @@ namespace Unstable
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerStrzałaGraczMetoda(0,8,2,10);
+            metodaMap.timerStrzałaGraczMetoda(0,8,0,2,10);
         }
     }
 }

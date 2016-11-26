@@ -35,19 +35,22 @@
             this.timerStrzałaGracz = new System.Windows.Forms.Timer(this.components);
             this.timerAtakMob = new System.Windows.Forms.Timer(this.components);
             this.timerMob = new System.Windows.Forms.Timer(this.components);
-            this.poleGry = new System.Windows.Forms.Panel();
+            this.timerNPC = new System.Windows.Forms.Timer(this.components);
             this.panelStatystyk = new System.Windows.Forms.Panel();
             this.labelExpGracz = new System.Windows.Forms.Label();
             this.labelLvGracz = new System.Windows.Forms.Label();
             this.labelManaGracz = new System.Windows.Forms.Label();
             this.hitLog = new System.Windows.Forms.Label();
             this.labelHpGracz = new System.Windows.Forms.Label();
+            this.poleGry = new System.Windows.Forms.Panel();
+            this.drzwiRightOpened = new System.Windows.Forms.PictureBox();
+            this.gracz = new System.Windows.Forms.PictureBox();
+            this.Perqun = new System.Windows.Forms.PictureBox();
             this.stolik = new System.Windows.Forms.PictureBox();
             this.strzałaGracz = new System.Windows.Forms.PictureBox();
             this.ściana1 = new System.Windows.Forms.PictureBox();
             this.ściana3 = new System.Windows.Forms.PictureBox();
             this.rozdajStatystyki = new System.Windows.Forms.PictureBox();
-            this.gracz = new System.Windows.Forms.PictureBox();
             this.ściana2 = new System.Windows.Forms.PictureBox();
             this.beczki = new System.Windows.Forms.PictureBox();
             this.beczka3 = new System.Windows.Forms.PictureBox();
@@ -55,14 +58,29 @@
             this.beczka1 = new System.Windows.Forms.PictureBox();
             this.underGracz = new System.Windows.Forms.PictureBox();
             this.wyjścieMapa1 = new System.Windows.Forms.PictureBox();
-            this.poleGry.SuspendLayout();
+            this.wyjściePiwnica = new System.Windows.Forms.PictureBox();
+            this.underPerqun = new System.Windows.Forms.PictureBox();
+            this.wyjściePiętroPierwsze = new System.Windows.Forms.PictureBox();
+            this.panelDialogu = new System.Windows.Forms.Panel();
+            this.odpowiedź3 = new System.Windows.Forms.Label();
+            this.odpowiedź2 = new System.Windows.Forms.Label();
+            this.odpowiedź1 = new System.Windows.Forms.Label();
+            this.alaButtonOdpowiedź3 = new System.Windows.Forms.PictureBox();
+            this.alaButtonOdpowiedź2 = new System.Windows.Forms.PictureBox();
+            this.alaButtonOdpowiedź1 = new System.Windows.Forms.PictureBox();
+            this.avatar = new System.Windows.Forms.PictureBox();
+            this.labelDialogNPC = new System.Windows.Forms.Label();
+            this.wyjścieDziedziniec = new System.Windows.Forms.PictureBox();
             this.panelStatystyk.SuspendLayout();
+            this.poleGry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drzwiRightOpened)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Perqun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stolik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beczki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beczka3)).BeginInit();
@@ -70,6 +88,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.beczka1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wyjścieMapa1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjściePiwnica)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.underPerqun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjściePiętroPierwsze)).BeginInit();
+            this.panelDialogu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjścieDziedziniec)).BeginInit();
             this.SuspendLayout();
             // 
             // timerGracz
@@ -99,32 +126,11 @@
             // 
             this.timerMob.Interval = 50;
             // 
-            // poleGry
+            // timerNPC
             // 
-            this.poleGry.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.poleGry.BackColor = System.Drawing.Color.Transparent;
-            this.poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Parter;
-            this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.poleGry.CausesValidation = false;
-            this.poleGry.Controls.Add(this.stolik);
-            this.poleGry.Controls.Add(this.strzałaGracz);
-            this.poleGry.Controls.Add(this.ściana1);
-            this.poleGry.Controls.Add(this.ściana3);
-            this.poleGry.Controls.Add(this.rozdajStatystyki);
-            this.poleGry.Controls.Add(this.gracz);
-            this.poleGry.Controls.Add(this.ściana2);
-            this.poleGry.Controls.Add(this.beczki);
-            this.poleGry.Controls.Add(this.beczka3);
-            this.poleGry.Controls.Add(this.beczka2);
-            this.poleGry.Controls.Add(this.beczka1);
-            this.poleGry.Controls.Add(this.underGracz);
-            this.poleGry.Controls.Add(this.wyjścieMapa1);
-            this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -3);
-            this.poleGry.Name = "poleGry";
-            this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.poleGry.Size = new System.Drawing.Size(780, 450);
-            this.poleGry.TabIndex = 8;
+            this.timerNPC.Enabled = true;
+            this.timerNPC.Interval = 1;
+            this.timerNPC.Tick += new System.EventHandler(this.timerNPC_Tick);
             // 
             // panelStatystyk
             // 
@@ -135,7 +141,7 @@
             this.panelStatystyk.Controls.Add(this.labelManaGracz);
             this.panelStatystyk.Controls.Add(this.hitLog);
             this.panelStatystyk.Controls.Add(this.labelHpGracz);
-            this.panelStatystyk.Location = new System.Drawing.Point(3, 445);
+            this.panelStatystyk.Location = new System.Drawing.Point(3, 425);
             this.panelStatystyk.Name = "panelStatystyk";
             this.panelStatystyk.Size = new System.Drawing.Size(780, 115);
             this.panelStatystyk.TabIndex = 35;
@@ -197,6 +203,77 @@
             this.labelHpGracz.TabIndex = 4;
             this.labelHpGracz.Text = "hpGracz";
             // 
+            // poleGry
+            // 
+            this.poleGry.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.poleGry.BackColor = System.Drawing.Color.Transparent;
+            this.poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Parter;
+            this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.poleGry.CausesValidation = false;
+            this.poleGry.Controls.Add(this.drzwiRightOpened);
+            this.poleGry.Controls.Add(this.gracz);
+            this.poleGry.Controls.Add(this.Perqun);
+            this.poleGry.Controls.Add(this.stolik);
+            this.poleGry.Controls.Add(this.strzałaGracz);
+            this.poleGry.Controls.Add(this.ściana1);
+            this.poleGry.Controls.Add(this.ściana3);
+            this.poleGry.Controls.Add(this.rozdajStatystyki);
+            this.poleGry.Controls.Add(this.ściana2);
+            this.poleGry.Controls.Add(this.beczki);
+            this.poleGry.Controls.Add(this.beczka3);
+            this.poleGry.Controls.Add(this.beczka2);
+            this.poleGry.Controls.Add(this.beczka1);
+            this.poleGry.Controls.Add(this.underGracz);
+            this.poleGry.Controls.Add(this.wyjścieMapa1);
+            this.poleGry.Controls.Add(this.wyjściePiwnica);
+            this.poleGry.Controls.Add(this.underPerqun);
+            this.poleGry.Controls.Add(this.wyjściePiętroPierwsze);
+            this.poleGry.Controls.Add(this.wyjścieDziedziniec);
+            this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.poleGry.Location = new System.Drawing.Point(3, -3);
+            this.poleGry.Name = "poleGry";
+            this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.poleGry.Size = new System.Drawing.Size(780, 450);
+            this.poleGry.TabIndex = 8;
+            // 
+            // drzwiRightOpened
+            // 
+            this.drzwiRightOpened.Image = global::Unstable.Properties.Resources.Drzwi;
+            this.drzwiRightOpened.Location = new System.Drawing.Point(695, 303);
+            this.drzwiRightOpened.MaximumSize = new System.Drawing.Size(78, 10);
+            this.drzwiRightOpened.Name = "drzwiRightOpened";
+            this.drzwiRightOpened.Size = new System.Drawing.Size(78, 10);
+            this.drzwiRightOpened.TabIndex = 39;
+            this.drzwiRightOpened.TabStop = false;
+            // 
+            // gracz
+            // 
+            this.gracz.BackColor = System.Drawing.Color.Transparent;
+            this.gracz.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gracz.Image = global::Unstable.Properties.Resources.whiteBrownStand;
+            this.gracz.Location = new System.Drawing.Point(79, 262);
+            this.gracz.Margin = new System.Windows.Forms.Padding(10);
+            this.gracz.MaximumSize = new System.Drawing.Size(64, 64);
+            this.gracz.MinimumSize = new System.Drawing.Size(64, 64);
+            this.gracz.Name = "gracz";
+            this.gracz.Size = new System.Drawing.Size(64, 64);
+            this.gracz.TabIndex = 0;
+            this.gracz.TabStop = false;
+            // 
+            // Perqun
+            // 
+            this.Perqun.BackColor = System.Drawing.Color.Transparent;
+            this.Perqun.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Perqun.Image = global::Unstable.Properties.Resources.whiteBrownStand;
+            this.Perqun.Location = new System.Drawing.Point(519, 262);
+            this.Perqun.Margin = new System.Windows.Forms.Padding(10);
+            this.Perqun.MaximumSize = new System.Drawing.Size(64, 64);
+            this.Perqun.MinimumSize = new System.Drawing.Size(64, 64);
+            this.Perqun.Name = "Perqun";
+            this.Perqun.Size = new System.Drawing.Size(64, 64);
+            this.Perqun.TabIndex = 36;
+            this.Perqun.TabStop = false;
+            // 
             // stolik
             // 
             this.stolik.Location = new System.Drawing.Point(378, 15);
@@ -244,20 +321,7 @@
             this.rozdajStatystyki.TabIndex = 32;
             this.rozdajStatystyki.TabStop = false;
             this.rozdajStatystyki.Visible = false;
-            // 
-            // gracz
-            // 
-            this.gracz.BackColor = System.Drawing.Color.Transparent;
-            this.gracz.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gracz.Image = global::Unstable.Properties.Resources.whiteBrownStand;
-            this.gracz.Location = new System.Drawing.Point(79, 262);
-            this.gracz.Margin = new System.Windows.Forms.Padding(10);
-            this.gracz.MaximumSize = new System.Drawing.Size(64, 64);
-            this.gracz.MinimumSize = new System.Drawing.Size(64, 64);
-            this.gracz.Name = "gracz";
-            this.gracz.Size = new System.Drawing.Size(64, 64);
-            this.gracz.TabIndex = 0;
-            this.gracz.TabStop = false;
+            this.rozdajStatystyki.Click += new System.EventHandler(this.rozdajStatystyki_Click);
             // 
             // ściana2
             // 
@@ -323,7 +387,151 @@
             this.wyjścieMapa1.TabIndex = 4;
             this.wyjścieMapa1.TabStop = false;
             // 
-            // _01PietroPierwsze
+            // wyjściePiwnica
+            // 
+            this.wyjściePiwnica.Location = new System.Drawing.Point(219, 15);
+            this.wyjściePiwnica.Name = "wyjściePiwnica";
+            this.wyjściePiwnica.Size = new System.Drawing.Size(43, 64);
+            this.wyjściePiwnica.TabIndex = 35;
+            this.wyjściePiwnica.TabStop = false;
+            // 
+            // underPerqun
+            // 
+            this.underPerqun.Location = new System.Drawing.Point(519, 262);
+            this.underPerqun.MaximumSize = new System.Drawing.Size(64, 64);
+            this.underPerqun.MinimumSize = new System.Drawing.Size(64, 64);
+            this.underPerqun.Name = "underPerqun";
+            this.underPerqun.Size = new System.Drawing.Size(64, 64);
+            this.underPerqun.TabIndex = 37;
+            this.underPerqun.TabStop = false;
+            // 
+            // wyjściePiętroPierwsze
+            // 
+            this.wyjściePiętroPierwsze.Location = new System.Drawing.Point(103, 15);
+            this.wyjściePiętroPierwsze.Name = "wyjściePiętroPierwsze";
+            this.wyjściePiętroPierwsze.Size = new System.Drawing.Size(43, 64);
+            this.wyjściePiętroPierwsze.TabIndex = 38;
+            this.wyjściePiętroPierwsze.TabStop = false;
+            // 
+            // panelDialogu
+            // 
+            this.panelDialogu.BackColor = System.Drawing.Color.Snow;
+            this.panelDialogu.BackgroundImage = global::Unstable.Properties.Resources.PanelDialogu;
+            this.panelDialogu.Controls.Add(this.odpowiedź3);
+            this.panelDialogu.Controls.Add(this.odpowiedź2);
+            this.panelDialogu.Controls.Add(this.odpowiedź1);
+            this.panelDialogu.Controls.Add(this.alaButtonOdpowiedź3);
+            this.panelDialogu.Controls.Add(this.alaButtonOdpowiedź2);
+            this.panelDialogu.Controls.Add(this.alaButtonOdpowiedź1);
+            this.panelDialogu.Controls.Add(this.avatar);
+            this.panelDialogu.Controls.Add(this.labelDialogNPC);
+            this.panelDialogu.Location = new System.Drawing.Point(3, 445);
+            this.panelDialogu.Name = "panelDialogu";
+            this.panelDialogu.Size = new System.Drawing.Size(780, 115);
+            this.panelDialogu.TabIndex = 37;
+            // 
+            // odpowiedź3
+            // 
+            this.odpowiedź3.AutoSize = true;
+            this.odpowiedź3.BackColor = System.Drawing.Color.Transparent;
+            this.odpowiedź3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.odpowiedź3.Location = new System.Drawing.Point(183, 84);
+            this.odpowiedź3.MaximumSize = new System.Drawing.Size(400, 24);
+            this.odpowiedź3.MinimumSize = new System.Drawing.Size(400, 24);
+            this.odpowiedź3.Name = "odpowiedź3";
+            this.odpowiedź3.Size = new System.Drawing.Size(400, 24);
+            this.odpowiedź3.TabIndex = 7;
+            this.odpowiedź3.Text = "Odpowiedź3";
+            // 
+            // odpowiedź2
+            // 
+            this.odpowiedź2.AutoSize = true;
+            this.odpowiedź2.BackColor = System.Drawing.Color.Transparent;
+            this.odpowiedź2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.odpowiedź2.Location = new System.Drawing.Point(183, 59);
+            this.odpowiedź2.MaximumSize = new System.Drawing.Size(400, 24);
+            this.odpowiedź2.MinimumSize = new System.Drawing.Size(400, 24);
+            this.odpowiedź2.Name = "odpowiedź2";
+            this.odpowiedź2.Size = new System.Drawing.Size(400, 24);
+            this.odpowiedź2.TabIndex = 6;
+            this.odpowiedź2.Text = "Odpowiedź2";
+            // 
+            // odpowiedź1
+            // 
+            this.odpowiedź1.AutoSize = true;
+            this.odpowiedź1.BackColor = System.Drawing.Color.Transparent;
+            this.odpowiedź1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.odpowiedź1.Location = new System.Drawing.Point(184, 33);
+            this.odpowiedź1.MaximumSize = new System.Drawing.Size(400, 24);
+            this.odpowiedź1.MinimumSize = new System.Drawing.Size(400, 24);
+            this.odpowiedź1.Name = "odpowiedź1";
+            this.odpowiedź1.Size = new System.Drawing.Size(400, 24);
+            this.odpowiedź1.TabIndex = 5;
+            this.odpowiedź1.Text = "Odpowiedź1";
+            // 
+            // alaButtonOdpowiedź3
+            // 
+            this.alaButtonOdpowiedź3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonOdpowiedź3.Location = new System.Drawing.Point(157, 87);
+            this.alaButtonOdpowiedź3.Name = "alaButtonOdpowiedź3";
+            this.alaButtonOdpowiedź3.Size = new System.Drawing.Size(24, 24);
+            this.alaButtonOdpowiedź3.TabIndex = 4;
+            this.alaButtonOdpowiedź3.TabStop = false;
+            this.alaButtonOdpowiedź3.Click += new System.EventHandler(this.alaButtonOdpowiedź3_Click);
+            // 
+            // alaButtonOdpowiedź2
+            // 
+            this.alaButtonOdpowiedź2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonOdpowiedź2.Location = new System.Drawing.Point(157, 61);
+            this.alaButtonOdpowiedź2.Name = "alaButtonOdpowiedź2";
+            this.alaButtonOdpowiedź2.Size = new System.Drawing.Size(24, 24);
+            this.alaButtonOdpowiedź2.TabIndex = 3;
+            this.alaButtonOdpowiedź2.TabStop = false;
+            this.alaButtonOdpowiedź2.Click += new System.EventHandler(this.alaButtonOdpowiedź2_Click);
+            // 
+            // alaButtonOdpowiedź1
+            // 
+            this.alaButtonOdpowiedź1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonOdpowiedź1.Location = new System.Drawing.Point(157, 34);
+            this.alaButtonOdpowiedź1.Name = "alaButtonOdpowiedź1";
+            this.alaButtonOdpowiedź1.Size = new System.Drawing.Size(24, 24);
+            this.alaButtonOdpowiedź1.TabIndex = 2;
+            this.alaButtonOdpowiedź1.TabStop = false;
+            this.alaButtonOdpowiedź1.Click += new System.EventHandler(this.alaButtonOdpowiedź1_Click);
+            // 
+            // avatar
+            // 
+            this.avatar.Image = global::Unstable.Properties.Resources._01Parter;
+            this.avatar.Location = new System.Drawing.Point(9, 8);
+            this.avatar.Name = "avatar";
+            this.avatar.Size = new System.Drawing.Size(100, 100);
+            this.avatar.TabIndex = 1;
+            this.avatar.TabStop = false;
+            // 
+            // labelDialogNPC
+            // 
+            this.labelDialogNPC.AutoSize = true;
+            this.labelDialogNPC.BackColor = System.Drawing.Color.Transparent;
+            this.labelDialogNPC.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelDialogNPC.Location = new System.Drawing.Point(150, 5);
+            this.labelDialogNPC.MaximumSize = new System.Drawing.Size(600, 100);
+            this.labelDialogNPC.MinimumSize = new System.Drawing.Size(600, 100);
+            this.labelDialogNPC.Name = "labelDialogNPC";
+            this.labelDialogNPC.Size = new System.Drawing.Size(600, 100);
+            this.labelDialogNPC.TabIndex = 0;
+            this.labelDialogNPC.Text = "TekstNPC";
+            // 
+            // wyjścieDziedziniec
+            // 
+            this.wyjścieDziedziniec.Location = new System.Drawing.Point(753, 303);
+            this.wyjścieDziedziniec.MaximumSize = new System.Drawing.Size(24, 72);
+            this.wyjścieDziedziniec.MinimumSize = new System.Drawing.Size(24, 72);
+            this.wyjścieDziedziniec.Name = "wyjścieDziedziniec";
+            this.wyjścieDziedziniec.Size = new System.Drawing.Size(24, 72);
+            this.wyjścieDziedziniec.TabIndex = 40;
+            this.wyjścieDziedziniec.TabStop = false;
+            // 
+            // _01Parter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -331,23 +539,26 @@
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.panelStatystyk);
             this.Controls.Add(this.poleGry);
+            this.Controls.Add(this.panelDialogu);
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 600);
-            this.Name = "_01PietroPierwsze";
+            this.Name = "_01Parter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "_01PietroPierwsze";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapaStartowa_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MapaStartowa_KeyUp);
-            this.poleGry.ResumeLayout(false);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TheKeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TheKeyUp);
             this.panelStatystyk.ResumeLayout(false);
             this.panelStatystyk.PerformLayout();
+            this.poleGry.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.drzwiRightOpened)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Perqun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stolik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beczki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beczka3)).EndInit();
@@ -355,6 +566,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.beczka1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wyjścieMapa1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjściePiwnica)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.underPerqun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjściePiętroPierwsze)).EndInit();
+            this.panelDialogu.ResumeLayout(false);
+            this.panelDialogu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjścieDziedziniec)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -386,5 +607,21 @@
         private System.Windows.Forms.Label labelHpGracz;
         private System.Windows.Forms.PictureBox ściana3;
         private System.Windows.Forms.PictureBox stolik;
+        private System.Windows.Forms.PictureBox wyjściePiwnica;
+        private System.Windows.Forms.PictureBox Perqun;
+        private System.Windows.Forms.Timer timerNPC;
+        private System.Windows.Forms.PictureBox underPerqun;
+        private System.Windows.Forms.Panel panelDialogu;
+        private System.Windows.Forms.PictureBox avatar;
+        private System.Windows.Forms.Label labelDialogNPC;
+        private System.Windows.Forms.PictureBox alaButtonOdpowiedź3;
+        private System.Windows.Forms.PictureBox alaButtonOdpowiedź2;
+        private System.Windows.Forms.PictureBox alaButtonOdpowiedź1;
+        private System.Windows.Forms.Label odpowiedź3;
+        private System.Windows.Forms.Label odpowiedź2;
+        private System.Windows.Forms.Label odpowiedź1;
+        private System.Windows.Forms.PictureBox wyjściePiętroPierwsze;
+        private System.Windows.Forms.PictureBox drzwiRightOpened;
+        private System.Windows.Forms.PictureBox wyjścieDziedziniec;
     }
 }

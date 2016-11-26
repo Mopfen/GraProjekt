@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.Reflection;
+using System.Linq.Expressions;
 
 namespace Unstable
 {
@@ -102,9 +105,9 @@ namespace Unstable
         /// </summary>
         /// <param name="obiekt">W jaki obiekt ma trafić strzała</param>
         /// <param name="ilosc">Ilość możliwych obiektów (maks. idenks)</param>
-        internal void strzałaTrafienie(Launcher.ZmienneObiektów []obiekt, int ilosc)
+        internal void strzałaTrafienie(Launcher.ZmienneObiektów []obiekt, int pierwszyIndeks, int ilosc)
         {
-            for (int i = 0; i < ilosc; i++)
+            for (int i = pierwszyIndeks; i < ilosc+pierwszyIndeks; i++)
             {
                 if (obiekt[i].exists == true)
                 {
@@ -199,9 +202,9 @@ namespace Unstable
         /// </summary>
         /// <param name="obiekt">Obiekt, w który kierowany jest atak</param>
         /// <param name="ilosc">Ilość możliwych obiektów (maks. idenks)</param>
-        internal void atakwCelObok(Launcher.ZmienneObiektów[] obiekt, int ilosc)
+        internal void atakwCelObok(Launcher.ZmienneObiektów[] obiekt, int indeksMin, int indeksMax)
         {
-            for (int i = 0; i < ilosc; i++)
+            for (int i = indeksMin; i <= indeksMax; i++)
             {
                 if (obiekt[i].exists == true)
                 {
@@ -217,6 +220,36 @@ namespace Unstable
 
         #endregion
         #region poruszanieSię
+        /// <summary> Metoda odpowiedzialna za ruch postaci.</summary>
+        internal void RuchPostaci(Launcher.ZmiennePostaci postać)
+        {
+            if (postać.up == true & postać.down != true & postać.obraz.Top > daneLauncher.poleGry.Top + 2 & postać.wykonanoAtak == false & postać.przeszkoda == false)
+            {
+                postać.obraz.Top -= 4; // ruch w górę
+            }
+            else
+            {
+                if (postać.down == true & postać.up != true & postać.obraz.Bottom < daneLauncher.poleGry.Bottom & postać.wykonanoAtak == false & postać.przeszkoda == false)
+                {
+                    postać.obraz.Top += 4; // ruch w dół
+                }
+                else
+                {
+                    if (postać.left == true & postać.right != true & postać.obraz.Left > daneLauncher.poleGry.Left & postać.wykonanoAtak == false & postać.przeszkoda == false)
+                    {
+                        postać.obraz.Left -= 4; // ruch w lewo
+                    }
+                    else
+                    {
+                        if (postać.right == true & postać.left != true & postać.obraz.Right < daneLauncher.poleGry.Right & postać.wykonanoAtak == false & postać.przeszkoda == false)
+                        {
+                            postać.obraz.Left += 4; // ruch w prawo
+                        }
+                    }
+                }
+            }
+            postać.przeszkoda = false;
+        }
         /// <summary>
         /// Metoda sprawdza, czy na drodze postaci znajduje się przeszkoda. Jeśli tak, nie pozwala jej iść dalej.
         /// </summary>
@@ -244,6 +277,23 @@ namespace Unstable
             {
                 if (idący.obraz.Bounds.IntersectsWith(obiekt.obraz.Bounds))
                 {
+                    if (idący.obraz.Top <= obiekt.obraz.Bottom & idący.obraz.Top >= obiekt.obraz.Top & idący.obraz.Right >= obiekt.obraz.Left & idący.obraz.Left <= obiekt.obraz.Right)
+                    {
+                        idący.antyRozmycie.Top += 4;
+                    }
+                    if (idący.obraz.Bottom >= obiekt.obraz.Top & idący.obraz.Bottom >= obiekt.obraz.Bottom & idący.obraz.Right >= obiekt.obraz.Left & idący.obraz.Left <= obiekt.obraz.Right)
+                    {
+                        idący.antyRozmycie.Top -= 4;
+                    }
+                    if (idący.obraz.Right >= obiekt.obraz.Left & idący.obraz.Right <= obiekt.obraz.Right & idący.obraz.Bottom >= obiekt.obraz.Top & idący.obraz.Top <= obiekt.obraz.Bottom)
+                    {
+                        idący.antyRozmycie.Left -= 4;
+                    }
+                    if (idący.obraz.Left <= obiekt.obraz.Right & idący.obraz.Left >= obiekt.obraz.Left & idący.obraz.Bottom >= obiekt.obraz.Top & idący.obraz.Top <= obiekt.obraz.Bottom)
+                    {
+                        idący.antyRozmycie.Left += 4;
+                    }
+
                     idący.obraz.Location = idący.antyRozmycie.Location;
                     idący.przeszkoda = true;
                 }
@@ -294,6 +344,16 @@ namespace Unstable
             }
             return false;
         }
+        /// <summary>
+        /// Metoda wstrzymuje wszelkie akcje w wątku na okresloną liczbę sekund
+        /// </summary>
+        /// <param name="seconds">Liczba sekund</param>
+        internal void wait(double seconds)
+        {
+            double miliseconds = seconds * 100;
+            Thread.Sleep(Convert.ToInt32(miliseconds));
+        }
+
         #endregion
 
         /// <summary>
@@ -303,7 +363,8 @@ namespace Unstable
         {
             while (daneLauncher.daneGracz.exp >=daneLauncher.daneGracz.expMax)
             {
-                //daneLauncher.lvUpSound.Play();
+                daneLauncher.soundGracz.URL = "lvUp.wav";
+                daneLauncher.soundGracz.Ctlcontrols.play();
                 daneLauncher.daneGracz.lv++;
                 daneLauncher.daneGracz.exp -= daneLauncher.daneGracz.expMax;
                 daneLauncher.daneGracz.expMax += 5;
@@ -368,14 +429,14 @@ namespace Unstable
                 podniesiono = sprawdzDostepnySlot(280, 488); if (podniesiono == true) break;
                 podniesiono = sprawdzDostepnySlot(331, 488); if (podniesiono == true) break;
                 podniesiono = sprawdzDostepnySlot(383, 488); if (podniesiono == true) break;
-                podniesiono = sprawdzDostepnySlot(19, 540); if (podniesiono == true) break;
-                podniesiono = sprawdzDostepnySlot(71, 540); if (podniesiono == true) break;
-                podniesiono = sprawdzDostepnySlot(123, 540); if (podniesiono == true) break;
-                podniesiono = sprawdzDostepnySlot(175, 540); if (podniesiono == true) break;
-                podniesiono = sprawdzDostepnySlot(228, 540); if (podniesiono == true) break;
-                podniesiono = sprawdzDostepnySlot(280, 540); if (podniesiono == true) break;
-                podniesiono = sprawdzDostepnySlot(331, 540); if (podniesiono == true) break;
-                podniesiono = sprawdzDostepnySlot(383, 540); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(19, 542); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(71, 542); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(123, 542); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(175, 542); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(228, 542); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(280, 542); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(331, 542); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlot(383, 542); if (podniesiono == true) break;
                 // komunikat brak miejsca w eq
                 break;
             }
@@ -416,7 +477,7 @@ namespace Unstable
                     {
                         for (int j = 1; j <= 46; j++)
                         {
-                            if (daneLauncher.danePlecakSlot[j].Lokacja == new System.Drawing.Point(LokacjaX, LokacjaY) & daneLauncher.danePlecakSlot[j].exists == false)
+                            if (daneLauncher.danePlecakSlot[j].Lokacja == new System.Drawing.Point(LokacjaX, LokacjaY) & daneLauncher.danePlecakSlot[j].exists == false & daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji==daneLauncher.daneDrop[i].numerLokacji)
                             {
                                 Point kopiaLokacji = new Point();
                                 kopiaLokacji = daneLauncher.danePlecakSlot[j].Lokacja;

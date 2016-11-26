@@ -53,6 +53,7 @@ namespace Unstable
             metodaUniwersalne.liczStatystyki();
             formaEkwipunek.Show();
             formaEkwipunek.Close();
+            daneLauncher.muzykaMenu = false;
             _01Piwnica forma_01Piwnica = new _01Piwnica(daneLauncher);
             this.Close();
             forma_01Piwnica.Show();
@@ -147,6 +148,8 @@ namespace Unstable
             daneLauncher.daneGracz = new Launcher.ZmiennePostaci();
             daneLauncher.daneBonusyGracz = new Launcher.ZmienneBonusów();
 
+            daneLauncher.daneGracz.exists = true;
+
             for (int i = 0; i <= 99; i++)
             {
                 if (i < 2)
@@ -171,6 +174,13 @@ namespace Unstable
 
                 daneLauncher.danePrzeszkoda[i] = new Launcher.ZmienneObiektów();
                 daneLauncher.danePrzeszkoda[i].exists = false;
+
+                daneLauncher.daneMapa[i] = new Launcher.ZmienneMap();
+
+                for (int j = 0; j <= 19; j++)
+                {
+                    daneLauncher.daneMapa[i].częśćMapyOdwiedzona[j] = false;
+                }
             }
         }
     }

@@ -16,21 +16,7 @@ namespace Unstable
         {
             daneLauncher = dane;
         }
-        /// <summary> Metoda odpowiedzialna za ruch gracza.</summary>
-        public void RuchGracza()
-        {
-            if ((daneLauncher.daneGracz.up == false & daneLauncher.daneGracz.down == false & daneLauncher.daneGracz.left == false & daneLauncher.daneGracz.right == false & daneLauncher.daneGracz.przeszkoda == false)) { daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownStand.Image; } // obraz postaci, gdy się nie rusza
-            if (daneLauncher.daneGracz.antyRozmycie.Location != daneLauncher.daneGracz.obraz.Location) { daneLauncher.daneGracz.antyRozmycie.Location = daneLauncher.daneGracz.obraz.Location; } // niweluje rozmycie tła podczas poruszania się postaci
 
-            if (daneLauncher.daneGracz.up == true & daneLauncher.daneGracz.obraz.Top > daneLauncher.poleGry.Top+2 & daneLauncher.daneGracz.wykonanoAtak == false & daneLauncher.daneGracz.przeszkoda==false) { if (daneLauncher.daneGracz.zmianaKierunkuUp == false) { daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownMovingUp.Image; daneLauncher.daneGracz.zmianaKierunkuUp = true; } if (daneLauncher.daneGracz.left == true | daneLauncher.daneGracz.right == true) daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false; daneLauncher.daneGracz.obraz.Top -= 4; } // ruch w górę
-            else
-            if (daneLauncher.daneGracz.down == true & daneLauncher.daneGracz.obraz.Bottom < daneLauncher.poleGry.Bottom & daneLauncher.daneGracz.wykonanoAtak == false & daneLauncher.daneGracz.przeszkoda == false) { if (daneLauncher.daneGracz.zmianaKierunkuDown == false) { daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownMovingDown.Image; daneLauncher.daneGracz.zmianaKierunkuDown = true; } if (daneLauncher.daneGracz.left == true | daneLauncher.daneGracz.right == true) daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false; daneLauncher.daneGracz.obraz.Top += 4; } // ruch w dół
-            else 
-            if (daneLauncher.daneGracz.left == true & daneLauncher.daneGracz.obraz.Left > daneLauncher.poleGry.Left & daneLauncher.daneGracz.wykonanoAtak == false & daneLauncher.daneGracz.przeszkoda == false) { if (daneLauncher.daneGracz.zmianaKierunkuLeft == false) { daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownMovingLeft.Image; daneLauncher.daneGracz.zmianaKierunkuLeft = true; } if (daneLauncher.daneGracz.up == true | daneLauncher.daneGracz.down == true) daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuRight = false; daneLauncher.daneGracz.obraz.Left -= 4; } // ruch w lewo
-            else
-            if (daneLauncher.daneGracz.right == true & daneLauncher.daneGracz.obraz.Right < daneLauncher.poleGry.Right & daneLauncher.daneGracz.wykonanoAtak == false & daneLauncher.daneGracz.przeszkoda == false) { if (daneLauncher.daneGracz.zmianaKierunkuRight == false) { daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownMovingRight.Image; daneLauncher.daneGracz.zmianaKierunkuRight = true; } if (daneLauncher.daneGracz.up == true | daneLauncher.daneGracz.down == true) daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = false; daneLauncher.daneGracz.obraz.Left += 4; } // ruch w prawo
-            daneLauncher.daneGracz.przeszkoda = false;
-        }
         /// <summary> Metoda odpowiedzialna za wykonywanie ataku przez gracza.</summary>
         public void AtakGracza(Timer timerGracz)
         {
@@ -42,7 +28,12 @@ namespace Unstable
                     if (daneLauncher.daneGracz.left == true) daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownAttackingLeft.Image;
                     if (daneLauncher.daneGracz.right == true) daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownAttackingRight.Image;
                     metodaUniwersalne.atakwCelObok(daneLauncher.daneMob, 5);
-                    metodaUniwersalne.atakwCelObok(daneLauncher.danePrzeszkoda, 100);
+
+                    #region metodaUniwersalne.atakwCelObok(daneLauncher.danePrzeszkoda,...)
+                    if (daneLauncher.daneMapa[1].gdzieOstatnio == 0) metodaUniwersalne.atakwCelObok(daneLauncher.danePrzeszkoda,0, 8);
+                    if (daneLauncher.daneMapa[1].gdzieOstatnio == 1) metodaUniwersalne.atakwCelObok(daneLauncher.danePrzeszkoda, 12, 12);
+
+                    #endregion
                 }
                 if(daneLauncher.daneGracz.rodzajAtaku==false & daneLauncher.daneGracz.posiadaŁuk==true)
                 {
@@ -81,7 +72,7 @@ namespace Unstable
             daneLauncher.daneGracz.attack = false;
         }
 
-        public void StrzalaGracz(int ilośćMobow,int ilośćPrzeszkod,int indeksPierwszejŚciany,int ilośćŚcian)
+        public void StrzalaGracz(int ilośćMobow, int ilośćPrzeszkod, int indeksPierwszejPrzeszkody, int ilośćŚcian, int indeksPierwszejŚciany)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             bool stop = false; // zmienna określa, kiedy strzała w coś trafi
@@ -96,7 +87,7 @@ namespace Unstable
             {
                 daneLauncher.daneStrzała[0].obraz.Visible = true;
                 metodaUniwersalne.strzałaTrafienie(daneLauncher.daneMob,ilośćMobow);
-                metodaUniwersalne.strzałaTrafienie(daneLauncher.danePrzeszkoda, ilośćPrzeszkod);
+                metodaUniwersalne.strzałaTrafienie(daneLauncher.danePrzeszkoda, indeksPierwszejPrzeszkody, ilośćPrzeszkod);
                 if (daneLauncher.daneStrzała[0].obraz.Image == daneLauncher.strzałaLeft.Image)
                 {
                     if (daneLauncher.daneStrzała[0].obraz.Left > daneLauncher.poleGry.Left & stop==false)

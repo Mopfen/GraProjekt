@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Unstable
 {
@@ -21,8 +22,15 @@ namespace Unstable
 
             daneLauncher = dane;
 
-            daneLauncher.music.SoundLocation = "SoundtrackMenu.wav";
-            daneLauncher.music.PlayLooping();
+            if(daneLauncher.muzykaMenu==false)
+            {
+                Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+
+                daneLauncher.wątekMuzyka = new Thread(metodaMuzyka.SoundtrackMenu);
+                daneLauncher.wątekMuzyka.Start();
+                daneLauncher.muzykaMenu = true;
+            }
+            
 
             //aktualizator.Enabled = true;
 

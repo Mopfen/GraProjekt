@@ -101,8 +101,13 @@ namespace Unstable
 
             zapiszDane();
 
+            #region Test
             daneLauncher.danePlecakSlot[2].exists = true;
             daneLauncher.danePlecakSlot[2].id = 2;
+            daneLauncher.danePlecakSlot[46].exists = true; // łuk
+            daneLauncher.danePlecakSlot[2].id = 2; // łuk
+
+            #endregion
         }
 
         private void Statystyki_KeyDown(object sender, KeyEventArgs e)

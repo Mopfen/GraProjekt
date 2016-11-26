@@ -16,3 +16,9 @@ C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Ekwipunek
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable._01Piwnica.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.MapaTestowa.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable._01Parter.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Interop.WMPLib.dll
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.csproj.ResolveComReference.cache
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\Interop.WMPLib.dll
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable._01Dziedziniec.resources

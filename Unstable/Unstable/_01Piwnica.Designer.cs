@@ -42,7 +42,7 @@
             this.labelManaGracz = new System.Windows.Forms.Label();
             this.hitLog = new System.Windows.Forms.Label();
             this.labelHpGracz = new System.Windows.Forms.Label();
-            this.wyjścieMapa1 = new System.Windows.Forms.PictureBox();
+            this.wyjścieParter = new System.Windows.Forms.PictureBox();
             this.underGracz = new System.Windows.Forms.PictureBox();
             this.strzałaGracz = new System.Windows.Forms.PictureBox();
             this.beczka1 = new System.Windows.Forms.PictureBox();
@@ -62,7 +62,7 @@
             this.drop1 = new System.Windows.Forms.PictureBox();
             this.rozdajStatystyki = new System.Windows.Forms.PictureBox();
             this.panelStatystyk.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wyjścieMapa1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beczka1)).BeginInit();
@@ -86,7 +86,7 @@
             // timerGracz
             // 
             this.timerGracz.Enabled = true;
-            this.timerGracz.Interval = 50;
+            this.timerGracz.Interval = 1;
             this.timerGracz.Tick += new System.EventHandler(this.timerGracz_Tick);
             // 
             // timerAtakGracz
@@ -181,13 +181,13 @@
             this.labelHpGracz.TabIndex = 4;
             this.labelHpGracz.Text = "hpGracz";
             // 
-            // wyjścieMapa1
+            // wyjścieParter
             // 
-            this.wyjścieMapa1.Location = new System.Drawing.Point(496, 0);
-            this.wyjścieMapa1.Name = "wyjścieMapa1";
-            this.wyjścieMapa1.Size = new System.Drawing.Size(124, 64);
-            this.wyjścieMapa1.TabIndex = 4;
-            this.wyjścieMapa1.TabStop = false;
+            this.wyjścieParter.Location = new System.Drawing.Point(496, 0);
+            this.wyjścieParter.Name = "wyjścieParter";
+            this.wyjścieParter.Size = new System.Drawing.Size(124, 64);
+            this.wyjścieParter.TabIndex = 4;
+            this.wyjścieParter.TabStop = false;
             // 
             // underGracz
             // 
@@ -322,7 +322,7 @@
             this.gracz.BackColor = System.Drawing.Color.Transparent;
             this.gracz.Cursor = System.Windows.Forms.Cursors.Default;
             this.gracz.Image = global::Unstable.Properties.Resources.whiteBrownStand;
-            this.gracz.Location = new System.Drawing.Point(28, 55);
+            this.gracz.Location = new System.Drawing.Point(511, 67);
             this.gracz.Margin = new System.Windows.Forms.Padding(10);
             this.gracz.MaximumSize = new System.Drawing.Size(64, 64);
             this.gracz.MinimumSize = new System.Drawing.Size(64, 64);
@@ -355,9 +355,9 @@
             this.poleGry.Controls.Add(this.beczka1);
             this.poleGry.Controls.Add(this.strzałaGracz);
             this.poleGry.Controls.Add(this.underGracz);
-            this.poleGry.Controls.Add(this.wyjścieMapa1);
+            this.poleGry.Controls.Add(this.wyjścieParter);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -36);
+            this.poleGry.Location = new System.Drawing.Point(3, -102);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
@@ -400,11 +400,11 @@
             this.Name = "_01Piwnica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MapaStartowa";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapaStartowa_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MapaStartowa_KeyUp);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TheKeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TheKeyUp);
             this.panelStatystyk.ResumeLayout(false);
             this.panelStatystyk.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wyjścieMapa1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.beczka1)).EndInit();
@@ -440,7 +440,7 @@
         private System.Windows.Forms.Label labelLvGracz;
         private System.Windows.Forms.Label labelManaGracz;
         private System.Windows.Forms.Timer timerStrzałaGracz;
-        private System.Windows.Forms.PictureBox wyjścieMapa1;
+        private System.Windows.Forms.PictureBox wyjścieParter;
         private System.Windows.Forms.PictureBox underGracz;
         private System.Windows.Forms.PictureBox strzałaGracz;
         private System.Windows.Forms.PictureBox beczka1;

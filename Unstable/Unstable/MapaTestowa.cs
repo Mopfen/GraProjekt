@@ -45,8 +45,8 @@ namespace Unstable
 
             daneLauncher.timerStatystyki = timerStatystyki;
 
-            daneLauncher.music.SoundLocation = "Soundtrack1.wav";
-            daneLauncher.music.PlayLooping();
+            //daneLauncher.music.SoundLocation = "Soundtrack1.wav";
+            //daneLauncher.music.PlayLooping();
         }
 
         private void rozdajStatystyki_Click(object sender, EventArgs e)
@@ -67,9 +67,9 @@ namespace Unstable
         private void timerGracz_Tick(object sender, EventArgs e)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
-            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneMob[0]);
-
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
+
+            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneMob[0]);
             metodaMap.timerGraczMetoda();
         }
         private void timerAtakGracz_Tick(object sender, EventArgs e)
@@ -88,7 +88,12 @@ namespace Unstable
         private void timerMob_Tick(object sender, EventArgs e)
         {
             Mob metodaMob = new Mob(daneLauncher);
+            MetodyMap metodaMap = new MetodyMap(daneLauncher);
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+
             metodaMob.RuchMobaDoGracza(0);
+            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneMob[0], daneLauncher.daneGracz);
+            metodaMap.timerMobMetoda(0);
         }
 
         private void timerAtakMob_Tick(object sender, EventArgs e)
@@ -100,7 +105,7 @@ namespace Unstable
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerStrzałaGraczMetoda(1,0,0,0);
+            metodaMap.timerStrzałaGraczMetoda(1,0,0,0,0);
         }
     }
 }
