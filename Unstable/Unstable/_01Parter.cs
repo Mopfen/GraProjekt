@@ -62,9 +62,11 @@ namespace Unstable
 
             #region cutScena
             #region przypisanieDoList
+            alaButtons.Add(null);
             alaButtons.Add(alaButtonOdpowiedź1);
             alaButtons.Add(alaButtonOdpowiedź2);
             alaButtons.Add(alaButtonOdpowiedź3);
+            odpowiedzi.Add(null);
             odpowiedzi.Add(odpowiedź1);
             odpowiedzi.Add(odpowiedź2);
             odpowiedzi.Add(odpowiedź3);
@@ -200,7 +202,7 @@ namespace Unstable
 
         private void timerGracz_Tick(object sender, EventArgs e)
         {
-            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             NPC metodaNPC = new NPC(daneLauncher);
 
@@ -209,10 +211,10 @@ namespace Unstable
                 metodaNPC.MoveToY(daneLauncher.daneGracz, 166);
             }
 
-            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneNPC[0]);
+            metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneNPC[0]);
             for (int i = 12; i <= 21; i++)
             {
-                metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
+                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
             }
             metodaMap.timerGraczMetoda();
         }
@@ -225,10 +227,11 @@ namespace Unstable
 
         private void timerNPC_Tick(object sender, EventArgs e)
         {
-            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             NPC metodaNPC = new NPC(daneLauncher);
 
+           
             if (daneLauncher.daneNPC[0].exists == true)
             {
                 if (daneLauncher.daneNPC[0].dotartoDoX[1] == true)
@@ -240,18 +243,32 @@ namespace Unstable
                     }
                 }
 
-                metodaNPC.MoveToXX(daneLauncher.daneNPC[0], 350, 260);
-                if (daneLauncher.daneNPC[0].dotartoDoX[0] == true)
+                if (cutScena == true)
                 {
-                    metodaNPC.MoveToY(daneLauncher.daneNPC[0], 166);
+                    metodaNPC.MoveToXX(daneLauncher.daneNPC[0], 350, 260);
+                    if (daneLauncher.daneNPC[0].dotartoDoX[0] == true)
+                    {
+                        metodaNPC.MoveToY(daneLauncher.daneNPC[0], 166);
+                    }
+                }
+                else
+                {
+                    metodaNPC.MoveToY(daneLauncher.daneNPC[0], 316);
+                    metodaNPC.MoveToX(daneLauncher.daneNPC[0], 700);
+                    if(daneLauncher.daneNPC[0].obraz.Bounds.IntersectsWith(wyjścieDziedziniec.Bounds))
+                    {
+                        daneLauncher.daneNPC[0].exists = false;
+                        daneLauncher.daneNPC[0].obraz.Visible = false;
+                        daneLauncher.daneNPC[0].up = daneLauncher.daneNPC[0].down = daneLauncher.daneNPC[0].left = daneLauncher.daneNPC[0].right = false;
+                    }
                 }
 
-                metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.daneGracz);
+                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.daneGracz);
                 for (int j = 0; j < 1; j++)
                 {
                     for (int i = 12; i <= 21; i++)
                     {
-                        metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.danePrzeszkoda[i]);
+                        metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.danePrzeszkoda[i]);
                     }
                     metodaMap.timerNPCMetoda(j);
                 }
@@ -295,58 +312,56 @@ namespace Unstable
 
             Wątki.editInThread(this, true, value => labelDialogNPC.Visible = value);
 
-            string Tekst = "Przeznaczeniem Patryka Von Baterii jest śmierć z ręki Pawliszyna.";
+            string Tekst = "Co to za hałasy w piwnicy?! Kim jesteś i skąd się tu wziąłeś?! A z resztą,\nnie obchodzi mnie to. Powiedz mi tylko, czy nie uszkodziłeś moich beczek?";
             for (int i = 0; i < Tekst.Length; i++)
             {
-                metodaUniwersalne.wait(0.2);
+                metodaUniwersalne.wait(0.03);
                 Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
             }
             while(daneLauncher.danoOdpowiedź1==false & daneLauncher.danoOdpowiedź2 == false & daneLauncher.danoOdpowiedź3 == false)
             {
-                Wątki.editInThread(this, "Pie****enie o Szopenie.", value => odpowiedź1.Text = value);
-                Wątki.editInThread(this, "Patryś Vun Bateria być najlepszy!", value => odpowiedź2.Text = value);
-                Wątki.editInThread(this, "Goń się.", value => odpowiedź3.Text = value);
-                for (int i = 0; i < 3; i++)
+                Wątki.editInThread(this, "Ymm... Nie uszkodziłem.", value => odpowiedź2.Text = value);
+                Wątki.editInThread(this, "Niestety, ale uszkodziłem kilka z nich.", value => odpowiedź3.Text = value);
+                for (int i = 2; i <= 3; i++)
                 {
                     Wątki.editInThread(this, true, value => alaButtons[i].Visible = value);
                     Wątki.editInThread(this, true, value => odpowiedzi[i].Visible = value);
                 }
             }
-            for (int i = 0; i < 3; i++)
+            for (int i = 2; i <= 3; i++)
             {
                 Wątki.editInThread(this, "", value => labelDialogNPC.Text = value);
                 Wątki.editInThread(this, false, value => alaButtons[i].Visible = value);
                 Wątki.editInThread(this, false, value => odpowiedzi[i].Visible = value);
             }
-            if (daneLauncher.danoOdpowiedź1==true)
-            {
-                daneLauncher.danoOdpowiedź1 = false;
-                Tekst = "W sumie racja.";
-                for (int i = 0; i < Tekst.Length; i++)
-                {
-                    metodaUniwersalne.wait(0.2);
-                    Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
-                }
-            }
             if (daneLauncher.danoOdpowiedź2 == true)
             {
                 daneLauncher.danoOdpowiedź2 = false;
-                Tekst = "I tak nie ma szans z człowiekiem w swetrze.";
+                Tekst = "Widzę już w Twoim spojrzeniu, że kłamiesz! Wynoś się stąd, ale już!\nZaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała:\n\"Pewnego dnia pojawi się wśród twych beczek ten, którego\nmusisz wyprawić na wielką podróż\".";
                 for (int i = 0; i < Tekst.Length; i++)
                 {
-                    metodaUniwersalne.wait(0.2);
+                    metodaUniwersalne.wait(0.03);
                     Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
                 }
             }
             if (daneLauncher.danoOdpowiedź3 == true)
             {
                 daneLauncher.danoOdpowiedź3 = false;
-                Tekst = "Wzajemnie.";
+                Tekst = "A niech Cię szlag parszywcu! Wynoś się stąd, ale już!\nZaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała:\n\"Pewnego dnia pojawi się wśród twych beczek ten, którego\nmusisz wyprawić na wielką podróż\".";
                 for (int i = 0; i < Tekst.Length; i++)
                 {
-                    metodaUniwersalne.wait(0.2);
+                    metodaUniwersalne.wait(0.03);
                     Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
                 }
+            }
+            metodaUniwersalne.wait(5);
+            Wątki.editInThread(this, "", value => labelDialogNPC.Text = value);
+            daneLauncher.danoOdpowiedź3 = false;
+            Tekst = "Ona się nigdy nie myli... No chodź, rozruszasz się trochę przed wyprawą.";
+            for (int i = 0; i < Tekst.Length; i++)
+            {
+                metodaUniwersalne.wait(0.03);
+                Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
             }
             Wątki.editInThread(this, "Wyjdź", value => odpowiedź1.Text = value);
             Wątki.editInThread(this, true, value => alaButtonOdpowiedź1.Visible = value);
@@ -357,8 +372,13 @@ namespace Unstable
             Wątki.editInThread(this, false, value => panelDialogu.Visible = value);
             Wątki.editInThread(this, true, value => panelStatystyk.Visible = value);
             daneLauncher.daneGracz.down = daneLauncher.daneGracz.up = false;
+            daneLauncher.daneQuest[1].nazwa = "Pomoc winiarza";
+            daneLauncher.daneQuest[1].exp = 5;
+            daneLauncher.daneQuest[1].stan = 1;
+            daneLauncher.daneQuest[1].etap = 1;
+            daneLauncher.daneQuest[1].opisEtapu[1] = "Wyjdź na dziedziniec";
             cutScena = false;
-            
         }
+
     }
 }

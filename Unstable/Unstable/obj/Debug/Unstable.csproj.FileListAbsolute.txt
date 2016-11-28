@@ -22,3 +22,4 @@ C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.csproj.Re
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\Interop.WMPLib.dll
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable._01Dziedziniec.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.MetodyEkwipunek.resources

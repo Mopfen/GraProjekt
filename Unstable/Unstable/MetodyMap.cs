@@ -52,8 +52,8 @@ namespace Unstable
             }
             if (e.KeyCode == Keys.Z)
             {
-                Uniwersalne metodyUniwersalne = new Uniwersalne(daneLauncher);
-                metodyUniwersalne.podnieśDrop();
+                MetodyEkwipunek metodaEkwipunek = new MetodyEkwipunek(daneLauncher);
+                metodaEkwipunek.podnieśDrop();
             }
 
         }
@@ -72,28 +72,30 @@ namespace Unstable
         /// </summary>
         internal void timerGraczMetoda()
         {
+            PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
             ZmianaWygladu metodaZmianaWygladu = new ZmianaWygladu(daneLauncher);
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
 
             metodaZmianaWygladu.ZmieńWygląd(daneLauncher.daneGracz);
-            metodaUniwersalne.RuchPostaci(daneLauncher.daneGracz);
+            metodaPoruszanieSię.RuchPostaci(daneLauncher.daneGracz);
         }
         /// <summary>
         /// Metoda wykonująca czynności w timerAtakGracz
         /// </summary>
         internal void timerAtakGraczMetoda(Timer timerGracz)
         {
-            Gracz metodaGracz = new Unstable.Gracz(daneLauncher);
-            metodaGracz.AtakGracza(timerGracz);
+            Walka metodaWalka = new Walka(daneLauncher);
+            metodaWalka.AtakGracza(timerGracz);
         }
 
         internal void timerMobMetoda(int indeks)
         {
+            PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
             ZmianaWygladu metodaZmianaWygladu = new ZmianaWygladu(daneLauncher);
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
 
             metodaZmianaWygladu.ZmieńWygląd(daneLauncher.daneMob[indeks]);
-            metodaUniwersalne.RuchPostaci(daneLauncher.daneMob[indeks]);
+            metodaPoruszanieSię.RuchPostaci(daneLauncher.daneMob[indeks]);
         }
 
         internal void timerAtakMobMetoda()
@@ -107,11 +109,12 @@ namespace Unstable
         /// <param name="ilość"></param>
         internal void timerNPCMetoda(int indeks)
         {
+            PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
             ZmianaWygladu metodaZmianaWygladu = new ZmianaWygladu(daneLauncher);
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
 
             metodaZmianaWygladu.ZmieńWygląd(daneLauncher.daneNPC[indeks]);
-            metodaUniwersalne.RuchPostaci(daneLauncher.daneNPC[indeks]);
+            metodaPoruszanieSię.RuchPostaci(daneLauncher.daneNPC[indeks]);
         }
 
         internal void timerAtakNPCMetoda()
@@ -125,6 +128,8 @@ namespace Unstable
         internal void timerStatystykiMetoda(Form forma, Timer timerGracz, Timer timerAtakGracz, Timer timerMob, Timer timerAtakMob, Timer timerStatystyki, Label labelHpGracz, Label labelManaGracz, Label labelLvGracz, Label labelExpGracz)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            MetodyStatystyki metodaStatystyki = new MetodyStatystyki(daneLauncher);
+            Walka metodaWalka = new Unstable.Walka(daneLauncher);
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
             //Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher); // - BUG
             GameOver formaGameOver = new GameOver(daneLauncher, forma);
@@ -133,7 +138,7 @@ namespace Unstable
             labelLvGracz.Text = Convert.ToString("Poziom: " + daneLauncher.daneGracz.lv);
             labelExpGracz.Text = Convert.ToString("Dosw: " + daneLauncher.daneGracz.exp + "/" + daneLauncher.daneGracz.expMax);
 
-            metodaUniwersalne.levelUp();
+            metodaStatystyki.levelUp();
             if (daneLauncher.daneGracz.statystykiDoRozdania > 0)
             {
                 daneLauncher.rozdajStatystyki.Visible = true;
@@ -142,12 +147,12 @@ namespace Unstable
             {
                 daneLauncher.rozdajStatystyki.Visible = false;
             }
-            Tuple<bool, int> czyMobZabity = metodaUniwersalne.śmierćMoba();
+            Tuple<bool, int> czyMobZabity = metodaWalka.śmierćMoba();
             if (czyMobZabity.Item1 == true)
             {
                 daneLauncher.daneMob[czyMobZabity.Item2].exists = false;
             }
-            if (metodaUniwersalne.śmierćGracza() == true)
+            if (metodaWalka.śmierćGracza() == true)
             {
                 daneLauncher.daneGracz.exists = false;
                 //daneLauncher.music.SoundLocation = "GameOver.wav";
@@ -173,8 +178,8 @@ namespace Unstable
 
         internal void timerStrzałaGraczMetoda(int ilośćMobow, int ilośćPrzeszkod, int indeksPierwszejPrzeszkody, int ilośćŚcian, int indeksPierwszejŚciany)
         {
-            Gracz metodaGracz = new Gracz(daneLauncher);
-            metodaGracz.StrzalaGracz(ilośćMobow, ilośćPrzeszkod, indeksPierwszejPrzeszkody, ilośćŚcian,indeksPierwszejŚciany);
+            Walka metodaWalka = new Walka(daneLauncher);
+            metodaWalka.StrzalaGracz(ilośćMobow, ilośćPrzeszkod, indeksPierwszejPrzeszkody, ilośćŚcian,indeksPierwszejŚciany);
         }
     }
 }

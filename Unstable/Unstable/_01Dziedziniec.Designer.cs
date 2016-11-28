@@ -52,6 +52,7 @@
             this.avatar = new System.Windows.Forms.PictureBox();
             this.labelDialogNPC = new System.Windows.Forms.Label();
             this.poleGry = new System.Windows.Forms.Panel();
+            this.głaz = new System.Windows.Forms.PictureBox();
             this.labelHpMob0 = new System.Windows.Forms.Label();
             this.kukła = new System.Windows.Forms.PictureBox();
             this.krzak3 = new System.Windows.Forms.PictureBox();
@@ -64,7 +65,6 @@
             this.underGracz = new System.Windows.Forms.PictureBox();
             this.underPerqun = new System.Windows.Forms.PictureBox();
             this.wyjścieParter = new System.Windows.Forms.PictureBox();
-            this.głaz = new System.Windows.Forms.PictureBox();
             this.panelStatystyk.SuspendLayout();
             this.panelDialogu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź3)).BeginInit();
@@ -72,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.poleGry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.głaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kukła)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.krzak3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
@@ -83,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.underPerqun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.głaz)).BeginInit();
             this.SuspendLayout();
             // 
             // timerGracz
@@ -128,7 +128,7 @@
             this.panelStatystyk.Controls.Add(this.labelManaGracz);
             this.panelStatystyk.Controls.Add(this.hitLog);
             this.panelStatystyk.Controls.Add(this.labelHpGracz);
-            this.panelStatystyk.Location = new System.Drawing.Point(3, 454);
+            this.panelStatystyk.Location = new System.Drawing.Point(3, 431);
             this.panelStatystyk.Name = "panelStatystyk";
             this.panelStatystyk.Size = new System.Drawing.Size(780, 115);
             this.panelStatystyk.TabIndex = 39;
@@ -278,7 +278,7 @@
             // 
             // avatar
             // 
-            this.avatar.Image = global::Unstable.Properties.Resources._01Parter;
+            this.avatar.Image = global::Unstable.Properties.Resources.AvatarTest;
             this.avatar.Location = new System.Drawing.Point(9, 8);
             this.avatar.Name = "avatar";
             this.avatar.Size = new System.Drawing.Size(100, 100);
@@ -324,6 +324,14 @@
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 38;
+            // 
+            // głaz
+            // 
+            this.głaz.Location = new System.Drawing.Point(633, 195);
+            this.głaz.Name = "głaz";
+            this.głaz.Size = new System.Drawing.Size(126, 62);
+            this.głaz.TabIndex = 42;
+            this.głaz.TabStop = false;
             // 
             // labelHpMob0
             // 
@@ -375,7 +383,7 @@
             this.Perqun.BackColor = System.Drawing.Color.Transparent;
             this.Perqun.Cursor = System.Windows.Forms.Cursors.Default;
             this.Perqun.Image = global::Unstable.Properties.Resources.whiteBrownStand;
-            this.Perqun.Location = new System.Drawing.Point(40, 71);
+            this.Perqun.Location = new System.Drawing.Point(303, 262);
             this.Perqun.Margin = new System.Windows.Forms.Padding(10);
             this.Perqun.MaximumSize = new System.Drawing.Size(64, 64);
             this.Perqun.MinimumSize = new System.Drawing.Size(64, 64);
@@ -440,7 +448,7 @@
             // 
             // underPerqun
             // 
-            this.underPerqun.Location = new System.Drawing.Point(40, 71);
+            this.underPerqun.Location = new System.Drawing.Point(303, 262);
             this.underPerqun.MaximumSize = new System.Drawing.Size(64, 64);
             this.underPerqun.MinimumSize = new System.Drawing.Size(64, 64);
             this.underPerqun.Name = "underPerqun";
@@ -455,14 +463,6 @@
             this.wyjścieParter.Size = new System.Drawing.Size(25, 64);
             this.wyjścieParter.TabIndex = 38;
             this.wyjścieParter.TabStop = false;
-            // 
-            // głaz
-            // 
-            this.głaz.Location = new System.Drawing.Point(633, 195);
-            this.głaz.Name = "głaz";
-            this.głaz.Size = new System.Drawing.Size(126, 62);
-            this.głaz.TabIndex = 42;
-            this.głaz.TabStop = false;
             // 
             // _01Dziedziniec
             // 
@@ -489,6 +489,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.poleGry.ResumeLayout(false);
             this.poleGry.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.głaz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kukła)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.krzak3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
@@ -500,7 +501,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.underPerqun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.głaz)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -47,7 +47,8 @@ namespace Unstable
         public void AtakMoba(Timer timerMob,int numerMoba,int wartośćAtaku)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
-            if(daneLauncher.daneMob[numerMoba].exists==true)
+            Walka metodaWalka = new Walka(daneLauncher);
+            if (daneLauncher.daneMob[numerMoba].exists==true)
             {
                 if (daneLauncher.daneMob[numerMoba].stopMoving == 0 & daneLauncher.daneMob[numerMoba].attack == false & (daneLauncher.daneMob[numerMoba].obraz.Left - daneLauncher.daneGracz.obraz.Right >= (-16) & daneLauncher.daneMob[numerMoba].obraz.Left - daneLauncher.daneGracz.obraz.Right < 8 & daneLauncher.daneGracz.obraz.Top - daneLauncher.daneMob[numerMoba].obraz.Top >= (-64) & daneLauncher.daneGracz.obraz.Top - daneLauncher.daneMob[numerMoba].obraz.Top < daneLauncher.daneMob[numerMoba].obraz.Height))
                 {
@@ -62,8 +63,8 @@ namespace Unstable
                 }
                 if (daneLauncher.daneMob[numerMoba].stopMoving == 0 & daneLauncher.daneMob[numerMoba].attack == true)
                 {
-                    daneLauncher.daneGracz.hp -= metodaUniwersalne.dmgZwarcieMob(wartośćAtaku);
-                    daneLauncher.hitLog.Text = ("Mob zadaje " + metodaUniwersalne.dmgZwarcieMob(wartośćAtaku) + " obrażeń.\n" + daneLauncher.hitLog.Text);
+                    daneLauncher.daneGracz.hp -= metodaWalka.dmgZwarcieMob(wartośćAtaku);
+                    daneLauncher.hitLog.Text = ("Mob zadaje " + metodaWalka.dmgZwarcieMob(wartośćAtaku) + " obrażeń.\n" + daneLauncher.hitLog.Text);
                     daneLauncher.daneMob[numerMoba].wykonanoAtak = true;
                     daneLauncher.daneMob[numerMoba].zmianaKierunkuLeft = daneLauncher.daneMob[numerMoba].zmianaKierunkuRight = false;
                 }

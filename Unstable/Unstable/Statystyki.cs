@@ -80,8 +80,8 @@ namespace Unstable
 
         private void aktualizuj()
         {
-            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
-            metodaUniwersalne.liczStatystyki();
+            MetodyStatystyki metodaStatystyki = new MetodyStatystyki(daneLauncher);
+            metodaStatystyki.liczStatystyki();
 
             labelSiłaGracz.Text = Convert.ToString(daneLauncher.daneGracz.siła);
             labelZręcznośćGracz.Text = Convert.ToString(daneLauncher.daneGracz.zręczność);

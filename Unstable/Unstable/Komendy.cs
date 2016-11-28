@@ -89,14 +89,14 @@ namespace Unstable
                 }
                 if (daneLauncher.komenda == "squadak")
                 {
-                    Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                    MetodyEkwipunek metodaEkwipunek = new MetodyEkwipunek(daneLauncher);
                     daneLauncher.daneDropKomenda.exists = true;
                     daneLauncher.daneDropKomenda.miecz = true;
                     daneLauncher.daneDropKomenda.id = 1000;
                     daneLauncher.daneDropKomenda.obraz = daneLauncher.MieczSquadaka;
                     daneLauncher.daneDropKomenda.dmgZwarcie[0] = 9240;
                     daneLauncher.daneDropKomenda.dmgZwarcie[1] = 9480;
-                    metodaUniwersalne.NałóżPrzedmiotKomendy(247, 170);
+                    metodaEkwipunek.NałóżPrzedmiotKomendy(247, 170);
                     daneLauncher.komenda = "";
                     forma.Close();
                 }

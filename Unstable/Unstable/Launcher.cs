@@ -12,7 +12,7 @@ using System.Threading;
 namespace Unstable
 {
     /// <summary> Odpowiada za uruchomienie i działanie programu. Przechowuje większość zmiennych, na których pracuje program. </summary>
-    public partial class Launcher : Form
+    public partial class Launcher : MetodyOgraniczonegoDostępu
     {
         /// <summary>
         /// Klasa przechowuje zmienne, na których opiera się każda postać
@@ -137,7 +137,10 @@ namespace Unstable
             /// Zmienna określa stan misji. 0 - nieaktywna, 1 - aktywna, 2 - zakończona sukcesem, 3 - zakończona niepowodzeniem
             /// </summary>
             internal short stan = 0;
-            internal short etap = 0; // Zmienna określa etap, na którym znajduje się misja
+            internal short etap = 0; // zmienna określa etap, na którym znajduje się misja
+            internal string []opisEtapu = new string[10]; // tablica przechowująca opisy etapów poszczególnych misji
+
+            internal string nazwa; // zmienna przechowująca nazwę misji
 
             internal int exp = 0; // zmienna określa, ile punktów doświadczenia dostaje się za pomyślne ukończenie misji
             internal int gold = 0; // zmienna określa, ile złota dostaje się za pomyślne ukończenie misji
@@ -253,50 +256,30 @@ namespace Unstable
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-
             MenuGlowne formaMenuGlowne = new MenuGlowne(this);
+            WczytajDaneOdNowa(this);
 
-            #region PrzypisanieDanychDoObiektówTablicowych
-            for (int i = 0; i <= 99; i++)
-            {
-                if(i<2)
-                {
-                    daneStrzała[i] = new ZmienneObiektów();
-                }
-                if(i<5)
-                {
-                    daneMob[i] = new ZmiennePostaci();
-
-                    daneNPC[i] = new ZmiennePostaci();
-
-                    daneBonusyMob[i] = new ZmienneBonusów();
-
-                    daneDrop[i] = new ZmienneEkwipunku();
-                }
-                if(i<47)
-                {
-                    danePlecakSlot[i] = new ZmienneEkwipunku();
-                }   
-               
-                danePrzeszkoda[i] = new ZmienneObiektów();
-                daneQuest[i] = new ZmienneMisji();
-                daneMapa[i] = new ZmienneMap();
-
-                for(int j=0;j<=19;j++)
-                {
-                    if (i<5 & j < 10)
-                    {
-                        daneNPC[i].dotartoDoX[j] = false;
-                        daneNPC[i].dotartoDoY[j] = false;
-                    }
-                    daneMapa[i].częśćMapyOdwiedzona[j] = false;
-                }
-                
-            }
-
-            #endregion
-
-            wczytajWszystkieDane();
+            wczytajDaneObrazkiWhiteBrownHuman();
+            wczytajDaneObrazkiWhiteBlackHuman();
+            wczytajDaneObrazkiWhiteBlondeHuman();
+            wczytajDaneObrazkiWhiteRedHuman();
+            wczytajDaneObrazkiBlackBrownHuman();
+            wczytajDaneObrazkiBlackBlackHuman();
+            wczytajDaneObrazkiBlackBlondeHuman();
+            wczytajDaneObrazkiBlackRedHuman();
+            wczytajDaneObrazkiPinkBrownHuman();
+            wczytajDaneObrazkiPinkBlackHuman();
+            wczytajDaneObrazkiPinkBlondeHuman();
+            wczytajDaneObrazkiPinkRedHuman();
+            wczytajDaneObrazkiYellowBrownHuman();
+            wczytajDaneObrazkiYellowBlackHuman();
+            wczytajDaneObrazkiYellowBlondeHuman();
+            wczytajDaneObrazkiYellowRedHuman();
+            wczytajDaneObrazkiRedBrownHuman();
+            wczytajDaneObrazkiRedBlackHuman();
+            wczytajDaneObrazkiRedBlondeHuman();
+            wczytajDaneObrazkiRedRedHuman();
+            wczytajDaneObrazkiInne();
 
             this.Hide();
             formaMenuGlowne.Show();
@@ -432,29 +415,6 @@ namespace Unstable
             MieczSquadaka.Image = global::Unstable.Properties.Resources.MieczSquadaka;
         }
 
-        private void wczytajWszystkieDane()
-        {
-            wczytajDaneObrazkiWhiteBrownHuman();
-            wczytajDaneObrazkiWhiteBlackHuman();
-            wczytajDaneObrazkiWhiteBlondeHuman();
-            wczytajDaneObrazkiWhiteRedHuman();
-            wczytajDaneObrazkiBlackBrownHuman();
-            wczytajDaneObrazkiBlackBlackHuman();
-            wczytajDaneObrazkiBlackBlondeHuman();
-            wczytajDaneObrazkiBlackRedHuman();
-            wczytajDaneObrazkiPinkBrownHuman();
-            wczytajDaneObrazkiPinkBlackHuman();
-            wczytajDaneObrazkiPinkBlondeHuman();
-            wczytajDaneObrazkiPinkRedHuman();
-            wczytajDaneObrazkiYellowBrownHuman();
-            wczytajDaneObrazkiYellowBlackHuman();
-            wczytajDaneObrazkiYellowBlondeHuman();
-            wczytajDaneObrazkiYellowRedHuman();
-            wczytajDaneObrazkiRedBrownHuman();
-            wczytajDaneObrazkiRedBlackHuman();
-            wczytajDaneObrazkiRedBlondeHuman();
-            wczytajDaneObrazkiRedRedHuman();
-            wczytajDaneObrazkiInne();
-        }
+
     }
 }

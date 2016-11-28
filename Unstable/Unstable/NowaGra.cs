@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
-    public partial class NowaGra : Form
+    public partial class NowaGra : MetodyOgraniczonegoDostępu
     {
         private int włosy = 0; //
         private int skóra = 0; // zmienne odpowiadające za zmianę wyglądu gracza
@@ -47,10 +47,10 @@ namespace Unstable
 
         private void buttonGoTest_Click(object sender, EventArgs e)
         {
-            PrzywrócUstawieniaPoczątkowe();
-            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            WczytajDaneOdNowa(daneLauncher);
+            MetodyStatystyki metodaStatystyki = new MetodyStatystyki(daneLauncher);
             Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
-            metodaUniwersalne.liczStatystyki();
+            metodaStatystyki.liczStatystyki();
             formaEkwipunek.Show();
             formaEkwipunek.Close();
             daneLauncher.muzykaMenu = false;
@@ -140,47 +140,6 @@ namespace Unstable
                         case 3: this.gracz.Image = daneLauncher.redRedStand.Image; break;
                     }
                     break;
-            }
-        }
-
-        private void PrzywrócUstawieniaPoczątkowe()
-        {
-            daneLauncher.daneGracz = new Launcher.ZmiennePostaci();
-            daneLauncher.daneBonusyGracz = new Launcher.ZmienneBonusów();
-
-            daneLauncher.daneGracz.exists = true;
-
-            for (int i = 0; i <= 99; i++)
-            {
-                if (i < 2)
-                {
-                    daneLauncher.daneStrzała[i] = new Launcher.ZmienneObiektów();
-                    daneLauncher.daneStrzała[i].exists = false;
-                }
-                if (i < 5)
-                {
-                    daneLauncher.daneMob[i] = new Launcher.ZmiennePostaci();
-                    daneLauncher.daneMob[i].exists = false;
-
-                    daneLauncher.daneBonusyMob[i] = new Launcher.ZmienneBonusów();
-
-                    daneLauncher.daneDrop[i] = new Launcher.ZmienneEkwipunku();
-                }
-                if (i < 47)
-                {
-                    daneLauncher.danePlecakSlot[i] = new Launcher.ZmienneEkwipunku();
-                    daneLauncher.danePlecakSlot[i].exists = false;
-                }
-
-                daneLauncher.danePrzeszkoda[i] = new Launcher.ZmienneObiektów();
-                daneLauncher.danePrzeszkoda[i].exists = false;
-
-                daneLauncher.daneMapa[i] = new Launcher.ZmienneMap();
-
-                for (int j = 0; j <= 19; j++)
-                {
-                    daneLauncher.daneMapa[i].częśćMapyOdwiedzona[j] = false;
-                }
             }
         }
     }

@@ -153,6 +153,7 @@ namespace Unstable
         {
             if (ruchPlecakSlot[numerSlotu] == true)
             {
+                MetodyEkwipunek metodaEkwipunek = new MetodyEkwipunek(daneLauncher);
                 bool przestaw = true;
                 bool przestawiono = false;
                 for (int i = 1; i <= 46; i++)
@@ -161,12 +162,12 @@ namespace Unstable
                     {
                         if (daneLauncher.danePlecakSlot[numerSlotu].obraz.Bounds.IntersectsWith(daneLauncher.danePlecakSlot[i].obraz.Bounds))
                         {
-                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 311, 40, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].hełm, daneLauncher.danePlecakSlot[i].hełm);
-                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 311, 106, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].zbroja, daneLauncher.danePlecakSlot[i].zbroja);
-                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 311, 170, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].spodnie, daneLauncher.danePlecakSlot[i].spodnie);
-                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 311, 236, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].buty, daneLauncher.danePlecakSlot[i].buty);
-                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 247, 170, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].miecz, daneLauncher.danePlecakSlot[i].miecz);
-                            przestaw = czyPrzestawienieMożliwe(numerSlotu, i, 380, 170, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].łuk, daneLauncher.danePlecakSlot[i].łuk);
+                            przestaw = metodaEkwipunek.czyPrzestawienieMożliwe(numerSlotu, i, 311, 40, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].hełm, daneLauncher.danePlecakSlot[i].hełm);
+                            przestaw = metodaEkwipunek.czyPrzestawienieMożliwe(numerSlotu, i, 311, 106, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].zbroja, daneLauncher.danePlecakSlot[i].zbroja);
+                            przestaw = metodaEkwipunek.czyPrzestawienieMożliwe(numerSlotu, i, 311, 170, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].spodnie, daneLauncher.danePlecakSlot[i].spodnie);
+                            przestaw = metodaEkwipunek.czyPrzestawienieMożliwe(numerSlotu, i, 311, 236, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].buty, daneLauncher.danePlecakSlot[i].buty);
+                            przestaw = metodaEkwipunek.czyPrzestawienieMożliwe(numerSlotu, i, 247, 170, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].miecz, daneLauncher.danePlecakSlot[i].miecz);
+                            przestaw = metodaEkwipunek.czyPrzestawienieMożliwe(numerSlotu, i, 380, 170, staraLokacja, przestaw, daneLauncher.danePlecakSlot[numerSlotu].łuk, daneLauncher.danePlecakSlot[i].łuk);
 
                             if (przestaw == true)
                             {
@@ -174,7 +175,7 @@ namespace Unstable
                                 daneLauncher.danePlecakSlot[numerSlotu].Lokacja = daneLauncher.danePlecakSlot[numerSlotu].obraz.Location = daneLauncher.danePlecakSlot[i].obraz.Location;
                                 daneLauncher.danePlecakSlot[i].Lokacja = daneLauncher.danePlecakSlot[i].obraz.Location = staraLokacja.Location;
                                 przestawiono = true;
-                                aktualizujDaneWyposażenia();
+                                metodaEkwipunek.aktualizujDaneWyposażenia();
                             }
                         }
                     }
@@ -217,84 +218,18 @@ namespace Unstable
             daneLauncher.statystykiPokazywane = true;
         }
 
-        private bool czyPrzestawienieMożliwe(int numerSlotu, int i, int LocationX, int LocationY, PictureBox staraLokacja, bool przestaw, bool elementWyposażenia1, bool elementWyposażenia2)
-        {
-            if (przestaw == true & daneLauncher.danePlecakSlot[i].obraz.Location == new Point(LocationX, LocationY))
-            {
-                if (elementWyposażenia1 == false)
-                {
-                    return false;
-                }
-            }
-            if (przestaw == true & staraLokacja.Location == new Point(LocationX, LocationY))
-            {
-                if (elementWyposażenia2 == false & daneLauncher.danePlecakSlot[i].exists==true)
-                {
-                    return false;
-                }
-            }
-            if (przestaw==false)
-            {
-                return false;
-            }
-            return true;
-        }
+        
 
-        private void aktualizujDaneWyposażenia()
-        {
-            for(int i=1;i<=46;i++)
-            {
-                if(daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311,40) & daneLauncher.danePlecakSlot[i].exists == true)
-                {
-                    // statystyki hełmu
-                }
-                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 106) & daneLauncher.danePlecakSlot[i].exists == true)
-                {
-                    // statystyki zbroji
-                }
-                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 170) & daneLauncher.danePlecakSlot[i].exists == true)
-                {
-                    // statystyki spodni
-                }
-                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 236) & daneLauncher.danePlecakSlot[i].exists == true)
-                {
-                    // statystyki butów
-                }
-                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(247, 170))
-                {
-                    if(daneLauncher.danePlecakSlot[i].exists==true)
-                    {
-                        daneLauncher.daneBonusyGracz.dmgZwarcie[0] = daneLauncher.danePlecakSlot[i].dmgZwarcie[0];
-                        daneLauncher.daneBonusyGracz.dmgZwarcie[1] = daneLauncher.danePlecakSlot[i].dmgZwarcie[1];
-
-                        daneLauncher.daneGracz.posiadaMiecz = true;
-                    }
-                    else
-                    {
-                        daneLauncher.daneBonusyGracz.dmgZwarcie[0] = 0;
-                        daneLauncher.daneBonusyGracz.dmgZwarcie[1] = 0;
-
-                        daneLauncher.daneGracz.posiadaMiecz = false;
-                    }
-                    
-                }
-                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(380, 170) & daneLauncher.danePlecakSlot[i].exists==true)
-                {
-
-                    // statystyki łuku
-
-                    daneLauncher.daneGracz.posiadaŁuk = true;
-                }
-            }
-        }
+        
 
         private void zapiszDane()
         {
+            MetodyEkwipunek metodaEkwipunek = new MetodyEkwipunek(daneLauncher);
             for(int i=1;i<=46;i++)
             {
                 daneLauncher.danePlecakSlot[i].Lokacja = Sloty[i].Location;
             }
-            aktualizujDaneWyposażenia();
+            metodaEkwipunek.aktualizujDaneWyposażenia();
         }
 
         private void zamknijFormę()

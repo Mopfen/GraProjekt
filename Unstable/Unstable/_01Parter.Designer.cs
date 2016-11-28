@@ -61,6 +61,7 @@
             this.wyjściePiwnica = new System.Windows.Forms.PictureBox();
             this.underPerqun = new System.Windows.Forms.PictureBox();
             this.wyjściePiętroPierwsze = new System.Windows.Forms.PictureBox();
+            this.wyjścieDziedziniec = new System.Windows.Forms.PictureBox();
             this.panelDialogu = new System.Windows.Forms.Panel();
             this.odpowiedź3 = new System.Windows.Forms.Label();
             this.odpowiedź2 = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@
             this.alaButtonOdpowiedź1 = new System.Windows.Forms.PictureBox();
             this.avatar = new System.Windows.Forms.PictureBox();
             this.labelDialogNPC = new System.Windows.Forms.Label();
-            this.wyjścieDziedziniec = new System.Windows.Forms.PictureBox();
             this.panelStatystyk.SuspendLayout();
             this.poleGry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drzwiRightOpened)).BeginInit();
@@ -91,12 +91,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.wyjściePiwnica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.underPerqun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wyjściePiętroPierwsze)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjścieDziedziniec)).BeginInit();
             this.panelDialogu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wyjścieDziedziniec)).BeginInit();
             this.SuspendLayout();
             // 
             // timerGracz
@@ -413,6 +413,16 @@
             this.wyjściePiętroPierwsze.TabIndex = 38;
             this.wyjściePiętroPierwsze.TabStop = false;
             // 
+            // wyjścieDziedziniec
+            // 
+            this.wyjścieDziedziniec.Location = new System.Drawing.Point(753, 303);
+            this.wyjścieDziedziniec.MaximumSize = new System.Drawing.Size(24, 72);
+            this.wyjścieDziedziniec.MinimumSize = new System.Drawing.Size(24, 72);
+            this.wyjścieDziedziniec.Name = "wyjścieDziedziniec";
+            this.wyjścieDziedziniec.Size = new System.Drawing.Size(24, 72);
+            this.wyjścieDziedziniec.TabIndex = 40;
+            this.wyjścieDziedziniec.TabStop = false;
+            // 
             // panelDialogu
             // 
             this.panelDialogu.BackColor = System.Drawing.Color.Snow;
@@ -501,7 +511,7 @@
             // 
             // avatar
             // 
-            this.avatar.Image = global::Unstable.Properties.Resources._01Parter;
+            this.avatar.Image = global::Unstable.Properties.Resources.AvatarTest;
             this.avatar.Location = new System.Drawing.Point(9, 8);
             this.avatar.Name = "avatar";
             this.avatar.Size = new System.Drawing.Size(100, 100);
@@ -520,16 +530,6 @@
             this.labelDialogNPC.Size = new System.Drawing.Size(600, 100);
             this.labelDialogNPC.TabIndex = 0;
             this.labelDialogNPC.Text = "TekstNPC";
-            // 
-            // wyjścieDziedziniec
-            // 
-            this.wyjścieDziedziniec.Location = new System.Drawing.Point(753, 303);
-            this.wyjścieDziedziniec.MaximumSize = new System.Drawing.Size(24, 72);
-            this.wyjścieDziedziniec.MinimumSize = new System.Drawing.Size(24, 72);
-            this.wyjścieDziedziniec.Name = "wyjścieDziedziniec";
-            this.wyjścieDziedziniec.Size = new System.Drawing.Size(24, 72);
-            this.wyjścieDziedziniec.TabIndex = 40;
-            this.wyjścieDziedziniec.TabStop = false;
             // 
             // _01Parter
             // 
@@ -569,13 +569,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.wyjściePiwnica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.underPerqun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wyjściePiętroPierwsze)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjścieDziedziniec)).EndInit();
             this.panelDialogu.ResumeLayout(false);
             this.panelDialogu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wyjścieDziedziniec)).EndInit();
             this.ResumeLayout(false);
 
         }

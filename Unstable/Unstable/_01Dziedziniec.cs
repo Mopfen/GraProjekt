@@ -47,7 +47,7 @@ namespace Unstable
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
 
-            if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[2] == false)
+            if (daneLauncher.daneQuest[1].etap == 1 | daneLauncher.daneQuest[1].etap == 2)
             {
                 daneLauncher.daneNPC[0].obraz = Perqun;
                 daneLauncher.daneNPC[0].antyRozmycie = underPerqun;
@@ -63,15 +63,18 @@ namespace Unstable
             else
             {
                 Perqun.Visible = false;
+                kukła.Visible = false;
                 Launcher.ZmiennePostaci resetuj = new Launcher.ZmiennePostaci();
                 daneLauncher.daneNPC[0] = resetuj;
             }
 
             #region cutScena
             #region przypisanieDoList
+            alaButtons.Add(null);
             alaButtons.Add(alaButtonOdpowiedź1);
             alaButtons.Add(alaButtonOdpowiedź2);
             alaButtons.Add(alaButtonOdpowiedź3);
+            odpowiedzi.Add(null);
             odpowiedzi.Add(odpowiedź1);
             odpowiedzi.Add(odpowiedź2);
             odpowiedzi.Add(odpowiedź3);
@@ -180,20 +183,28 @@ namespace Unstable
 
         private void timerGracz_Tick(object sender, EventArgs e)
         {
-            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             NPC metodaNPC = new NPC(daneLauncher);
 
             if (cutScena == true)
             {
-                //metodaNPC.MoveToY(daneLauncher.daneGracz, 166);
+                metodaNPC.MoveToX(daneLauncher.daneGracz, 230);
+                if(daneLauncher.daneGracz.dotartoDoX[0] == true)
+                {
+                    if (cutScenaBegin == false)
+                    {
+                        wątekCutScena = new Thread(wykonajCutScena1);
+                        wątekCutScena.Start();
+                    }
+                }
             }
 
-            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneNPC[0]);
-            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneMob[0]);
+            metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneNPC[0]);
+            metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneMob[0]);
             for (int i = 22; i <= 25; i++)
             {
-                metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
+                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
             }
             metodaMap.timerGraczMetoda();
         }
@@ -206,34 +217,18 @@ namespace Unstable
 
         private void timerNPC_Tick(object sender, EventArgs e)
         {
-            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             NPC metodaNPC = new NPC(daneLauncher);
 
             if (daneLauncher.daneNPC[0].exists == true)
             {
-                /*if (daneLauncher.daneNPC[0].dotartoDoX[1] == true)
-                {
-                    if (cutScenaBegin == false)
-                    {
-                        //wątekCutScena = new Thread(wykonajCutScena1);
-                        //wątekCutScena.Start();
-                    }
-                }
-
-                metodaNPC.MoveToXX(daneLauncher.daneNPC[0], 350, 260);
-                if (daneLauncher.daneNPC[0].dotartoDoX[0] == true)
-                {
-                    metodaNPC.MoveToY(daneLauncher.daneNPC[0], 166);
-                }
-                */
-
-                metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.daneGracz);
+                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.daneGracz);
                 for (int j = 0; j < 1; j++)
                 {
                     for (int i = 12; i <= 21; i++)
                     {
-                        metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.danePrzeszkoda[i]);
+                        metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.danePrzeszkoda[i]);
                     }
                     metodaMap.timerNPCMetoda(j);
                 }
@@ -245,9 +240,15 @@ namespace Unstable
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
 
-
             metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
             labelHpMob0.Text = Convert.ToString(metodaUniwersalne.wyliczProcent(daneLauncher.daneMob[0].hp, daneLauncher.daneMob[0].hpMax) + "%");
+
+            if(daneLauncher.daneMob[0].exists==false & daneLauncher.daneQuest[1].etap==2)
+            {
+                daneLauncher.daneQuest[1].stan = 1;
+                daneLauncher.daneQuest[1].etap = 3;
+                daneLauncher.daneQuest[1].opisEtapu[3] = "Idź na pierwsze piętro wieży po łuk.";
+            }
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
@@ -271,6 +272,39 @@ namespace Unstable
         private void alaButtonOdpowiedź3_Click(object sender, EventArgs e)
         {
             daneLauncher.danoOdpowiedź3 = true;
+        }
+
+
+        private void wykonajCutScena1()
+        {
+            cutScenaBegin = true;
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+
+            Wątki.editInThread(this, true, value => labelDialogNPC.Visible = value);
+
+            string Tekst = "Widzę, że znalazłeś mój stary miecz. Możesz go sobie zatrzymać.\nZobaczymy, czy potrafisz coś więcej, poza rozwalaniem moich beczek.\nRozruszaj trochę tą kukłę.";
+            for (int i = 0; i < Tekst.Length; i++)
+            {
+                metodaUniwersalne.wait(0.03);
+                Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
+            }
+            while (daneLauncher.danoOdpowiedź3 == false)
+            {
+                Wątki.editInThread(this, "Ruszam.", value => odpowiedź3.Text = value);
+                Wątki.editInThread(this, true, value => alaButtons[3].Visible = value);
+                Wątki.editInThread(this, true, value => odpowiedzi[3].Visible = value);
+            }
+            daneLauncher.danoOdpowiedź3 = false;
+            Wątki.editInThread(this, "", value => labelDialogNPC.Text = value);
+            Wątki.editInThread(this, false, value => alaButtons[3].Visible = value);
+            Wątki.editInThread(this, false, value => odpowiedzi[3].Visible = value);
+            Wątki.editInThread(this, false, value => panelDialogu.Visible = value);
+            Wątki.editInThread(this, true, value => panelStatystyk.Visible = value);
+            daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = false;
+            daneLauncher.daneQuest[1].stan = 1;
+            daneLauncher.daneQuest[1].etap = 2;
+            daneLauncher.daneQuest[1].opisEtapu[2] = "Zniszcz kukłę";
+            cutScena = false;
         }
     }
 }

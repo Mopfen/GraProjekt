@@ -66,10 +66,10 @@ namespace Unstable
         }
         private void timerGracz_Tick(object sender, EventArgs e)
         {
-            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
 
-            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneMob[0]);
+            metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneMob[0]);
             metodaMap.timerGraczMetoda();
         }
         private void timerAtakGracz_Tick(object sender, EventArgs e)
@@ -89,10 +89,10 @@ namespace Unstable
         {
             Mob metodaMob = new Mob(daneLauncher);
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
 
             metodaMob.RuchMobaDoGracza(0);
-            metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneMob[0], daneLauncher.daneGracz);
+            metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneMob[0], daneLauncher.daneGracz);
             metodaMap.timerMobMetoda(0);
         }
 

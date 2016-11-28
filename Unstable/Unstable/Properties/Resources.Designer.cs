@@ -83,6 +83,16 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AvatarTest {
+            get {
+                object obj = ResourceManager.GetObject("AvatarTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Beczka {
             get {
                 object obj = ResourceManager.GetObject("Beczka", resourceCulture);

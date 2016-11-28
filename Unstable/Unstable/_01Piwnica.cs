@@ -135,10 +135,10 @@ namespace Unstable
 
         private void timerGracz_Tick(object sender, EventArgs e)
         {
-            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
-            for(int i=0;i<=11;i++)
+            PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
+            for (int i=0;i<=11;i++)
             {
-                metodaUniwersalne.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
+                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
             }
             
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
