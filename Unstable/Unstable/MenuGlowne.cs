@@ -7,20 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Unstable
 {
     public partial class MenuGlowne : Form
     {
-        Launcher daneLauncher;
+        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
+        Launcher daneLauncher; // 
 
         public MenuGlowne(Launcher dane)
         {
             InitializeComponent();
 
-            daneLauncher=dane;
+            daneLauncher = dane;
 
-            aktualizator.Enabled = true;
+            if(daneLauncher.muzykaMenu==false)
+            {
+                Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+
+                daneLauncher.wątekMuzyka = new Thread(metodaMuzyka.SoundtrackMenu);
+                daneLauncher.wątekMuzyka.Start();
+                daneLauncher.muzykaMenu = true;
+            }
+            
+
+            //aktualizator.Enabled = true;
+
         }
 
         private void buttonNowaGra_Click(object sender, EventArgs e)

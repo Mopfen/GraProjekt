@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
-    public partial class NowaGra : Form
+    public partial class NowaGra : MetodyOgraniczonegoDostępu
     {
-        private int włosy = 0;
-        private int skóra = 0;
+        private int włosy = 0; //
+        private int skóra = 0; // zmienne odpowiadające za zmianę wyglądu gracza
 
+        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
         Launcher daneLauncher;
 
         public NowaGra(Launcher dane)
@@ -43,12 +44,19 @@ namespace Unstable
         {
 
         }
+
         private void buttonGoTest_Click(object sender, EventArgs e)
         {
-            Test formaTest = new Test();
-
+            WczytajDaneOdNowa(daneLauncher);
+            MetodyStatystyki metodaStatystyki = new MetodyStatystyki(daneLauncher);
+            Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
+            metodaStatystyki.liczStatystyki();
+            formaEkwipunek.Show();
+            formaEkwipunek.Close();
+            daneLauncher.muzykaMenu = false;
+            _01Piwnica forma_01Piwnica = new _01Piwnica(daneLauncher);
             this.Close();
-            formaTest.Show();
+            forma_01Piwnica.Show();
         }
 
         private void button_KolorWłosów_Click(object sender, EventArgs e)
@@ -56,12 +64,12 @@ namespace Unstable
             if (włosy > 0)
                 włosy--;
             else
-                włosy = 4;
+                włosy = 3;
         }
 
         private void buttonKolorWłosów__Click(object sender, EventArgs e)
         {
-            if (włosy < 4)
+            if (włosy < 3)
                 włosy++;
             else
                 włosy = 0;
@@ -90,41 +98,49 @@ namespace Unstable
                 case 0:
                     switch (włosy)
                     {
-                        case 0: this.gracz.Image = global::Unstable.Properties.Resources.StandWhiteManBrownHairBlueEyes; break;
-                        case 1: this.gracz.Image = global::Unstable.Properties.Resources.StandWhiteManBlackHairBlueEyes; break;
+                        case 0: this.gracz.Image = daneLauncher.whiteBrownStand.Image; break;
+                        case 1: this.gracz.Image = daneLauncher.whiteBlackStand.Image; break;
+                        case 2: this.gracz.Image = daneLauncher.whiteBlondeStand.Image; break;
+                        case 3: this.gracz.Image = daneLauncher.whiteRedStand.Image; break;
                     }
                     break;
                 case 1:
                     switch (włosy)
                     {
-                        case 0: this.gracz.Image = global::Unstable.Properties.Resources.StandBlackManBrownHairBlueEyes; break;
-                        case 1: this.gracz.Image = global::Unstable.Properties.Resources.StandBlackManBlackHairBlueEyes; break;
+                        case 0: this.gracz.Image = daneLauncher.blackBrownStand.Image; break;
+                        case 1: this.gracz.Image = daneLauncher.blackBlackStand.Image; break;
+                        case 2: this.gracz.Image = daneLauncher.blackBlondeStand.Image; break;
+                        case 3: this.gracz.Image = daneLauncher.blackRedStand.Image; break;
                     }
                     break;
                 case 2:
                     switch (włosy)
                     {
-                        case 0: this.gracz.Image = global::Unstable.Properties.Resources.StandPinkManBrownHairBlueEyes; break;
-                        case 1: this.gracz.Image = global::Unstable.Properties.Resources.StandPinkManBlackHairBlueEyes; break;
+                        case 0: this.gracz.Image = daneLauncher.pinkBrownStand.Image; break;
+                        case 1: this.gracz.Image = daneLauncher.pinkBlackStand.Image; break;
+                        case 2: this.gracz.Image = daneLauncher.pinkBlondeStand.Image; break;
+                        case 3: this.gracz.Image = daneLauncher.pinkRedStand.Image; break;
                     }
                     break;
                 case 3:
                     switch (włosy)
                     {
-                        case 0: this.gracz.Image = global::Unstable.Properties.Resources.StandYellowManBrownHairBlueEyes; break;
-                        case 1: this.gracz.Image = global::Unstable.Properties.Resources.StandYellowManBlackHairBlueEyes; break;
+                        case 0: this.gracz.Image = daneLauncher.yellowBrownStand.Image; break;
+                        case 1: this.gracz.Image = daneLauncher.yellowBlackStand.Image; break;
+                        case 2: this.gracz.Image = daneLauncher.yellowBlondeStand.Image; break;
+                        case 3: this.gracz.Image = daneLauncher.yellowRedStand.Image; break;
                     }
                     break;
                 case 4:
                     switch (włosy)
                     {
-                        case 0: this.gracz.Image = global::Unstable.Properties.Resources.StandRedManBrownHairBlueEyes; break;
-                        case 1: this.gracz.Image = global::Unstable.Properties.Resources.StandRedManBlackHairBlueEyes; break;
+                        case 0: this.gracz.Image = daneLauncher.redBrownStand.Image; break;
+                        case 1: this.gracz.Image = daneLauncher.redBlackStand.Image; break;
+                        case 2: this.gracz.Image = daneLauncher.redBlondeStand.Image; break;
+                        case 3: this.gracz.Image = daneLauncher.redRedStand.Image; break;
                     }
                     break;
             }
         }
-
-        
     }
 }

@@ -46,11 +46,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ekwipunek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ekwipunek.Designer.cs">
+      <DependentUpon>Ekwipunek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameOver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameOver.Designer.cs">
+      <DependentUpon>GameOver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Komendy.cs" />
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Launcher.Designer.cs">
       <DependentUpon>Launcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapaTestowa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapaTestowa.Designer.cs">
+      <DependentUpon>MapaTestowa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetodyEkwipunek.cs" />
+    <Compile Include="MetodyOgraniczonegoDostępu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetodyStatystyki.cs" />
+    <Compile Include="Muzyka.cs" />
+    <Compile Include="NPC.cs" />
+    <Compile Include="PoruszanieSię.cs" />
+    <Compile Include="Walka.cs" />
+    <Compile Include="Wątki.cs" />
+    <Compile Include="ZmianaWygladu.cs" />
+    <Compile Include="_01Dziedziniec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_01Dziedziniec.Designer.cs">
+      <DependentUpon>_01Dziedziniec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_01Parter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_01Parter.Designer.cs">
+      <DependentUpon>_01Parter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_01Piwnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_01Piwnica.Designer.cs">
+      <DependentUpon>_01Piwnica.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuGlowne.cs">
       <SubType>Form</SubType>
@@ -58,6 +106,8 @@
     <Compile Include="MenuGlowne.Designer.cs">
       <DependentUpon>MenuGlowne.cs</DependentUpon>
     </Compile>
+    <Compile Include="MetodyMap.cs" />
+    <Compile Include="Mob.cs" />
     <Compile Include="NowaGra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,20 +121,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Test.cs">
+    <Compile Include="Statystyki.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
+    <Compile Include="Statystyki.Designer.cs">
+      <DependentUpon>Statystyki.cs</DependentUpon>
     </Compile>
+    <Compile Include="Uniwersalne.cs" />
     <Compile Include="WczytajGrę.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WczytajGrę.Designer.cs">
       <DependentUpon>WczytajGrę.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ekwipunek.resx">
+      <DependentUpon>Ekwipunek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameOver.resx">
+      <DependentUpon>GameOver.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapaTestowa.resx">
+      <DependentUpon>MapaTestowa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MetodyEkwipunek.resx">
+      <DependentUpon>MetodyEkwipunek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_01Dziedziniec.resx">
+      <DependentUpon>_01Dziedziniec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_01Parter.resx">
+      <DependentUpon>_01Parter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_01Piwnica.resx">
+      <DependentUpon>_01Piwnica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGlowne.resx">
       <DependentUpon>MenuGlowne.cs</DependentUpon>
@@ -97,8 +169,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
+    <EmbeddedResource Include="Statystyki.resx">
+      <DependentUpon>Statystyki.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WczytajGrę.resx">
       <DependentUpon>WczytajGrę.cs</DependentUpon>
@@ -150,10 +222,92 @@
     <None Include="Models\Backgrounds\TłoNowaGra.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\TłoNowaGra.gif" />
+    <None Include="Models\Player\StandWhiteManBrownHairBlueEyesNew.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\StandWhiteManBrownHairBlueEyes.gif" />
+    <None Include="Models\Player\MovingWhiteManBrownHairRight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\Player\MovingWhiteManBrownHairLeft.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\Player\MovingDownWhiteManBrownHair.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\Player\MovingUpWhiteManBrownHair.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\Player\whiteRedStand.gif" />
+    <None Include="Models\Player\yellowRedStand.gif" />
+    <None Include="Models\Player\yellowBlondeStand.gif" />
+    <None Include="Models\Player\yellowBrownStand.png" />
+    <None Include="Models\Player\yellowBlackStand.png" />
+    <None Include="Models\Player\blackBlackStand.png" />
+    <None Include="Models\Player\whiteBrownAttackingRight.gif" />
+    <None Include="Models\Player\whiteBrownAttackingLeft.gif" />
+    <None Include="Models\Player\blackBrownStand.png" />
+    <None Include="Models\Player\pinkBlackStand.png" />
+    <None Include="Models\Player\pinkBrownStand.png" />
+    <None Include="Models\Player\redBlackStand.png" />
+    <None Include="Models\Player\redBrownStand.png" />
+    <None Include="Models\Player\whiteBlackStand.png" />
+    <None Include="Models\Player\blackBlondeStand.gif" />
+    <None Include="Models\Player\blackRedStand.gif" />
+    <None Include="Models\Player\pinkBlondeStand.gif" />
+    <None Include="Models\Player\pinkRedStand.gif" />
+    <None Include="Models\Player\redBlondeStand.gif" />
+    <None Include="Models\Player\redRedStand.gif" />
+    <None Include="Models\Player\whiteBlondeStand.gif" />
+    <None Include="Models\Backgrounds\OkienkoStatystyki.png" />
+    <None Include="Models\Backgrounds\PanelStatystyk.png" />
+    <None Include="Models\Others\StrzałaRight.gif" />
+    <None Include="Models\Others\StrzałaLeft.gif" />
+    <None Include="Models\Objekty\Beczka.gif" />
+    <None Include="Models\Others\rozdajStatystyki.png" />
+    <None Include="Models\Others\Zamknij24x24.png" />
+    <None Include="Models\Others\Plus16x16.png" />
+    <None Include="Models\Backgrounds\OkienkoEkwipunek.png" />
+    <None Include="Models\Items\ZardzewiałyMiecz.gif" />
+    <None Include="Models\Items\CzerwonaMiksturaMała.gif" />
+    <None Include="Models\Items\BrakItemu.gif" />
+    <None Include="Models\Items\MieczSquadaka.gif" />
+    <None Include="Models\Backgrounds\01PietroPierwsze.png" />
+    <None Include="Models\Backgrounds\01Parter.png" />
+    <None Include="Models\Backgrounds\PanelDialogu.png" />
+    <None Include="bin\Debug\Soundtrack1.wav" />
+    <None Include="bin\Debug\GameOver.wav" />
+    <None Include="bin\Debug\lvUp.wav" />
+    <None Include="bin\Debug\SoundtrackMenu.wav" />
+    <None Include="Models\Objekty\Drzwi.png" />
+    <None Include="Models\Backgrounds\01Dziedziniec.png" />
+    <None Include="Models\Objekty\Kukła.gif" />
+    <None Include="Models\Avatars\AvatarTest.png" />
+    <Content Include="Models\Player\whiteBrownMovingDown.gif" />
+    <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
+    <Content Include="Models\Player\whiteBrownMovingRight.gif" />
+    <Content Include="Models\Player\whiteBrownMovingUp.gif" />
+    <None Include="Models\Player\whiteBrownShotingLeft.gif" />
+    <None Include="Models\Player\whiteBrownShotingRight.gif" />
+    <Content Include="Models\Player\whiteBrownStand.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

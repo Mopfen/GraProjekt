@@ -14,17 +14,10 @@ namespace Unstable
         [STAThread]
         static void Main()
         {
+     
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Launcher());
         }
     }
-    class blabla
-    {
-        public void ZrobCos(int x)
-        {
-            
-        }
-    }
-
 }

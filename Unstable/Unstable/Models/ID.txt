@@ -1,0 +1,7 @@
+ID:
+   a)Miecze:
+1 - Zardzewia³y Miecz
+1000 - Miecz Squadaka
+
+   b)Mikstury:
+2 - Czerwona Mikstura(M)

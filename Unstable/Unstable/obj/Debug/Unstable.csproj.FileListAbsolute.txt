@@ -10,7 +10,16 @@ C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.pdb
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.NowaGra.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.MenuGlowne.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.WczytajGrę.resources
-C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Test.resources
-D:\Yey\Nowy folder\Unstable\Unstable\bin\Debug\Unstable.exe.config
-D:\Yey\Nowy folder\Unstable\Unstable\obj\Debug\Unstable.exe
-D:\Yey\Nowy folder\Unstable\Unstable\obj\Debug\Unstable.pdb
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.GameOver.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Statystyki.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.Ekwipunek.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable._01Piwnica.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.MapaTestowa.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable._01Parter.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Interop.WMPLib.dll
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.csproj.ResolveComReference.cache
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\Interop.WMPLib.dll
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable._01Dziedziniec.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.MetodyEkwipunek.resources
