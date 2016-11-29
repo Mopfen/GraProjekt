@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
+=======
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ekwipunek));
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.plecakSlot1 = new System.Windows.Forms.PictureBox();
             this.plecakSlot2 = new System.Windows.Forms.PictureBox();
             this.plecakSlot8 = new System.Windows.Forms.PictureBox();
@@ -901,6 +905,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.BackgroundImage = global::Unstable.Properties.Resources.OkienkoEkwipunek;
             this.ClientSize = new System.Drawing.Size(450, 600);
+<<<<<<< HEAD
+=======
+            this.ControlBox = false;
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.Controls.Add(this.labelStatystykiPrzedmiotu);
             this.Controls.Add(this.PlecakSlot46);
             this.Controls.Add(this.pictureBox1);
@@ -954,6 +962,10 @@
             this.Controls.Add(this.staraLokacja);
             this.Controls.Add(this.antyRozmycie);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+<<<<<<< HEAD
+=======
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.Name = "Ekwipunek";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ekwipunek";

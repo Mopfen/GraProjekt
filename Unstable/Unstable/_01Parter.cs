@@ -34,6 +34,11 @@ namespace Unstable
 
             DoubleBuffered = true;
 
+<<<<<<< HEAD
+=======
+            this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
+
+>>>>>>> refs/remotes/origin/Unstable1.1
             #region Test
             timerGracz.Interval = 1;
 
@@ -97,7 +102,14 @@ namespace Unstable
             {
                 daneLauncher.daneGracz.obraz.Location = new Point(198, 40);
             }
+<<<<<<< HEAD
 
+=======
+            if (daneLauncher.daneMapa[1].gdzieOstatnio == 2)
+            {
+                daneLauncher.daneGracz.obraz.Location = new Point(700, 315);
+            }
+>>>>>>> refs/remotes/origin/Unstable1.1
             #endregion
             #region Przeszkody
             przeszkody.Add(beczka1);
@@ -278,7 +290,11 @@ namespace Unstable
         private void timerStatystyki_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
+<<<<<<< HEAD
             metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+=======
+            metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerNPC, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+>>>>>>> refs/remotes/origin/Unstable1.1
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)

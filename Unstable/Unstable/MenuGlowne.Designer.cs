@@ -34,6 +34,8 @@
             this.buttonWczytajGrę = new System.Windows.Forms.Button();
             this.aktualizator = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.wersjaGry = new System.Windows.Forms.Label();
+            this.labelTerrorOfDragons = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonNowaGra
@@ -79,15 +81,45 @@
             // 
             this.aktualizator.Tick += new System.EventHandler(this.aktualizator_Tick);
             // 
+            // wersjaGry
+            // 
+            this.wersjaGry.AutoSize = true;
+            this.wersjaGry.BackColor = System.Drawing.Color.Transparent;
+            this.wersjaGry.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wersjaGry.ForeColor = System.Drawing.Color.White;
+            this.wersjaGry.Location = new System.Drawing.Point(592, 533);
+            this.wersjaGry.MaximumSize = new System.Drawing.Size(180, 20);
+            this.wersjaGry.MinimumSize = new System.Drawing.Size(180, 20);
+            this.wersjaGry.Name = "wersjaGry";
+            this.wersjaGry.Size = new System.Drawing.Size(180, 20);
+            this.wersjaGry.TabIndex = 4;
+            this.wersjaGry.Text = "Wersja Gry: ";
+            // 
+            // labelTerrorOfDragons
+            // 
+            this.labelTerrorOfDragons.AutoSize = true;
+            this.labelTerrorOfDragons.BackColor = System.Drawing.Color.Transparent;
+            this.labelTerrorOfDragons.Font = new System.Drawing.Font("Showcard Gothic", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTerrorOfDragons.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.labelTerrorOfDragons.Location = new System.Drawing.Point(149, 55);
+            this.labelTerrorOfDragons.Name = "labelTerrorOfDragons";
+            this.labelTerrorOfDragons.Size = new System.Drawing.Size(528, 60);
+            this.labelTerrorOfDragons.TabIndex = 5;
+            this.labelTerrorOfDragons.Text = "Terror Of Dragons";
+            // 
             // MenuGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Unstable.Properties.Resources.TłoNowaGra;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ControlBox = false;
+            this.Controls.Add(this.labelTerrorOfDragons);
+            this.Controls.Add(this.wersjaGry);
             this.Controls.Add(this.buttonWczytajGrę);
             this.Controls.Add(this.buttonWyjście);
             this.Controls.Add(this.buttonNowaGra);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MenuGlowne";
@@ -95,6 +127,7 @@
             this.Text = "MenuGlowne";
             this.Load += new System.EventHandler(this.MenuGlowne_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -105,5 +138,7 @@
         private System.Windows.Forms.Button buttonWczytajGrę;
         private System.Windows.Forms.Timer aktualizator;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label wersjaGry;
+        private System.Windows.Forms.Label labelTerrorOfDragons;
     }
 }

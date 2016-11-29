@@ -34,14 +34,20 @@
             this.labelWygląd = new System.Windows.Forms.Label();
             this.labelKolorWłosów = new System.Windows.Forms.Label();
             this.labelKolorSkóry = new System.Windows.Forms.Label();
-            this.button_KolorWłosów = new System.Windows.Forms.Button();
-            this.buttonKolorWłosów_ = new System.Windows.Forms.Button();
-            this.button_KolorSkóry = new System.Windows.Forms.Button();
-            this.buttonKolorSkóry_ = new System.Windows.Forms.Button();
             this.aktualizator = new System.Windows.Forms.Timer(this.components);
             this.gracz = new System.Windows.Forms.PictureBox();
             this.buttonGoTest = new System.Windows.Forms.Button();
+            this.alaButton_KolorWłosów = new System.Windows.Forms.PictureBox();
+            this.alaButton_KolorSkóry = new System.Windows.Forms.PictureBox();
+            this.alaButtonKolorWłosów_ = new System.Windows.Forms.PictureBox();
+            this.alaButtonKolorSkóry_ = new System.Windows.Forms.PictureBox();
+            this.info = new System.Windows.Forms.Label();
+            this.wersjaGry = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButton_KolorWłosów)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButton_KolorSkóry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonKolorWłosów_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonKolorSkóry_)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonWróć
@@ -98,48 +104,9 @@
             this.labelKolorSkóry.TabIndex = 8;
             this.labelKolorSkóry.Text = "Kolor skóry";
             // 
-            // button_KolorWłosów
-            // 
-            this.button_KolorWłosów.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_KolorWłosów.Location = new System.Drawing.Point(385, 92);
-            this.button_KolorWłosów.Name = "button_KolorWłosów";
-            this.button_KolorWłosów.Size = new System.Drawing.Size(16, 16);
-            this.button_KolorWłosów.TabIndex = 9;
-            this.button_KolorWłosów.UseVisualStyleBackColor = true;
-            this.button_KolorWłosów.Click += new System.EventHandler(this.button_KolorWłosów_Click);
-            // 
-            // buttonKolorWłosów_
-            // 
-            this.buttonKolorWłosów_.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonKolorWłosów_.Location = new System.Drawing.Point(516, 92);
-            this.buttonKolorWłosów_.Name = "buttonKolorWłosów_";
-            this.buttonKolorWłosów_.Size = new System.Drawing.Size(16, 16);
-            this.buttonKolorWłosów_.TabIndex = 10;
-            this.buttonKolorWłosów_.UseVisualStyleBackColor = true;
-            this.buttonKolorWłosów_.Click += new System.EventHandler(this.buttonKolorWłosów__Click);
-            // 
-            // button_KolorSkóry
-            // 
-            this.button_KolorSkóry.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_KolorSkóry.Location = new System.Drawing.Point(385, 127);
-            this.button_KolorSkóry.Name = "button_KolorSkóry";
-            this.button_KolorSkóry.Size = new System.Drawing.Size(16, 16);
-            this.button_KolorSkóry.TabIndex = 11;
-            this.button_KolorSkóry.UseVisualStyleBackColor = true;
-            this.button_KolorSkóry.Click += new System.EventHandler(this.button_KolorSkóry_Click);
-            // 
-            // buttonKolorSkóry_
-            // 
-            this.buttonKolorSkóry_.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonKolorSkóry_.Location = new System.Drawing.Point(516, 127);
-            this.buttonKolorSkóry_.Name = "buttonKolorSkóry_";
-            this.buttonKolorSkóry_.Size = new System.Drawing.Size(16, 16);
-            this.buttonKolorSkóry_.TabIndex = 12;
-            this.buttonKolorSkóry_.UseVisualStyleBackColor = true;
-            this.buttonKolorSkóry_.Click += new System.EventHandler(this.buttonKolorSkóry__Click);
-            // 
             // aktualizator
             // 
+            this.aktualizator.Enabled = true;
             this.aktualizator.Tick += new System.EventHandler(this.aktualizator_Tick);
             // 
             // gracz
@@ -155,13 +122,88 @@
             // 
             // buttonGoTest
             // 
-            this.buttonGoTest.Location = new System.Drawing.Point(672, 12);
+            this.buttonGoTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGoTest.Location = new System.Drawing.Point(353, 197);
             this.buttonGoTest.Name = "buttonGoTest";
             this.buttonGoTest.Size = new System.Drawing.Size(100, 74);
             this.buttonGoTest.TabIndex = 13;
-            this.buttonGoTest.Text = "Go Test";
+            this.buttonGoTest.Text = "Graj";
             this.buttonGoTest.UseVisualStyleBackColor = true;
             this.buttonGoTest.Click += new System.EventHandler(this.buttonGoTest_Click);
+            // 
+            // alaButton_KolorWłosów
+            // 
+            this.alaButton_KolorWłosów.BackColor = System.Drawing.Color.Transparent;
+            this.alaButton_KolorWłosów.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButton_KolorWłosów.Image = global::Unstable.Properties.Resources.StrzałkaLeft;
+            this.alaButton_KolorWłosów.Location = new System.Drawing.Point(380, 88);
+            this.alaButton_KolorWłosów.Name = "alaButton_KolorWłosów";
+            this.alaButton_KolorWłosów.Size = new System.Drawing.Size(24, 24);
+            this.alaButton_KolorWłosów.TabIndex = 14;
+            this.alaButton_KolorWłosów.TabStop = false;
+            this.alaButton_KolorWłosów.Click += new System.EventHandler(this.alaButton_KolorWłosów_Click);
+            // 
+            // alaButton_KolorSkóry
+            // 
+            this.alaButton_KolorSkóry.BackColor = System.Drawing.Color.Transparent;
+            this.alaButton_KolorSkóry.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButton_KolorSkóry.Image = global::Unstable.Properties.Resources.StrzałkaLeft;
+            this.alaButton_KolorSkóry.Location = new System.Drawing.Point(380, 122);
+            this.alaButton_KolorSkóry.Name = "alaButton_KolorSkóry";
+            this.alaButton_KolorSkóry.Size = new System.Drawing.Size(24, 24);
+            this.alaButton_KolorSkóry.TabIndex = 15;
+            this.alaButton_KolorSkóry.TabStop = false;
+            this.alaButton_KolorSkóry.Click += new System.EventHandler(this.alaButton_KolorSkóry_Click);
+            // 
+            // alaButtonKolorWłosów_
+            // 
+            this.alaButtonKolorWłosów_.BackColor = System.Drawing.Color.Transparent;
+            this.alaButtonKolorWłosów_.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonKolorWłosów_.Image = global::Unstable.Properties.Resources.StrzałkaRight;
+            this.alaButtonKolorWłosów_.Location = new System.Drawing.Point(511, 88);
+            this.alaButtonKolorWłosów_.Name = "alaButtonKolorWłosów_";
+            this.alaButtonKolorWłosów_.Size = new System.Drawing.Size(24, 24);
+            this.alaButtonKolorWłosów_.TabIndex = 16;
+            this.alaButtonKolorWłosów_.TabStop = false;
+            this.alaButtonKolorWłosów_.Click += new System.EventHandler(this.alaButtonKolorWłosów__Click);
+            // 
+            // alaButtonKolorSkóry_
+            // 
+            this.alaButtonKolorSkóry_.BackColor = System.Drawing.Color.Transparent;
+            this.alaButtonKolorSkóry_.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonKolorSkóry_.Image = global::Unstable.Properties.Resources.StrzałkaRight;
+            this.alaButtonKolorSkóry_.Location = new System.Drawing.Point(511, 122);
+            this.alaButtonKolorSkóry_.Name = "alaButtonKolorSkóry_";
+            this.alaButtonKolorSkóry_.Size = new System.Drawing.Size(24, 24);
+            this.alaButtonKolorSkóry_.TabIndex = 17;
+            this.alaButtonKolorSkóry_.TabStop = false;
+            this.alaButtonKolorSkóry_.Click += new System.EventHandler(this.alaButtonKolorSkóry__Click);
+            // 
+            // info
+            // 
+            this.info.AutoSize = true;
+            this.info.BackColor = System.Drawing.Color.Transparent;
+            this.info.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.info.ForeColor = System.Drawing.Color.Gray;
+            this.info.Location = new System.Drawing.Point(124, 152);
+            this.info.Name = "info";
+            this.info.Size = new System.Drawing.Size(541, 23);
+            this.info.TabIndex = 18;
+            this.info.Text = "W tej wersji gry ustawiony wygląd nie zostanie zapamiętany w grze";
+            // 
+            // wersjaGry
+            // 
+            this.wersjaGry.AutoSize = true;
+            this.wersjaGry.BackColor = System.Drawing.Color.Transparent;
+            this.wersjaGry.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wersjaGry.ForeColor = System.Drawing.Color.White;
+            this.wersjaGry.Location = new System.Drawing.Point(592, 530);
+            this.wersjaGry.MaximumSize = new System.Drawing.Size(180, 20);
+            this.wersjaGry.MinimumSize = new System.Drawing.Size(180, 20);
+            this.wersjaGry.Name = "wersjaGry";
+            this.wersjaGry.Size = new System.Drawing.Size(180, 20);
+            this.wersjaGry.TabIndex = 19;
+            this.wersjaGry.Text = "Wersja Gry: ";
             // 
             // NowaGra
             // 
@@ -170,17 +212,21 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BackgroundImage = global::Unstable.Properties.Resources.TłoNowaGra;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ControlBox = false;
+            this.Controls.Add(this.wersjaGry);
+            this.Controls.Add(this.info);
+            this.Controls.Add(this.alaButtonKolorSkóry_);
+            this.Controls.Add(this.alaButtonKolorWłosów_);
+            this.Controls.Add(this.alaButton_KolorSkóry);
+            this.Controls.Add(this.alaButton_KolorWłosów);
             this.Controls.Add(this.buttonGoTest);
-            this.Controls.Add(this.buttonKolorSkóry_);
-            this.Controls.Add(this.button_KolorSkóry);
-            this.Controls.Add(this.buttonKolorWłosów_);
-            this.Controls.Add(this.button_KolorWłosów);
             this.Controls.Add(this.labelKolorSkóry);
             this.Controls.Add(this.labelKolorWłosów);
             this.Controls.Add(this.labelWygląd);
             this.Controls.Add(this.gracz);
             this.Controls.Add(this.testNick);
             this.Controls.Add(this.buttonWróć);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "NowaGra";
@@ -188,6 +234,10 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.NowaGra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButton_KolorWłosów)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButton_KolorSkóry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonKolorWłosów_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alaButtonKolorSkóry_)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,11 +251,13 @@
         private System.Windows.Forms.Label labelWygląd;
         private System.Windows.Forms.Label labelKolorWłosów;
         private System.Windows.Forms.Label labelKolorSkóry;
-        private System.Windows.Forms.Button button_KolorWłosów;
-        private System.Windows.Forms.Button buttonKolorWłosów_;
-        private System.Windows.Forms.Button button_KolorSkóry;
-        private System.Windows.Forms.Button buttonKolorSkóry_;
         private System.Windows.Forms.Timer aktualizator;
         private System.Windows.Forms.Button buttonGoTest;
+        private System.Windows.Forms.PictureBox alaButton_KolorWłosów;
+        private System.Windows.Forms.PictureBox alaButton_KolorSkóry;
+        private System.Windows.Forms.PictureBox alaButtonKolorWłosów_;
+        private System.Windows.Forms.PictureBox alaButtonKolorSkóry_;
+        private System.Windows.Forms.Label info;
+        private System.Windows.Forms.Label wersjaGry;
     }
 }

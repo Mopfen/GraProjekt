@@ -23,3 +23,8 @@ C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\Interop.WMPLib.dll
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable._01Dziedziniec.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.MetodyEkwipunek.resources
+<<<<<<< HEAD
+=======
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.OkienkoInformacji.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.KoniecTestu.resources
+>>>>>>> refs/remotes/origin/Unstable1.1

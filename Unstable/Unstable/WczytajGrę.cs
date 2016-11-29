@@ -19,6 +19,9 @@ namespace Unstable
             InitializeComponent();
 
             daneLauncher = dane;
+
+            this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
+            wersjaGry.Text += daneLauncher.gameVersion;
         }
 
         private void buttonWróć_Click(object sender, EventArgs e)

@@ -24,7 +24,8 @@ namespace Unstable
 
             daneLauncher = dane;
 
-            aktualizator.Enabled = true; 
+            this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
+            wersjaGry.Text += daneLauncher.gameVersion;
         }
 
         private void NowaGra_Load(object sender, EventArgs e)
@@ -59,7 +60,7 @@ namespace Unstable
             forma_01Piwnica.Show();
         }
 
-        private void button_KolorWłosów_Click(object sender, EventArgs e)
+        private void alaButton_KolorWłosów_Click(object sender, EventArgs e)
         {
             if (włosy > 0)
                 włosy--;
@@ -67,7 +68,7 @@ namespace Unstable
                 włosy = 3;
         }
 
-        private void buttonKolorWłosów__Click(object sender, EventArgs e)
+        private void alaButtonKolorWłosów__Click(object sender, EventArgs e)
         {
             if (włosy < 3)
                 włosy++;
@@ -75,7 +76,7 @@ namespace Unstable
                 włosy = 0;
         }
 
-        private void button_KolorSkóry_Click(object sender, EventArgs e)
+        private void alaButton_KolorSkóry_Click(object sender, EventArgs e)
         {
             if (skóra > 0)
                 skóra--;
@@ -83,7 +84,7 @@ namespace Unstable
                 skóra = 4;
         }
 
-        private void buttonKolorSkóry__Click(object sender, EventArgs e)
+        private void alaButtonKolorSkóry__Click(object sender, EventArgs e)
         {
             if (skóra < 4)
                 skóra++;

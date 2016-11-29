@@ -32,6 +32,11 @@ namespace Unstable
 
             DoubleBuffered = true;
 
+<<<<<<< HEAD
+=======
+            this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
+
+>>>>>>> refs/remotes/origin/Unstable1.1
             daneLauncher.numerMapy = 1;
 
             #region Test
@@ -159,7 +164,11 @@ namespace Unstable
                 metodaMap.KeyDownMetoda(this, e);
                 if (e.KeyCode == Keys.Z)
                 {
+<<<<<<< HEAD
                     if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(wyjścieParter.Bounds))
+=======
+                    if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(wyjścieParter.Bounds) & this.Visible == true)
+>>>>>>> refs/remotes/origin/Unstable1.1
                     {
                         daneLauncher.daneStrzała[0].obraz.Visible = false;
                         daneLauncher.daneStrzała[0].exists = false;
@@ -171,6 +180,21 @@ namespace Unstable
                         map_01Parter.Show();
                     }
                 }
+<<<<<<< HEAD
+=======
+                if (e.KeyCode == Keys.Z)
+                {
+                    if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(drogowskaz.Bounds) & this.Visible==true)
+                    {
+                        KoniecTestu formaKoniecTestu = new KoniecTestu(daneLauncher, this);
+                        daneLauncher.daneGracz.exists = false;
+                        daneLauncher.music.Ctlcontrols.stop();
+                        daneLauncher.soundGracz.URL = "lvUp.wav";
+                        timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerNPC.Enabled = timerStatystyki.Enabled = false;
+                        formaKoniecTestu.ShowDialog();
+                    }
+                }
+>>>>>>> refs/remotes/origin/Unstable1.1
             }
 
         }
@@ -240,7 +264,11 @@ namespace Unstable
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
 
+<<<<<<< HEAD
             metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+=======
+            metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerNPC, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+>>>>>>> refs/remotes/origin/Unstable1.1
             labelHpMob0.Text = Convert.ToString(metodaUniwersalne.wyliczProcent(daneLauncher.daneMob[0].hp, daneLauncher.daneMob[0].hpMax) + "%");
 
             if(daneLauncher.daneMob[0].exists==false & daneLauncher.daneQuest[1].etap==2)
@@ -282,7 +310,11 @@ namespace Unstable
 
             Wątki.editInThread(this, true, value => labelDialogNPC.Visible = value);
 
+<<<<<<< HEAD
             string Tekst = "Widzę, że znalazłeś mój stary miecz. Możesz go sobie zatrzymać.\nZobaczymy, czy potrafisz coś więcej, poza rozwalaniem moich beczek.\nRozruszaj trochę tą kukłę.";
+=======
+            string Tekst = "Widzę, że znalazłeś mój stary miecz. Możesz go sobie zatrzymać.\nZobaczymy, czy potrafisz coś więcej, poza rozwalaniem moich beczek.\nRozruszaj trochę tę kukłę.";
+>>>>>>> refs/remotes/origin/Unstable1.1
             for (int i = 0; i < Tekst.Length; i++)
             {
                 metodaUniwersalne.wait(0.03);

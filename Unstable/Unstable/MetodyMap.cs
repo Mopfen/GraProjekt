@@ -125,13 +125,20 @@ namespace Unstable
         /// <summary>
         /// Metoda wykonująca czynności w timerStatystyki
         /// </summary>
+<<<<<<< HEAD
         internal void timerStatystykiMetoda(Form forma, Timer timerGracz, Timer timerAtakGracz, Timer timerMob, Timer timerAtakMob, Timer timerStatystyki, Label labelHpGracz, Label labelManaGracz, Label labelLvGracz, Label labelExpGracz)
+=======
+        internal void timerStatystykiMetoda(Form forma, Timer timerGracz, Timer timerAtakGracz, Timer timerMob, Timer timerAtakMob, Timer timerNPC, Timer timerStatystyki, Label labelHpGracz, Label labelManaGracz, Label labelLvGracz, Label labelExpGracz)
+>>>>>>> refs/remotes/origin/Unstable1.1
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             MetodyStatystyki metodaStatystyki = new MetodyStatystyki(daneLauncher);
             Walka metodaWalka = new Unstable.Walka(daneLauncher);
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
+<<<<<<< HEAD
             //Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher); // - BUG
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             GameOver formaGameOver = new GameOver(daneLauncher, forma);
             labelHpGracz.Text = Convert.ToString("PŻ: " + daneLauncher.daneGracz.hp + "/" + daneLauncher.daneGracz.hpMax);
             labelManaGracz.Text = Convert.ToString("Mana: " + daneLauncher.daneGracz.mana + "/" + daneLauncher.daneGracz.manaMax);
@@ -155,6 +162,7 @@ namespace Unstable
             if (metodaWalka.śmierćGracza() == true)
             {
                 daneLauncher.daneGracz.exists = false;
+<<<<<<< HEAD
                 //daneLauncher.music.SoundLocation = "GameOver.wav";
                 //daneLauncher.music.Play();
                 formaGameOver.Show();
@@ -164,6 +172,17 @@ namespace Unstable
             {
                 daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
                 timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerStatystyki.Enabled = false;
+=======
+                daneLauncher.music.Ctlcontrols.stop();
+                daneLauncher.soundGracz.URL = "GameOver.wav";
+                timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerNPC.Enabled = timerStatystyki.Enabled = false;
+                formaGameOver.ShowDialog();
+            }
+            if (metodaUniwersalne.CheckOpened(formaStatystyki.Name))
+            {
+                daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
+                timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerNPC.Enabled = timerStatystyki.Enabled = false;
+>>>>>>> refs/remotes/origin/Unstable1.1
             }
             else
             {
@@ -171,6 +190,10 @@ namespace Unstable
                 {
                     if (daneLauncher.daneGracz.wykonanoAtak == false) timerGracz.Enabled = true;
                     if (daneLauncher.daneMob[0].wykonanoAtak == false) timerMob.Enabled = true;
+<<<<<<< HEAD
+=======
+                    timerNPC.Enabled = true;
+>>>>>>> refs/remotes/origin/Unstable1.1
                     timerAtakGracz.Enabled = timerAtakMob.Enabled = true;
                 }
             }

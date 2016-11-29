@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
+=======
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_01Parter));
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.timerGracz = new System.Windows.Forms.Timer(this.components);
             this.timerAtakGracz = new System.Windows.Forms.Timer(this.components);
             this.timerStatystyki = new System.Windows.Forms.Timer(this.components);
@@ -43,11 +47,18 @@
             this.hitLog = new System.Windows.Forms.Label();
             this.labelHpGracz = new System.Windows.Forms.Label();
             this.poleGry = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
+=======
+            this.strzałaGracz = new System.Windows.Forms.PictureBox();
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.drzwiRightOpened = new System.Windows.Forms.PictureBox();
             this.gracz = new System.Windows.Forms.PictureBox();
             this.Perqun = new System.Windows.Forms.PictureBox();
             this.stolik = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
             this.strzałaGracz = new System.Windows.Forms.PictureBox();
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.ściana1 = new System.Windows.Forms.PictureBox();
             this.ściana3 = new System.Windows.Forms.PictureBox();
             this.rozdajStatystyki = new System.Windows.Forms.PictureBox();
@@ -73,11 +84,18 @@
             this.labelDialogNPC = new System.Windows.Forms.Label();
             this.panelStatystyk.SuspendLayout();
             this.poleGry.SuspendLayout();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
+>>>>>>> refs/remotes/origin/Unstable1.1
             ((System.ComponentModel.ISupportInitialize)(this.drzwiRightOpened)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Perqun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stolik)).BeginInit();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             ((System.ComponentModel.ISupportInitialize)(this.ściana1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).BeginInit();
@@ -141,7 +159,11 @@
             this.panelStatystyk.Controls.Add(this.labelManaGracz);
             this.panelStatystyk.Controls.Add(this.hitLog);
             this.panelStatystyk.Controls.Add(this.labelHpGracz);
+<<<<<<< HEAD
             this.panelStatystyk.Location = new System.Drawing.Point(3, 425);
+=======
+            this.panelStatystyk.Location = new System.Drawing.Point(3, 398);
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.panelStatystyk.Name = "panelStatystyk";
             this.panelStatystyk.Size = new System.Drawing.Size(780, 115);
             this.panelStatystyk.TabIndex = 35;
@@ -210,11 +232,18 @@
             this.poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Parter;
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
+<<<<<<< HEAD
+=======
+            this.poleGry.Controls.Add(this.strzałaGracz);
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.poleGry.Controls.Add(this.drzwiRightOpened);
             this.poleGry.Controls.Add(this.gracz);
             this.poleGry.Controls.Add(this.Perqun);
             this.poleGry.Controls.Add(this.stolik);
+<<<<<<< HEAD
             this.poleGry.Controls.Add(this.strzałaGracz);
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.poleGry.Controls.Add(this.ściana1);
             this.poleGry.Controls.Add(this.ściana3);
             this.poleGry.Controls.Add(this.rozdajStatystyki);
@@ -230,12 +259,30 @@
             this.poleGry.Controls.Add(this.wyjściePiętroPierwsze);
             this.poleGry.Controls.Add(this.wyjścieDziedziniec);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+<<<<<<< HEAD
             this.poleGry.Location = new System.Drawing.Point(3, -3);
+=======
+            this.poleGry.Location = new System.Drawing.Point(3, -25);
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 8;
             // 
+<<<<<<< HEAD
+=======
+            // strzałaGracz
+            // 
+            this.strzałaGracz.Image = global::Unstable.Properties.Resources.StrzałaRight;
+            this.strzałaGracz.Location = new System.Drawing.Point(9, 15);
+            this.strzałaGracz.MaximumSize = new System.Drawing.Size(32, 12);
+            this.strzałaGracz.MinimumSize = new System.Drawing.Size(32, 12);
+            this.strzałaGracz.Name = "strzałaGracz";
+            this.strzałaGracz.Size = new System.Drawing.Size(32, 12);
+            this.strzałaGracz.TabIndex = 5;
+            this.strzałaGracz.TabStop = false;
+            // 
+>>>>>>> refs/remotes/origin/Unstable1.1
             // drzwiRightOpened
             // 
             this.drzwiRightOpened.Image = global::Unstable.Properties.Resources.Drzwi;
@@ -282,6 +329,7 @@
             this.stolik.TabIndex = 34;
             this.stolik.TabStop = false;
             // 
+<<<<<<< HEAD
             // strzałaGracz
             // 
             this.strzałaGracz.Image = global::Unstable.Properties.Resources.StrzałaRight;
@@ -293,6 +341,8 @@
             this.strzałaGracz.TabIndex = 5;
             this.strzałaGracz.TabStop = false;
             // 
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             // ściana1
             // 
             this.ściana1.Location = new System.Drawing.Point(17, 3);
@@ -481,7 +531,13 @@
             // 
             // alaButtonOdpowiedź3
             // 
+<<<<<<< HEAD
             this.alaButtonOdpowiedź3.Cursor = System.Windows.Forms.Cursors.Hand;
+=======
+            this.alaButtonOdpowiedź3.BackColor = System.Drawing.Color.Transparent;
+            this.alaButtonOdpowiedź3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonOdpowiedź3.Image = global::Unstable.Properties.Resources.StrzałkaRight;
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.alaButtonOdpowiedź3.Location = new System.Drawing.Point(157, 87);
             this.alaButtonOdpowiedź3.Name = "alaButtonOdpowiedź3";
             this.alaButtonOdpowiedź3.Size = new System.Drawing.Size(24, 24);
@@ -491,7 +547,13 @@
             // 
             // alaButtonOdpowiedź2
             // 
+<<<<<<< HEAD
             this.alaButtonOdpowiedź2.Cursor = System.Windows.Forms.Cursors.Hand;
+=======
+            this.alaButtonOdpowiedź2.BackColor = System.Drawing.Color.Transparent;
+            this.alaButtonOdpowiedź2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonOdpowiedź2.Image = global::Unstable.Properties.Resources.StrzałkaRight;
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.alaButtonOdpowiedź2.Location = new System.Drawing.Point(157, 61);
             this.alaButtonOdpowiedź2.Name = "alaButtonOdpowiedź2";
             this.alaButtonOdpowiedź2.Size = new System.Drawing.Size(24, 24);
@@ -501,7 +563,13 @@
             // 
             // alaButtonOdpowiedź1
             // 
+<<<<<<< HEAD
             this.alaButtonOdpowiedź1.Cursor = System.Windows.Forms.Cursors.Hand;
+=======
+            this.alaButtonOdpowiedź1.BackColor = System.Drawing.Color.Transparent;
+            this.alaButtonOdpowiedź1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonOdpowiedź1.Image = global::Unstable.Properties.Resources.StrzałkaRight;
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.alaButtonOdpowiedź1.Location = new System.Drawing.Point(157, 34);
             this.alaButtonOdpowiedź1.Name = "alaButtonOdpowiedź1";
             this.alaButtonOdpowiedź1.Size = new System.Drawing.Size(24, 24);
@@ -537,9 +605,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(175)))), ((int)(((byte)(81)))));
             this.ClientSize = new System.Drawing.Size(784, 562);
+<<<<<<< HEAD
             this.Controls.Add(this.panelStatystyk);
             this.Controls.Add(this.poleGry);
             this.Controls.Add(this.panelDialogu);
+=======
+            this.ControlBox = false;
+            this.Controls.Add(this.panelStatystyk);
+            this.Controls.Add(this.poleGry);
+            this.Controls.Add(this.panelDialogu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 600);
@@ -551,11 +627,18 @@
             this.panelStatystyk.ResumeLayout(false);
             this.panelStatystyk.PerformLayout();
             this.poleGry.ResumeLayout(false);
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
+>>>>>>> refs/remotes/origin/Unstable1.1
             ((System.ComponentModel.ISupportInitialize)(this.drzwiRightOpened)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Perqun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stolik)).EndInit();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             ((System.ComponentModel.ISupportInitialize)(this.ściana1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).EndInit();

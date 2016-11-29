@@ -61,6 +61,10 @@
             this.poleGry = new System.Windows.Forms.Panel();
             this.drop1 = new System.Windows.Forms.PictureBox();
             this.rozdajStatystyki = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
+=======
+            this.timerNPC = new System.Windows.Forms.Timer(this.components);
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.panelStatystyk.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).BeginInit();
@@ -322,7 +326,11 @@
             this.gracz.BackColor = System.Drawing.Color.Transparent;
             this.gracz.Cursor = System.Windows.Forms.Cursors.Default;
             this.gracz.Image = global::Unstable.Properties.Resources.whiteBrownStand;
+<<<<<<< HEAD
             this.gracz.Location = new System.Drawing.Point(511, 67);
+=======
+            this.gracz.Location = new System.Drawing.Point(28, 55);
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.gracz.Margin = new System.Windows.Forms.Padding(10);
             this.gracz.MaximumSize = new System.Drawing.Size(64, 64);
             this.gracz.MinimumSize = new System.Drawing.Size(64, 64);
@@ -338,6 +346,10 @@
             this.poleGry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("poleGry.BackgroundImage")));
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
+<<<<<<< HEAD
+=======
+            this.poleGry.Controls.Add(this.strzałaGracz);
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.poleGry.Controls.Add(this.gracz);
             this.poleGry.Controls.Add(this.drop1);
             this.poleGry.Controls.Add(this.rozdajStatystyki);
@@ -353,11 +365,18 @@
             this.poleGry.Controls.Add(this.ściana1);
             this.poleGry.Controls.Add(this.beczka4);
             this.poleGry.Controls.Add(this.beczka1);
+<<<<<<< HEAD
             this.poleGry.Controls.Add(this.strzałaGracz);
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.wyjścieParter);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.poleGry.Location = new System.Drawing.Point(3, -102);
+=======
+            this.poleGry.Controls.Add(this.underGracz);
+            this.poleGry.Controls.Add(this.wyjścieParter);
+            this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.poleGry.Location = new System.Drawing.Point(3, -3);
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
@@ -386,6 +405,14 @@
             this.rozdajStatystyki.Visible = false;
             this.rozdajStatystyki.Click += new System.EventHandler(this.rozdajStatystyki_Click);
             // 
+<<<<<<< HEAD
+=======
+            // timerNPC
+            // 
+            this.timerNPC.Enabled = true;
+            this.timerNPC.Interval = 1;
+            // 
+>>>>>>> refs/remotes/origin/Unstable1.1
             // _01Piwnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,6 +422,10 @@
             this.ControlBox = false;
             this.Controls.Add(this.panelStatystyk);
             this.Controls.Add(this.poleGry);
+<<<<<<< HEAD
+=======
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "_01Piwnica";
@@ -459,5 +490,9 @@
         private System.Windows.Forms.Panel poleGry;
         private System.Windows.Forms.PictureBox rozdajStatystyki;
         private System.Windows.Forms.PictureBox drop1;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Timer timerNPC;
+>>>>>>> refs/remotes/origin/Unstable1.1
     }
 }

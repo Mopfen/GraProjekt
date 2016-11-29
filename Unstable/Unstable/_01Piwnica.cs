@@ -25,6 +25,11 @@ namespace Unstable
 
             DoubleBuffered = true;
 
+<<<<<<< HEAD
+=======
+            this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
+
+>>>>>>> refs/remotes/origin/Unstable1.1
             daneLauncher.numerMapy = 1;
 
             #region Test
@@ -154,7 +159,11 @@ namespace Unstable
         private void timerStatystyki_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
+<<<<<<< HEAD
             metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+=======
+            metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerNPC, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+>>>>>>> refs/remotes/origin/Unstable1.1
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)

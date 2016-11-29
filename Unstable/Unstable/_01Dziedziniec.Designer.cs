@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
+=======
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_01Dziedziniec));
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.timerGracz = new System.Windows.Forms.Timer(this.components);
             this.timerAtakGracz = new System.Windows.Forms.Timer(this.components);
             this.timerStatystyki = new System.Windows.Forms.Timer(this.components);
@@ -52,19 +56,30 @@
             this.avatar = new System.Windows.Forms.PictureBox();
             this.labelDialogNPC = new System.Windows.Forms.Label();
             this.poleGry = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
+=======
+            this.strzałaGracz = new System.Windows.Forms.PictureBox();
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.głaz = new System.Windows.Forms.PictureBox();
             this.labelHpMob0 = new System.Windows.Forms.Label();
             this.kukła = new System.Windows.Forms.PictureBox();
             this.krzak3 = new System.Windows.Forms.PictureBox();
             this.gracz = new System.Windows.Forms.PictureBox();
             this.Perqun = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
             this.strzałaGracz = new System.Windows.Forms.PictureBox();
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.krzak1 = new System.Windows.Forms.PictureBox();
             this.rozdajStatystyki = new System.Windows.Forms.PictureBox();
             this.krzak2 = new System.Windows.Forms.PictureBox();
             this.underGracz = new System.Windows.Forms.PictureBox();
             this.underPerqun = new System.Windows.Forms.PictureBox();
             this.wyjścieParter = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
+=======
+            this.drogowskaz = new System.Windows.Forms.PictureBox();
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.panelStatystyk.SuspendLayout();
             this.panelDialogu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź3)).BeginInit();
@@ -72,18 +87,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.poleGry.SuspendLayout();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
+>>>>>>> refs/remotes/origin/Unstable1.1
             ((System.ComponentModel.ISupportInitialize)(this.głaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kukła)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.krzak3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Perqun)).BeginInit();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             ((System.ComponentModel.ISupportInitialize)(this.krzak1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.krzak2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.underPerqun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).BeginInit();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.drogowskaz)).BeginInit();
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.SuspendLayout();
             // 
             // timerGracz
@@ -128,7 +154,11 @@
             this.panelStatystyk.Controls.Add(this.labelManaGracz);
             this.panelStatystyk.Controls.Add(this.hitLog);
             this.panelStatystyk.Controls.Add(this.labelHpGracz);
+<<<<<<< HEAD
             this.panelStatystyk.Location = new System.Drawing.Point(3, 431);
+=======
+            this.panelStatystyk.Location = new System.Drawing.Point(3, 450);
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.panelStatystyk.Name = "panelStatystyk";
             this.panelStatystyk.Size = new System.Drawing.Size(780, 115);
             this.panelStatystyk.TabIndex = 39;
@@ -248,7 +278,13 @@
             // 
             // alaButtonOdpowiedź3
             // 
+<<<<<<< HEAD
             this.alaButtonOdpowiedź3.Cursor = System.Windows.Forms.Cursors.Hand;
+=======
+            this.alaButtonOdpowiedź3.BackColor = System.Drawing.Color.Transparent;
+            this.alaButtonOdpowiedź3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonOdpowiedź3.Image = global::Unstable.Properties.Resources.StrzałkaRight;
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.alaButtonOdpowiedź3.Location = new System.Drawing.Point(157, 87);
             this.alaButtonOdpowiedź3.Name = "alaButtonOdpowiedź3";
             this.alaButtonOdpowiedź3.Size = new System.Drawing.Size(24, 24);
@@ -258,7 +294,13 @@
             // 
             // alaButtonOdpowiedź2
             // 
+<<<<<<< HEAD
             this.alaButtonOdpowiedź2.Cursor = System.Windows.Forms.Cursors.Hand;
+=======
+            this.alaButtonOdpowiedź2.BackColor = System.Drawing.Color.Transparent;
+            this.alaButtonOdpowiedź2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonOdpowiedź2.Image = global::Unstable.Properties.Resources.StrzałkaRight;
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.alaButtonOdpowiedź2.Location = new System.Drawing.Point(157, 61);
             this.alaButtonOdpowiedź2.Name = "alaButtonOdpowiedź2";
             this.alaButtonOdpowiedź2.Size = new System.Drawing.Size(24, 24);
@@ -268,7 +310,13 @@
             // 
             // alaButtonOdpowiedź1
             // 
+<<<<<<< HEAD
             this.alaButtonOdpowiedź1.Cursor = System.Windows.Forms.Cursors.Hand;
+=======
+            this.alaButtonOdpowiedź1.BackColor = System.Drawing.Color.Transparent;
+            this.alaButtonOdpowiedź1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.alaButtonOdpowiedź1.Image = global::Unstable.Properties.Resources.StrzałkaRight;
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.alaButtonOdpowiedź1.Location = new System.Drawing.Point(157, 34);
             this.alaButtonOdpowiedź1.Name = "alaButtonOdpowiedź1";
             this.alaButtonOdpowiedź1.Size = new System.Drawing.Size(24, 24);
@@ -305,26 +353,53 @@
             this.poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Dziedziniec;
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
+<<<<<<< HEAD
+=======
+            this.poleGry.Controls.Add(this.strzałaGracz);
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.poleGry.Controls.Add(this.głaz);
             this.poleGry.Controls.Add(this.labelHpMob0);
             this.poleGry.Controls.Add(this.kukła);
             this.poleGry.Controls.Add(this.krzak3);
             this.poleGry.Controls.Add(this.gracz);
             this.poleGry.Controls.Add(this.Perqun);
+<<<<<<< HEAD
             this.poleGry.Controls.Add(this.strzałaGracz);
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.poleGry.Controls.Add(this.krzak1);
             this.poleGry.Controls.Add(this.rozdajStatystyki);
             this.poleGry.Controls.Add(this.krzak2);
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.underPerqun);
             this.poleGry.Controls.Add(this.wyjścieParter);
+<<<<<<< HEAD
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.poleGry.Location = new System.Drawing.Point(3, -3);
+=======
+            this.poleGry.Controls.Add(this.drogowskaz);
+            this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.poleGry.Location = new System.Drawing.Point(3, -14);
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 38;
             // 
+<<<<<<< HEAD
+=======
+            // strzałaGracz
+            // 
+            this.strzałaGracz.Image = global::Unstable.Properties.Resources.StrzałaRight;
+            this.strzałaGracz.Location = new System.Drawing.Point(9, 15);
+            this.strzałaGracz.MaximumSize = new System.Drawing.Size(32, 12);
+            this.strzałaGracz.MinimumSize = new System.Drawing.Size(32, 12);
+            this.strzałaGracz.Name = "strzałaGracz";
+            this.strzałaGracz.Size = new System.Drawing.Size(32, 12);
+            this.strzałaGracz.TabIndex = 5;
+            this.strzałaGracz.TabStop = false;
+            // 
+>>>>>>> refs/remotes/origin/Unstable1.1
             // głaz
             // 
             this.głaz.Location = new System.Drawing.Point(633, 195);
@@ -392,6 +467,7 @@
             this.Perqun.TabIndex = 36;
             this.Perqun.TabStop = false;
             // 
+<<<<<<< HEAD
             // strzałaGracz
             // 
             this.strzałaGracz.Image = global::Unstable.Properties.Resources.StrzałaRight;
@@ -403,6 +479,8 @@
             this.strzałaGracz.TabIndex = 5;
             this.strzałaGracz.TabStop = false;
             // 
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             // krzak1
             // 
             this.krzak1.Location = new System.Drawing.Point(441, 0);
@@ -464,14 +542,37 @@
             this.wyjścieParter.TabIndex = 38;
             this.wyjścieParter.TabStop = false;
             // 
+<<<<<<< HEAD
+=======
+            // drogowskaz
+            // 
+            this.drogowskaz.Location = new System.Drawing.Point(699, 271);
+            this.drogowskaz.MaximumSize = new System.Drawing.Size(72, 84);
+            this.drogowskaz.MinimumSize = new System.Drawing.Size(72, 84);
+            this.drogowskaz.Name = "drogowskaz";
+            this.drogowskaz.Size = new System.Drawing.Size(72, 84);
+            this.drogowskaz.TabIndex = 43;
+            this.drogowskaz.TabStop = false;
+            // 
+>>>>>>> refs/remotes/origin/Unstable1.1
             // _01Dziedziniec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.panelStatystyk);
             this.Controls.Add(this.panelDialogu);
             this.Controls.Add(this.poleGry);
+=======
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ControlBox = false;
+            this.Controls.Add(this.panelStatystyk);
+            this.Controls.Add(this.panelDialogu);
+            this.Controls.Add(this.poleGry);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "_01Dziedziniec";
@@ -489,18 +590,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.poleGry.ResumeLayout(false);
             this.poleGry.PerformLayout();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
+>>>>>>> refs/remotes/origin/Unstable1.1
             ((System.ComponentModel.ISupportInitialize)(this.głaz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kukła)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.krzak3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Perqun)).EndInit();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
             ((System.ComponentModel.ISupportInitialize)(this.krzak1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.krzak2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.underPerqun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).EndInit();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.drogowskaz)).EndInit();
+>>>>>>> refs/remotes/origin/Unstable1.1
             this.ResumeLayout(false);
 
         }
@@ -542,5 +654,9 @@
         private System.Windows.Forms.PictureBox kukła;
         private System.Windows.Forms.Label labelHpMob0;
         private System.Windows.Forms.PictureBox głaz;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.PictureBox drogowskaz;
+>>>>>>> refs/remotes/origin/Unstable1.1
     }
 }

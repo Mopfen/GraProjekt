@@ -104,8 +104,13 @@ namespace Unstable
             #region Test
             daneLauncher.danePlecakSlot[2].exists = true;
             daneLauncher.danePlecakSlot[2].id = 2;
+<<<<<<< HEAD
             daneLauncher.danePlecakSlot[46].exists = true; // łuk
             daneLauncher.danePlecakSlot[2].id = 2; // łuk
+=======
+            /*daneLauncher.danePlecakSlot[46].exists = true; // łuk
+            daneLauncher.danePlecakSlot[2].id = 2; // łuk*/
+>>>>>>> refs/remotes/origin/Unstable1.1
 
             #endregion
         }

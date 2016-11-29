@@ -22,7 +22,14 @@ namespace Unstable
 
             daneLauncher = dane;
 
+<<<<<<< HEAD
             if(daneLauncher.muzykaMenu==false)
+=======
+            this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
+            wersjaGry.Text += daneLauncher.gameVersion;
+
+            if (daneLauncher.muzykaMenu==false)
+>>>>>>> refs/remotes/origin/Unstable1.1
             {
                 Muzyka metodaMuzyka = new Muzyka(daneLauncher);
 

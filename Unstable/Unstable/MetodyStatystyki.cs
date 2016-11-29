@@ -45,7 +45,10 @@ namespace Unstable
             while (daneLauncher.daneGracz.exp >= daneLauncher.daneGracz.expMax)
             {
                 daneLauncher.soundGracz.URL = "lvUp.wav";
+<<<<<<< HEAD
                 daneLauncher.soundGracz.Ctlcontrols.play();
+=======
+>>>>>>> refs/remotes/origin/Unstable1.1
                 daneLauncher.daneGracz.lv++;
                 daneLauncher.daneGracz.exp -= daneLauncher.daneGracz.expMax;
                 daneLauncher.daneGracz.expMax += 5;

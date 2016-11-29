@@ -165,10 +165,17 @@ namespace Unstable
                         dmgZwarcieGracz1();
                         dmgZwarcieGracz2();
                         int dmg = metodaUniwersalne.losuj(daneLauncher.daneGracz.siłaAtakuZwarcie[0], daneLauncher.daneGracz.siłaAtakuZwarcie[1]);
+<<<<<<< HEAD
                         if (metodaUniwersalne.losuj(0, 100) <= daneLauncher.daneGracz.szansaKryta)
                         {
                             dmg *= 2;
                             daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
+=======
+                        int dmgK = dmg * 2;
+                        if (metodaUniwersalne.losuj(0, 100) <= daneLauncher.daneGracz.szansaKryta)
+                        {
+                            daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmgK + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
+>>>>>>> refs/remotes/origin/Unstable1.1
                         }
                         else
                         {
