@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Statystyki));
             this.labelSił = new System.Windows.Forms.Label();
             this.labelObrZwa = new System.Windows.Forms.Label();
             this.labelZrę = new System.Windows.Forms.Label();
@@ -382,6 +383,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Unstable.Properties.Resources.OkienkoStatystyki;
             this.ClientSize = new System.Drawing.Size(450, 600);
+            this.ControlBox = false;
             this.Controls.Add(this.alaButtonAddSzc);
             this.Controls.Add(this.alaButtonAddWyt);
             this.Controls.Add(this.alaButtonAddInt);
@@ -409,6 +411,7 @@
             this.Controls.Add(this.labelObrZwa);
             this.Controls.Add(this.labelSił);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(450, 600);
             this.MinimumSize = new System.Drawing.Size(450, 600);
             this.Name = "Statystyki";

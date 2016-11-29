@@ -34,6 +34,8 @@ namespace Unstable
 
             DoubleBuffered = true;
 
+            this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
+
             #region Test
             timerGracz.Interval = 1;
 
@@ -97,7 +99,10 @@ namespace Unstable
             {
                 daneLauncher.daneGracz.obraz.Location = new Point(198, 40);
             }
-
+            if (daneLauncher.daneMapa[1].gdzieOstatnio == 2)
+            {
+                daneLauncher.daneGracz.obraz.Location = new Point(700, 315);
+            }
             #endregion
             #region Przeszkody
             przeszkody.Add(beczka1);
@@ -278,7 +283,7 @@ namespace Unstable
         private void timerStatystyki_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+            metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerNPC, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)

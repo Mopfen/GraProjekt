@@ -202,6 +202,8 @@ namespace Unstable
 
         #endregion
         #region zmiennePozostałe
+        internal string gameVersion = "Unstable1.1"; // zmienna przechowuje informacje o wersji gry
+
         internal Panel poleGry; // zmienna odpowiadająca za właściwości pola gry
         internal Label hitLog; // zmienna odpowiadająca za wyświetlanie informacji przez hitLog
         internal Label statystykiPrzedmiotu; // zmienna odpowiadająca za wyświetlanie informacji o statystykach przedmiotów
@@ -245,8 +247,11 @@ namespace Unstable
 
             DoubleBuffered = true;
 
+            this.Text = "TerrorOfDragons - "+gameVersion;
+
             music.settings.setMode("loop", true);
             music.Ctlcontrols.play();
+            soundGracz.Ctlcontrols.play();
         }
 
         private void Launcher_Load(object sender, EventArgs e)
@@ -257,6 +262,7 @@ namespace Unstable
         private void buttonStart_Click(object sender, EventArgs e)
         {
             MenuGlowne formaMenuGlowne = new MenuGlowne(this);
+            OkienkoInformacji formaOkienkoInformacji = new OkienkoInformacji();
             WczytajDaneOdNowa(this);
 
             wczytajDaneObrazkiWhiteBrownHuman();
@@ -283,6 +289,7 @@ namespace Unstable
 
             this.Hide();
             formaMenuGlowne.Show();
+            formaOkienkoInformacji.ShowDialog();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

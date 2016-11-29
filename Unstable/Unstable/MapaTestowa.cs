@@ -22,6 +22,8 @@ namespace Unstable
 
             daneLauncher = dane;
 
+            this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
+
             this.poleGry.Location = new System.Drawing.Point(3, -3);
 
             DoubleBuffered = true;
@@ -82,7 +84,7 @@ namespace Unstable
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             labelHpMob0.Text = Convert.ToString(metodaUniwersalne.wyliczProcent(daneLauncher.daneMob[0].hp, daneLauncher.daneMob[0].hpMax)+"%");
-            metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+            metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerNPC, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
         }
 
         private void timerMob_Tick(object sender, EventArgs e)

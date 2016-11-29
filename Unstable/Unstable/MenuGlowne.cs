@@ -22,7 +22,10 @@ namespace Unstable
 
             daneLauncher = dane;
 
-            if(daneLauncher.muzykaMenu==false)
+            this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
+            wersjaGry.Text += daneLauncher.gameVersion;
+
+            if (daneLauncher.muzykaMenu==false)
             {
                 Muzyka metodaMuzyka = new Muzyka(daneLauncher);
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameOver));
             this.Tekst = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -49,10 +50,12 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.Brown;
             this.ClientSize = new System.Drawing.Size(508, 254);
+            this.ControlBox = false;
             this.Controls.Add(this.Tekst);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameOver";
-            this.Opacity = 0.5D;
+            this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameOver";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameOver_KeyDown);

@@ -45,7 +45,6 @@ namespace Unstable
             while (daneLauncher.daneGracz.exp >= daneLauncher.daneGracz.expMax)
             {
                 daneLauncher.soundGracz.URL = "lvUp.wav";
-                daneLauncher.soundGracz.Ctlcontrols.play();
                 daneLauncher.daneGracz.lv++;
                 daneLauncher.daneGracz.exp -= daneLauncher.daneGracz.expMax;
                 daneLauncher.daneGracz.expMax += 5;

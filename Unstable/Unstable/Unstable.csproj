@@ -59,6 +59,12 @@
       <DependentUpon>GameOver.cs</DependentUpon>
     </Compile>
     <Compile Include="Komendy.cs" />
+    <Compile Include="KoniecTestu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KoniecTestu.Designer.cs">
+      <DependentUpon>KoniecTestu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     <Compile Include="MetodyStatystyki.cs" />
     <Compile Include="Muzyka.cs" />
     <Compile Include="NPC.cs" />
+    <Compile Include="OkienkoInformacji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OkienkoInformacji.Designer.cs">
+      <DependentUpon>OkienkoInformacji.cs</DependentUpon>
+    </Compile>
     <Compile Include="PoruszanieSię.cs" />
     <Compile Include="Walka.cs" />
     <Compile Include="Wątki.cs" />
@@ -140,6 +152,9 @@
     <EmbeddedResource Include="GameOver.resx">
       <DependentUpon>GameOver.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KoniecTestu.resx">
+      <DependentUpon>KoniecTestu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MetodyEkwipunek.resx">
       <DependentUpon>MetodyEkwipunek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OkienkoInformacji.resx">
+      <DependentUpon>OkienkoInformacji.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_01Dziedziniec.resx">
       <DependentUpon>_01Dziedziniec.cs</DependentUpon>
@@ -282,6 +300,9 @@
     <None Include="Models\Backgrounds\01Dziedziniec.png" />
     <None Include="Models\Objekty\Kukła.gif" />
     <None Include="Models\Avatars\AvatarTest.png" />
+    <None Include="Models\Others\StrzałkaRight.png" />
+    <None Include="Models\Others\StrzałkaLeft.png" />
+    <None Include="Models\Objekty\Drogowskaz.png" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />
