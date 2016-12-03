@@ -44,7 +44,6 @@ namespace Unstable
                     daneLauncher.danePlecakSlot[i] = new Launcher.ZmienneEkwipunku();
                 }
 
-                daneLauncher.danePrzeszkoda[i] = new Launcher.ZmienneObiektów();
                 daneLauncher.daneQuest[i] = new Launcher.ZmienneMisji();
                 daneLauncher.daneMapa[i] = new Launcher.ZmienneMap();
 

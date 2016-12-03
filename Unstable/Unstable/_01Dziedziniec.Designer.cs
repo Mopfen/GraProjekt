@@ -329,7 +329,7 @@
             this.poleGry.Controls.Add(this.wyjścieParter);
             this.poleGry.Controls.Add(this.drogowskaz);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -14);
+            this.poleGry.Location = new System.Drawing.Point(3, -25);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);

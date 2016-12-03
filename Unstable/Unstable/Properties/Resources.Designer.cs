@@ -83,6 +83,16 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _01PiętroPierwsze {
+            get {
+                object obj = ResourceManager.GetObject("01PiętroPierwsze", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AvatarTest {
             get {
                 object obj = ResourceManager.GetObject("AvatarTest", resourceCulture);
@@ -195,6 +205,16 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap Kukła {
             get {
                 object obj = ResourceManager.GetObject("Kukła", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ŁukSquadaka {
+            get {
+                object obj = ResourceManager.GetObject("ŁukSquadaka", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -612,6 +632,16 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap ZardzewiałyMiecz {
             get {
                 object obj = ResourceManager.GetObject("ZardzewiałyMiecz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ZbutwiałyŁuk {
+            get {
+                object obj = ResourceManager.GetObject("ZbutwiałyŁuk", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

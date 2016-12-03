@@ -146,6 +146,12 @@
     <Compile Include="WczytajGrę.Designer.cs">
       <DependentUpon>WczytajGrę.cs</DependentUpon>
     </Compile>
+    <Compile Include="_01PiętroPierwsze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_01PiętroPierwsze.Designer.cs">
+      <DependentUpon>_01PiętroPierwsze.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Ekwipunek.resx">
       <DependentUpon>Ekwipunek.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WczytajGrę.resx">
       <DependentUpon>WczytajGrę.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_01PiętroPierwsze.resx">
+      <DependentUpon>_01PiętroPierwsze.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -303,6 +312,9 @@
     <None Include="Models\Others\StrzałkaRight.png" />
     <None Include="Models\Others\StrzałkaLeft.png" />
     <None Include="Models\Objekty\Drogowskaz.png" />
+    <None Include="Models\Backgrounds\01PiętroPierwsze.png" />
+    <None Include="Models\Items\ŁukSquadaka.gif" />
+    <None Include="Models\Items\ZbutwiałyŁuk.gif" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />

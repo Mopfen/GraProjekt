@@ -59,7 +59,7 @@
             this.ściana2 = new System.Windows.Forms.PictureBox();
             this.gracz = new System.Windows.Forms.PictureBox();
             this.poleGry = new System.Windows.Forms.Panel();
-            this.drop1 = new System.Windows.Forms.PictureBox();
+            this.drop0 = new System.Windows.Forms.PictureBox();
             this.rozdajStatystyki = new System.Windows.Forms.PictureBox();
             this.timerNPC = new System.Windows.Forms.Timer(this.components);
             this.panelStatystyk.SuspendLayout();
@@ -80,7 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ściana2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             this.poleGry.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drop1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drop0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).BeginInit();
             this.SuspendLayout();
             // 
@@ -341,7 +341,7 @@
             this.poleGry.CausesValidation = false;
             this.poleGry.Controls.Add(this.strzałaGracz);
             this.poleGry.Controls.Add(this.gracz);
-            this.poleGry.Controls.Add(this.drop1);
+            this.poleGry.Controls.Add(this.drop0);
             this.poleGry.Controls.Add(this.rozdajStatystyki);
             this.poleGry.Controls.Add(this.ściana2);
             this.poleGry.Controls.Add(this.beczki2);
@@ -358,20 +358,20 @@
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.wyjścieParter);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -3);
+            this.poleGry.Location = new System.Drawing.Point(3, -25);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 7;
             // 
-            // drop1
+            // drop0
             // 
-            this.drop1.Image = global::Unstable.Properties.Resources.ZardzewiałyMiecz;
-            this.drop1.Location = new System.Drawing.Point(694, 346);
-            this.drop1.Name = "drop1";
-            this.drop1.Size = new System.Drawing.Size(48, 48);
-            this.drop1.TabIndex = 33;
-            this.drop1.TabStop = false;
+            this.drop0.Image = global::Unstable.Properties.Resources.ZardzewiałyMiecz;
+            this.drop0.Location = new System.Drawing.Point(694, 346);
+            this.drop0.Name = "drop0";
+            this.drop0.Size = new System.Drawing.Size(48, 48);
+            this.drop0.TabIndex = 33;
+            this.drop0.TabStop = false;
             // 
             // rozdajStatystyki
             // 
@@ -428,7 +428,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ściana2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
             this.poleGry.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.drop1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drop0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).EndInit();
             this.ResumeLayout(false);
 
@@ -465,7 +465,7 @@
         private System.Windows.Forms.PictureBox gracz;
         private System.Windows.Forms.Panel poleGry;
         private System.Windows.Forms.PictureBox rozdajStatystyki;
-        private System.Windows.Forms.PictureBox drop1;
+        private System.Windows.Forms.PictureBox drop0;
         private System.Windows.Forms.Timer timerNPC;
     }
 }

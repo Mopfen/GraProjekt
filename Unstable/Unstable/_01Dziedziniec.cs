@@ -110,26 +110,33 @@ namespace Unstable
 
             #endregion
             #region Przeszkody
-            przeszkody.Add(krzak1);
-            przeszkody.Add(krzak2);
-            przeszkody.Add(krzak3);
-            przeszkody.Add(głaz);
-
-            for (int i = 22, j = 0; i <= 25; i++, j++)
+            if (daneLauncher.daneMapa[daneLauncher.numerMapy].częśćMapyOdwiedzona[daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] == false)
             {
-                if (j > 3) j = 2;
-                if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[2] == false)
-                {
-                    daneLauncher.danePrzeszkoda[i].exists = true;
-                }
-                daneLauncher.danePrzeszkoda[i].obraz = przeszkody[j];
-                if (daneLauncher.danePrzeszkoda[i].exists == false)
-                {
-                    daneLauncher.danePrzeszkoda[i].obraz.Visible = false;
-                }
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, krzak1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji, 1));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, krzak2, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji, 2));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, krzak3, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji, 3));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, głaz, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji, 4));
             }
-            daneLauncher.daneMapa[1].częśćMapyOdwiedzona[2] = true;
-            daneLauncher.daneMapa[1].gdzieOstatnio = 2;
+            else
+            {
+                #region PonownePrzypisanieObrazków
+                foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerMapy == daneLauncher.numerMapy & x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
+                {
+                    switch (daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].numerObiektu)
+                    {
+                        case 1: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = krzak1; break;
+                        case 2: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = krzak2; break;
+                        case 3: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = krzak3; break;
+                        case 4: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = głaz; break;
+                    }
+                }
+
+                #endregion
+            }
+            foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerMapy == daneLauncher.numerMapy & x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji & x.exists == false))
+            {
+                daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz.Visible = false;
+            }
 
             #endregion
             #region ZatrzymajGracza
@@ -142,6 +149,9 @@ namespace Unstable
 
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
             daneLauncher.timerStatystyki = timerStatystyki;
+
+            daneLauncher.daneMapa[1].częśćMapyOdwiedzona[daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] = true;
+            daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji;
 
             #endregion
 
@@ -216,9 +226,9 @@ namespace Unstable
 
             metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneNPC[0]);
             metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneMob[0]);
-            for (int i = 22; i <= 25; i++)
+            foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
             {
-                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
+                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)]);
             }
             metodaMap.timerGraczMetoda();
         }
@@ -226,7 +236,7 @@ namespace Unstable
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz);
+            metodaMap.timerAtakGraczMetoda(timerGracz, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
         private void timerNPC_Tick(object sender, EventArgs e)
@@ -238,14 +248,13 @@ namespace Unstable
             if (daneLauncher.daneNPC[0].exists == true)
             {
                 metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.daneGracz);
-                for (int j = 0; j < 1; j++)
+
+                foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
                 {
-                    for (int i = 12; i <= 21; i++)
-                    {
-                        metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.danePrzeszkoda[i]);
-                    }
-                    metodaMap.timerNPCMetoda(j);
+                    metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)]);
                 }
+                metodaMap.timerNPCMetoda(0);
+
             }
         }
 
@@ -268,7 +277,7 @@ namespace Unstable
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerStrzałaGraczMetoda(1, 0, 0, 4, 22);
+            metodaMap.timerStrzałaGraczMetoda(1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
 

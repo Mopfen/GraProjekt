@@ -23,22 +23,27 @@ namespace Unstable
         {
             for (int i = 1; i <= 46; i++)
             {
+                //Hełm:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 40) & daneLauncher.danePlecakSlot[i].exists == true)
                 {
                     // statystyki hełmu
                 }
+                //Zbroja:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 106) & daneLauncher.danePlecakSlot[i].exists == true)
                 {
                     // statystyki zbroji
                 }
+                //Spodnie:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 170) & daneLauncher.danePlecakSlot[i].exists == true)
                 {
                     // statystyki spodni
                 }
+                //Buty:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 236) & daneLauncher.danePlecakSlot[i].exists == true)
                 {
                     // statystyki butów
                 }
+                //Miecz:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(247, 170))
                 {
                     if (daneLauncher.danePlecakSlot[i].exists == true)
@@ -55,14 +60,24 @@ namespace Unstable
 
                         daneLauncher.daneGracz.posiadaMiecz = false;
                     }
-
                 }
+                //Łuk:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(380, 170) & daneLauncher.danePlecakSlot[i].exists == true)
                 {
+                    if (daneLauncher.danePlecakSlot[i].exists == true)
+                    {
+                        daneLauncher.daneBonusyGracz.dmgDystans[0] = daneLauncher.danePlecakSlot[i].dmgDystans[0];
+                        daneLauncher.daneBonusyGracz.dmgDystans[1] = daneLauncher.danePlecakSlot[i].dmgDystans[1];
 
-                    // statystyki łuku
+                        daneLauncher.daneGracz.posiadaŁuk = true;
+                    }
+                    else
+                    {
+                        daneLauncher.daneBonusyGracz.dmgDystans[0] = 0;
+                        daneLauncher.daneBonusyGracz.dmgDystans[1] = 0;
 
-                    daneLauncher.daneGracz.posiadaŁuk = true;
+                        daneLauncher.daneGracz.posiadaŁuk = false;
+                    }
                 }
             }
         }

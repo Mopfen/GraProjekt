@@ -13,8 +13,6 @@ namespace Unstable
 {
     public partial class _01Piwnica : Form
     {
-        List<PictureBox> przeszkody = new List<PictureBox>();
-
         Launcher daneLauncher;
 
         public _01Piwnica(Launcher dane)
@@ -42,7 +40,7 @@ namespace Unstable
             daneLauncher.hitLog = hitLog;
 
             daneLauncher.daneDrop[0].exists = true;
-            daneLauncher.daneDrop[0].obraz = drop1;
+            daneLauncher.daneDrop[0].obraz = drop0;
             daneLauncher.daneDrop[0].id = 1;
             daneLauncher.daneDrop[0].miecz = true;
             daneLauncher.daneDrop[0].dmgZwarcie[0] = 3;
@@ -52,6 +50,13 @@ namespace Unstable
             daneLauncher.daneStrzała[0].obraz = strzałaGracz;
             daneLauncher.daneStrzała[0].obraz.Visible = false;
 
+            if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[0] == false)
+            {
+                Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+                daneLauncher.wątekMuzyka = new Thread(metodaMuzyka.Soundtrack1);
+                daneLauncher.wątekMuzyka.Start();
+            }
+
             #region UstawGracza
             if (daneLauncher.daneMapa[1].gdzieOstatnio == 1)
             {
@@ -60,36 +65,49 @@ namespace Unstable
 
             #endregion
             #region Przeszkody
-            przeszkody.Add(beczka1);
-            przeszkody.Add(beczka2);
-            przeszkody.Add(beczka3);
-            przeszkody.Add(beczka4);
-            przeszkody.Add(beczka5);
-            przeszkody.Add(beczka6);
-            przeszkody.Add(beczka7);
-            przeszkody.Add(beczka8);
-            przeszkody.Add(beczki1);
-            przeszkody.Add(beczki2);
-            przeszkody.Add(ściana1);
-            przeszkody.Add(ściana2);
-
-            for (int i = 0; i <= 11; i++)
+            if (daneLauncher.daneMapa[daneLauncher.numerMapy].częśćMapyOdwiedzona[daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] == false)
             {
-                if(daneLauncher.daneMapa[1].częśćMapyOdwiedzona[0]==false)
-                {
-                    Muzyka metodaMuzyka = new Muzyka(daneLauncher);
-                    daneLauncher.danePrzeszkoda[i].exists = true;
-                    daneLauncher.wątekMuzyka = new Thread(metodaMuzyka.Soundtrack1);
-                    daneLauncher.wątekMuzyka.Start();
-                }
-                daneLauncher.danePrzeszkoda[i].obraz = przeszkody[i];
-                if(daneLauncher.danePrzeszkoda[i].exists==false)
-                {
-                    daneLauncher.danePrzeszkoda[i].obraz.Visible = false;
-                }                
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, false, beczka1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,1)); 
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, false, beczka2, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,2));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, false, beczka3, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,3));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, false, beczka4, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,4));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, false, beczka5, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,5));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, false, beczka6, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,6));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, false, beczka7, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,7));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, false, beczka8, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,8));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, beczki1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,9));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, beczki2, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,10));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, ściana1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,11));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, ściana2, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,12));
             }
-            daneLauncher.daneMapa[1].częśćMapyOdwiedzona[0] = true;
-            daneLauncher.daneMapa[1].gdzieOstatnio = 0;
+            else
+            {
+                #region PonownePrzypisanieObrazków
+                foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerMapy == daneLauncher.numerMapy & x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
+                {
+                    switch(daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].numerObiektu)
+                    {
+                        case 1: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka1; break;
+                        case 2: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka2; break;
+                        case 3: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka3; break;
+                        case 4: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka4; break;
+                        case 5: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka5; break;
+                        case 6: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka6; break;
+                        case 7: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka7; break;
+                        case 8: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka8; break;
+                        case 9: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczki1; break;
+                        case 10: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczki2; break;
+                        case 11: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = ściana1; break;
+                        case 12: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = ściana2; break;
+                    }
+                }
+
+                #endregion
+            }
+            foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerMapy == daneLauncher.numerMapy & x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji & x.exists == false))
+            {
+                daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz.Visible = false;
+            }
 
             #endregion
             #region ZatrzymajGracza
@@ -99,6 +117,9 @@ namespace Unstable
 
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
             daneLauncher.timerStatystyki = timerStatystyki;
+
+            daneLauncher.daneMapa[1].częśćMapyOdwiedzona[daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] = true;
+            daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji;
 
             #endregion
         }
@@ -119,11 +140,8 @@ namespace Unstable
                 {
                     daneLauncher.daneStrzała[0].obraz.Visible = false;
                     daneLauncher.daneStrzała[0].exists = false;
-                    //MapaTestowa mapMapaTestowa = new MapaTestowa(daneLauncher);
                     _01Parter map_01Parter = new _01Parter(daneLauncher);
-                    przeszkody.Clear();
                     this.Close();
-                    //mapMapaTestowa.Show();
                     map_01Parter.Show();
                 }
             }
@@ -138,9 +156,10 @@ namespace Unstable
         private void timerGracz_Tick(object sender, EventArgs e)
         {
             PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
-            for (int i=0;i<=11;i++)
+
+            foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
             {
-                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
+                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)]);
             }
             
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
@@ -150,7 +169,7 @@ namespace Unstable
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz);
+            metodaMap.timerAtakGraczMetoda(timerGracz, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
         private void timerStatystyki_Tick(object sender, EventArgs e)
@@ -162,7 +181,7 @@ namespace Unstable
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerStrzałaGraczMetoda(0,8,0,2,10);
+            metodaMap.timerStrzałaGraczMetoda(0,daneLauncher.numerMapy,daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
     }
 }

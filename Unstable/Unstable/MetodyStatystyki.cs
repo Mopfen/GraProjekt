@@ -61,10 +61,8 @@ namespace Unstable
         {
             Walka metodaWalka = new Walka(daneLauncher);
 
-            metodaWalka.dmgZwarcieGracz1();
-            metodaWalka.dmgZwarcieGracz2();
-            metodaWalka.dmgDystansGracz1();
-            metodaWalka.dmgDystansGracz2();
+            metodaWalka.dmgZwarcie();
+            metodaWalka.dmgDystans();
             hpMaxGracz();
             manaMaxGracz();
             szansaKrytykGracz();

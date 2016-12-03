@@ -44,7 +44,7 @@ namespace Unstable
             }
         }
         /// <summary> Metoda odpowiedzialna za wykonywanie ataku przez Moba.</summary>
-        public void AtakMoba(Timer timerMob,int numerMoba,int wartośćAtaku)
+        public void AtakMoba(Timer timerMob,int numerMoba,int wartośćAtakuMin, int wartośćAtakuMax)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             Walka metodaWalka = new Walka(daneLauncher);
@@ -63,8 +63,19 @@ namespace Unstable
                 }
                 if (daneLauncher.daneMob[numerMoba].stopMoving == 0 & daneLauncher.daneMob[numerMoba].attack == true)
                 {
-                    daneLauncher.daneGracz.hp -= metodaWalka.dmgZwarcieMob(wartośćAtaku);
-                    daneLauncher.hitLog.Text = ("Mob zadaje " + metodaWalka.dmgZwarcieMob(wartośćAtaku) + " obrażeń.\n" + daneLauncher.hitLog.Text);
+                    metodaWalka.dmgZwarcie(daneLauncher.daneMob, numerMoba, wartośćAtakuMin, wartośćAtakuMax);
+                    int dmg = metodaUniwersalne.losuj(daneLauncher.daneMob[numerMoba].siłaAtakuZwarcie[0], daneLauncher.daneMob[numerMoba].siłaAtakuZwarcie[1]);
+                    int dmgK = dmg * 2;
+                    if (metodaUniwersalne.losuj(1, 100) <= daneLauncher.daneMob[numerMoba].szansaKryta)
+                    {
+                        daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmgK + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
+                        daneLauncher.daneGracz.hp -= dmgK;
+                    }
+                    else
+                    {
+                        daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
+                        daneLauncher.daneGracz.hp -= dmg;
+                    }
                     daneLauncher.daneMob[numerMoba].wykonanoAtak = true;
                     daneLauncher.daneMob[numerMoba].zmianaKierunkuLeft = daneLauncher.daneMob[numerMoba].zmianaKierunkuRight = false;
                 }

@@ -97,6 +97,13 @@ namespace Unstable
                     daneLauncher.daneDropKomenda.dmgZwarcie[0] = 9240;
                     daneLauncher.daneDropKomenda.dmgZwarcie[1] = 9480;
                     metodaEkwipunek.NałóżPrzedmiotKomendy(247, 170);
+                    daneLauncher.daneDropKomenda.exists = true;
+                    daneLauncher.daneDropKomenda.łuk = true;
+                    daneLauncher.daneDropKomenda.id = 1001;
+                    daneLauncher.daneDropKomenda.obraz = daneLauncher.ŁukSquadaka;
+                    daneLauncher.daneDropKomenda.dmgDystans[0] = 9240;
+                    daneLauncher.daneDropKomenda.dmgDystans[1] = 9480;
+                    metodaEkwipunek.NałóżPrzedmiotKomendy(380, 170);
                     daneLauncher.komenda = "";
                     forma.Close();
                 }

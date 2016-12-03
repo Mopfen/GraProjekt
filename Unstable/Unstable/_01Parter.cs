@@ -15,7 +15,6 @@ namespace Unstable
 {
     public partial class _01Parter : Form
     {
-        List<PictureBox> przeszkody = new List<PictureBox>();
         List<PictureBox> alaButtons = new List<PictureBox>();
         List<Label> odpowiedzi = new List<Label>();
         bool[] koniecDialogu = new bool[20];
@@ -103,33 +102,49 @@ namespace Unstable
             {
                 daneLauncher.daneGracz.obraz.Location = new Point(700, 315);
             }
+            if (daneLauncher.daneMapa[1].gdzieOstatnio == 3)
+            {
+                daneLauncher.daneGracz.obraz.Location = new Point(110, 40);
+            }
             #endregion
             #region Przeszkody
-            przeszkody.Add(beczka1);
-            przeszkody.Add(beczka2);
-            przeszkody.Add(beczka3);
-            przeszkody.Add(beczki);
-            przeszkody.Add(drzwiRightOpened);
-            przeszkody.Add(ściana1);
-            przeszkody.Add(ściana2);
-            przeszkody.Add(ściana3);
-            przeszkody.Add(stolik);
-
-            for (int i = 12, j = 0; i <= 21; i++, j++)
+            if (daneLauncher.daneMapa[daneLauncher.numerMapy].częśćMapyOdwiedzona[daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] == false)
             {
-                if (j > 8) j = 8;
-                if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[1] == false)
-                {
-                    daneLauncher.danePrzeszkoda[i].exists = true;
-                }
-                daneLauncher.danePrzeszkoda[i].obraz = przeszkody[j];
-                if (daneLauncher.danePrzeszkoda[i].exists == false)
-                {
-                    daneLauncher.danePrzeszkoda[i].obraz.Visible = false;
-                }
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, false, beczka1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,1));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, beczka2, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,2));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, beczka3, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,3));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, beczki, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,4));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, drzwiRightOpened, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,5));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, ściana1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,6));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, ściana2, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,7));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, ściana3, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,8));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, stolik, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,9));
             }
-            daneLauncher.daneMapa[1].częśćMapyOdwiedzona[1] = true;
-            daneLauncher.daneMapa[1].gdzieOstatnio = 1;
+            else
+            {
+                #region PonownePrzypisanieObrazków
+                foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerMapy == daneLauncher.numerMapy & x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
+                {
+                    switch (daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].numerObiektu)
+                    {
+                        case 1: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka1; break;
+                        case 2: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka2; break;
+                        case 3: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka3; break;
+                        case 4: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczki; break;
+                        case 5: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = drzwiRightOpened; break;
+                        case 6: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = ściana1; break;
+                        case 7: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = ściana2; break;
+                        case 8: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = ściana3; break;
+                        case 9: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = stolik; break;
+                    }
+                }
+
+                #endregion
+            }
+            foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerMapy == daneLauncher.numerMapy & x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji & x.exists == false))
+            {
+                daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz.Visible = false;
+            }
 
             #endregion
             #region ZatrzymajGracza
@@ -142,6 +157,9 @@ namespace Unstable
 
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
             daneLauncher.timerStatystyki = timerStatystyki;
+
+            daneLauncher.daneMapa[1].częśćMapyOdwiedzona[daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] = true;
+            daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji;
 
             #endregion
 
@@ -166,7 +184,6 @@ namespace Unstable
                         daneLauncher.daneStrzała[0].obraz.Visible = false;
                         daneLauncher.daneStrzała[0].exists = false;
                         _01Piwnica map_01Piwnica = new _01Piwnica(daneLauncher);
-                        przeszkody.Clear();
                         alaButtons.Clear();
                         odpowiedzi.Clear();
                         this.Close();
@@ -176,8 +193,7 @@ namespace Unstable
                     {
                         daneLauncher.daneStrzała[0].obraz.Visible = false;
                         daneLauncher.daneStrzała[0].exists = false;
-                        MapaTestowa map_01PiętroPierwsze = new MapaTestowa(daneLauncher);
-                        przeszkody.Clear();
+                        _01PiętroPierwsze map_01PiętroPierwsze = new _01PiętroPierwsze(daneLauncher);
                         alaButtons.Clear();
                         odpowiedzi.Clear();
                         this.Close();
@@ -188,7 +204,6 @@ namespace Unstable
                         daneLauncher.daneStrzała[0].obraz.Visible = false;
                         daneLauncher.daneStrzała[0].exists = false;
                         _01Dziedziniec map_01Dziedziniec = new _01Dziedziniec(daneLauncher);
-                        przeszkody.Clear();
                         alaButtons.Clear();
                         odpowiedzi.Clear();
                         this.Close();
@@ -196,7 +211,6 @@ namespace Unstable
                     }
                 }
             }
-
         }
 
         private void TheKeyUp(object sender, KeyEventArgs e)
@@ -217,9 +231,9 @@ namespace Unstable
             }
 
             metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneNPC[0]);
-            for (int i = 12; i <= 21; i++)
+            foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
             {
-                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
+                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)]);
             }
             metodaMap.timerGraczMetoda();
         }
@@ -227,7 +241,7 @@ namespace Unstable
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz);
+            metodaMap.timerAtakGraczMetoda(timerGracz, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
         private void timerNPC_Tick(object sender, EventArgs e)
@@ -269,14 +283,12 @@ namespace Unstable
                 }
 
                 metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.daneGracz);
-                for (int j = 0; j < 1; j++)
+                
+                foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
                 {
-                    for (int i = 12; i <= 21; i++)
-                    {
-                        metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.danePrzeszkoda[i]);
-                    }
-                    metodaMap.timerNPCMetoda(j);
+                    metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)]);
                 }
+                metodaMap.timerNPCMetoda(0);
             }
         }
 
@@ -289,7 +301,7 @@ namespace Unstable
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerStrzałaGraczMetoda(0, 1, 12, 4, 16);
+            metodaMap.timerStrzałaGraczMetoda(0, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
 

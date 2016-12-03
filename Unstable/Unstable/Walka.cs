@@ -16,43 +16,58 @@ namespace Unstable
             daneLauncher = dane;
         }
 
-        internal void dmgZwarcieGracz1()
+        /// <summary>
+        /// Metoda oblicza minimalną wartość ataku gracza w zwarciu
+        /// </summary>
+        internal void dmgZwarcie()
         {
-            double dmg = 0;
+            double dmgMin = 0;
+            double dmgMax = 0;
 
-            dmg += 1 + daneLauncher.daneBonusyGracz.dmgZwarcie[0] + daneLauncher.daneGracz.siła * 0.8;
+            dmgMin += 1 + daneLauncher.daneBonusyGracz.dmgZwarcie[0] + daneLauncher.daneGracz.siła * 0.8;
+            dmgMax += 2 + daneLauncher.daneBonusyGracz.dmgZwarcie[1] + daneLauncher.daneGracz.siła;
 
-            daneLauncher.daneGracz.siłaAtakuZwarcie[0] = (int)dmg;
+            daneLauncher.daneGracz.siłaAtakuZwarcie[0] = (int)dmgMin;
+            daneLauncher.daneGracz.siłaAtakuZwarcie[1] = (int)dmgMax;
         }
-        internal void dmgZwarcieGracz2()
+        /// <summary>
+        /// Metoda przypisuje minimalną wartośc ataku moba w zwarciu
+        /// </summary>
+        /// <param name="postać">Okresla postać, której ma zostac przypisana wartość ataku</param>
+        /// <param name="indeks">Określa indeks postaci, której ma zostać przypisana wartość ataku</param>
+        /// <param name="dmgMin">Określa wartość minimalnej wartości ataku, która ma zostać prypisana postaci</param>
+        /// <param name="dmgMax">Określa wartość maksymalnej wartości ataku, która ma zostać prypisana postaci</param>
+        internal void dmgZwarcie(Launcher.ZmiennePostaci[] postać, int indeks, int dmgMin, int dmgMax)
         {
-            int dmg = 0;
-
-            dmg += 2 + daneLauncher.daneBonusyGracz.dmgZwarcie[1] + daneLauncher.daneGracz.siła;
-
-            daneLauncher.daneGracz.siłaAtakuZwarcie[1] = dmg;
-        }
-
-        internal void dmgDystansGracz1()
-        {
-            double dmg = 0;
-
-            dmg += 1 + daneLauncher.daneGracz.zręczność * 0.8;
-
-            daneLauncher.daneGracz.siłaAtakuDystans[0] = (int)dmg;
-        }
-        internal void dmgDystansGracz2()
-        {
-            int dmg = 0;
-
-            dmg += 2 + daneLauncher.daneGracz.zręczność;
-
-            daneLauncher.daneGracz.siłaAtakuDystans[1] = dmg;
+            postać[indeks].siłaAtakuZwarcie[0] = dmgMin;
+            postać[indeks].siłaAtakuZwarcie[1] = dmgMax;
         }
 
-        internal int dmgZwarcieMob(int wartośćAtaku)
+        /// <summary>
+        /// Metoda oblicza minimalną wartość ataku gracza na dystans
+        /// </summary>
+        internal void dmgDystans()
         {
-            return wartośćAtaku;
+            double dmgMin = 0;
+            double dmgMax = 0;
+
+            dmgMin += 1 + daneLauncher.daneBonusyGracz.dmgDystans[0] + daneLauncher.daneGracz.zręczność * 0.8;
+            dmgMax += 2 + daneLauncher.daneBonusyGracz.dmgDystans[1] + daneLauncher.daneGracz.zręczność;
+
+            daneLauncher.daneGracz.siłaAtakuDystans[0] = (int)dmgMin;
+            daneLauncher.daneGracz.siłaAtakuDystans[1] = (int)dmgMax;
+        }
+        /// <summary>
+        /// Metoda przypisuje minimalną wartośc ataku moba na dystans
+        /// </summary>
+        /// <param name="postać">Okresla postać, której ma zostac przypisana wartość ataku</param>
+        /// <param name="indeks">Określa indeks postaci, której ma zostać przypisana wartość ataku</param>
+        /// <param name="dmgMin">Określa wartość minimalnej wartości ataku, która ma zostać prypisana postaci</param>
+        /// <param name="dmgMax">Określa wartość maksymalnej wartości ataku, która ma zostać prypisana postaci</param>
+        internal void dmgDystans(Launcher.ZmiennePostaci[] postać, int indeks, int dmgMin, int dmgMax)
+        {
+            postać[indeks].siłaAtakuDystans[0] = dmgMin;
+            postać[indeks].siłaAtakuDystans[1] = dmgMax;
         }
 
 
@@ -75,8 +90,17 @@ namespace Unstable
                             daneLauncher.daneStrzała[0].exists = false;
                             daneLauncher.daneStrzała[0].obraz.Visible = false;
                             int dmg = metodaUniwersalne.losuj(daneLauncher.daneGracz.siłaAtakuDystans[0], daneLauncher.daneGracz.siłaAtakuDystans[1]);
-                            obiekt[i].hp -= dmg;
-                            daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
+                            int dmgK = dmg * 2;
+                            if (metodaUniwersalne.losuj(0, 100) <= daneLauncher.daneGracz.szansaKryta)
+                            {
+                                daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmgK + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
+                                obiekt[i].hp -= dmgK;
+                            }
+                            else
+                            {
+                                daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
+                                obiekt[i].hp -= dmg;
+                            }
                         }
                     }
                 }
@@ -87,21 +111,18 @@ namespace Unstable
         /// </summary>
         /// <param name="obiekt">W jaki obiekt ma trafić strzała</param>
         /// <param name="ilosc">Ilość możliwych obiektów (maks. idenks)</param>
-        internal void strzałaTrafienie(Launcher.ZmienneObiektów[] obiekt, int pierwszyIndeks, int ilosc)
+        internal void strzałaTrafienie(List<Launcher.ZmienneObiektów> obiekt, int numerMapy, int numerLokacji)
         {
-            for (int i = pierwszyIndeks; i < ilosc + pierwszyIndeks; i++)
+            foreach (var indeks in obiekt.Where(x => x.numerMapy == numerMapy & x.numerLokacji == numerLokacji & x.exists == true))
             {
-                if (obiekt[i].exists == true)
+                if (daneLauncher.daneStrzała[0].obraz.Bounds.IntersectsWith(obiekt[obiekt.IndexOf(indeks)].obraz.Bounds))
                 {
-                    if (daneLauncher.daneStrzała[0].obraz.Bounds.IntersectsWith(obiekt[i].obraz.Bounds))
+                    daneLauncher.daneStrzała[0].exists = false;
+                    daneLauncher.daneStrzała[0].obraz.Visible = false;
+                    if (obiekt[obiekt.IndexOf(indeks)].ściana == false)
                     {
-                        if (obiekt[i].exists == true)
-                        {
-                            daneLauncher.daneStrzała[0].exists = false;
-                            daneLauncher.daneStrzała[0].obraz.Visible = false;
-                            obiekt[i].exists = false;
-                            obiekt[i].obraz.Visible = false;
-                        }
+                        obiekt[obiekt.IndexOf(indeks)].exists = false;
+                        obiekt[obiekt.IndexOf(indeks)].obraz.Visible = false;
                     }
                 }
             }
@@ -162,19 +183,19 @@ namespace Unstable
                      (daneLauncher.daneGracz.right == true & (obiekt[i].obraz.Left - daneLauncher.daneGracz.obraz.Left >= (-60) & obiekt[i].obraz.Left - daneLauncher.daneGracz.obraz.Right < 8 & (obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)))))
                     {
                         Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
-                        dmgZwarcieGracz1();
-                        dmgZwarcieGracz2();
+                        dmgZwarcie();
                         int dmg = metodaUniwersalne.losuj(daneLauncher.daneGracz.siłaAtakuZwarcie[0], daneLauncher.daneGracz.siłaAtakuZwarcie[1]);
                         int dmgK = dmg * 2;
-                        if (metodaUniwersalne.losuj(0, 100) <= daneLauncher.daneGracz.szansaKryta)
+                        if (metodaUniwersalne.losuj(1, 100) <= daneLauncher.daneGracz.szansaKryta)
                         {
                             daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmgK + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
+                            obiekt[i].hp -= dmgK;
                         }
                         else
                         {
                             daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
+                            obiekt[i].hp -= dmg;
                         }
-                        obiekt[i].hp -= dmg;
                     }
 
                 }
@@ -185,24 +206,23 @@ namespace Unstable
         /// </summary>
         /// <param name="obiekt">Obiekt, w który kierowany jest atak</param>
         /// <param name="ilosc">Ilość możliwych obiektów (maks. idenks)</param>
-        internal void atakwCelObok(Launcher.ZmienneObiektów[] obiekt, int indeksMin, int indeksMax)
+        internal void atakwCelObok(List<Launcher.ZmienneObiektów> obiekt, int numerMapy, int numerLokacji)
         {
-            for (int i = indeksMin; i <= indeksMax; i++)
+            foreach (var indeks in obiekt.Where(x => x.numerMapy == numerMapy & x.numerLokacji == numerLokacji & x.exists == true & x.ściana == false))
             {
-                if (obiekt[i].exists == true)
+                if ((daneLauncher.daneGracz.left == true & (daneLauncher.daneGracz.obraz.Left - obiekt[obiekt.IndexOf(indeks)].obraz.Left >= (60) & daneLauncher.daneGracz.obraz.Left - obiekt[obiekt.IndexOf(indeks)].obraz.Right < 8 & (obiekt[obiekt.IndexOf(indeks)].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[obiekt.IndexOf(indeks)].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)) |
+                (daneLauncher.daneGracz.right == true & (obiekt[obiekt.IndexOf(indeks)].obraz.Left - daneLauncher.daneGracz.obraz.Left >= (-60) & obiekt[obiekt.IndexOf(indeks)].obraz.Left - daneLauncher.daneGracz.obraz.Right < 8 & (obiekt[obiekt.IndexOf(indeks)].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[obiekt.IndexOf(indeks)].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)))))
                 {
-                    if ((daneLauncher.daneGracz.left == true & (daneLauncher.daneGracz.obraz.Left - obiekt[i].obraz.Left >= (60) & daneLauncher.daneGracz.obraz.Left - obiekt[i].obraz.Right < 8 & (obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)) |
-                     (daneLauncher.daneGracz.right == true & (obiekt[i].obraz.Left - daneLauncher.daneGracz.obraz.Left >= (-60) & obiekt[i].obraz.Left - daneLauncher.daneGracz.obraz.Right < 8 & (obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[i].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)))))
-                    {
-                        obiekt[i].exists = false;
-                        obiekt[i].obraz.Visible = false;
-                    }
+                    obiekt[obiekt.IndexOf(indeks)].exists = false;
+                    obiekt[obiekt.IndexOf(indeks)].obraz.Visible = false;
                 }
-            }
+            }        
         }
 
-        /// <summary> Metoda odpowiedzialna za wykonywanie ataku przez gracza.</summary>
-        public void AtakGracza(Timer timerGracz)
+        /// <summary>
+        /// Metoda odpowiedzialna za wykonywanie ataku przez gracza.
+        /// </summary>
+        public void AtakGracza(Timer timerGracz, int numerMapy, int numerLokacji)
         {
             if (daneLauncher.daneGracz.attack == true & (daneLauncher.daneGracz.left == true | daneLauncher.daneGracz.right == true) & daneLauncher.daneGracz.wykonanoAtak == false)
             {
@@ -211,12 +231,8 @@ namespace Unstable
                     if (daneLauncher.daneGracz.left == true) daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownAttackingLeft.Image;
                     if (daneLauncher.daneGracz.right == true) daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownAttackingRight.Image;
                     atakwCelObok(daneLauncher.daneMob, 5);
+                    atakwCelObok(daneLauncher.danePrzeszkoda, numerMapy, numerLokacji);
 
-                    #region metodaUniwersalne.atakwCelObok(daneLauncher.danePrzeszkoda,...)
-                    if (daneLauncher.daneMapa[1].gdzieOstatnio == 0) atakwCelObok(daneLauncher.danePrzeszkoda, 0, 8);
-                    if (daneLauncher.daneMapa[1].gdzieOstatnio == 1) atakwCelObok(daneLauncher.danePrzeszkoda, 12, 12);
-
-                    #endregion
                 }
                 if (daneLauncher.daneGracz.rodzajAtaku == false & daneLauncher.daneGracz.posiadaŁuk == true)
                 {
@@ -257,21 +273,15 @@ namespace Unstable
         /// <summary>
         /// Metoda opowiedzialna za strzał z łuku gracz
         /// </summary>
-        public void StrzalaGracz(int ilośćMobow, int ilośćPrzeszkod, int indeksPierwszejPrzeszkody, int ilośćŚcian, int indeksPierwszejŚciany)
+        public void StrzalaGracz(int ilośćMobow, int numerMapy, int numerLokacji)
         {
             bool stop = false; // zmienna określa, kiedy strzała w coś trafi
-            for (int i = indeksPierwszejŚciany; i < ilośćŚcian + indeksPierwszejŚciany; i++)
-            {
-                if (daneLauncher.danePrzeszkoda[i].exists == true)
-                {
-                    if (daneLauncher.daneStrzała[0].obraz.Bounds.IntersectsWith(daneLauncher.danePrzeszkoda[i].obraz.Bounds)) stop = true;
-                }
-            }
+            
             if (daneLauncher.daneStrzała[0].exists == true & daneLauncher.daneGracz.stopMoving >= 0)
             {
                 daneLauncher.daneStrzała[0].obraz.Visible = true;
                 strzałaTrafienie(daneLauncher.daneMob, ilośćMobow);
-                strzałaTrafienie(daneLauncher.danePrzeszkoda, indeksPierwszejPrzeszkody, ilośćPrzeszkod);
+                strzałaTrafienie(daneLauncher.danePrzeszkoda, numerMapy, numerLokacji);
                 if (daneLauncher.daneStrzała[0].obraz.Image == daneLauncher.strzałaLeft.Image)
                 {
                     if (daneLauncher.daneStrzała[0].obraz.Left > daneLauncher.poleGry.Left & stop == false)

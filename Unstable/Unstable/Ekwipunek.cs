@@ -79,9 +79,17 @@ namespace Unstable
                 {
                     daneLauncher.danePlecakSlot[i].obraz.Image = daneLauncher.ZardzewiałyMiecz.Image;
                 }
-                if(daneLauncher.danePlecakSlot[i].id==1000)
+                if (daneLauncher.danePlecakSlot[i].id == 2)
+                {
+                    daneLauncher.danePlecakSlot[i].obraz.Image = daneLauncher.ZbutwiałyŁuk.Image;
+                }
+                if (daneLauncher.danePlecakSlot[i].id==1000)
                 {
                     daneLauncher.danePlecakSlot[i].obraz.Image = daneLauncher.MieczSquadaka.Image;
+                }
+                if (daneLauncher.danePlecakSlot[i].id == 1001)
+                {
+                    daneLauncher.danePlecakSlot[i].obraz.Image = daneLauncher.ŁukSquadaka.Image;
                 }
             }
 
@@ -103,9 +111,7 @@ namespace Unstable
 
             #region Test
             daneLauncher.danePlecakSlot[2].exists = true;
-            daneLauncher.danePlecakSlot[2].id = 2;
-            /*daneLauncher.danePlecakSlot[46].exists = true; // łuk
-            daneLauncher.danePlecakSlot[2].id = 2; // łuk*/
+            daneLauncher.danePlecakSlot[2].id = 3;
 
             #endregion
         }
@@ -205,22 +211,21 @@ namespace Unstable
             string obrażenia="";
 
             if (daneLauncher.danePlecakSlot[numerSlotu].id == 1) nazwa = "Zardzewiały Miecz";
-            if (daneLauncher.danePlecakSlot[numerSlotu].id == 2) nazwa = "Czerwona Mikstura(M)";
+            if (daneLauncher.danePlecakSlot[numerSlotu].id == 2) nazwa = "ZbutwiałyŁuk";
+            if (daneLauncher.danePlecakSlot[numerSlotu].id == 3) nazwa = "Czerwona Mikstura(M)";
             if (daneLauncher.danePlecakSlot[numerSlotu].id == 1000) nazwa = "Miecz Squadaka";
+            if (daneLauncher.danePlecakSlot[numerSlotu].id == 1001) nazwa = "Łuk Squadaka";
 
             if (daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[0] != 0 & daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[1] != 0) obrażenia = Convert.ToString(daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[0] + "-" + daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[1]);
+            if (daneLauncher.danePlecakSlot[numerSlotu].dmgDystans[0] != 0 & daneLauncher.danePlecakSlot[numerSlotu].dmgDystans[1] != 0) obrażenia = Convert.ToString(daneLauncher.danePlecakSlot[numerSlotu].dmgDystans[0] + "-" + daneLauncher.danePlecakSlot[numerSlotu].dmgDystans[1]);
 
-            if(daneLauncher.danePlecakSlot[numerSlotu].exists==true)
+            if (daneLauncher.danePlecakSlot[numerSlotu].exists==true)
             {
                 daneLauncher.statystykiPrzedmiotu.Text += nazwa+"\n";
                 if (obrażenia != "") daneLauncher.statystykiPrzedmiotu.Text +="Obrażenia: " + obrażenia + "\n";
             }
             daneLauncher.statystykiPokazywane = true;
         }
-
-        
-
-        
 
         private void zapiszDane()
         {

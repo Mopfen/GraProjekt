@@ -25,3 +25,4 @@ C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable._01Dziedz
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.MetodyEkwipunek.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.OkienkoInformacji.resources
 C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable.KoniecTestu.resources
+C:\Users\Squadak\Desktop\C#\Tests\Unstable\Unstable\obj\Debug\Unstable._01PiętroPierwsze.resources

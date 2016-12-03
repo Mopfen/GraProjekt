@@ -82,10 +82,10 @@ namespace Unstable
         /// <summary>
         /// Metoda wykonująca czynności w timerAtakGracz
         /// </summary>
-        internal void timerAtakGraczMetoda(Timer timerGracz)
+        internal void timerAtakGraczMetoda(Timer timerGracz, int numerMapy, int numerLokacji)
         {
             Walka metodaWalka = new Walka(daneLauncher);
-            metodaWalka.AtakGracza(timerGracz);
+            metodaWalka.AtakGracza(timerGracz,numerMapy,numerLokacji);
         }
 
         internal void timerMobMetoda(int indeks)
@@ -176,10 +176,10 @@ namespace Unstable
             }
         }
 
-        internal void timerStrzałaGraczMetoda(int ilośćMobow, int ilośćPrzeszkod, int indeksPierwszejPrzeszkody, int ilośćŚcian, int indeksPierwszejŚciany)
+        internal void timerStrzałaGraczMetoda(int ilośćMobow, int numerMapy, int numerLokacji)
         {
             Walka metodaWalka = new Walka(daneLauncher);
-            metodaWalka.StrzalaGracz(ilośćMobow, ilośćPrzeszkod, indeksPierwszejPrzeszkody, ilośćŚcian,indeksPierwszejŚciany);
+            metodaWalka.StrzalaGracz(ilośćMobow, numerMapy, numerLokacji);
         }
     }
 }

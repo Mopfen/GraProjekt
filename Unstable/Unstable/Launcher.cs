@@ -50,8 +50,8 @@ namespace Unstable
             internal int inteligencja = 1; //
             internal int wytrzymałość = 1; //
             internal int szczęście = 1; //
-            internal int obronaGracz = 0; //
-            internal int odpornośćGracz = 0; // statystyki gracza
+            internal int obrona = 0; //
+            internal int odporność = 0; // statystyki postaci
 
             internal bool up = false; //
             internal bool down = false; //
@@ -81,7 +81,24 @@ namespace Unstable
         /// </summary>
         internal class ZmienneObiektów
         {
+            internal ZmienneObiektów() { }
+            internal ZmienneObiektów(bool exists, bool ściana, PictureBox obraz, int numerMapy, int numerLokacji, int numerObiektu)
+            {
+                this.exists = exists;
+                this.ściana = ściana;
+                this.obraz = obraz;
+                this.numerMapy = numerMapy;
+                this.numerLokacji = numerLokacji;
+                this.numerObiektu = numerObiektu;
+            }
+
             internal PictureBox obraz; // zmienna odpowiadająca za wygląd obiektu
+
+            internal int numerMapy = 0; // zmienna określa, na jakiej mapie znajduje się obiekt
+            internal int numerLokacji = 0; // zmienna określa, w której częsci mapy znajduję się obiekt
+            internal int numerObiektu = 0; // zmienna okresla, jaki numer ma obiekt na mapie
+
+            internal bool ściana = false; // zmienna określa, czy obiekt jest ścianą
 
             internal bool exists = false; // zmienna określa, czy obiekt istnieje
         }
@@ -198,11 +215,13 @@ namespace Unstable
 
         internal PictureBox BrakItemu = new PictureBox();
         internal PictureBox ZardzewiałyMiecz = new PictureBox();
+        internal PictureBox ZbutwiałyŁuk = new PictureBox();
         internal PictureBox MieczSquadaka = new PictureBox();
+        internal PictureBox ŁukSquadaka = new PictureBox();
 
         #endregion
         #region zmiennePozostałe
-        internal string gameVersion = "Unstable1.1"; // zmienna przechowuje informacje o wersji gry
+        internal string gameVersion = "Unstable1.2"; // zmienna przechowuje informacje o wersji gry
 
         internal Panel poleGry; // zmienna odpowiadająca za właściwości pola gry
         internal Label hitLog; // zmienna odpowiadająca za wyświetlanie informacji przez hitLog
@@ -231,7 +250,7 @@ namespace Unstable
         internal ZmiennePostaci daneGracz = new ZmiennePostaci(); // obiekt przechowująca informacje o graczu
         internal ZmiennePostaci []daneMob = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o mobach
         internal ZmiennePostaci[] daneNPC = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o NPC
-        internal ZmienneObiektów []danePrzeszkoda = new ZmienneObiektów[100]; // tablica obiektów przechowujących informacje o przeszkodach
+        internal List<ZmienneObiektów> danePrzeszkoda = new List<ZmienneObiektów>(); // tablica obiektów przechowujących informacje o przeszkodach
         internal ZmienneObiektów []daneStrzała = new ZmienneObiektów[2]; // tablica obiekótw przechowujących informacje o strzałach wystrzelonych przez postać
         internal ZmienneEkwipunku []danePlecakSlot = new ZmienneEkwipunku[47]; // tablica obiektów przechowujących informacje o przedmiocie na danym slocie w ekwipunku
         internal ZmienneEkwipunku[] daneDrop = new ZmienneEkwipunku[5]; // tablica obiektów przechowujących infromacje o przedmiocie do podniesienia
@@ -419,7 +438,9 @@ namespace Unstable
 
             BrakItemu.Image = global::Unstable.Properties.Resources.BrakItemu;
             ZardzewiałyMiecz.Image = global::Unstable.Properties.Resources.ZardzewiałyMiecz;
+            ZbutwiałyŁuk.Image = global::Unstable.Properties.Resources.ZbutwiałyŁuk;
             MieczSquadaka.Image = global::Unstable.Properties.Resources.MieczSquadaka;
+            ŁukSquadaka.Image = global::Unstable.Properties.Resources.ŁukSquadaka;
         }
 
 

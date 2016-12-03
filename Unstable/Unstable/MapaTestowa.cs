@@ -28,6 +28,7 @@ namespace Unstable
 
             DoubleBuffered = true;
 
+            daneLauncher.daneMapa[1].numerLokacji = 10;
             daneLauncher.daneGracz.obraz=gracz;
             daneLauncher.daneGracz.antyRozmycie = underGracz;
             daneLauncher.poleGry = poleGry;
@@ -77,7 +78,7 @@ namespace Unstable
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz);
+            metodaMap.timerAtakGraczMetoda(timerGracz, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
         private void timerStatystyki_Tick(object sender, EventArgs e)
         {
@@ -101,13 +102,13 @@ namespace Unstable
         private void timerAtakMob_Tick(object sender, EventArgs e)
         {
             Mob metodaMob = new Mob(daneLauncher);
-            metodaMob.AtakMoba(timerMob, 0,1);
+            metodaMob.AtakMoba(timerMob, 0, 1, 2);
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerStrzałaGraczMetoda(1,0,0,0,0);
+            metodaMap.timerStrzałaGraczMetoda(1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
     }
 }
