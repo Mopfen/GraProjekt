@@ -157,6 +157,8 @@ namespace Unstable
             internal short etap = 0; // zmienna określa etap, na którym znajduje się misja
             internal string []opisEtapu = new string[10]; // tablica przechowująca opisy etapów poszczególnych misji
 
+            internal bool poboczna = false; // zmienna okresla, czy zadanie jest misją poboczną
+
             internal string nazwa; // zmienna przechowująca nazwę misji
 
             internal int exp = 0; // zmienna określa, ile punktów doświadczenia dostaje się za pomyślne ukończenie misji
@@ -167,9 +169,11 @@ namespace Unstable
         /// </summary>
         internal class ZmienneMap
         {
-            internal bool[] częśćMapyOdwiedzona = new bool[20]; // tablica przechowuje informacje o tym, czy dana część mapy została już odwiedzona
+            internal bool []częśćMapyOdwiedzona = new bool[20]; // tablica przechowuje informacje o tym, czy dana część mapy została już odwiedzona
             internal short numerLokacji = 0; // zmienna określa, w której częsci mapy gracz aktualnie się znajduje
             internal short gdzieOstatnio = 0; // zmienna określa, w której częsci mapy gracz był ostatnio
+
+            internal bool []drop = new bool[20]; // zamienna określa, czy na mapie jest drop
         }
 
         #region zmienneWygląduObiektów
@@ -221,7 +225,7 @@ namespace Unstable
 
         #endregion
         #region zmiennePozostałe
-        internal string gameVersion = "Unstable1.2"; // zmienna przechowuje informacje o wersji gry
+        internal string gameVersion = "Unstable1.3"; // zmienna przechowuje informacje o wersji gry
 
         internal Panel poleGry; // zmienna odpowiadająca za właściwości pola gry
         internal Label hitLog; // zmienna odpowiadająca za wyświetlanie informacji przez hitLog
@@ -237,20 +241,25 @@ namespace Unstable
 
         internal int numerMapy = 0; // zmienna określa na jakiej mapie znajduje się gracz
 
-        internal bool muzykaMenu = false; // zmienna sprawdza, czy muzka w menu jest odtwarzana
-
         internal bool danoOdpowiedź1 = false; //
         internal bool danoOdpowiedź2 = false; //
         internal bool danoOdpowiedź3 = false; // zmiene sprawdzają, której odpowiedzi dokonał gracz
 
-        internal Thread wątekMuzyka; // zmienna umozliwia wykonywanie wątku odtwarzającego muzykę w tle
-        
+        internal string opcjeMuzykaText = "Włączona"; //
+        internal string opcjeEfektyDźwiękoweText = "Włączone"; //
+        internal string opcjeSamouczekText = "Włączony"; //
+        internal bool muzykaOn = true; // 
+        internal bool efektyDźwiękoweOn = true; //
+        internal bool samouczek = true; // zmienne odpowiedzialne za zmianę opcji gry
+
+        internal bool muzykaMenu = false; // zmienna sprawdza, czy muzka w menu jest odtwarzana
+
         #endregion
 
         internal ZmiennePostaci daneGracz = new ZmiennePostaci(); // obiekt przechowująca informacje o graczu
         internal ZmiennePostaci []daneMob = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o mobach
-        internal ZmiennePostaci[] daneNPC = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o NPC
-        internal List<ZmienneObiektów> danePrzeszkoda = new List<ZmienneObiektów>(); // tablica obiektów przechowujących informacje o przeszkodach
+        internal ZmiennePostaci []daneNPC = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o NPC
+        internal List<ZmienneObiektów> danePrzeszkoda = new List<ZmienneObiektów>(); // lista obiektów przechowujących informacje o przeszkodach
         internal ZmienneObiektów []daneStrzała = new ZmienneObiektów[2]; // tablica obiekótw przechowujących informacje o strzałach wystrzelonych przez postać
         internal ZmienneEkwipunku []danePlecakSlot = new ZmienneEkwipunku[47]; // tablica obiektów przechowujących informacje o przedmiocie na danym slocie w ekwipunku
         internal ZmienneEkwipunku[] daneDrop = new ZmienneEkwipunku[5]; // tablica obiektów przechowujących infromacje o przedmiocie do podniesienia
@@ -271,6 +280,11 @@ namespace Unstable
             music.settings.setMode("loop", true);
             music.Ctlcontrols.play();
             soundGracz.Ctlcontrols.play();
+            soundInterface.Ctlcontrols.play();
+
+            music.settings.volume = 20;
+            soundGracz.settings.volume = 80;
+            soundGracz.settings.volume = 80;
         }
 
         private void Launcher_Load(object sender, EventArgs e)
@@ -442,7 +456,5 @@ namespace Unstable
             MieczSquadaka.Image = global::Unstable.Properties.Resources.MieczSquadaka;
             ŁukSquadaka.Image = global::Unstable.Properties.Resources.ŁukSquadaka;
         }
-
-
     }
 }

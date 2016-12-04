@@ -90,19 +90,18 @@ namespace Unstable
 
         private void timerMob_Tick(object sender, EventArgs e)
         {
-            Mob metodaMob = new Mob(daneLauncher);
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
 
-            metodaMob.RuchMobaDoGracza(0);
+            metodaPoruszanieSię.RuchMobaDoGracza(0);
             metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneMob[0], daneLauncher.daneGracz);
             metodaMap.timerMobMetoda(0);
         }
 
         private void timerAtakMob_Tick(object sender, EventArgs e)
         {
-            Mob metodaMob = new Mob(daneLauncher);
-            metodaMob.AtakMoba(timerMob, 0, 1, 2);
+            Walka metodaWalka = new Walka(daneLauncher);
+            metodaWalka.AtakMoba(timerMob, 0, 1, 2);
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)

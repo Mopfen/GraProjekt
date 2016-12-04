@@ -50,6 +50,11 @@ namespace Unstable
                 Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
                 formaEkwipunek.ShowDialog();
             }
+            if(e.KeyCode == Keys.Q)
+            {
+                Zadania formaZadanie = new Unstable.Zadania(daneLauncher);
+                formaZadanie.ShowDialog();
+            }
             if (e.KeyCode == Keys.Z)
             {
                 MetodyEkwipunek metodaEkwipunek = new MetodyEkwipunek(daneLauncher);
@@ -132,6 +137,7 @@ namespace Unstable
             Walka metodaWalka = new Unstable.Walka(daneLauncher);
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
             GameOver formaGameOver = new GameOver(daneLauncher, forma);
+            Zadania formaZadania = new Zadania(daneLauncher);
             labelHpGracz.Text = Convert.ToString("PŻ: " + daneLauncher.daneGracz.hp + "/" + daneLauncher.daneGracz.hpMax);
             labelManaGracz.Text = Convert.ToString("Mana: " + daneLauncher.daneGracz.mana + "/" + daneLauncher.daneGracz.manaMax);
             labelLvGracz.Text = Convert.ToString("Poziom: " + daneLauncher.daneGracz.lv);
@@ -159,7 +165,7 @@ namespace Unstable
                 timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerNPC.Enabled = timerStatystyki.Enabled = false;
                 formaGameOver.ShowDialog();
             }
-            if (metodaUniwersalne.CheckOpened(formaStatystyki.Name))
+            if (metodaUniwersalne.CheckOpened(formaStatystyki.Name) | metodaUniwersalne.CheckOpened(formaZadania.Name))
             {
                 daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
                 timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerNPC.Enabled = timerStatystyki.Enabled = false;

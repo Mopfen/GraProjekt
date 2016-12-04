@@ -15,16 +15,23 @@ namespace Unstable
             daneLauncher = dane;
         }
 
-        public void SoundtrackMenu()
+        public void Soundtrack(string nazwa)
         {
-            daneLauncher.music.URL = "SoundtrackMenu.wav";
-            //daneLauncher.music.Ctlcontrols.play();
+            if(daneLauncher.muzykaOn==true)
+            {
+                daneLauncher.music.URL = nazwa;
+            }
         }
 
-        public void Soundtrack1()
+        public void SoundEffect(AxWMPLib.AxWindowsMediaPlayer soundEffect, string nazwa)
         {
-            daneLauncher.music.URL = "Soundtrack1.wav";
-            //daneLauncher.music.Ctlcontrols.play();
+            if (daneLauncher.efektyDźwiękoweOn == true)
+            {
+                soundEffect.Ctlcontrols.stop();
+                soundEffect.URL = nazwa;
+                soundEffect.Ctlcontrols.play();
+            }
         }
+
     }
 }

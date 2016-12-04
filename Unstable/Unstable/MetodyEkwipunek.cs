@@ -62,7 +62,7 @@ namespace Unstable
                     }
                 }
                 //Łuk:
-                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(380, 170) & daneLauncher.danePlecakSlot[i].exists == true)
+                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(380, 170))
                 {
                     if (daneLauncher.danePlecakSlot[i].exists == true)
                     {

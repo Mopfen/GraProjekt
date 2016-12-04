@@ -142,7 +142,7 @@
             this.panelStatystyk.Controls.Add(this.labelManaGracz);
             this.panelStatystyk.Controls.Add(this.hitLog);
             this.panelStatystyk.Controls.Add(this.labelHpGracz);
-            this.panelStatystyk.Location = new System.Drawing.Point(3, 398);
+            this.panelStatystyk.Location = new System.Drawing.Point(3, 314);
             this.panelStatystyk.Name = "panelStatystyk";
             this.panelStatystyk.Size = new System.Drawing.Size(780, 115);
             this.panelStatystyk.TabIndex = 35;
@@ -208,7 +208,7 @@
             // 
             this.poleGry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.poleGry.BackColor = System.Drawing.Color.Transparent;
-            this.poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Parter;
+            this.poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Parter_Krata;
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
             this.poleGry.Controls.Add(this.strzałaGracz);
@@ -231,7 +231,7 @@
             this.poleGry.Controls.Add(this.wyjściePiętroPierwsze);
             this.poleGry.Controls.Add(this.wyjścieDziedziniec);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -58);
+            this.poleGry.Location = new System.Drawing.Point(3, -14);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);

@@ -55,9 +55,11 @@ namespace Unstable
                         daneLauncher.daneNPC[i].dotartoDoY[j] = false;
                     }
                     daneLauncher.daneMapa[i].częśćMapyOdwiedzona[j] = false;
+                    daneLauncher.daneMapa[i].drop[j] = false;
                 }
             }
             daneLauncher.daneGracz.exists = true;
+            daneLauncher.daneQuest[0].nazwa = "Przeznaczenie";
             daneLauncher.daneQuest[0].stan = 1;
             daneLauncher.daneQuest[0].etap = 1;
             daneLauncher.daneQuest[0].exp = 100;

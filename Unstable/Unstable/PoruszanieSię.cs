@@ -96,5 +96,35 @@ namespace Unstable
                 }
             }
         }
+
+        /// <summary>
+        /// Metoda odpowiedzialna za ruch moba w kierunku gracza.
+        /// </summary>
+        public void RuchMobaDoGracza(int numerMoba)
+        {
+            if (daneLauncher.daneMob[numerMoba].exists == true)
+            {
+                daneLauncher.daneMob[numerMoba].up = daneLauncher.daneMob[numerMoba].down = daneLauncher.daneMob[numerMoba].left = daneLauncher.daneMob[numerMoba].right = false;
+
+                if (daneLauncher.daneMob[numerMoba].obraz.Top > daneLauncher.daneGracz.obraz.Top & daneLauncher.daneMob[numerMoba].wykonanoAtak == false) { daneLauncher.daneMob[numerMoba].up = true; }
+                if (daneLauncher.daneMob[numerMoba].obraz.Bottom < daneLauncher.daneGracz.obraz.Bottom & daneLauncher.daneMob[numerMoba].wykonanoAtak == false) { daneLauncher.daneMob[numerMoba].down = true; }
+                if (daneLauncher.daneMob[numerMoba].obraz.Left > daneLauncher.daneGracz.obraz.Right + 4 & daneLauncher.daneMob[numerMoba].wykonanoAtak == false) { daneLauncher.daneMob[numerMoba].left = true; }
+                if (daneLauncher.daneMob[numerMoba].obraz.Right < daneLauncher.daneGracz.obraz.Left - 4 & daneLauncher.daneMob[numerMoba].wykonanoAtak == false) { daneLauncher.daneMob[numerMoba].right = true; }
+
+                if (((daneLauncher.daneMob[numerMoba].obraz.Top > daneLauncher.daneGracz.obraz.Top & daneLauncher.daneMob[numerMoba].obraz.Top <= daneLauncher.daneGracz.obraz.Bottom + 8) | (daneLauncher.daneMob[numerMoba].obraz.Bottom < daneLauncher.daneGracz.obraz.Bottom & daneLauncher.daneMob[numerMoba].obraz.Bottom >= daneLauncher.daneGracz.obraz.Top - 8)) & daneLauncher.daneMob[numerMoba].obraz.Left <= daneLauncher.daneGracz.obraz.Right + 4 & daneLauncher.daneMob[numerMoba].obraz.Right >= daneLauncher.daneGracz.obraz.Left - 4 & daneLauncher.daneMob[numerMoba].wykonanoAtak == false)
+                {
+                    daneLauncher.daneMob[numerMoba].up = daneLauncher.daneMob[numerMoba].down = false;
+                    if (!(daneLauncher.daneGracz.obraz.Left < (daneLauncher.poleGry.Left + 70)))
+                    {
+                        daneLauncher.daneMob[numerMoba].left = true;
+                    }
+                    else daneLauncher.daneMob[numerMoba].right = true;
+                }
+
+
+                if (daneLauncher.daneMob[numerMoba].antyRozmycie.Top != daneLauncher.daneMob[numerMoba].obraz.Top | daneLauncher.daneMob[numerMoba].antyRozmycie.Left != daneLauncher.daneMob[numerMoba].obraz.Left) { daneLauncher.daneMob[numerMoba].antyRozmycie.Top = daneLauncher.daneMob[numerMoba].obraz.Top; daneLauncher.daneMob[numerMoba].antyRozmycie.Left = daneLauncher.daneMob[numerMoba].obraz.Left; } // niweluje rozmycie tła podczas poruszania się postaci
+                if (daneLauncher.daneMob[numerMoba].labelhp.Bottom != daneLauncher.daneMob[numerMoba].obraz.Top | daneLauncher.daneMob[numerMoba].labelhp.Left != daneLauncher.daneMob[numerMoba].obraz.Left + 8) { daneLauncher.daneMob[numerMoba].labelhp.Top = daneLauncher.daneMob[numerMoba].obraz.Top - daneLauncher.daneMob[numerMoba].labelhp.Height; daneLauncher.daneMob[numerMoba].labelhp.Left = daneLauncher.daneMob[numerMoba].obraz.Left + 8; } // przesuwa wskaźnik punktów życia za mobem
+            }
+        }
     }
 }

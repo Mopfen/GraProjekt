@@ -123,13 +123,18 @@
             // 
             // buttonGoTest
             // 
+            this.buttonGoTest.BackColor = System.Drawing.SystemColors.Control;
             this.buttonGoTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonGoTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGoTest.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonGoTest.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonGoTest.Image = global::Unstable.Properties.Resources.Button;
             this.buttonGoTest.Location = new System.Drawing.Point(353, 197);
             this.buttonGoTest.Name = "buttonGoTest";
-            this.buttonGoTest.Size = new System.Drawing.Size(100, 74);
+            this.buttonGoTest.Size = new System.Drawing.Size(100, 64);
             this.buttonGoTest.TabIndex = 13;
             this.buttonGoTest.Text = "Graj";
-            this.buttonGoTest.UseVisualStyleBackColor = true;
+            this.buttonGoTest.UseVisualStyleBackColor = false;
             this.buttonGoTest.Click += new System.EventHandler(this.buttonGoTest_Click);
             // 
             // alaButton_KolorWłosów

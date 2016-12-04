@@ -44,7 +44,8 @@ namespace Unstable
         {
             while (daneLauncher.daneGracz.exp >= daneLauncher.daneGracz.expMax)
             {
-                daneLauncher.soundGracz.URL = "lvUp.wav";
+                Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+                metodaMuzyka.SoundEffect(daneLauncher.soundGracz, "lvUp.wav");
                 daneLauncher.daneGracz.lv++;
                 daneLauncher.daneGracz.exp -= daneLauncher.daneGracz.expMax;
                 daneLauncher.daneGracz.expMax += 5;

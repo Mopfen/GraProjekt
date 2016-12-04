@@ -372,6 +372,7 @@
             this.drop0.Size = new System.Drawing.Size(48, 48);
             this.drop0.TabIndex = 33;
             this.drop0.TabStop = false;
+            this.drop0.Visible = false;
             // 
             // rozdajStatystyki
             // 

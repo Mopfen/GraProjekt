@@ -49,12 +49,18 @@ namespace Unstable
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
 
+            //if...
+            daneLauncher.daneNPC[0].obraz = Perqun;
+            daneLauncher.daneNPC[0].antyRozmycie = underPerqun;
+            daneLauncher.daneNPC[0].exists = true;
+
+            /*else...
+                Perqun.Visible = false;
+                Launcher.ZmiennePostaci resetuj = new Launcher.ZmiennePostaci();
+                daneLauncher.daneNPC[0] = resetuj; */
+
             if (daneLauncher.daneQuest[1].etap == 1 | daneLauncher.daneQuest[1].etap == 2)
             {
-                daneLauncher.daneNPC[0].obraz = Perqun;
-                daneLauncher.daneNPC[0].antyRozmycie = underPerqun;
-                daneLauncher.daneNPC[0].exists = true;
-
                 daneLauncher.daneMob[0].obraz = kukła;
                 daneLauncher.daneMob[0].obraz.Visible = true;
                 daneLauncher.daneMob[0].exists = true;
@@ -64,10 +70,7 @@ namespace Unstable
             }
             else
             {
-                Perqun.Visible = false;
                 kukła.Visible = false;
-                Launcher.ZmiennePostaci resetuj = new Launcher.ZmiennePostaci();
-                daneLauncher.daneNPC[0] = resetuj;
             }
 
             #region cutScena
@@ -214,7 +217,8 @@ namespace Unstable
             if (cutScena == true)
             {
                 metodaNPC.MoveToX(daneLauncher.daneGracz, 230);
-                if(daneLauncher.daneGracz.dotartoDoX[0] == true)
+                metodaNPC.MoveToY(daneLauncher.daneGracz, 262);
+                if(daneLauncher.daneGracz.dotartoDoX[0] == true & daneLauncher.daneQuest[1].etap == 1)
                 {
                     if (cutScenaBegin == false)
                     {
@@ -268,9 +272,25 @@ namespace Unstable
 
             if(daneLauncher.daneMob[0].exists==false & daneLauncher.daneQuest[1].etap==2)
             {
+                #region PrzygotowanieDoCutSceny
+                labelDialogNPC.Text = "";
+                labelDialogNPC.Visible = false;
+                alaButtonOdpowiedź1.Visible = false;
+                alaButtonOdpowiedź2.Visible = false;
+                alaButtonOdpowiedź3.Visible = false;
+                odpowiedź1.Visible = false;
+                odpowiedź2.Visible = false;
+                odpowiedź3.Visible = false;
+                panelStatystyk.Visible = false;
+                panelDialogu.Visible = true;
+
+                #endregion
+                cutScena = true;
                 daneLauncher.daneQuest[1].stan = 1;
                 daneLauncher.daneQuest[1].etap = 3;
                 daneLauncher.daneQuest[1].opisEtapu[3] = "Idź na pierwsze piętro wieży po łuk.";
+                wątekCutScena = new Thread(wykonajCutScena2);
+                wątekCutScena.Start();
             }
         }
 
@@ -308,7 +328,7 @@ namespace Unstable
             string Tekst = "Widzę, że znalazłeś mój stary miecz. Możesz go sobie zatrzymać.\nZobaczymy, czy potrafisz coś więcej, poza rozwalaniem moich beczek.\nRozruszaj trochę tę kukłę.";
             for (int i = 0; i < Tekst.Length; i++)
             {
-                metodaUniwersalne.wait(0.03);
+                metodaUniwersalne.wait(0.02);
                 Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
             }
             while (daneLauncher.danoOdpowiedź3 == false)
@@ -323,10 +343,39 @@ namespace Unstable
             Wątki.editInThread(this, false, value => odpowiedzi[3].Visible = value);
             Wątki.editInThread(this, false, value => panelDialogu.Visible = value);
             Wątki.editInThread(this, true, value => panelStatystyk.Visible = value);
-            daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = false;
+            daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = false;
             daneLauncher.daneQuest[1].stan = 1;
             daneLauncher.daneQuest[1].etap = 2;
             daneLauncher.daneQuest[1].opisEtapu[2] = "Zniszcz kukłę";
+            cutScena = false;
+        }
+
+        private void wykonajCutScena2()
+        {
+            cutScenaBegin = true;
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+
+            Wątki.editInThread(this, true, value => labelDialogNPC.Visible = value);
+
+            string Tekst = "Mieczem władasz nienajgorzej. Hmm...\nOstatnio znalazłem stary łuk, jest na pierwszym piętrze.\nIdź po niego. Masz tutaj klucz otwierający kratę.";
+            for (int i = 0; i < Tekst.Length; i++)
+            {
+                metodaUniwersalne.wait(0.02);
+                Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
+            }
+            while (daneLauncher.danoOdpowiedź3 == false)
+            {
+                Wątki.editInThread(this, "Ruszam.", value => odpowiedź3.Text = value);
+                Wątki.editInThread(this, true, value => alaButtons[3].Visible = value);
+                Wątki.editInThread(this, true, value => odpowiedzi[3].Visible = value);
+            }
+            daneLauncher.danoOdpowiedź3 = false;
+            Wątki.editInThread(this, "", value => labelDialogNPC.Text = value);
+            Wątki.editInThread(this, false, value => alaButtons[3].Visible = value);
+            Wątki.editInThread(this, false, value => odpowiedzi[3].Visible = value);
+            Wątki.editInThread(this, false, value => panelDialogu.Visible = value);
+            Wątki.editInThread(this, true, value => panelStatystyk.Visible = value);
+            daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = false;
             cutScena = false;
         }
     }

@@ -44,7 +44,6 @@
             this.hitLog = new System.Windows.Forms.Label();
             this.labelHpGracz = new System.Windows.Forms.Label();
             this.poleGry = new System.Windows.Forms.Panel();
-            this.drop0 = new System.Windows.Forms.PictureBox();
             this.strzałaGracz = new System.Windows.Forms.PictureBox();
             this.gracz = new System.Windows.Forms.PictureBox();
             this.ściana1 = new System.Windows.Forms.PictureBox();
@@ -53,9 +52,9 @@
             this.ściana2 = new System.Windows.Forms.PictureBox();
             this.underGracz = new System.Windows.Forms.PictureBox();
             this.wyjścieParter = new System.Windows.Forms.PictureBox();
+            this.drop0 = new System.Windows.Forms.PictureBox();
             this.panelStatystyk.SuspendLayout();
             this.poleGry.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drop0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana1)).BeginInit();
@@ -64,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ściana2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drop0)).BeginInit();
             this.SuspendLayout();
             // 
             // timerGracz
@@ -186,20 +186,11 @@
             this.poleGry.Controls.Add(this.wyjścieParter);
             this.poleGry.Controls.Add(this.drop0);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -14);
+            this.poleGry.Location = new System.Drawing.Point(3, -36);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 38;
-            // 
-            // drop0
-            // 
-            this.drop0.Image = global::Unstable.Properties.Resources.ZbutwiałyŁuk;
-            this.drop0.Location = new System.Drawing.Point(378, 69);
-            this.drop0.Name = "drop0";
-            this.drop0.Size = new System.Drawing.Size(48, 48);
-            this.drop0.TabIndex = 40;
-            this.drop0.TabStop = false;
             // 
             // strzałaGracz
             // 
@@ -285,10 +276,21 @@
             this.wyjścieParter.TabIndex = 35;
             this.wyjścieParter.TabStop = false;
             // 
+            // drop0
+            // 
+            this.drop0.Image = global::Unstable.Properties.Resources.ZbutwiałyŁuk;
+            this.drop0.Location = new System.Drawing.Point(378, 69);
+            this.drop0.Name = "drop0";
+            this.drop0.Size = new System.Drawing.Size(48, 48);
+            this.drop0.TabIndex = 40;
+            this.drop0.TabStop = false;
+            this.drop0.Visible = false;
+            // 
             // _01PiętroPierwsze
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(37)))), ((int)(((byte)(4)))));
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.ControlBox = false;
             this.Controls.Add(this.panelStatystyk);
@@ -305,7 +307,6 @@
             this.panelStatystyk.ResumeLayout(false);
             this.panelStatystyk.PerformLayout();
             this.poleGry.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.drop0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana1)).EndInit();
@@ -314,6 +315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ściana2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.underGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drop0)).EndInit();
             this.ResumeLayout(false);
 
         }

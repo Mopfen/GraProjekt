@@ -90,9 +90,32 @@
     <Compile Include="OkienkoInformacji.Designer.cs">
       <DependentUpon>OkienkoInformacji.cs</DependentUpon>
     </Compile>
+    <Compile Include="Opcje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opcje.Designer.cs">
+      <DependentUpon>Opcje.cs</DependentUpon>
+    </Compile>
     <Compile Include="PoruszanieSię.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Samouczek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Samouczek.Designer.cs">
+      <DependentUpon>Samouczek.cs</DependentUpon>
+    </Compile>
     <Compile Include="Walka.cs" />
     <Compile Include="Wątki.cs" />
+    <Compile Include="Zadania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zadania.Designer.cs">
+      <DependentUpon>Zadania.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZmianaWygladu.cs" />
     <Compile Include="_01Dziedziniec.cs">
       <SubType>Form</SubType>
@@ -119,7 +142,6 @@
       <DependentUpon>MenuGlowne.cs</DependentUpon>
     </Compile>
     <Compile Include="MetodyMap.cs" />
-    <Compile Include="Mob.cs" />
     <Compile Include="NowaGra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,11 +150,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Statystyki.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +189,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OkienkoInformacji.resx">
       <DependentUpon>OkienkoInformacji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opcje.resx">
+      <DependentUpon>Opcje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samouczek.resx">
+      <DependentUpon>Samouczek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zadania.resx">
+      <DependentUpon>Zadania.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_01Dziedziniec.resx">
       <DependentUpon>_01Dziedziniec.cs</DependentUpon>
@@ -264,6 +290,8 @@
     <None Include="Models\Player\MovingUpWhiteManBrownHair.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Models\Samouczek\KlawiszeSamouczekChodzenie.gif" />
+    <None Include="Models\Samouczek\SamouczekChodzenie.gif" />
     <None Include="Models\Player\whiteRedStand.gif" />
     <None Include="Models\Player\yellowRedStand.gif" />
     <None Include="Models\Player\yellowBlondeStand.gif" />
@@ -315,6 +343,10 @@
     <None Include="Models\Backgrounds\01PiętroPierwsze.png" />
     <None Include="Models\Items\ŁukSquadaka.gif" />
     <None Include="Models\Items\ZbutwiałyŁuk.gif" />
+    <None Include="Models\Others\Button.png" />
+    <None Include="Models\Objekty\Krata.png" />
+    <None Include="Models\Backgrounds\01Parter+Krata.png" />
+    <None Include="Models\Backgrounds\OkienkoSamouczek.png" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />

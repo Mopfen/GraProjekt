@@ -39,13 +39,10 @@ namespace Unstable
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
 
-            daneLauncher.daneDrop[0].exists = true;
-            daneLauncher.daneDrop[0].obraz = drop0;
-            daneLauncher.daneDrop[0].id = 2;
-            daneLauncher.daneDrop[0].łuk = true;
-            daneLauncher.daneDrop[0].dmgDystans[0] = 1;
-            daneLauncher.daneDrop[0].dmgDystans[1] = 6;
-            daneLauncher.daneDrop[0].numerLokacji = daneLauncher.daneMapa[1].numerLokacji;
+            if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[3] == false)
+            {
+                daneLauncher.daneMapa[1].drop[3] = true;
+            }
 
             #region UstawGracza
             if (daneLauncher.daneMapa[1].gdzieOstatnio == 1)
@@ -86,6 +83,20 @@ namespace Unstable
             daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = false;
 
             #endregion
+
+            if(daneLauncher.daneMapa[1].drop[3]==true)
+            {
+                daneLauncher.daneDrop[0] = new Launcher.ZmienneEkwipunku();
+                daneLauncher.daneDrop[0].exists = true;
+                daneLauncher.daneDrop[0].obraz = drop0;
+                daneLauncher.daneDrop[0].obraz.Visible = true;
+                daneLauncher.daneDrop[0].id = 2;
+                daneLauncher.daneDrop[0].łuk = true;
+                daneLauncher.daneDrop[0].dmgDystans[0] = 1;
+                daneLauncher.daneDrop[0].dmgDystans[1] = 6;
+                daneLauncher.daneDrop[0].numerLokacji = daneLauncher.daneMapa[1].numerLokacji;
+            }
+            
 
             daneLauncher.daneStrzała[0].obraz = strzałaGracz;
             daneLauncher.daneStrzała[0].obraz.Visible = false;
@@ -151,6 +162,11 @@ namespace Unstable
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerNPC, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+
+            if (daneLauncher.daneDrop[0].exists == false)
+            {
+                daneLauncher.daneMapa[1].drop[3] = false;
+            }
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)

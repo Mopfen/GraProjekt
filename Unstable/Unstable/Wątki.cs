@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,19 @@ namespace Unstable
         /// <param name="a">Atrybut kontrolki do modyfikacji</param>
         /// <param name="b">Wartość, jaka ma być przypisana atrybutowi kontrolki</param>
         public static void editInThread(Form forma, string input, Action<string> output)
+        {
+            forma.Invoke((MethodInvoker)delegate
+            {
+                output(input);
+            });
+        }
+        /// <summary>
+        /// Metoda pozwala modyfikować atrybuty kontrolek form wewnątrz wątku.
+        /// </summary>
+        /// <param name="forma">Forma, w której znajduje się dana kontrolka</param>
+        /// <param name="a">Atrybut kontrolki do modyfikacji</param>
+        /// <param name="b">Wartość, jaka ma być przypisana atrybutowi kontrolki</param>
+        public static void editInThread(Form forma, Point input, Action<Point> output)
         {
             forma.Invoke((MethodInvoker)delegate
             {

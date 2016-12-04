@@ -34,9 +34,11 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.music = new AxWMPLib.AxWindowsMediaPlayer();
             this.soundGracz = new AxWMPLib.AxWindowsMediaPlayer();
+            this.soundInterface = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.obrazek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.music)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soundGracz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soundInterface)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -95,6 +97,16 @@
             this.soundGracz.TabIndex = 4;
             this.soundGracz.Visible = false;
             // 
+            // soundInterface
+            // 
+            this.soundInterface.Enabled = true;
+            this.soundInterface.Location = new System.Drawing.Point(82, 45);
+            this.soundInterface.Name = "soundInterface";
+            this.soundInterface.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("soundInterface.OcxState")));
+            this.soundInterface.Size = new System.Drawing.Size(8, 8);
+            this.soundInterface.TabIndex = 5;
+            this.soundInterface.Visible = false;
+            // 
             // Launcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,6 +114,7 @@
             this.BackgroundImage = global::Unstable.Properties.Resources.TłoNowaGra;
             this.ClientSize = new System.Drawing.Size(240, 90);
             this.ControlBox = false;
+            this.Controls.Add(this.soundInterface);
             this.Controls.Add(this.soundGracz);
             this.Controls.Add(this.music);
             this.Controls.Add(this.buttonExit);
@@ -119,6 +132,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.obrazek)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.music)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soundGracz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soundInterface)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -130,6 +144,7 @@
         private System.Windows.Forms.Button buttonExit;
         internal AxWMPLib.AxWindowsMediaPlayer music;
         internal AxWMPLib.AxWindowsMediaPlayer soundGracz;
+        internal AxWMPLib.AxWindowsMediaPlayer soundInterface;
     }
 }
 

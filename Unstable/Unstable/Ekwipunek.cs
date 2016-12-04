@@ -107,6 +107,8 @@ namespace Unstable
             }
             daneLauncher.statystykiPrzedmiotu = labelStatystykiPrzedmiotu;
 
+            daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
+
             zapiszDane();
 
             #region Test
@@ -211,7 +213,7 @@ namespace Unstable
             string obrażenia="";
 
             if (daneLauncher.danePlecakSlot[numerSlotu].id == 1) nazwa = "Zardzewiały Miecz";
-            if (daneLauncher.danePlecakSlot[numerSlotu].id == 2) nazwa = "ZbutwiałyŁuk";
+            if (daneLauncher.danePlecakSlot[numerSlotu].id == 2) nazwa = "Zbutwiały Łuk";
             if (daneLauncher.danePlecakSlot[numerSlotu].id == 3) nazwa = "Czerwona Mikstura(M)";
             if (daneLauncher.danePlecakSlot[numerSlotu].id == 1000) nazwa = "Miecz Squadaka";
             if (daneLauncher.danePlecakSlot[numerSlotu].id == 1001) nazwa = "Łuk Squadaka";

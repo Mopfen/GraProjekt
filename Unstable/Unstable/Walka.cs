@@ -117,12 +117,15 @@ namespace Unstable
             {
                 if (daneLauncher.daneStrzała[0].obraz.Bounds.IntersectsWith(obiekt[obiekt.IndexOf(indeks)].obraz.Bounds))
                 {
+                    Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+                   
                     daneLauncher.daneStrzała[0].exists = false;
                     daneLauncher.daneStrzała[0].obraz.Visible = false;
                     if (obiekt[obiekt.IndexOf(indeks)].ściana == false)
                     {
                         obiekt[obiekt.IndexOf(indeks)].exists = false;
                         obiekt[obiekt.IndexOf(indeks)].obraz.Visible = false;
+                        metodaMuzyka.SoundEffect(daneLauncher.soundInterface, "NiszczonyObiekt.wav");
                     }
                 }
             }
@@ -213,6 +216,11 @@ namespace Unstable
                 if ((daneLauncher.daneGracz.left == true & (daneLauncher.daneGracz.obraz.Left - obiekt[obiekt.IndexOf(indeks)].obraz.Left >= (60) & daneLauncher.daneGracz.obraz.Left - obiekt[obiekt.IndexOf(indeks)].obraz.Right < 8 & (obiekt[obiekt.IndexOf(indeks)].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[obiekt.IndexOf(indeks)].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)) |
                 (daneLauncher.daneGracz.right == true & (obiekt[obiekt.IndexOf(indeks)].obraz.Left - daneLauncher.daneGracz.obraz.Left >= (-60) & obiekt[obiekt.IndexOf(indeks)].obraz.Left - daneLauncher.daneGracz.obraz.Right < 8 & (obiekt[obiekt.IndexOf(indeks)].obraz.Top - daneLauncher.daneGracz.obraz.Top >= (-64) & obiekt[obiekt.IndexOf(indeks)].obraz.Top - daneLauncher.daneGracz.obraz.Top < daneLauncher.daneGracz.obraz.Height)))))
                 {
+                    Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+
+                    metodaMuzyka.SoundEffect(daneLauncher.soundInterface, "NiszczonyObiekt.wav");
+                    
+
                     obiekt[obiekt.IndexOf(indeks)].exists = false;
                     obiekt[obiekt.IndexOf(indeks)].obraz.Visible = false;
                 }
@@ -228,8 +236,11 @@ namespace Unstable
             {
                 if (daneLauncher.daneGracz.rodzajAtaku == true & daneLauncher.daneGracz.posiadaMiecz == true)
                 {
+                    Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+
                     if (daneLauncher.daneGracz.left == true) daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownAttackingLeft.Image;
                     if (daneLauncher.daneGracz.right == true) daneLauncher.daneGracz.obraz.Image = daneLauncher.whiteBrownAttackingRight.Image;
+                    metodaMuzyka.SoundEffect(daneLauncher.soundGracz, "MachnięcieMieczem.wav");
                     atakwCelObok(daneLauncher.daneMob, 5);
                     atakwCelObok(daneLauncher.danePrzeszkoda, numerMapy, numerLokacji);
 
@@ -261,12 +272,21 @@ namespace Unstable
                 daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
                 daneLauncher.daneGracz.wykonanoAtak = true;
             }
-            if (daneLauncher.daneGracz.wykonanoAtak == true) { timerGracz.Enabled = false; daneLauncher.daneGracz.stopMoving++; }
+            if (daneLauncher.daneGracz.wykonanoAtak == true)
+            {
+                timerGracz.Enabled = false;
+                daneLauncher.daneGracz.stopMoving++;
+            }
             if (daneLauncher.daneGracz.stopMoving == 5)
             {
                 timerGracz.Enabled = true;
                 daneLauncher.daneGracz.wykonanoAtak = false;
                 daneLauncher.daneGracz.stopMoving = 0;
+            }
+            if (daneLauncher.daneGracz.stopMoving == 1 & (daneLauncher.daneGracz.obraz.Image == daneLauncher.whiteBrownShotingLeft.Image | daneLauncher.daneGracz.obraz.Image == daneLauncher.whiteBrownShotingRight.Image))
+            {
+                Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+                metodaMuzyka.SoundEffect(daneLauncher.soundGracz, "ŁukStrzał.mp3");
             }
             daneLauncher.daneGracz.attack = false;
         }
@@ -306,6 +326,55 @@ namespace Unstable
                         daneLauncher.daneStrzała[0].obraz.Visible = false;
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Metoda odpowiedzialna za wykonywanie ataku przez Moba.
+        /// </summary>
+        public void AtakMoba(Timer timerMob, int numerMoba, int wartośćAtakuMin, int wartośćAtakuMax)
+        {
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            Walka metodaWalka = new Walka(daneLauncher);
+            if (daneLauncher.daneMob[numerMoba].exists == true)
+            {
+                if (daneLauncher.daneMob[numerMoba].stopMoving == 0 & daneLauncher.daneMob[numerMoba].attack == false & (daneLauncher.daneMob[numerMoba].obraz.Left - daneLauncher.daneGracz.obraz.Right >= (-16) & daneLauncher.daneMob[numerMoba].obraz.Left - daneLauncher.daneGracz.obraz.Right < 8 & daneLauncher.daneGracz.obraz.Top - daneLauncher.daneMob[numerMoba].obraz.Top >= (-64) & daneLauncher.daneGracz.obraz.Top - daneLauncher.daneMob[numerMoba].obraz.Top < daneLauncher.daneMob[numerMoba].obraz.Height))
+                {
+                    daneLauncher.daneMob[numerMoba].obraz.Image = daneLauncher.whiteBrownAttackingLeft.Image;
+                    daneLauncher.daneMob[numerMoba].attack = true;
+                }
+                if (daneLauncher.daneMob[numerMoba].stopMoving == 0 & daneLauncher.daneMob[numerMoba].attack == false & (daneLauncher.daneGracz.obraz.Left - daneLauncher.daneMob[numerMoba].obraz.Right >= (-16) & daneLauncher.daneGracz.obraz.Left - daneLauncher.daneMob[numerMoba].obraz.Right < 8 & daneLauncher.daneGracz.obraz.Top - daneLauncher.daneMob[numerMoba].obraz.Top >= (-64) & daneLauncher.daneGracz.obraz.Top - daneLauncher.daneMob[numerMoba].obraz.Top < daneLauncher.daneMob[numerMoba].obraz.Height))
+                {
+                    daneLauncher.daneMob[numerMoba].obraz.Image = daneLauncher.whiteBrownAttackingRight.Image;
+                    daneLauncher.daneMob[numerMoba].attack = true;
+                    daneLauncher.daneMob[numerMoba].up = daneLauncher.daneMob[numerMoba].down = daneLauncher.daneMob[numerMoba].left = daneLauncher.daneMob[numerMoba].right = daneLauncher.daneMob[numerMoba].zmianaKierunkuUp = daneLauncher.daneMob[numerMoba].zmianaKierunkuDown = daneLauncher.daneMob[numerMoba].zmianaKierunkuLeft = daneLauncher.daneMob[numerMoba].zmianaKierunkuRight = false;
+                }
+                if (daneLauncher.daneMob[numerMoba].stopMoving == 0 & daneLauncher.daneMob[numerMoba].attack == true)
+                {
+                    metodaWalka.dmgZwarcie(daneLauncher.daneMob, numerMoba, wartośćAtakuMin, wartośćAtakuMax);
+                    int dmg = metodaUniwersalne.losuj(daneLauncher.daneMob[numerMoba].siłaAtakuZwarcie[0], daneLauncher.daneMob[numerMoba].siłaAtakuZwarcie[1]);
+                    int dmgK = dmg * 2;
+                    if (metodaUniwersalne.losuj(1, 100) <= daneLauncher.daneMob[numerMoba].szansaKryta)
+                    {
+                        daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmgK + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
+                        daneLauncher.daneGracz.hp -= dmgK;
+                    }
+                    else
+                    {
+                        daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
+                        daneLauncher.daneGracz.hp -= dmg;
+                    }
+                    daneLauncher.daneMob[numerMoba].wykonanoAtak = true;
+                    daneLauncher.daneMob[numerMoba].zmianaKierunkuLeft = daneLauncher.daneMob[numerMoba].zmianaKierunkuRight = false;
+                }
+                if (daneLauncher.daneMob[numerMoba].wykonanoAtak == true) { timerMob.Enabled = false; daneLauncher.daneMob[numerMoba].stopMoving++; }
+                if (daneLauncher.daneMob[numerMoba].stopMoving == 5)
+                {
+                    timerMob.Enabled = true;
+                    daneLauncher.daneMob[numerMoba].wykonanoAtak = false;
+                    daneLauncher.daneMob[numerMoba].stopMoving = 0;
+                }
+                daneLauncher.daneMob[numerMoba].attack = false;
             }
         }
     }

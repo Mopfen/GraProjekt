@@ -332,7 +332,7 @@ namespace Unstable
             string Tekst = "Co to za hałasy w piwnicy?! Kim jesteś i skąd się tu wziąłeś?! A z resztą,\nnie obchodzi mnie to. Powiedz mi tylko, czy nie uszkodziłeś moich beczek?";
             for (int i = 0; i < Tekst.Length; i++)
             {
-                metodaUniwersalne.wait(0.03);
+                metodaUniwersalne.wait(0.02);
                 Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
             }
             while(daneLauncher.danoOdpowiedź1==false & daneLauncher.danoOdpowiedź2 == false & daneLauncher.danoOdpowiedź3 == false)
@@ -357,7 +357,7 @@ namespace Unstable
                 Tekst = "Widzę już w Twoim spojrzeniu, że kłamiesz! Wynoś się stąd, ale już!\nZaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała:\n\"Pewnego dnia pojawi się wśród twych beczek ten, którego\nmusisz wyprawić na wielką podróż\".";
                 for (int i = 0; i < Tekst.Length; i++)
                 {
-                    metodaUniwersalne.wait(0.03);
+                    metodaUniwersalne.wait(0.02);
                     Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
                 }
             }
@@ -367,17 +367,29 @@ namespace Unstable
                 Tekst = "A niech Cię szlag parszywcu! Wynoś się stąd, ale już!\nZaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała:\n\"Pewnego dnia pojawi się wśród twych beczek ten, którego\nmusisz wyprawić na wielką podróż\".";
                 for (int i = 0; i < Tekst.Length; i++)
                 {
-                    metodaUniwersalne.wait(0.03);
+                    metodaUniwersalne.wait(0.02);
                     Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
                 }
             }
-            metodaUniwersalne.wait(5);
+            while (daneLauncher.danoOdpowiedź3 == false)
+            {
+                Wątki.editInThread(this, "Dalej", value => odpowiedź3.Text = value);
+                Wątki.editInThread(this, true, value => alaButtons[3].Visible = value);
+                Wątki.editInThread(this, true, value => odpowiedzi[3].Visible = value);
+                Wątki.editInThread(this, new Point(600, 87), value => alaButtons[3].Location = value);
+                Wątki.editInThread(this, new Point(626, 87), value => odpowiedzi[3].Location = value);
+            }
+            Wątki.editInThread(this, false, value => alaButtons[3].Visible = value);
+            Wątki.editInThread(this, false, value => odpowiedzi[3].Visible = value);
+            Wątki.editInThread(this, new Point(157, 87), value => alaButtons[3].Location = value);
+            Wątki.editInThread(this, new Point(183, 84), value => odpowiedzi[3].Location = value);
+            daneLauncher.danoOdpowiedź3 = false;
             Wątki.editInThread(this, "", value => labelDialogNPC.Text = value);
             daneLauncher.danoOdpowiedź3 = false;
             Tekst = "Ona się nigdy nie myli... No chodź, rozruszasz się trochę przed wyprawą.";
             for (int i = 0; i < Tekst.Length; i++)
             {
-                metodaUniwersalne.wait(0.03);
+                metodaUniwersalne.wait(0.02);
                 Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
             }
             Wątki.editInThread(this, "Wyjdź", value => odpowiedź1.Text = value);
@@ -389,7 +401,7 @@ namespace Unstable
             Wątki.editInThread(this, false, value => panelDialogu.Visible = value);
             Wątki.editInThread(this, true, value => panelStatystyk.Visible = value);
             daneLauncher.daneGracz.down = daneLauncher.daneGracz.up = false;
-            daneLauncher.daneQuest[1].nazwa = "Pomoc winiarza";
+            daneLauncher.daneQuest[1].nazwa = "Pomoc Winiarza";
             daneLauncher.daneQuest[1].exp = 5;
             daneLauncher.daneQuest[1].stan = 1;
             daneLauncher.daneQuest[1].etap = 1;

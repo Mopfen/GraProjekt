@@ -13,6 +13,8 @@ namespace Unstable
 {
     public partial class _01Piwnica : Form
     {
+        bool[] pokazSamouczek = { false, false, false };
+
         Launcher daneLauncher;
 
         public _01Piwnica(Launcher dane)
@@ -39,22 +41,20 @@ namespace Unstable
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
 
-            daneLauncher.daneDrop[0].exists = true;
-            daneLauncher.daneDrop[0].obraz = drop0;
-            daneLauncher.daneDrop[0].id = 1;
-            daneLauncher.daneDrop[0].miecz = true;
-            daneLauncher.daneDrop[0].dmgZwarcie[0] = 3;
-            daneLauncher.daneDrop[0].dmgZwarcie[1] = 5;
-            daneLauncher.daneDrop[0].numerLokacji = daneLauncher.daneMapa[1].numerLokacji;
-
             daneLauncher.daneStrzała[0].obraz = strzałaGracz;
             daneLauncher.daneStrzała[0].obraz.Visible = false;
 
             if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[0] == false)
             {
+                if(daneLauncher.samouczek==true)
+                {
+                    pokazSamouczek[0] = true;
+                }
+
                 Muzyka metodaMuzyka = new Muzyka(daneLauncher);
-                daneLauncher.wątekMuzyka = new Thread(metodaMuzyka.Soundtrack1);
-                daneLauncher.wątekMuzyka.Start();
+                metodaMuzyka.Soundtrack("Soundtrack1.wav");
+
+                daneLauncher.daneMapa[1].drop[0] = true;
             }
 
             #region UstawGracza
@@ -115,13 +115,27 @@ namespace Unstable
 
             #endregion
 
+            if(daneLauncher.daneMapa[1].drop[0]==true)
+            {
+                daneLauncher.daneDrop[0] = new Launcher.ZmienneEkwipunku();
+                daneLauncher.daneDrop[0].exists = true;
+                daneLauncher.daneDrop[0].obraz = drop0;
+                daneLauncher.daneDrop[0].obraz.Visible = true;
+                daneLauncher.daneDrop[0].id = 1;
+                daneLauncher.daneDrop[0].miecz = true;
+                daneLauncher.daneDrop[0].dmgZwarcie[0] = 3;
+                daneLauncher.daneDrop[0].dmgZwarcie[1] = 5;
+                daneLauncher.daneDrop[0].numerLokacji = daneLauncher.daneMapa[1].numerLokacji;
+            }
+
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
             daneLauncher.timerStatystyki = timerStatystyki;
 
             daneLauncher.daneMapa[1].częśćMapyOdwiedzona[daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] = true;
             daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji;
 
-            #endregion
+            #endregion  
+
         }
 
         private void rozdajStatystyki_Click(object sender, EventArgs e)
@@ -176,6 +190,18 @@ namespace Unstable
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerNPC, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+
+            if(daneLauncher.daneDrop[0].exists==false)
+            {
+                daneLauncher.daneMapa[1].drop[0] = false;
+            }
+            if(pokazSamouczek[0]==true)
+            {
+                Samouczek formaSamouczek = new Samouczek(daneLauncher);
+
+                pokazSamouczek[0] = false;
+                formaSamouczek.ShowDialog();
+            }
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
