@@ -175,7 +175,7 @@
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.underMob);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -91);
+            this.poleGry.Location = new System.Drawing.Point(3, -3);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);

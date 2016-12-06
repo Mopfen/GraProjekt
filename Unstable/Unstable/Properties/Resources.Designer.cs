@@ -73,6 +73,16 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _01Dziedziniec_Blokada {
+            get {
+                object obj = ResourceManager.GetObject("01Dziedziniec+Blokada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _01Parter {
             get {
                 object obj = ResourceManager.GetObject("01Parter", resourceCulture);
@@ -96,6 +106,16 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap _01PiętroPierwsze {
             get {
                 object obj = ResourceManager.GetObject("01PiętroPierwsze", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _01PiętroPierwsze_Krata {
+            get {
+                object obj = ResourceManager.GetObject("01PiętroPierwsze+Krata", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +183,16 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blokada {
+            get {
+                object obj = ResourceManager.GetObject("Blokada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BrakItemu {
             get {
                 object obj = ResourceManager.GetObject("BrakItemu", resourceCulture);
@@ -222,6 +252,16 @@ namespace Unstable.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap KeyPerqun1st {
+            get {
+                object obj = ResourceManager.GetObject("KeyPerqun1st", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap KlawiszeSamouczekChodzenie {
             get {
                 object obj = ResourceManager.GetObject("KlawiszeSamouczekChodzenie", resourceCulture);
@@ -274,6 +314,16 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap OkienkoEkwipunek {
             get {
                 object obj = ResourceManager.GetObject("OkienkoEkwipunek", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OkienkoPrzedmiotyFabularne {
+            get {
+                object obj = ResourceManager.GetObject("OkienkoPrzedmiotyFabularne", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -364,6 +414,16 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap Plus16x16 {
             get {
                 object obj = ResourceManager.GetObject("Plus16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Quest {
+            get {
+                object obj = ResourceManager.GetObject("Quest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -682,6 +742,16 @@ namespace Unstable.Properties {
         internal static System.Drawing.Bitmap ZbutwiałyŁuk {
             get {
                 object obj = ResourceManager.GetObject("ZbutwiałyŁuk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zobaczNoweZadanie {
+            get {
+                object obj = ResourceManager.GetObject("zobaczNoweZadanie", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

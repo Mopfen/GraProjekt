@@ -23,7 +23,7 @@ namespace Unstable
 
             daneLauncher = dane;
 
-            #region przypisanieSlotówDoTablicy
+            #region PrzypisanieSlotówDoTablicy
             Sloty.Add(staraLokacja);
             Sloty.Add(plecakSlot1);
             Sloty.Add(plecakSlot2);
@@ -118,7 +118,7 @@ namespace Unstable
             #endregion
         }
 
-        private void Statystyki_KeyDown(object sender, KeyEventArgs e)
+        private void Ekwipunek_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.I | e.KeyCode == Keys.Escape)
             {
@@ -251,13 +251,20 @@ namespace Unstable
                 }
             }
             zapiszDane();
-            daneLauncher.timerStatystyki.Enabled = true;
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            metodaUniwersalne.uruchomTimery();
             timerRuch.Enabled = false;
             Sloty.Clear();
             this.Close();
         }
 
         #region KlikanieNaPrzedmioty
+        private void przedmiotyFabularne_Click(object sender, EventArgs e)
+        {
+            PrzedmiotyFabularne formaPrzedmiotyFabularne = new PrzedmiotyFabularne(daneLauncher);
+            formaPrzedmiotyFabularne.ShowDialog();
+        }
+
         private void plecakSlot1_Click(object sender, EventArgs e)
         {
             akcjaNaSlocie(1);

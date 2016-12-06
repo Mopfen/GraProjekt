@@ -44,6 +44,7 @@
             this.hitLog = new System.Windows.Forms.Label();
             this.labelHpGracz = new System.Windows.Forms.Label();
             this.poleGry = new System.Windows.Forms.Panel();
+            this.pokazNoweZadanie = new System.Windows.Forms.PictureBox();
             this.strzałaGracz = new System.Windows.Forms.PictureBox();
             this.drzwiRightOpened = new System.Windows.Forms.PictureBox();
             this.gracz = new System.Windows.Forms.PictureBox();
@@ -74,6 +75,7 @@
             this.labelDialogNPC = new System.Windows.Forms.Label();
             this.panelStatystyk.SuspendLayout();
             this.poleGry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzwiRightOpened)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
@@ -142,7 +144,7 @@
             this.panelStatystyk.Controls.Add(this.labelManaGracz);
             this.panelStatystyk.Controls.Add(this.hitLog);
             this.panelStatystyk.Controls.Add(this.labelHpGracz);
-            this.panelStatystyk.Location = new System.Drawing.Point(3, 314);
+            this.panelStatystyk.Location = new System.Drawing.Point(3, 431);
             this.panelStatystyk.Name = "panelStatystyk";
             this.panelStatystyk.Size = new System.Drawing.Size(780, 115);
             this.panelStatystyk.TabIndex = 35;
@@ -211,6 +213,7 @@
             this.poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Parter_Krata;
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
+            this.poleGry.Controls.Add(this.pokazNoweZadanie);
             this.poleGry.Controls.Add(this.strzałaGracz);
             this.poleGry.Controls.Add(this.drzwiRightOpened);
             this.poleGry.Controls.Add(this.gracz);
@@ -231,11 +234,25 @@
             this.poleGry.Controls.Add(this.wyjściePiętroPierwsze);
             this.poleGry.Controls.Add(this.wyjścieDziedziniec);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -14);
+            this.poleGry.Location = new System.Drawing.Point(3, -25);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 8;
+            // 
+            // pokazNoweZadanie
+            // 
+            this.pokazNoweZadanie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pokazNoweZadanie.Image = global::Unstable.Properties.Resources.zobaczNoweZadanie;
+            this.pokazNoweZadanie.Location = new System.Drawing.Point(738, 410);
+            this.pokazNoweZadanie.MaximumSize = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.MinimumSize = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.Name = "pokazNoweZadanie";
+            this.pokazNoweZadanie.Size = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.TabIndex = 45;
+            this.pokazNoweZadanie.TabStop = false;
+            this.pokazNoweZadanie.Visible = false;
+            this.pokazNoweZadanie.Click += new System.EventHandler(this.pokazNoweZadanie_Click);
             // 
             // strzałaGracz
             // 
@@ -560,6 +577,7 @@
             this.panelStatystyk.ResumeLayout(false);
             this.panelStatystyk.PerformLayout();
             this.poleGry.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drzwiRightOpened)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
@@ -632,5 +650,6 @@
         private System.Windows.Forms.PictureBox wyjściePiętroPierwsze;
         private System.Windows.Forms.PictureBox drzwiRightOpened;
         private System.Windows.Forms.PictureBox wyjścieDziedziniec;
+        private System.Windows.Forms.PictureBox pokazNoweZadanie;
     }
 }

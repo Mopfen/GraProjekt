@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Zadania));
             this.listaMisjiGłównych = new System.Windows.Forms.ComboBox();
             this.alaButtonExit = new System.Windows.Forms.PictureBox();
             this.labelNazwa = new System.Windows.Forms.Label();
             this.labelZadaniaGłówne = new System.Windows.Forms.Label();
             this.labelZadaniaPoboczne = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.listaMisjiPobocznych = new System.Windows.Forms.ComboBox();
             this.labelNazwaZadania = new System.Windows.Forms.Label();
             this.labelAktualnyEtap = new System.Windows.Forms.Label();
             this.labelEtap = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.listaMisjiGłównych.Location = new System.Drawing.Point(233, 56);
             this.listaMisjiGłównych.Name = "listaMisjiGłównych";
             this.listaMisjiGłównych.Size = new System.Drawing.Size(205, 38);
-            this.listaMisjiGłównych.Sorted = true;
             this.listaMisjiGłównych.TabIndex = 0;
             this.listaMisjiGłównych.TabStop = false;
             this.listaMisjiGłównych.SelectedIndexChanged += new System.EventHandler(this.ZmianaArgumetówMisjeGłówne);
@@ -106,21 +106,20 @@
             this.labelZadaniaPoboczne.TabIndex = 29;
             this.labelZadaniaPoboczne.Text = "Zadania poboczne:";
             // 
-            // comboBox1
+            // listaMisjiPobocznych
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.OliveDrab;
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.ForeColor = System.Drawing.Color.Gold;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox1.Location = new System.Drawing.Point(233, 118);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(205, 38);
-            this.comboBox1.Sorted = true;
-            this.comboBox1.TabIndex = 30;
-            this.comboBox1.TabStop = false;
+            this.listaMisjiPobocznych.BackColor = System.Drawing.Color.OliveDrab;
+            this.listaMisjiPobocznych.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listaMisjiPobocznych.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listaMisjiPobocznych.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listaMisjiPobocznych.ForeColor = System.Drawing.Color.Gold;
+            this.listaMisjiPobocznych.FormattingEnabled = true;
+            this.listaMisjiPobocznych.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.listaMisjiPobocznych.Location = new System.Drawing.Point(233, 118);
+            this.listaMisjiPobocznych.Name = "listaMisjiPobocznych";
+            this.listaMisjiPobocznych.Size = new System.Drawing.Size(205, 38);
+            this.listaMisjiPobocznych.TabIndex = 30;
+            this.listaMisjiPobocznych.TabStop = false;
             // 
             // labelNazwaZadania
             // 
@@ -170,18 +169,20 @@
             this.Controls.Add(this.labelEtap);
             this.Controls.Add(this.labelAktualnyEtap);
             this.Controls.Add(this.labelNazwaZadania);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.listaMisjiPobocznych);
             this.Controls.Add(this.labelZadaniaPoboczne);
             this.Controls.Add(this.labelZadaniaGłówne);
             this.Controls.Add(this.labelNazwa);
             this.Controls.Add(this.alaButtonExit);
             this.Controls.Add(this.listaMisjiGłównych);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(450, 600);
             this.MinimumSize = new System.Drawing.Size(450, 600);
             this.Name = "Zadania";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zadania";
+            this.VisibleChanged += new System.EventHandler(this.Zadania_VisibleChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Zadania_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonExit)).EndInit();
             this.ResumeLayout(false);
@@ -196,7 +197,7 @@
         private System.Windows.Forms.Label labelNazwa;
         private System.Windows.Forms.Label labelZadaniaGłówne;
         private System.Windows.Forms.Label labelZadaniaPoboczne;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox listaMisjiPobocznych;
         private System.Windows.Forms.Label labelNazwaZadania;
         private System.Windows.Forms.Label labelAktualnyEtap;
         private System.Windows.Forms.Label labelEtap;

@@ -39,6 +39,10 @@ namespace Unstable
 
                     daneLauncher.daneDrop[i] = new Launcher.ZmienneEkwipunku();
                 }
+                if (i < 17)
+                {
+                    daneLauncher.daneFabularnyItem[i] = new Launcher.ZmienneEkwipunku();
+                }
                 if (i < 47)
                 {
                     daneLauncher.danePlecakSlot[i] = new Launcher.ZmienneEkwipunku();

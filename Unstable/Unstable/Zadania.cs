@@ -53,7 +53,8 @@ namespace Unstable
         {
             if (e.KeyCode == Keys.Q | e.KeyCode == Keys.Escape)
             {
-                daneLauncher.timerStatystyki.Enabled = true;
+                Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                metodaUniwersalne.uruchomTimery();
                 this.Close();
             }
         }
@@ -73,12 +74,35 @@ namespace Unstable
                 labelNazwa.Text = listaMisjiGłównych.Text;
                 labelEtap.Text = daneLauncher.daneQuest[1].opisEtapu[daneLauncher.daneQuest[1].etap];
             }
+            if(listaMisjiGłównych.Text == "Miasto Winczewo")
+            {
+                labelNazwa.Text = listaMisjiGłównych.Text;
+                labelEtap.Text = daneLauncher.daneQuest[2].opisEtapu[daneLauncher.daneQuest[2].etap];
+            }
         }
 
         private void alaButtonExit_Click(object sender, EventArgs e)
         {
-            daneLauncher.timerStatystyki.Enabled = true;
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            metodaUniwersalne.uruchomTimery();
             this.Close();
+        }
+
+        private void Zadania_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible == true)
+            {
+                if (daneLauncher.noweGlowneZadanie == true)
+                {
+                    listaMisjiGłównych.Text = Convert.ToString(listaMisjiGłównych.Items[listaMisjiGłównych.Items.Count - 1]);
+                    daneLauncher.noweGlowneZadanie = false;
+                }
+                if (daneLauncher.nowePoboczneZadanie == true)
+                {
+                    listaMisjiPobocznych.Text = Convert.ToString(listaMisjiPobocznych.Items[listaMisjiPobocznych.Items.Count - 1]);
+                    daneLauncher.nowePoboczneZadanie = false;
+                }
+            }
         }
     }
 }

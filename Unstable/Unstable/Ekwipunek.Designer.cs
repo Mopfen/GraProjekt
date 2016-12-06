@@ -83,6 +83,8 @@
             this.PlecakSlot46 = new System.Windows.Forms.PictureBox();
             this.labelStatystykiPrzedmiotu = new System.Windows.Forms.Label();
             this.antyRozmycie = new System.Windows.Forms.PictureBox();
+            this.labelNazwa = new System.Windows.Forms.Label();
+            this.przedmiotyFabularne = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot8)).BeginInit();
@@ -133,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlecakSlot46)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antyRozmycie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.przedmiotyFabularne)).BeginInit();
             this.SuspendLayout();
             // 
             // plecakSlot1
@@ -895,6 +898,33 @@
             this.antyRozmycie.TabIndex = 51;
             this.antyRozmycie.TabStop = false;
             // 
+            // labelNazwa
+            // 
+            this.labelNazwa.AutoSize = true;
+            this.labelNazwa.BackColor = System.Drawing.Color.Transparent;
+            this.labelNazwa.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNazwa.Location = new System.Drawing.Point(1, 1);
+            this.labelNazwa.MaximumSize = new System.Drawing.Size(300, 32);
+            this.labelNazwa.MinimumSize = new System.Drawing.Size(300, 32);
+            this.labelNazwa.Name = "labelNazwa";
+            this.labelNazwa.Size = new System.Drawing.Size(300, 32);
+            this.labelNazwa.TabIndex = 52;
+            this.labelNazwa.Text = "Ekwipunek";
+            // 
+            // przedmiotyFabularne
+            // 
+            this.przedmiotyFabularne.BackColor = System.Drawing.Color.Transparent;
+            this.przedmiotyFabularne.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.przedmiotyFabularne.Image = global::Unstable.Properties.Resources.Quest;
+            this.przedmiotyFabularne.Location = new System.Drawing.Point(228, 36);
+            this.przedmiotyFabularne.MaximumSize = new System.Drawing.Size(48, 48);
+            this.przedmiotyFabularne.MinimumSize = new System.Drawing.Size(48, 48);
+            this.przedmiotyFabularne.Name = "przedmiotyFabularne";
+            this.przedmiotyFabularne.Size = new System.Drawing.Size(48, 48);
+            this.przedmiotyFabularne.TabIndex = 53;
+            this.przedmiotyFabularne.TabStop = false;
+            this.przedmiotyFabularne.Click += new System.EventHandler(this.przedmiotyFabularne_Click);
+            // 
             // Ekwipunek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -903,6 +933,8 @@
             this.BackgroundImage = global::Unstable.Properties.Resources.OkienkoEkwipunek;
             this.ClientSize = new System.Drawing.Size(450, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.przedmiotyFabularne);
+            this.Controls.Add(this.labelNazwa);
             this.Controls.Add(this.PlecakSlot46);
             this.Controls.Add(this.PlecakSlot45);
             this.Controls.Add(this.PlecakSlot44);
@@ -957,10 +989,12 @@
             this.Controls.Add(this.antyRozmycie);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(450, 600);
+            this.MinimumSize = new System.Drawing.Size(450, 600);
             this.Name = "Ekwipunek";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ekwipunek";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Statystyki_KeyDown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ekwipunek_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot8)).EndInit();
@@ -1011,6 +1045,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlecakSlot46)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.antyRozmycie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.przedmiotyFabularne)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1073,5 +1108,7 @@
         private System.Windows.Forms.PictureBox PlecakSlot46;
         private System.Windows.Forms.Label labelStatystykiPrzedmiotu;
         private System.Windows.Forms.PictureBox antyRozmycie;
+        private System.Windows.Forms.Label labelNazwa;
+        private System.Windows.Forms.PictureBox przedmiotyFabularne;
     }
 }

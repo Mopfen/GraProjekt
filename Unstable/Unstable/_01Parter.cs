@@ -20,6 +20,7 @@ namespace Unstable
         bool[] koniecDialogu = new bool[20];
         bool cutScena = false;
         bool cutScenaBegin = false;
+        bool dostępNaPierwszePiętro = false;
 
         Thread wątekCutScena;
 
@@ -53,12 +54,20 @@ namespace Unstable
                 daneLauncher.daneNPC[0].obraz = Perqun;
                 daneLauncher.daneNPC[0].antyRozmycie = underPerqun;
                 daneLauncher.daneNPC[0].exists = true;
+
+                daneLauncher.daneMapa[1].misjaFabularnaWykonana.Add(false);
             }
             else
             {
                 Perqun.Visible = false;
                 Launcher.ZmiennePostaci resetuj = new Launcher.ZmiennePostaci();
                 daneLauncher.daneNPC[0] = resetuj;
+
+                if(daneLauncher.daneMapa[1].misjaFabularnaWykonana[0]==true)
+                {
+                    poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Parter;
+                    dostępNaPierwszePiętro = true;
+                }
             }
 
             #region cutScena
@@ -151,12 +160,22 @@ namespace Unstable
             daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = false;
 
             #endregion
+            #region PrzypisanieTimerów
+            daneLauncher.timerGracz = timerGracz;
+            daneLauncher.timerAtakGracz = timerAtakGracz;
+            daneLauncher.timerMob = timerMob;
+            daneLauncher.timerAtakMob = timerAtakMob;
+            daneLauncher.timerNPC = timerNPC;
+            daneLauncher.timerStatystyki = timerStatystyki;
+            daneLauncher.timerStrzałaGracz = timerStrzałaGracz;
+
+            #endregion
 
             daneLauncher.daneStrzała[0].obraz = strzałaGracz;
             daneLauncher.daneStrzała[0].obraz.Visible = false;
 
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
-            daneLauncher.timerStatystyki = timerStatystyki;
+            daneLauncher.pokazNoweZadanie = pokazNoweZadanie;
 
             daneLauncher.daneMapa[1].częśćMapyOdwiedzona[daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] = true;
             daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji;
@@ -169,6 +188,12 @@ namespace Unstable
         {
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
             formaStatystyki.ShowDialog();
+        }
+
+        private void pokazNoweZadanie_Click(object sender, EventArgs e)
+        {
+            Zadania formaZadania = new Zadania(daneLauncher);
+            formaZadania.ShowDialog();
         }
 
         private void TheKeyDown(object sender, KeyEventArgs e)
@@ -190,14 +215,28 @@ namespace Unstable
                         map_01Piwnica.Show();
                     }
                     if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(wyjściePiętroPierwsze.Bounds))
-                    {
-                        daneLauncher.daneStrzała[0].obraz.Visible = false;
-                        daneLauncher.daneStrzała[0].exists = false;
-                        _01PiętroPierwsze map_01PiętroPierwsze = new _01PiętroPierwsze(daneLauncher);
-                        alaButtons.Clear();
-                        odpowiedzi.Clear();
-                        this.Close();
-                        map_01PiętroPierwsze.Show();
+                    { 
+                        if (dostępNaPierwszePiętro == true)
+                        {
+                            daneLauncher.daneStrzała[0].obraz.Visible = false;
+                            daneLauncher.daneStrzała[0].exists = false;
+                            _01PiętroPierwsze map_01PiętroPierwsze = new _01PiętroPierwsze(daneLauncher);
+                            alaButtons.Clear();
+                            odpowiedzi.Clear();
+                            this.Close();
+                            map_01PiętroPierwsze.Show();
+                        }
+                        else
+                        {
+                            MetodyEkwipunek metodaEkwipunek = new MetodyEkwipunek(daneLauncher);
+                            if(metodaEkwipunek.użyjFabularnegoItemu(9)==true)
+                            {
+                                poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Parter;
+                                daneLauncher.daneMapa[1].misjaFabularnaWykonana[0] = true;
+                                dostępNaPierwszePiętro = true;
+                            }
+                        }
+                        
                     }
                     if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(wyjścieDziedziniec.Bounds))
                     {
@@ -329,7 +368,7 @@ namespace Unstable
 
             Wątki.editInThread(this, true, value => labelDialogNPC.Visible = value);
 
-            string Tekst = "Co to za hałasy w piwnicy?! Kim jesteś i skąd się tu wziąłeś?! A z resztą,\nnie obchodzi mnie to. Powiedz mi tylko, czy nie uszkodziłeś moich beczek?";
+            string Tekst = "Co to za hałasy w piwnicy?! Kim jesteś i skąd się tu wziąłeś?! A z resztą, nie obchodzi mnie to. Powiedz mi tylko, czy nie uszkodziłeś moich beczek?";
             for (int i = 0; i < Tekst.Length; i++)
             {
                 metodaUniwersalne.wait(0.02);
@@ -354,7 +393,7 @@ namespace Unstable
             if (daneLauncher.danoOdpowiedź2 == true)
             {
                 daneLauncher.danoOdpowiedź2 = false;
-                Tekst = "Widzę już w Twoim spojrzeniu, że kłamiesz! Wynoś się stąd, ale już!\nZaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała:\n\"Pewnego dnia pojawi się wśród twych beczek ten, którego\nmusisz wyprawić na wielką podróż\".";
+                Tekst = "Widzę już w Twoim spojrzeniu, że kłamiesz! Wynoś się stąd, ale już! Zaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała: \"Pewnego dnia pojawi się wśród twych beczek ten, którego musisz wyprawić na wielką podróż\".";
                 for (int i = 0; i < Tekst.Length; i++)
                 {
                     metodaUniwersalne.wait(0.02);
@@ -364,7 +403,7 @@ namespace Unstable
             if (daneLauncher.danoOdpowiedź3 == true)
             {
                 daneLauncher.danoOdpowiedź3 = false;
-                Tekst = "A niech Cię szlag parszywcu! Wynoś się stąd, ale już!\nZaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała:\n\"Pewnego dnia pojawi się wśród twych beczek ten, którego\nmusisz wyprawić na wielką podróż\".";
+                Tekst = "A niech Cię szlag parszywcu! Wynoś się stąd, ale już! Zaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała: \"Pewnego dnia pojawi się wśród twych beczek ten, którego musisz wyprawić na wielką podróż\".";
                 for (int i = 0; i < Tekst.Length; i++)
                 {
                     metodaUniwersalne.wait(0.02);
@@ -406,6 +445,7 @@ namespace Unstable
             daneLauncher.daneQuest[1].stan = 1;
             daneLauncher.daneQuest[1].etap = 1;
             daneLauncher.daneQuest[1].opisEtapu[1] = "Wyjdź na dziedziniec";
+            daneLauncher.noweGlowneZadanie = true;
             cutScena = false;
         }
 

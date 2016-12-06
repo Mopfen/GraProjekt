@@ -83,8 +83,18 @@ namespace Unstable
             daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = false;
 
             #endregion
+            #region PrzypisanieTimerów
+            daneLauncher.timerGracz = timerGracz;
+            daneLauncher.timerAtakGracz = timerAtakGracz;
+            daneLauncher.timerMob = timerMob;
+            daneLauncher.timerAtakMob = timerAtakMob;
+            daneLauncher.timerNPC = timerNPC;
+            daneLauncher.timerStatystyki = timerStatystyki;
+            daneLauncher.timerStrzałaGracz = timerStrzałaGracz;
 
-            if(daneLauncher.daneMapa[1].drop[3]==true)
+            #endregion
+
+            if (daneLauncher.daneMapa[1].drop[3]==true)
             {
                 daneLauncher.daneDrop[0] = new Launcher.ZmienneEkwipunku();
                 daneLauncher.daneDrop[0].exists = true;
@@ -102,7 +112,7 @@ namespace Unstable
             daneLauncher.daneStrzała[0].obraz.Visible = false;
 
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
-            daneLauncher.timerStatystyki = timerStatystyki;
+            daneLauncher.pokazNoweZadanie = pokazNoweZadanie;
 
             daneLauncher.daneMapa[1].częśćMapyOdwiedzona[daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] = true;
             daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji;
@@ -115,6 +125,12 @@ namespace Unstable
         {
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
             formaStatystyki.ShowDialog();
+        }
+
+        private void pokazNoweZadanie_Click(object sender, EventArgs e)
+        {
+            Zadania formaZadania = new Zadania(daneLauncher);
+            formaZadania.ShowDialog();
         }
 
         private void TheKeyDown(object sender, KeyEventArgs e)
@@ -167,6 +183,23 @@ namespace Unstable
             {
                 daneLauncher.daneMapa[1].drop[3] = false;
             }
+
+            #region Quest1
+            if(daneLauncher.daneQuest[1].etap == 3)
+            {
+                for (int i = 1; i <= 46; i++)
+                {
+                    if (daneLauncher.danePlecakSlot[i].id == 2)
+                    {
+                        daneLauncher.daneQuest[1].stan = 1;
+                        daneLauncher.daneQuest[1].etap = 4;
+                        daneLauncher.daneQuest[1].opisEtapu[4] = "Wróć do Perquna.";
+                        daneLauncher.noweGlowneZadanie = true;
+                    }
+                }
+            }
+            
+            #endregion
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)

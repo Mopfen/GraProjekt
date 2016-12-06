@@ -48,8 +48,8 @@ namespace Unstable
 
             daneLauncher.timerStatystyki = timerStatystyki;
 
-            //daneLauncher.music.SoundLocation = "Soundtrack1.wav";
-            //daneLauncher.music.PlayLooping();
+            Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+            metodaMuzyka.Soundtrack("BossSoundtrack.mp3");
         }
 
         private void rozdajStatystyki_Click(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace Unstable
         private void timerAtakMob_Tick(object sender, EventArgs e)
         {
             Walka metodaWalka = new Walka(daneLauncher);
-            metodaWalka.AtakMoba(timerMob, 0, 1, 2);
+            metodaWalka.AtakMoba(timerMob, 0, 1, 5);
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)

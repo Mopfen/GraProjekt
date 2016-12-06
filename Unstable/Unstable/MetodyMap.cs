@@ -42,17 +42,23 @@ namespace Unstable
             }
             if (e.KeyCode == Keys.C)
             {
+                Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
                 Statystyki formaStatystyki = new Statystyki(daneLauncher);
+                metodaUniwersalne.zatrzymajTimery();
                 formaStatystyki.ShowDialog();
             }
             if (e.KeyCode == Keys.I)
             {
+                Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
                 Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
+                metodaUniwersalne.zatrzymajTimery();
                 formaEkwipunek.ShowDialog();
             }
             if(e.KeyCode == Keys.Q)
             {
+                Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
                 Zadania formaZadanie = new Unstable.Zadania(daneLauncher);
+                metodaUniwersalne.zatrzymajTimery();
                 formaZadanie.ShowDialog();
             }
             if (e.KeyCode == Keys.Z)
@@ -122,6 +128,9 @@ namespace Unstable
             metodaPoruszanieSię.RuchPostaci(daneLauncher.daneNPC[indeks]);
         }
 
+        /// <summary>
+        /// Planowane
+        /// </summary>
         internal void timerAtakNPCMetoda()
         {
 
@@ -135,9 +144,6 @@ namespace Unstable
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             MetodyStatystyki metodaStatystyki = new MetodyStatystyki(daneLauncher);
             Walka metodaWalka = new Unstable.Walka(daneLauncher);
-            Statystyki formaStatystyki = new Statystyki(daneLauncher);
-            GameOver formaGameOver = new GameOver(daneLauncher, forma);
-            Zadania formaZadania = new Zadania(daneLauncher);
             labelHpGracz.Text = Convert.ToString("PŻ: " + daneLauncher.daneGracz.hp + "/" + daneLauncher.daneGracz.hpMax);
             labelManaGracz.Text = Convert.ToString("Mana: " + daneLauncher.daneGracz.mana + "/" + daneLauncher.daneGracz.manaMax);
             labelLvGracz.Text = Convert.ToString("Poziom: " + daneLauncher.daneGracz.lv);
@@ -152,6 +158,14 @@ namespace Unstable
             {
                 daneLauncher.rozdajStatystyki.Visible = false;
             }
+            if (daneLauncher.noweGlowneZadanie == true | daneLauncher.nowePoboczneZadanie == true)
+            {
+                daneLauncher.pokazNoweZadanie.Visible = true;
+            }
+            else
+            {
+                daneLauncher.pokazNoweZadanie.Visible = false;
+            }
             Tuple<bool, int> czyMobZabity = metodaWalka.śmierćMoba();
             if (czyMobZabity.Item1 == true)
             {
@@ -159,13 +173,14 @@ namespace Unstable
             }
             if (metodaWalka.śmierćGracza() == true)
             {
+                GameOver formaGameOver = new GameOver(daneLauncher, forma);
                 daneLauncher.daneGracz.exists = false;
                 daneLauncher.music.Ctlcontrols.stop();
                 daneLauncher.soundGracz.URL = "GameOver.wav";
                 timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerNPC.Enabled = timerStatystyki.Enabled = false;
                 formaGameOver.ShowDialog();
             }
-            if (metodaUniwersalne.CheckOpened(formaStatystyki.Name) | metodaUniwersalne.CheckOpened(formaZadania.Name))
+            /*if (metodaUniwersalne.CheckOpened(formaStatystyki.Name) | metodaUniwersalne.CheckOpened(formaZadania.Name))
             {
                 daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
                 timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerNPC.Enabled = timerStatystyki.Enabled = false;
@@ -179,7 +194,7 @@ namespace Unstable
                     timerNPC.Enabled = true;
                     timerAtakGracz.Enabled = timerAtakMob.Enabled = true;
                 }
-            }
+            }*/
         }
 
         internal void timerStrzałaGraczMetoda(int ilośćMobow, int numerMapy, int numerLokacji)

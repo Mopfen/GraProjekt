@@ -27,8 +27,8 @@ namespace Unstable
             internal int hp=25; //
             internal int hpMax=25; // zmienne odpowiadające za ilość punktów życia postaci
 
-            internal int mana=25; //
-            internal int manaMax=25; // zmienne odpowiadają za ilość punktów many postaci
+            internal int mana=15; //
+            internal int manaMax=15; // zmienne odpowiadają za ilość punktów many postaci
 
             internal short szansaKryta=0; // zmienna opowiada za procentową szansę na krytyczne uderzenie postaci
 
@@ -129,7 +129,9 @@ namespace Unstable
             internal int mana = 0; // zmienna przechowuje dane o statystyce przedmiotu: Punkty Many
             internal short szansaKryta = 0; // zmienna przechowuje dane o statystyce przedmiotu: Szansa na krytyczne uderzenie
 
-            internal short id = 0; // określa id przedmiotu
+            internal short id = 0; // zmienna określa id przedmiotu
+
+            internal bool fabularny = false; // zmienna określa, czy przedmiot jest fabularny
 
             internal int numerLokacji = 0; // określa numer lokacji, w której znajduje się przedmiot
         }
@@ -174,6 +176,7 @@ namespace Unstable
             internal short gdzieOstatnio = 0; // zmienna określa, w której częsci mapy gracz był ostatnio
 
             internal bool []drop = new bool[20]; // zamienna określa, czy na mapie jest drop
+            internal List<bool> misjaFabularnaWykonana = new List<bool>();
         }
 
         #region zmienneWygląduObiektów
@@ -223,18 +226,28 @@ namespace Unstable
         internal PictureBox MieczSquadaka = new PictureBox();
         internal PictureBox ŁukSquadaka = new PictureBox();
 
+        internal PictureBox KluczNaPierwszePiętroWieżyPerquna = new PictureBox();
+
         #endregion
         #region zmiennePozostałe
-        internal string gameVersion = "Unstable1.3"; // zmienna przechowuje informacje o wersji gry
+        internal string gameVersion = "Unstable1.4"; // zmienna przechowuje informacje o wersji gry
 
         internal Panel poleGry; // zmienna odpowiadająca za właściwości pola gry
         internal Label hitLog; // zmienna odpowiadająca za wyświetlanie informacji przez hitLog
         internal Label statystykiPrzedmiotu; // zmienna odpowiadająca za wyświetlanie informacji o statystykach przedmiotów
-        internal PictureBox rozdajStatystyki; // zmienna odpowiadająca za przechowywanie ilości statystyk do rozdania
+        internal Label nazwaPrzedmiotuFabularnego; // zmienna odpowiadająca za wyświetlanie nazwy przedmiotu fabularnego
+        internal PictureBox rozdajStatystyki; // zmienna odpowiadająca za informowanie gracza, że ma punkty statystyk do rozdania
+        internal PictureBox pokazNoweZadanie; // zmienna odpowiadająca za informowanie gracza, że otrzymał nowe zadanie
 
         internal bool statystykiPokazywane = false; // zmienna odpowiadająca za sprawdzenie, czy statystyki przedmiotu w ekwipunku są aktualnie wyświetlane
 
-        internal System.Windows.Forms.Timer timerStatystyki; // zmienna odpowiadająca za działanie timera
+        internal System.Windows.Forms.Timer timerGracz; //
+        internal System.Windows.Forms.Timer timerAtakGracz; //
+        internal System.Windows.Forms.Timer timerMob; //
+        internal System.Windows.Forms.Timer timerAtakMob; //
+        internal System.Windows.Forms.Timer timerNPC; //
+        internal System.Windows.Forms.Timer timerStatystyki;
+        internal System.Windows.Forms.Timer timerStrzałaGracz; // zmienne odpowiadająca za działanie timerów
 
         internal string komenda = ""; // zmienna przechowująca dane komendy
         internal bool komendaOK = true; // zmienna sprawdza, czy iżytkownik podaje poprawny ciąg znaków komendy
@@ -252,6 +265,9 @@ namespace Unstable
         internal bool efektyDźwiękoweOn = true; //
         internal bool samouczek = true; // zmienne odpowiedzialne za zmianę opcji gry
 
+        internal bool noweGlowneZadanie = false; //
+        internal bool nowePoboczneZadanie = false; // zmienne sprawdzają, czy zostało dodane nowe zadanie do listy misji
+
         internal bool muzykaMenu = false; // zmienna sprawdza, czy muzka w menu jest odtwarzana
 
         #endregion
@@ -262,6 +278,7 @@ namespace Unstable
         internal List<ZmienneObiektów> danePrzeszkoda = new List<ZmienneObiektów>(); // lista obiektów przechowujących informacje o przeszkodach
         internal ZmienneObiektów []daneStrzała = new ZmienneObiektów[2]; // tablica obiekótw przechowujących informacje o strzałach wystrzelonych przez postać
         internal ZmienneEkwipunku []danePlecakSlot = new ZmienneEkwipunku[47]; // tablica obiektów przechowujących informacje o przedmiocie na danym slocie w ekwipunku
+        internal ZmienneEkwipunku[] daneFabularnyItem = new ZmienneEkwipunku[17]; // tablica obiektów przechowujących informacje o przedmiocie fabularnym na danym slocie w ekwipunku
         internal ZmienneEkwipunku[] daneDrop = new ZmienneEkwipunku[5]; // tablica obiektów przechowujących infromacje o przedmiocie do podniesienia
         internal ZmienneEkwipunku daneDropKomenda = new ZmienneEkwipunku(); // obiekt przechowuje informacje o przedmiocie wygenerowanym przez komendę
         internal ZmienneBonusów daneBonusyGracz = new ZmienneBonusów(); // obiekt przechowujący informacje o bonusach gracza
@@ -455,6 +472,8 @@ namespace Unstable
             ZbutwiałyŁuk.Image = global::Unstable.Properties.Resources.ZbutwiałyŁuk;
             MieczSquadaka.Image = global::Unstable.Properties.Resources.MieczSquadaka;
             ŁukSquadaka.Image = global::Unstable.Properties.Resources.ŁukSquadaka;
+
+            KluczNaPierwszePiętroWieżyPerquna.Image = global::Unstable.Properties.Resources.KeyPerqun1st ;
         }
     }
 }

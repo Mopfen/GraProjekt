@@ -44,6 +44,7 @@
             this.hitLog = new System.Windows.Forms.Label();
             this.labelHpGracz = new System.Windows.Forms.Label();
             this.poleGry = new System.Windows.Forms.Panel();
+            this.pokazNoweZadanie = new System.Windows.Forms.PictureBox();
             this.strzałaGracz = new System.Windows.Forms.PictureBox();
             this.gracz = new System.Windows.Forms.PictureBox();
             this.ściana1 = new System.Windows.Forms.PictureBox();
@@ -55,6 +56,7 @@
             this.drop0 = new System.Windows.Forms.PictureBox();
             this.panelStatystyk.SuspendLayout();
             this.poleGry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana1)).BeginInit();
@@ -173,9 +175,10 @@
             // 
             this.poleGry.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.poleGry.BackColor = System.Drawing.Color.Transparent;
-            this.poleGry.BackgroundImage = global::Unstable.Properties.Resources._01PiętroPierwsze;
+            this.poleGry.BackgroundImage = global::Unstable.Properties.Resources._01PiętroPierwsze_Krata;
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
+            this.poleGry.Controls.Add(this.pokazNoweZadanie);
             this.poleGry.Controls.Add(this.strzałaGracz);
             this.poleGry.Controls.Add(this.gracz);
             this.poleGry.Controls.Add(this.ściana1);
@@ -186,11 +189,25 @@
             this.poleGry.Controls.Add(this.wyjścieParter);
             this.poleGry.Controls.Add(this.drop0);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -36);
+            this.poleGry.Location = new System.Drawing.Point(3, -25);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 38;
+            // 
+            // pokazNoweZadanie
+            // 
+            this.pokazNoweZadanie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pokazNoweZadanie.Image = global::Unstable.Properties.Resources.zobaczNoweZadanie;
+            this.pokazNoweZadanie.Location = new System.Drawing.Point(738, 410);
+            this.pokazNoweZadanie.MaximumSize = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.MinimumSize = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.Name = "pokazNoweZadanie";
+            this.pokazNoweZadanie.Size = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.TabIndex = 46;
+            this.pokazNoweZadanie.TabStop = false;
+            this.pokazNoweZadanie.Visible = false;
+            this.pokazNoweZadanie.Click += new System.EventHandler(this.pokazNoweZadanie_Click);
             // 
             // strzałaGracz
             // 
@@ -307,6 +324,7 @@
             this.panelStatystyk.ResumeLayout(false);
             this.panelStatystyk.PerformLayout();
             this.poleGry.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ściana1)).EndInit();
@@ -345,5 +363,6 @@
         private System.Windows.Forms.Label labelManaGracz;
         private System.Windows.Forms.Label hitLog;
         private System.Windows.Forms.PictureBox drop0;
+        private System.Windows.Forms.PictureBox pokazNoweZadanie;
     }
 }

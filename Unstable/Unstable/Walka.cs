@@ -356,12 +356,12 @@ namespace Unstable
                     int dmgK = dmg * 2;
                     if (metodaUniwersalne.losuj(1, 100) <= daneLauncher.daneMob[numerMoba].szansaKryta)
                     {
-                        daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmgK + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
+                        daneLauncher.hitLog.Text = ("Mob zadaje " + dmgK + " obrażeń krytycznych.\n" + daneLauncher.hitLog.Text);
                         daneLauncher.daneGracz.hp -= dmgK;
                     }
                     else
                     {
-                        daneLauncher.hitLog.Text = ("Mopfen zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
+                        daneLauncher.hitLog.Text = ("Mob zadaje " + dmg + " obrażeń.\n" + daneLauncher.hitLog.Text);
                         daneLauncher.daneGracz.hp -= dmg;
                     }
                     daneLauncher.daneMob[numerMoba].wykonanoAtak = true;

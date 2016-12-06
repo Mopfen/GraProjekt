@@ -59,6 +59,7 @@
             this.ściana2 = new System.Windows.Forms.PictureBox();
             this.gracz = new System.Windows.Forms.PictureBox();
             this.poleGry = new System.Windows.Forms.Panel();
+            this.pokazNoweZadanie = new System.Windows.Forms.PictureBox();
             this.drop0 = new System.Windows.Forms.PictureBox();
             this.rozdajStatystyki = new System.Windows.Forms.PictureBox();
             this.timerNPC = new System.Windows.Forms.Timer(this.components);
@@ -80,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ściana2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             this.poleGry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drop0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).BeginInit();
             this.SuspendLayout();
@@ -339,6 +341,7 @@
             this.poleGry.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("poleGry.BackgroundImage")));
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
+            this.poleGry.Controls.Add(this.pokazNoweZadanie);
             this.poleGry.Controls.Add(this.strzałaGracz);
             this.poleGry.Controls.Add(this.gracz);
             this.poleGry.Controls.Add(this.drop0);
@@ -358,11 +361,25 @@
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.wyjścieParter);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -25);
+            this.poleGry.Location = new System.Drawing.Point(3, -14);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 7;
+            // 
+            // pokazNoweZadanie
+            // 
+            this.pokazNoweZadanie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pokazNoweZadanie.Image = global::Unstable.Properties.Resources.zobaczNoweZadanie;
+            this.pokazNoweZadanie.Location = new System.Drawing.Point(738, 410);
+            this.pokazNoweZadanie.MaximumSize = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.MinimumSize = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.Name = "pokazNoweZadanie";
+            this.pokazNoweZadanie.Size = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.TabIndex = 46;
+            this.pokazNoweZadanie.TabStop = false;
+            this.pokazNoweZadanie.Visible = false;
+            this.pokazNoweZadanie.Click += new System.EventHandler(this.pokazNoweZadanie_Click);
             // 
             // drop0
             // 
@@ -429,6 +446,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ściana2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
             this.poleGry.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drop0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).EndInit();
             this.ResumeLayout(false);
@@ -468,5 +486,6 @@
         private System.Windows.Forms.PictureBox rozdajStatystyki;
         private System.Windows.Forms.PictureBox drop0;
         private System.Windows.Forms.Timer timerNPC;
+        private System.Windows.Forms.PictureBox pokazNoweZadanie;
     }
 }

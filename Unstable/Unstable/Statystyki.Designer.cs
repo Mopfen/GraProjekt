@@ -55,6 +55,7 @@
             this.alaButtonAddSzc = new System.Windows.Forms.PictureBox();
             this.alaButtonAddInt = new System.Windows.Forms.PictureBox();
             this.alaButtonAddZrę = new System.Windows.Forms.PictureBox();
+            this.labelNazwa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddSił)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonAddWyt)).BeginInit();
@@ -376,6 +377,19 @@
             this.alaButtonAddZrę.Visible = false;
             this.alaButtonAddZrę.Click += new System.EventHandler(this.alaButtonAddZrę_Click);
             // 
+            // labelNazwa
+            // 
+            this.labelNazwa.AutoSize = true;
+            this.labelNazwa.BackColor = System.Drawing.Color.Transparent;
+            this.labelNazwa.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNazwa.Location = new System.Drawing.Point(0, 2);
+            this.labelNazwa.MaximumSize = new System.Drawing.Size(300, 32);
+            this.labelNazwa.MinimumSize = new System.Drawing.Size(300, 32);
+            this.labelNazwa.Name = "labelNazwa";
+            this.labelNazwa.Size = new System.Drawing.Size(300, 32);
+            this.labelNazwa.TabIndex = 53;
+            this.labelNazwa.Text = "Statystyki";
+            // 
             // Statystyki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,6 +398,7 @@
             this.BackgroundImage = global::Unstable.Properties.Resources.OkienkoStatystyki;
             this.ClientSize = new System.Drawing.Size(450, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.labelNazwa);
             this.Controls.Add(this.alaButtonAddSzc);
             this.Controls.Add(this.alaButtonAddWyt);
             this.Controls.Add(this.alaButtonAddInt);
@@ -457,5 +472,6 @@
         private System.Windows.Forms.PictureBox alaButtonAddSzc;
         private System.Windows.Forms.PictureBox alaButtonAddInt;
         private System.Windows.Forms.PictureBox alaButtonAddZrę;
+        private System.Windows.Forms.Label labelNazwa;
     }
 }

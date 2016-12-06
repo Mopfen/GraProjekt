@@ -53,6 +53,8 @@
             this.avatar = new System.Windows.Forms.PictureBox();
             this.labelDialogNPC = new System.Windows.Forms.Label();
             this.poleGry = new System.Windows.Forms.Panel();
+            this.blokada = new System.Windows.Forms.PictureBox();
+            this.pokazNoweZadanie = new System.Windows.Forms.PictureBox();
             this.strzałaGracz = new System.Windows.Forms.PictureBox();
             this.głaz = new System.Windows.Forms.PictureBox();
             this.labelHpMob0 = new System.Windows.Forms.Label();
@@ -74,6 +76,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.poleGry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.blokada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.głaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kukła)).BeginInit();
@@ -314,6 +318,8 @@
             this.poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Dziedziniec;
             this.poleGry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.poleGry.CausesValidation = false;
+            this.poleGry.Controls.Add(this.blokada);
+            this.poleGry.Controls.Add(this.pokazNoweZadanie);
             this.poleGry.Controls.Add(this.strzałaGracz);
             this.poleGry.Controls.Add(this.głaz);
             this.poleGry.Controls.Add(this.labelHpMob0);
@@ -329,11 +335,34 @@
             this.poleGry.Controls.Add(this.wyjścieParter);
             this.poleGry.Controls.Add(this.drogowskaz);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -36);
+            this.poleGry.Location = new System.Drawing.Point(3, -14);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
             this.poleGry.TabIndex = 38;
+            // 
+            // blokada
+            // 
+            this.blokada.Image = global::Unstable.Properties.Resources.Blokada;
+            this.blokada.Location = new System.Drawing.Point(462, 361);
+            this.blokada.Name = "blokada";
+            this.blokada.Size = new System.Drawing.Size(19, 46);
+            this.blokada.TabIndex = 46;
+            this.blokada.TabStop = false;
+            // 
+            // pokazNoweZadanie
+            // 
+            this.pokazNoweZadanie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pokazNoweZadanie.Image = global::Unstable.Properties.Resources.zobaczNoweZadanie;
+            this.pokazNoweZadanie.Location = new System.Drawing.Point(738, 410);
+            this.pokazNoweZadanie.MaximumSize = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.MinimumSize = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.Name = "pokazNoweZadanie";
+            this.pokazNoweZadanie.Size = new System.Drawing.Size(32, 32);
+            this.pokazNoweZadanie.TabIndex = 44;
+            this.pokazNoweZadanie.TabStop = false;
+            this.pokazNoweZadanie.Visible = false;
+            this.pokazNoweZadanie.Click += new System.EventHandler(this.pokazNoweZadanie_Click);
             // 
             // strzałaGracz
             // 
@@ -488,7 +517,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(110)))), ((int)(((byte)(100)))));
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.ControlBox = false;
             this.Controls.Add(this.panelStatystyk);
@@ -512,6 +541,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.poleGry.ResumeLayout(false);
             this.poleGry.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.blokada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.głaz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kukła)).EndInit();
@@ -567,5 +598,7 @@
         private System.Windows.Forms.Label labelHpMob0;
         private System.Windows.Forms.PictureBox głaz;
         private System.Windows.Forms.PictureBox drogowskaz;
+        private System.Windows.Forms.PictureBox pokazNoweZadanie;
+        private System.Windows.Forms.PictureBox blokada;
     }
 }

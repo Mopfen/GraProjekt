@@ -102,6 +102,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="PrzedmiotyFabularne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrzedmiotyFabularne.Designer.cs">
+      <DependentUpon>PrzedmiotyFabularne.cs</DependentUpon>
+    </Compile>
     <Compile Include="Samouczek.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Opcje.resx">
       <DependentUpon>Opcje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrzedmiotyFabularne.resx">
+      <DependentUpon>PrzedmiotyFabularne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Samouczek.resx">
       <DependentUpon>Samouczek.cs</DependentUpon>
@@ -347,6 +356,13 @@
     <None Include="Models\Objekty\Krata.png" />
     <None Include="Models\Backgrounds\01Parter+Krata.png" />
     <None Include="Models\Backgrounds\OkienkoSamouczek.png" />
+    <None Include="Models\Backgrounds\OkienkoPrzedmiotyFabularne.png" />
+    <None Include="Models\Items\KeyPerqun1st.gif" />
+    <None Include="Models\Others\Quest.png" />
+    <None Include="Models\Others\zobaczNoweZadanie.png" />
+    <None Include="Models\Backgrounds\01PiętroPierwsze+Krata.png" />
+    <None Include="Models\Backgrounds\01Dziedziniec+Blokada.png" />
+    <None Include="Models\Objekty\Blokada.png" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />

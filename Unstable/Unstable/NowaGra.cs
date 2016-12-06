@@ -51,8 +51,11 @@ namespace Unstable
             WczytajDaneOdNowa(daneLauncher);
             MetodyStatystyki metodaStatystyki = new MetodyStatystyki(daneLauncher);
             Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
+            PrzedmiotyFabularne formaPrzedmiotyFabularne = new PrzedmiotyFabularne(daneLauncher);
             metodaStatystyki.liczStatystyki();
             formaEkwipunek.Show();
+            formaPrzedmiotyFabularne.Show();
+            formaPrzedmiotyFabularne.Close();
             formaEkwipunek.Close();
             daneLauncher.muzykaMenu = false;
             _01Piwnica forma_01Piwnica = new _01Piwnica(daneLauncher);
