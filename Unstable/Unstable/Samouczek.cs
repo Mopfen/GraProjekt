@@ -19,10 +19,17 @@ namespace Unstable
             InitializeComponent();
 
             daneLauncher = dane;
+
+            demonstracja.Image = daneLauncher.samouczekObrazDemonstracyjny.Image;
+            klawisze.Image = daneLauncher.samouczekObrazKlawiszy.Image;
+            labelInstrukcja.Text = daneLauncher.samouczekInstrukcja;
+            labelInfo.Text = daneLauncher.samouczekInfo;
         }
 
         private void buttonDalej_Click(object sender, EventArgs e)
         {
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            metodaUniwersalne.uruchomTimery();
             this.Close();
         }
     }

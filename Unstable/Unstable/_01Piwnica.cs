@@ -13,7 +13,7 @@ namespace Unstable
 {
     public partial class _01Piwnica : Form
     {
-        bool[] pokazSamouczek = { false, false, false };
+        bool samouczekChodzenie = false;
 
         Launcher daneLauncher;
 
@@ -40,19 +40,7 @@ namespace Unstable
             daneLauncher.daneGracz.antyRozmycie = underGracz;
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
-
-            if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[0] == false)
-            {
-                if (daneLauncher.samouczek == true)
-                {
-                    pokazSamouczek[0] = true;
-                }
-
-                Muzyka metodaMuzyka = new Muzyka(daneLauncher);
-                metodaMuzyka.Soundtrack("Soundtrack1.wav");
-
-                daneLauncher.daneMapa[1].drop[0] = true;
-            }
+            daneLauncher.używanaBroń = używanaBroń;
 
             #region UstawGracza
             if (daneLauncher.daneMapa[1].gdzieOstatnio == 1)
@@ -122,6 +110,28 @@ namespace Unstable
 
             #endregion
 
+            if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[0] == false)
+            {
+                if (daneLauncher.samouczek == true)
+                {
+                    Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                    metodaUniwersalne.zatrzymajTimery();
+
+                    daneLauncher.samouczekObrazDemonstracyjny.Image = global::Unstable.Properties.Resources.SamouczekChodzenie;
+                    daneLauncher.samouczekObrazKlawiszy.Image = global::Unstable.Properties.Resources.KlawiszeSamouczekChodzenie;
+                    daneLauncher.samouczekInstrukcja = "Do poruszania się używaj klawiszy strzałek.";
+                    daneLauncher.samouczekInfo = "Szybkość poruszania się zależy od obuwia, które nosisz.";
+
+                    Samouczek formaSamouczek = new Samouczek(daneLauncher);
+                    formaSamouczek.ShowDialog();
+                }
+
+                Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+                metodaMuzyka.Soundtrack("Soundtrack1.wav");
+
+                daneLauncher.daneMapa[1].drop[0] = true;
+            }
+
             if (daneLauncher.daneMapa[1].drop[0] == true)
             {
                 daneLauncher.daneDrop[0] = new Launcher.ZmienneEkwipunku();
@@ -141,7 +151,7 @@ namespace Unstable
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
             daneLauncher.pokazNoweZadanie = pokazNoweZadanie;
 
-            daneLauncher.daneMapa[1].częśćMapyOdwiedzona[daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] = true;
+            //częśćMapyOdwiedzona w metodzie TheKeyDown(object sender, KeyEventArgs e)
             daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji;
 
             #endregion  
@@ -167,11 +177,28 @@ namespace Unstable
             {
                 if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(wyjścieParter.Bounds))
                 {
+                    daneLauncher.daneMapa[1].częśćMapyOdwiedzona[daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] = true;
                     daneLauncher.daneStrzała[0].obraz.Visible = false;
                     daneLauncher.daneStrzała[0].exists = false;
                     _01Parter map_01Parter = new _01Parter(daneLauncher);
                     this.Close();
                     map_01Parter.Show();
+                }
+                if(daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(drop0.Bounds))
+                {
+                    if (daneLauncher.samouczek == true)
+                    {
+                        Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                        metodaUniwersalne.zatrzymajTimery();
+
+                        daneLauncher.samouczekObrazDemonstracyjny.Image = global::Unstable.Properties.Resources.SamouczekOtwieraniePanelów;
+                        daneLauncher.samouczekObrazKlawiszy.Image = global::Unstable.Properties.Resources.KlawiszeSamouczekOtwieraniePanelów;
+                        daneLauncher.samouczekInstrukcja = "\"Q\" - Zadania\n\"I\" - Ekwipunek\n\"C\" - Statystyki";
+                        daneLauncher.samouczekInfo = "Dobądź podniesionego miecza. W tym celu otwórz panel ekwipunku i nałóż miecz na prawą rękę postaci.";
+
+                        Samouczek formaSamouczek = new Samouczek(daneLauncher);
+                        formaSamouczek.ShowDialog();
+                    }
                 }
             }
         }
@@ -198,7 +225,7 @@ namespace Unstable
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
+            metodaMap.timerAtakGraczMetoda(daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
         private void timerStatystyki_Tick(object sender, EventArgs e)
@@ -210,19 +237,51 @@ namespace Unstable
             {
                 daneLauncher.daneMapa[1].drop[0] = false;
             }
-            if (pokazSamouczek[0] == true)
-            {
-                Samouczek formaSamouczek = new Samouczek(daneLauncher);
-
-                pokazSamouczek[0] = false;
-                formaSamouczek.ShowDialog();
-            }
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.timerStrzałaGraczMetoda(0, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
+        }
+
+        private void gracz_Move(object sender, EventArgs e)
+        {
+            if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[0] == false)
+            {
+                if (daneLauncher.samouczek == true)
+                {
+                    if(samouczekChodzenie == false)
+                    {
+                        samouczekChodzenie = true;
+                        Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                        metodaUniwersalne.zatrzymajTimery();
+
+                        daneLauncher.samouczekObrazDemonstracyjny.Image = global::Unstable.Properties.Resources.SamouczekZbieranieItemów;
+                        daneLauncher.samouczekObrazKlawiszy.Image = global::Unstable.Properties.Resources.KlawiszeSamouczekZbieranieItemów;
+                        daneLauncher.samouczekInstrukcja = "Aby podnieść przedmiot wciśnij \"Z\", gdy będziesz w jego pobliżu.";
+                        daneLauncher.samouczekInfo = "Rozejrzyj się za jakąś bronią i podnieś ją. Klawisz \"Z\" jest odpowiedzialny również za inne interakcje, takie jak zmiana lokacji, gdy stoisz przy przejściu na inną lokację.";
+
+                        Samouczek formaSamouczek = new Samouczek(daneLauncher);
+                        formaSamouczek.ShowDialog();
+                    }
+                    if(daneLauncher.daneGracz.posiadaMiecz==true)
+                    {
+                        Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                        metodaUniwersalne.zatrzymajTimery();
+
+                        daneLauncher.samouczekObrazDemonstracyjny.Image = global::Unstable.Properties.Resources.SamouczekAtakMieczem;
+                        daneLauncher.samouczekObrazKlawiszy.Image = global::Unstable.Properties.Resources.KlawiszeSamouczekAtakMieczem;
+                        daneLauncher.samouczekInstrukcja = "Aby zaatakować, trzymając wciśniętą spację naciśnij strzałkę w lewo lub w prawo.";
+                        daneLauncher.samouczekInfo = "Zniszcz beczki torujące drogę do schodów. Gdy znajdziesz się przy schodach wciśnij klawisz interakcji (\"Z\"), aby przejść na następną lokację.";
+
+                        Samouczek formaSamouczek = new Samouczek(daneLauncher);
+                        formaSamouczek.ShowDialog();
+
+                        daneLauncher.daneMapa[1].częśćMapyOdwiedzona[daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] = true;
+                    }
+                }
+            }
         }
     }
 }

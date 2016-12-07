@@ -31,7 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OkienkoInformacji));
             this.alaButtonExit = new System.Windows.Forms.PictureBox();
             this.info = new System.Windows.Forms.Label();
+            this.obrazek = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obrazek)).BeginInit();
             this.SuspendLayout();
             // 
             // alaButtonExit
@@ -59,6 +61,16 @@
             this.info.Text = resources.GetString("info.Text");
             this.info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // obrazek
+            // 
+            this.obrazek.BackColor = System.Drawing.Color.Transparent;
+            this.obrazek.Image = global::Unstable.Properties.Resources.PerqunMovingDown;
+            this.obrazek.Location = new System.Drawing.Point(186, 482);
+            this.obrazek.Name = "obrazek";
+            this.obrazek.Size = new System.Drawing.Size(64, 64);
+            this.obrazek.TabIndex = 44;
+            this.obrazek.TabStop = false;
+            // 
             // OkienkoInformacji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -66,6 +78,7 @@
             this.BackgroundImage = global::Unstable.Properties.Resources.OkienkoStatystyki;
             this.ClientSize = new System.Drawing.Size(450, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.obrazek);
             this.Controls.Add(this.info);
             this.Controls.Add(this.alaButtonExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -75,7 +88,9 @@
             this.Name = "OkienkoInformacji";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OkienkoInformacji";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OkienkoInformacji_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.obrazek)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,5 +100,6 @@
 
         private System.Windows.Forms.PictureBox alaButtonExit;
         private System.Windows.Forms.Label info;
+        private System.Windows.Forms.PictureBox obrazek;
     }
 }

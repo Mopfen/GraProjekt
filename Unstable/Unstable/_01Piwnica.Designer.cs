@@ -36,54 +36,57 @@
             this.timerMob = new System.Windows.Forms.Timer(this.components);
             this.timerAtakMob = new System.Windows.Forms.Timer(this.components);
             this.timerStrzałaGracz = new System.Windows.Forms.Timer(this.components);
+            this.timerNPC = new System.Windows.Forms.Timer(this.components);
             this.panelStatystyk = new System.Windows.Forms.Panel();
+            this.labelRodzajAtaku = new System.Windows.Forms.Label();
+            this.używanaBroń = new System.Windows.Forms.PictureBox();
             this.labelExpGracz = new System.Windows.Forms.Label();
             this.labelLvGracz = new System.Windows.Forms.Label();
             this.labelManaGracz = new System.Windows.Forms.Label();
             this.hitLog = new System.Windows.Forms.Label();
             this.labelHpGracz = new System.Windows.Forms.Label();
-            this.wyjścieParter = new System.Windows.Forms.PictureBox();
-            this.underGracz = new System.Windows.Forms.PictureBox();
-            this.strzałaGracz = new System.Windows.Forms.PictureBox();
-            this.beczka1 = new System.Windows.Forms.PictureBox();
-            this.beczka4 = new System.Windows.Forms.PictureBox();
-            this.ściana1 = new System.Windows.Forms.PictureBox();
-            this.beczka2 = new System.Windows.Forms.PictureBox();
-            this.beczka5 = new System.Windows.Forms.PictureBox();
-            this.beczka3 = new System.Windows.Forms.PictureBox();
-            this.beczka6 = new System.Windows.Forms.PictureBox();
-            this.beczka7 = new System.Windows.Forms.PictureBox();
-            this.beczka8 = new System.Windows.Forms.PictureBox();
-            this.beczki1 = new System.Windows.Forms.PictureBox();
-            this.beczki2 = new System.Windows.Forms.PictureBox();
-            this.ściana2 = new System.Windows.Forms.PictureBox();
-            this.gracz = new System.Windows.Forms.PictureBox();
             this.poleGry = new System.Windows.Forms.Panel();
             this.pokazNoweZadanie = new System.Windows.Forms.PictureBox();
+            this.strzałaGracz = new System.Windows.Forms.PictureBox();
+            this.gracz = new System.Windows.Forms.PictureBox();
             this.drop0 = new System.Windows.Forms.PictureBox();
             this.rozdajStatystyki = new System.Windows.Forms.PictureBox();
-            this.timerNPC = new System.Windows.Forms.Timer(this.components);
+            this.ściana2 = new System.Windows.Forms.PictureBox();
+            this.beczki2 = new System.Windows.Forms.PictureBox();
+            this.beczki1 = new System.Windows.Forms.PictureBox();
+            this.beczka8 = new System.Windows.Forms.PictureBox();
+            this.beczka7 = new System.Windows.Forms.PictureBox();
+            this.beczka6 = new System.Windows.Forms.PictureBox();
+            this.beczka3 = new System.Windows.Forms.PictureBox();
+            this.beczka5 = new System.Windows.Forms.PictureBox();
+            this.beczka2 = new System.Windows.Forms.PictureBox();
+            this.ściana1 = new System.Windows.Forms.PictureBox();
+            this.beczka4 = new System.Windows.Forms.PictureBox();
+            this.beczka1 = new System.Windows.Forms.PictureBox();
+            this.underGracz = new System.Windows.Forms.PictureBox();
+            this.wyjścieParter = new System.Windows.Forms.PictureBox();
             this.panelStatystyk.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.underGracz)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ściana1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczki1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczki2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ściana2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.używanaBroń)).BeginInit();
             this.poleGry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gracz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drop0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ściana2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczki2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczki1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ściana1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.underGracz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).BeginInit();
             this.SuspendLayout();
             // 
             // timerGracz
@@ -113,10 +116,17 @@
             this.timerStrzałaGracz.Interval = 1;
             this.timerStrzałaGracz.Tick += new System.EventHandler(this.timerStrzałaGracz_Tick);
             // 
+            // timerNPC
+            // 
+            this.timerNPC.Enabled = true;
+            this.timerNPC.Interval = 1;
+            // 
             // panelStatystyk
             // 
             this.panelStatystyk.BackColor = System.Drawing.Color.Snow;
             this.panelStatystyk.BackgroundImage = global::Unstable.Properties.Resources.PanelStatystyk;
+            this.panelStatystyk.Controls.Add(this.labelRodzajAtaku);
+            this.panelStatystyk.Controls.Add(this.używanaBroń);
             this.panelStatystyk.Controls.Add(this.labelExpGracz);
             this.panelStatystyk.Controls.Add(this.labelLvGracz);
             this.panelStatystyk.Controls.Add(this.labelManaGracz);
@@ -126,6 +136,27 @@
             this.panelStatystyk.Name = "panelStatystyk";
             this.panelStatystyk.Size = new System.Drawing.Size(780, 115);
             this.panelStatystyk.TabIndex = 7;
+            // 
+            // labelRodzajAtaku
+            // 
+            this.labelRodzajAtaku.AutoSize = true;
+            this.labelRodzajAtaku.BackColor = System.Drawing.Color.Transparent;
+            this.labelRodzajAtaku.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelRodzajAtaku.Location = new System.Drawing.Point(296, 63);
+            this.labelRodzajAtaku.Name = "labelRodzajAtaku";
+            this.labelRodzajAtaku.Size = new System.Drawing.Size(168, 25);
+            this.labelRodzajAtaku.TabIndex = 13;
+            this.labelRodzajAtaku.Text = "Używana broń:";
+            // 
+            // używanaBroń
+            // 
+            this.używanaBroń.BackColor = System.Drawing.Color.Transparent;
+            this.używanaBroń.Image = global::Unstable.Properties.Resources.ZarysMiecza;
+            this.używanaBroń.Location = new System.Drawing.Point(468, 49);
+            this.używanaBroń.Name = "używanaBroń";
+            this.używanaBroń.Size = new System.Drawing.Size(48, 48);
+            this.używanaBroń.TabIndex = 12;
+            this.używanaBroń.TabStop = false;
             // 
             // labelExpGracz
             // 
@@ -184,156 +215,6 @@
             this.labelHpGracz.TabIndex = 4;
             this.labelHpGracz.Text = "hpGracz";
             // 
-            // wyjścieParter
-            // 
-            this.wyjścieParter.Location = new System.Drawing.Point(496, 0);
-            this.wyjścieParter.Name = "wyjścieParter";
-            this.wyjścieParter.Size = new System.Drawing.Size(124, 64);
-            this.wyjścieParter.TabIndex = 4;
-            this.wyjścieParter.TabStop = false;
-            // 
-            // underGracz
-            // 
-            this.underGracz.BackColor = System.Drawing.Color.Transparent;
-            this.underGracz.Cursor = System.Windows.Forms.Cursors.Default;
-            this.underGracz.Location = new System.Drawing.Point(28, 55);
-            this.underGracz.Margin = new System.Windows.Forms.Padding(10);
-            this.underGracz.MaximumSize = new System.Drawing.Size(64, 64);
-            this.underGracz.MinimumSize = new System.Drawing.Size(64, 64);
-            this.underGracz.Name = "underGracz";
-            this.underGracz.Size = new System.Drawing.Size(64, 64);
-            this.underGracz.TabIndex = 3;
-            this.underGracz.TabStop = false;
-            // 
-            // strzałaGracz
-            // 
-            this.strzałaGracz.Image = global::Unstable.Properties.Resources.StrzałaRight;
-            this.strzałaGracz.Location = new System.Drawing.Point(9, 15);
-            this.strzałaGracz.MaximumSize = new System.Drawing.Size(32, 12);
-            this.strzałaGracz.MinimumSize = new System.Drawing.Size(32, 12);
-            this.strzałaGracz.Name = "strzałaGracz";
-            this.strzałaGracz.Size = new System.Drawing.Size(32, 12);
-            this.strzałaGracz.TabIndex = 5;
-            this.strzałaGracz.TabStop = false;
-            // 
-            // beczka1
-            // 
-            this.beczka1.Image = global::Unstable.Properties.Resources.Beczka;
-            this.beczka1.Location = new System.Drawing.Point(263, 6);
-            this.beczka1.Name = "beczka1";
-            this.beczka1.Size = new System.Drawing.Size(64, 64);
-            this.beczka1.TabIndex = 6;
-            this.beczka1.TabStop = false;
-            // 
-            // beczka4
-            // 
-            this.beczka4.Image = global::Unstable.Properties.Resources.Beczka;
-            this.beczka4.Location = new System.Drawing.Point(247, 67);
-            this.beczka4.Name = "beczka4";
-            this.beczka4.Size = new System.Drawing.Size(64, 64);
-            this.beczka4.TabIndex = 7;
-            this.beczka4.TabStop = false;
-            // 
-            // ściana1
-            // 
-            this.ściana1.Location = new System.Drawing.Point(185, 108);
-            this.ściana1.Name = "ściana1";
-            this.ściana1.Size = new System.Drawing.Size(48, 198);
-            this.ściana1.TabIndex = 8;
-            this.ściana1.TabStop = false;
-            // 
-            // beczka2
-            // 
-            this.beczka2.Image = global::Unstable.Properties.Resources.Beczka;
-            this.beczka2.Location = new System.Drawing.Point(333, 6);
-            this.beczka2.Name = "beczka2";
-            this.beczka2.Size = new System.Drawing.Size(64, 64);
-            this.beczka2.TabIndex = 12;
-            this.beczka2.TabStop = false;
-            // 
-            // beczka5
-            // 
-            this.beczka5.Image = global::Unstable.Properties.Resources.Beczka;
-            this.beczka5.Location = new System.Drawing.Point(317, 76);
-            this.beczka5.Name = "beczka5";
-            this.beczka5.Size = new System.Drawing.Size(64, 64);
-            this.beczka5.TabIndex = 13;
-            this.beczka5.TabStop = false;
-            // 
-            // beczka3
-            // 
-            this.beczka3.Image = global::Unstable.Properties.Resources.Beczka;
-            this.beczka3.Location = new System.Drawing.Point(403, 6);
-            this.beczka3.Name = "beczka3";
-            this.beczka3.Size = new System.Drawing.Size(64, 64);
-            this.beczka3.TabIndex = 17;
-            this.beczka3.TabStop = false;
-            // 
-            // beczka6
-            // 
-            this.beczka6.Image = global::Unstable.Properties.Resources.Beczka;
-            this.beczka6.Location = new System.Drawing.Point(387, 67);
-            this.beczka6.Name = "beczka6";
-            this.beczka6.Size = new System.Drawing.Size(64, 64);
-            this.beczka6.TabIndex = 18;
-            this.beczka6.TabStop = false;
-            // 
-            // beczka7
-            // 
-            this.beczka7.Image = global::Unstable.Properties.Resources.Beczka;
-            this.beczka7.Location = new System.Drawing.Point(635, 67);
-            this.beczka7.Name = "beczka7";
-            this.beczka7.Size = new System.Drawing.Size(64, 64);
-            this.beczka7.TabIndex = 26;
-            this.beczka7.TabStop = false;
-            // 
-            // beczka8
-            // 
-            this.beczka8.Image = global::Unstable.Properties.Resources.Beczka;
-            this.beczka8.Location = new System.Drawing.Point(694, 38);
-            this.beczka8.Name = "beczka8";
-            this.beczka8.Size = new System.Drawing.Size(64, 64);
-            this.beczka8.TabIndex = 28;
-            this.beczka8.TabStop = false;
-            // 
-            // beczki1
-            // 
-            this.beczki1.Location = new System.Drawing.Point(247, 137);
-            this.beczki1.Name = "beczki1";
-            this.beczki1.Size = new System.Drawing.Size(511, 169);
-            this.beczki1.TabIndex = 29;
-            this.beczki1.TabStop = false;
-            // 
-            // beczki2
-            // 
-            this.beczki2.Location = new System.Drawing.Point(247, 379);
-            this.beczki2.Name = "beczki2";
-            this.beczki2.Size = new System.Drawing.Size(511, 63);
-            this.beczki2.TabIndex = 30;
-            this.beczki2.TabStop = false;
-            // 
-            // ściana2
-            // 
-            this.ściana2.Location = new System.Drawing.Point(185, 379);
-            this.ściana2.Name = "ściana2";
-            this.ściana2.Size = new System.Drawing.Size(48, 66);
-            this.ściana2.TabIndex = 31;
-            this.ściana2.TabStop = false;
-            // 
-            // gracz
-            // 
-            this.gracz.BackColor = System.Drawing.Color.Transparent;
-            this.gracz.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gracz.Image = global::Unstable.Properties.Resources.whiteBrownStand;
-            this.gracz.Location = new System.Drawing.Point(28, 55);
-            this.gracz.Margin = new System.Windows.Forms.Padding(10);
-            this.gracz.MaximumSize = new System.Drawing.Size(64, 64);
-            this.gracz.MinimumSize = new System.Drawing.Size(64, 64);
-            this.gracz.Name = "gracz";
-            this.gracz.Size = new System.Drawing.Size(64, 64);
-            this.gracz.TabIndex = 0;
-            this.gracz.TabStop = false;
-            // 
             // poleGry
             // 
             this.poleGry.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -361,7 +242,7 @@
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.wyjścieParter);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -14);
+            this.poleGry.Location = new System.Drawing.Point(3, -3);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
@@ -380,6 +261,32 @@
             this.pokazNoweZadanie.TabStop = false;
             this.pokazNoweZadanie.Visible = false;
             this.pokazNoweZadanie.Click += new System.EventHandler(this.pokazNoweZadanie_Click);
+            // 
+            // strzałaGracz
+            // 
+            this.strzałaGracz.Image = global::Unstable.Properties.Resources.StrzałaRight;
+            this.strzałaGracz.Location = new System.Drawing.Point(9, 15);
+            this.strzałaGracz.MaximumSize = new System.Drawing.Size(32, 12);
+            this.strzałaGracz.MinimumSize = new System.Drawing.Size(32, 12);
+            this.strzałaGracz.Name = "strzałaGracz";
+            this.strzałaGracz.Size = new System.Drawing.Size(32, 12);
+            this.strzałaGracz.TabIndex = 5;
+            this.strzałaGracz.TabStop = false;
+            // 
+            // gracz
+            // 
+            this.gracz.BackColor = System.Drawing.Color.Transparent;
+            this.gracz.Cursor = System.Windows.Forms.Cursors.Default;
+            this.gracz.Image = global::Unstable.Properties.Resources.whiteBrownStand;
+            this.gracz.Location = new System.Drawing.Point(28, 55);
+            this.gracz.Margin = new System.Windows.Forms.Padding(10);
+            this.gracz.MaximumSize = new System.Drawing.Size(64, 64);
+            this.gracz.MinimumSize = new System.Drawing.Size(64, 64);
+            this.gracz.Name = "gracz";
+            this.gracz.Size = new System.Drawing.Size(64, 64);
+            this.gracz.TabIndex = 0;
+            this.gracz.TabStop = false;
+            this.gracz.Move += new System.EventHandler(this.gracz_Move);
             // 
             // drop0
             // 
@@ -405,10 +312,130 @@
             this.rozdajStatystyki.Visible = false;
             this.rozdajStatystyki.Click += new System.EventHandler(this.rozdajStatystyki_Click);
             // 
-            // timerNPC
+            // ściana2
             // 
-            this.timerNPC.Enabled = true;
-            this.timerNPC.Interval = 1;
+            this.ściana2.Location = new System.Drawing.Point(185, 379);
+            this.ściana2.Name = "ściana2";
+            this.ściana2.Size = new System.Drawing.Size(48, 66);
+            this.ściana2.TabIndex = 31;
+            this.ściana2.TabStop = false;
+            // 
+            // beczki2
+            // 
+            this.beczki2.Location = new System.Drawing.Point(247, 379);
+            this.beczki2.Name = "beczki2";
+            this.beczki2.Size = new System.Drawing.Size(511, 63);
+            this.beczki2.TabIndex = 30;
+            this.beczki2.TabStop = false;
+            // 
+            // beczki1
+            // 
+            this.beczki1.Location = new System.Drawing.Point(247, 137);
+            this.beczki1.Name = "beczki1";
+            this.beczki1.Size = new System.Drawing.Size(511, 169);
+            this.beczki1.TabIndex = 29;
+            this.beczki1.TabStop = false;
+            // 
+            // beczka8
+            // 
+            this.beczka8.Image = global::Unstable.Properties.Resources.Beczka;
+            this.beczka8.Location = new System.Drawing.Point(694, 38);
+            this.beczka8.Name = "beczka8";
+            this.beczka8.Size = new System.Drawing.Size(64, 64);
+            this.beczka8.TabIndex = 28;
+            this.beczka8.TabStop = false;
+            // 
+            // beczka7
+            // 
+            this.beczka7.Image = global::Unstable.Properties.Resources.Beczka;
+            this.beczka7.Location = new System.Drawing.Point(635, 67);
+            this.beczka7.Name = "beczka7";
+            this.beczka7.Size = new System.Drawing.Size(64, 64);
+            this.beczka7.TabIndex = 26;
+            this.beczka7.TabStop = false;
+            // 
+            // beczka6
+            // 
+            this.beczka6.Image = global::Unstable.Properties.Resources.Beczka;
+            this.beczka6.Location = new System.Drawing.Point(387, 67);
+            this.beczka6.Name = "beczka6";
+            this.beczka6.Size = new System.Drawing.Size(64, 64);
+            this.beczka6.TabIndex = 18;
+            this.beczka6.TabStop = false;
+            // 
+            // beczka3
+            // 
+            this.beczka3.Image = global::Unstable.Properties.Resources.Beczka;
+            this.beczka3.Location = new System.Drawing.Point(403, 6);
+            this.beczka3.Name = "beczka3";
+            this.beczka3.Size = new System.Drawing.Size(64, 64);
+            this.beczka3.TabIndex = 17;
+            this.beczka3.TabStop = false;
+            // 
+            // beczka5
+            // 
+            this.beczka5.Image = global::Unstable.Properties.Resources.Beczka;
+            this.beczka5.Location = new System.Drawing.Point(317, 76);
+            this.beczka5.Name = "beczka5";
+            this.beczka5.Size = new System.Drawing.Size(64, 64);
+            this.beczka5.TabIndex = 13;
+            this.beczka5.TabStop = false;
+            // 
+            // beczka2
+            // 
+            this.beczka2.Image = global::Unstable.Properties.Resources.Beczka;
+            this.beczka2.Location = new System.Drawing.Point(333, 6);
+            this.beczka2.Name = "beczka2";
+            this.beczka2.Size = new System.Drawing.Size(64, 64);
+            this.beczka2.TabIndex = 12;
+            this.beczka2.TabStop = false;
+            // 
+            // ściana1
+            // 
+            this.ściana1.Location = new System.Drawing.Point(185, 108);
+            this.ściana1.Name = "ściana1";
+            this.ściana1.Size = new System.Drawing.Size(48, 198);
+            this.ściana1.TabIndex = 8;
+            this.ściana1.TabStop = false;
+            // 
+            // beczka4
+            // 
+            this.beczka4.Image = global::Unstable.Properties.Resources.Beczka;
+            this.beczka4.Location = new System.Drawing.Point(247, 67);
+            this.beczka4.Name = "beczka4";
+            this.beczka4.Size = new System.Drawing.Size(64, 64);
+            this.beczka4.TabIndex = 7;
+            this.beczka4.TabStop = false;
+            // 
+            // beczka1
+            // 
+            this.beczka1.Image = global::Unstable.Properties.Resources.Beczka;
+            this.beczka1.Location = new System.Drawing.Point(263, 6);
+            this.beczka1.Name = "beczka1";
+            this.beczka1.Size = new System.Drawing.Size(64, 64);
+            this.beczka1.TabIndex = 6;
+            this.beczka1.TabStop = false;
+            // 
+            // underGracz
+            // 
+            this.underGracz.BackColor = System.Drawing.Color.Transparent;
+            this.underGracz.Cursor = System.Windows.Forms.Cursors.Default;
+            this.underGracz.Location = new System.Drawing.Point(28, 55);
+            this.underGracz.Margin = new System.Windows.Forms.Padding(10);
+            this.underGracz.MaximumSize = new System.Drawing.Size(64, 64);
+            this.underGracz.MinimumSize = new System.Drawing.Size(64, 64);
+            this.underGracz.Name = "underGracz";
+            this.underGracz.Size = new System.Drawing.Size(64, 64);
+            this.underGracz.TabIndex = 3;
+            this.underGracz.TabStop = false;
+            // 
+            // wyjścieParter
+            // 
+            this.wyjścieParter.Location = new System.Drawing.Point(496, 0);
+            this.wyjścieParter.Name = "wyjścieParter";
+            this.wyjścieParter.Size = new System.Drawing.Size(124, 64);
+            this.wyjścieParter.TabIndex = 4;
+            this.wyjścieParter.TabStop = false;
             // 
             // _01Piwnica
             // 
@@ -429,26 +456,27 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TheKeyUp);
             this.panelStatystyk.ResumeLayout(false);
             this.panelStatystyk.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.underGracz)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ściana1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczka8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczki1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beczki2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ściana2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.używanaBroń)).EndInit();
             this.poleGry.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gracz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drop0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ściana2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczki2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczki1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ściana1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beczka1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.underGracz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wyjścieParter)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,5 +515,7 @@
         private System.Windows.Forms.PictureBox drop0;
         private System.Windows.Forms.Timer timerNPC;
         private System.Windows.Forms.PictureBox pokazNoweZadanie;
+        private System.Windows.Forms.Label labelRodzajAtaku;
+        private System.Windows.Forms.PictureBox używanaBroń;
     }
 }

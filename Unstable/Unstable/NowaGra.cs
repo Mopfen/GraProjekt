@@ -53,10 +53,7 @@ namespace Unstable
             Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
             PrzedmiotyFabularne formaPrzedmiotyFabularne = new PrzedmiotyFabularne(daneLauncher);
             metodaStatystyki.liczStatystyki();
-            formaEkwipunek.Show();
-            formaPrzedmiotyFabularne.Show();
-            formaPrzedmiotyFabularne.Close();
-            formaEkwipunek.Close();
+            daneLauncher.daneGracz.bazowyObraz.Image = daneLauncher.whiteBrownStand.Image;
             daneLauncher.muzykaMenu = false;
             _01Piwnica forma_01Piwnica = new _01Piwnica(daneLauncher);
             this.Close();

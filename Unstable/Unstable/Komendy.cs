@@ -80,7 +80,7 @@ namespace Unstable
             /// Metoda wykonuje komendę: MieczProgramisty
             /// </summary>
             /// <param name="forma"></param>
-            internal void WykonajKomendę(Form forma)
+            internal void WykonajKomendę()
             {
                 if (daneLauncher.komendaOK == false)
                 {
@@ -90,6 +90,7 @@ namespace Unstable
                 if (daneLauncher.komenda == "squadak")
                 {
                     MetodyEkwipunek metodaEkwipunek = new MetodyEkwipunek(daneLauncher);
+                    daneLauncher.wpisanoKomendę = true;
                     daneLauncher.daneDropKomenda.exists = true;
                     daneLauncher.daneDropKomenda.miecz = true;
                     daneLauncher.daneDropKomenda.id = 1000;
@@ -104,8 +105,7 @@ namespace Unstable
                     daneLauncher.daneDropKomenda.dmgDystans[0] = 9240;
                     daneLauncher.daneDropKomenda.dmgDystans[1] = 9480;
                     metodaEkwipunek.NałóżPrzedmiotKomendy(380, 170);
-                    daneLauncher.komenda = "";
-                    forma.Close();
+                    daneLauncher.komenda = "";                   
                 }
             }
         }

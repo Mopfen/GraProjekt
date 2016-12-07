@@ -299,6 +299,17 @@
     <None Include="Models\Player\MovingUpWhiteManBrownHair.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Models\Samouczek\KlawiszeSamouczekZmianaBroni.gif" />
+    <None Include="Models\Samouczek\SamouczekZmianaBroni.gif" />
+    <None Include="Models\Samouczek\SamouczekStatystykiDoRozdania.gif" />
+    <None Include="Models\Samouczek\MyszSamouczekNoweZadanie.gif" />
+    <None Include="Models\Samouczek\SamouczekNoweZadanie.gif" />
+    <None Include="Models\Samouczek\KlawiszeSamouczekOtwieraniePanelów.gif" />
+    <None Include="Models\Samouczek\SamouczekOtwieraniePanelów.gif" />
+    <None Include="Models\Samouczek\KlawiszeSamouczekZbieranieItemów.gif" />
+    <None Include="Models\Samouczek\SamouczekZbieranieItemów.gif" />
+    <None Include="Models\Samouczek\KlawiszeSamouczekAtakMieczem.gif" />
+    <None Include="Models\Samouczek\SamouczekAtakMieczem.gif" />
     <None Include="Models\Samouczek\KlawiszeSamouczekChodzenie.gif" />
     <None Include="Models\Samouczek\SamouczekChodzenie.gif" />
     <None Include="Models\Player\whiteRedStand.gif" />
@@ -363,6 +374,14 @@
     <None Include="Models\Backgrounds\01PiętroPierwsze+Krata.png" />
     <None Include="Models\Backgrounds\01Dziedziniec+Blokada.png" />
     <None Include="Models\Objekty\Blokada.png" />
+    <None Include="Models\NPC\PerqunMovingDown.gif" />
+    <None Include="Models\NPC\PerqunMovingLeft.gif" />
+    <None Include="Models\NPC\PerqunMovingRight.gif" />
+    <None Include="Models\NPC\PerqunMovingUp.gif" />
+    <None Include="Models\NPC\PerqunStand.gif" />
+    <None Include="Models\Avatars\PerqunAvatar.png" />
+    <None Include="Models\Others\ZarysMiecza.png" />
+    <None Include="Models\Others\ZarysŁuku.png" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />

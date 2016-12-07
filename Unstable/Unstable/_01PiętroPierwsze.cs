@@ -38,6 +38,7 @@ namespace Unstable
             daneLauncher.daneGracz.antyRozmycie = underGracz;
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
+            daneLauncher.używanaBroń = używanaBroń;
 
             if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[3] == false)
             {
@@ -147,6 +148,19 @@ namespace Unstable
                     this.Close();
                     map_01Parter.Show();
                 }
+                if(daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(drop0.Bounds) & daneLauncher.samouczek == true)
+                {
+                    Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                    metodaUniwersalne.zatrzymajTimery();
+
+                    daneLauncher.samouczekObrazDemonstracyjny.Image = global::Unstable.Properties.Resources.SamouczekZmianaBroni;
+                    daneLauncher.samouczekObrazKlawiszy.Image = global::Unstable.Properties.Resources.KlawiszeSamouczekZmianaBroni;
+                    daneLauncher.samouczekInstrukcja = "Aby zmienić broń, której używasz, naciśnij \"X\".";
+                    daneLauncher.samouczekInfo = "Możesz zmienić rodzaj aktualnie używanej broni, o ile masz jej odpowiednik w ręku.";
+
+                    Samouczek formaSamouczek = new Samouczek(daneLauncher);
+                    formaSamouczek.ShowDialog();
+                }
             }
         }
 
@@ -171,7 +185,7 @@ namespace Unstable
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
+            metodaMap.timerAtakGraczMetoda(daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
         private void timerStatystyki_Tick(object sender, EventArgs e)

@@ -21,5 +21,10 @@ namespace Unstable
         {
             this.Close();
         }
+
+        private void OkienkoInformacji_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

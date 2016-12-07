@@ -47,9 +47,11 @@ namespace Unstable
             daneLauncher.daneGracz.antyRozmycie = underGracz;
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
+            daneLauncher.używanaBroń = używanaBroń;
 
-            if(daneLauncher.daneQuest[2].etap<2)
+            if (daneLauncher.daneQuest[2].etap<2)
             {
+                daneLauncher.daneNPC[0].bazowyObraz.Image = daneLauncher.PerqunStand.Image;
                 daneLauncher.daneNPC[0].obraz = Perqun;
                 daneLauncher.daneNPC[0].antyRozmycie = underPerqun;
                 daneLauncher.daneNPC[0].exists = true;
@@ -62,7 +64,7 @@ namespace Unstable
             }
                 
 
-            if (daneLauncher.daneQuest[1].etap == 1 | daneLauncher.daneQuest[1].etap == 2)
+            if (daneLauncher.daneQuest[1].stan == 1 & (daneLauncher.daneQuest[1].etap == 1 | daneLauncher.daneQuest[1].etap == 2))
             {
                 daneLauncher.daneMob[0].obraz = kukła;
                 daneLauncher.daneMob[0].obraz.Visible = true;
@@ -271,7 +273,7 @@ namespace Unstable
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
+            metodaMap.timerAtakGraczMetoda(daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
         private void timerNPC_Tick(object sender, EventArgs e)
@@ -350,6 +352,20 @@ namespace Unstable
                     daneLauncher.daneQuest[2].opisEtapu[1] = "Udaj się do miasta Winczewo";
                     daneLauncher.daneQuest[2].exp = 5;
                     daneLauncher.noweGlowneZadanie = true;
+
+                    if(daneLauncher.samouczek == true)
+                    {
+                        Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                        metodaUniwersalne.zatrzymajTimery();
+
+                        daneLauncher.samouczekObrazDemonstracyjny.Image = global::Unstable.Properties.Resources.SamouczekStatystykiDoRozdania;
+                        daneLauncher.samouczekObrazKlawiszy.Image = global::Unstable.Properties.Resources.MyszSamouczekNoweZadanie;
+                        daneLauncher.samouczekInstrukcja = "Nacisnij plus w lewym dolnym rogu, aby rozdać statystyki.";
+                        daneLauncher.samouczekInfo = "Wraz z nowym poziomem otrzymujesz 4 punkty statystyk do rozdania. Plus w lewym dolnym rogu informuje, że masz takowe punkty do rozdania. Możesz rozdać je w panelu statystyk.";
+
+                        Samouczek formaSamouczek = new Samouczek(daneLauncher);
+                        formaSamouczek.ShowDialog();
+                    }
                 }     
             }
         }

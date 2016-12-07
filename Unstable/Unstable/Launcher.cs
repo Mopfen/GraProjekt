@@ -11,7 +11,9 @@ using System.Threading;
 
 namespace Unstable
 {
-    /// <summary> Odpowiada za uruchomienie i działanie programu. Przechowuje większość zmiennych, na których pracuje program. </summary>
+    /// <summary> 
+    /// Odpowiada za uruchomienie i działanie programu. Przechowuje większość zmiennych, na których pracuje program.
+    /// </summary>
     public partial class Launcher : MetodyOgraniczonegoDostępu
     {
         /// <summary>
@@ -19,6 +21,7 @@ namespace Unstable
         /// </summary>
         internal class ZmiennePostaci
         {
+            internal PictureBox bazowyObraz = new PictureBox(); // zmienna przechowująca bazowy wygląd postaci
             internal PictureBox obraz; // zmienna odpowiadająca za wygląd postaci
             internal PictureBox antyRozmycie; // zmienna niwelująca rozmycie podczas poruszania się obiektu
 
@@ -75,6 +78,8 @@ namespace Unstable
             internal bool[] dotartoDoY = new bool[10]; // zmienne określają, czy potać dotarła do danego punktu
 
             internal Label labelhp; // pokazuje stan zdrowia postaci
+
+            internal int złoto = 0; // zmienna określa, ile złota ma przy sobie postać
         }
         /// <summary>
         /// Klasa przechowuje zmienne, na których opiera się każdy obiekt
@@ -179,7 +184,8 @@ namespace Unstable
             internal List<bool> misjaFabularnaWykonana = new List<bool>();
         }
 
-        #region zmienneWygląduObiektów
+        #region ZmienneWygląduObiektów
+        #region Gracz
         internal PictureBox whiteBrownStand = new PictureBox();
         internal PictureBox whiteBrownMovingUp = new PictureBox();
         internal PictureBox whiteBrownMovingDown = new PictureBox();
@@ -216,6 +222,16 @@ namespace Unstable
         internal PictureBox redBlondeStand = new PictureBox();
         internal PictureBox redRedStand = new PictureBox();
 
+        #endregion
+        #region NPC
+        internal PictureBox PerqunStand = new PictureBox();
+        internal PictureBox PerqunMovingUp = new PictureBox();
+        internal PictureBox PerqunMovingDown = new PictureBox();
+        internal PictureBox PerqunMovingLeft = new PictureBox();
+        internal PictureBox PerqunMovingRight = new PictureBox();
+
+        #endregion
+
 
         internal PictureBox strzałaLeft = new PictureBox();
         internal PictureBox strzałaRight = new PictureBox();
@@ -230,7 +246,7 @@ namespace Unstable
 
         #endregion
         #region zmiennePozostałe
-        internal string gameVersion = "Unstable1.4"; // zmienna przechowuje informacje o wersji gry
+        internal string gameVersion = "Unstable1.5"; // zmienna przechowuje informacje o wersji gry
 
         internal Panel poleGry; // zmienna odpowiadająca za właściwości pola gry
         internal Label hitLog; // zmienna odpowiadająca za wyświetlanie informacji przez hitLog
@@ -238,6 +254,7 @@ namespace Unstable
         internal Label nazwaPrzedmiotuFabularnego; // zmienna odpowiadająca za wyświetlanie nazwy przedmiotu fabularnego
         internal PictureBox rozdajStatystyki; // zmienna odpowiadająca za informowanie gracza, że ma punkty statystyk do rozdania
         internal PictureBox pokazNoweZadanie; // zmienna odpowiadająca za informowanie gracza, że otrzymał nowe zadanie
+        internal PictureBox używanaBroń; // zmienna odpowiadająca za informowanie gracza, jakiego rodzaju broni aktualnie używa
 
         internal bool statystykiPokazywane = false; // zmienna odpowiadająca za sprawdzenie, czy statystyki przedmiotu w ekwipunku są aktualnie wyświetlane
 
@@ -251,6 +268,7 @@ namespace Unstable
 
         internal string komenda = ""; // zmienna przechowująca dane komendy
         internal bool komendaOK = true; // zmienna sprawdza, czy iżytkownik podaje poprawny ciąg znaków komendy
+        internal bool wpisanoKomendę = false; // zmienna sprawdza, czy komenda zostałą poprawnie wpisana
 
         internal int numerMapy = 0; // zmienna określa na jakiej mapie znajduje się gracz
 
@@ -264,6 +282,12 @@ namespace Unstable
         internal bool muzykaOn = true; // 
         internal bool efektyDźwiękoweOn = true; //
         internal bool samouczek = true; // zmienne odpowiedzialne za zmianę opcji gry
+
+        internal PictureBox samouczekObrazDemonstracyjny = new PictureBox(); //
+        internal PictureBox samouczekObrazKlawiszy = new PictureBox(); // zmienne odpowiadające za wyświetlanie obrazków w samouczku
+
+        internal string samouczekInstrukcja; //
+        internal string samouczekInfo; // zmienne określają, jaki tekst zostanie wyświetlony w samouczku
 
         internal bool noweGlowneZadanie = false; //
         internal bool nowePoboczneZadanie = false; // zmienne sprawdzają, czy zostało dodane nowe zadanie do listy misji
@@ -335,6 +359,7 @@ namespace Unstable
             wczytajDaneObrazkiRedBlackHuman();
             wczytajDaneObrazkiRedBlondeHuman();
             wczytajDaneObrazkiRedRedHuman();
+            wczytajDaneObrazkiPerqun();
             wczytajDaneObrazkiInne();
 
             this.Hide();
@@ -346,6 +371,8 @@ namespace Unstable
         {
             Application.Exit();
         }
+
+        #region WczytywanieGrafiki
 
         private void wczytajDaneObrazkiWhiteBrownHuman()
         {
@@ -462,6 +489,15 @@ namespace Unstable
             redRedStand.Image = global::Unstable.Properties.Resources.redRedStand;
         }
 
+        private void wczytajDaneObrazkiPerqun()
+        {
+            PerqunStand.Image = global::Unstable.Properties.Resources.PerqunStand;
+            PerqunMovingUp.Image = global::Unstable.Properties.Resources.PerqunMovingUp;
+            PerqunMovingDown.Image = global::Unstable.Properties.Resources.PerqunMovingDown;
+            PerqunMovingLeft.Image = global::Unstable.Properties.Resources.PerqunMovingLeft;
+            PerqunMovingRight.Image = global::Unstable.Properties.Resources.PerqunMovingRight;
+        }
+
         private void wczytajDaneObrazkiInne()
         {
             strzałaLeft.Image = global::Unstable.Properties.Resources.StrzałaLeft;
@@ -475,5 +511,7 @@ namespace Unstable
 
             KluczNaPierwszePiętroWieżyPerquna.Image = global::Unstable.Properties.Resources.KeyPerqun1st ;
         }
+
+        #endregion
     }
 }

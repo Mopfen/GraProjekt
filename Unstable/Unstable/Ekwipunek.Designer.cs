@@ -70,7 +70,7 @@
             this.plecakSlot37 = new System.Windows.Forms.PictureBox();
             this.plecakSlot40 = new System.Windows.Forms.PictureBox();
             this.plecakSlot39 = new System.Windows.Forms.PictureBox();
-            this.stanZłota = new System.Windows.Forms.Label();
+            this.labelStanZłota = new System.Windows.Forms.Label();
             this.alaButtonExit = new System.Windows.Forms.PictureBox();
             this.timerRuch = new System.Windows.Forms.Timer(this.components);
             this.staraLokacja = new System.Windows.Forms.PictureBox();
@@ -738,17 +738,17 @@
             this.plecakSlot39.MouseLeave += new System.EventHandler(this.plecakSlot_MouseLeave);
             this.plecakSlot39.MouseHover += new System.EventHandler(this.plecakSlot39_MouseHover);
             // 
-            // stanZłota
+            // labelStanZłota
             // 
-            this.stanZłota.AutoSize = true;
-            this.stanZłota.BackColor = System.Drawing.Color.Transparent;
-            this.stanZłota.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.stanZłota.ForeColor = System.Drawing.Color.White;
-            this.stanZłota.Location = new System.Drawing.Point(252, 300);
-            this.stanZłota.Name = "stanZłota";
-            this.stanZłota.Size = new System.Drawing.Size(165, 23);
-            this.stanZłota.TabIndex = 40;
-            this.stanZłota.Text = "XXXXXXXXX złota";
+            this.labelStanZłota.AutoSize = true;
+            this.labelStanZłota.BackColor = System.Drawing.Color.Transparent;
+            this.labelStanZłota.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelStanZłota.ForeColor = System.Drawing.Color.White;
+            this.labelStanZłota.Location = new System.Drawing.Point(252, 300);
+            this.labelStanZłota.Name = "labelStanZłota";
+            this.labelStanZłota.Size = new System.Drawing.Size(165, 23);
+            this.labelStanZłota.TabIndex = 40;
+            this.labelStanZłota.Text = "XXXXXXXXX złota";
             // 
             // alaButtonExit
             // 
@@ -984,7 +984,7 @@
             this.Controls.Add(this.labelStatystykiPrzedmiotu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.alaButtonExit);
-            this.Controls.Add(this.stanZłota);
+            this.Controls.Add(this.labelStanZłota);
             this.Controls.Add(this.staraLokacja);
             this.Controls.Add(this.antyRozmycie);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1095,7 +1095,7 @@
         private System.Windows.Forms.PictureBox plecakSlot37;
         private System.Windows.Forms.PictureBox plecakSlot40;
         private System.Windows.Forms.PictureBox plecakSlot39;
-        private System.Windows.Forms.Label stanZłota;
+        private System.Windows.Forms.Label labelStanZłota;
         private System.Windows.Forms.PictureBox alaButtonExit;
         private System.Windows.Forms.Timer timerRuch;
         private System.Windows.Forms.PictureBox staraLokacja;

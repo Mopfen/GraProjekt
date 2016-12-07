@@ -70,7 +70,6 @@ namespace Unstable
             postać[indeks].siłaAtakuDystans[1] = dmgMax;
         }
 
-
         /// <summary>
         /// Metoda sprawdzająca, czy strzała trafiła jakiś obiekt. Jeżeli tak, wykonuje okresloną czynność.
         /// </summary>
@@ -130,47 +129,7 @@ namespace Unstable
                 }
             }
         }
-        /// <summary>
-        /// Metoda sprawdza, czy gracz zginął
-        /// </summary>
-        /// <returns></returns>
-        internal bool śmierćGracza()
-        {
-            if (daneLauncher.daneGracz.hp <= 0)
-            {
-                daneLauncher.daneGracz.hp = 0;
-                return true;
-            }
-            return false;
-        }
-        /// <summary>
-        /// Metoda sprawdza, czy mob został zabity. Jeśli tak, to wykonuje ustalone operacje
-        /// </summary>
-        /// <returns></returns>
-        internal Tuple<bool, int> śmierćMoba()
-        {
-            int i = 0;
-            bool zabity = false;
-            Tuple<bool, int> wynik = new Tuple<bool, int>(zabity, i);
-            for (i = 0; i < 4; i++)
-            {
-                if (daneLauncher.daneMob[i].exists == true)
-                {
-                    if (daneLauncher.daneMob[i].hp <= 0)
-                    {
-                        daneLauncher.daneMob[i].hp = 0;
-                        zabity = true;
-                        daneLauncher.hitLog.Text = "Mob zostaje zabity!\n" + daneLauncher.hitLog.Text;
-                        if (daneLauncher.daneGracz.lv == daneLauncher.daneMob[i].lv) daneLauncher.daneGracz.exp += 5;
-                        daneLauncher.daneMob[i].obraz.Visible = false;
-                        daneLauncher.daneMob[i].labelhp.Visible = false;
-                        wynik = new Tuple<bool, int>(zabity, i);
-                        return wynik;
-                    }
-                }
-            }
-            return wynik;
-        }
+        
         /// <summary>
         /// Metoda sprawdza czy obok gracza znajduje się jakiś obiekt. Jeżeli tak, to wykonuje atak.
         /// </summary>
@@ -230,7 +189,7 @@ namespace Unstable
         /// <summary>
         /// Metoda odpowiedzialna za wykonywanie ataku przez gracza.
         /// </summary>
-        public void AtakGracza(Timer timerGracz, int numerMapy, int numerLokacji)
+        internal void AtakGracza(int numerMapy, int numerLokacji)
         {
             if (daneLauncher.daneGracz.attack == true & (daneLauncher.daneGracz.left == true | daneLauncher.daneGracz.right == true) & daneLauncher.daneGracz.wykonanoAtak == false)
             {
@@ -274,12 +233,12 @@ namespace Unstable
             }
             if (daneLauncher.daneGracz.wykonanoAtak == true)
             {
-                timerGracz.Enabled = false;
+                daneLauncher.timerGracz.Enabled = false;
                 daneLauncher.daneGracz.stopMoving++;
             }
             if (daneLauncher.daneGracz.stopMoving == 5)
             {
-                timerGracz.Enabled = true;
+                daneLauncher.timerGracz.Enabled = true;
                 daneLauncher.daneGracz.wykonanoAtak = false;
                 daneLauncher.daneGracz.stopMoving = 0;
             }
@@ -293,7 +252,7 @@ namespace Unstable
         /// <summary>
         /// Metoda opowiedzialna za strzał z łuku gracz
         /// </summary>
-        public void StrzalaGracz(int ilośćMobow, int numerMapy, int numerLokacji)
+        internal void StrzalaGracz(int ilośćMobow, int numerMapy, int numerLokacji)
         {
             bool stop = false; // zmienna określa, kiedy strzała w coś trafi
             
@@ -332,7 +291,7 @@ namespace Unstable
         /// <summary>
         /// Metoda odpowiedzialna za wykonywanie ataku przez Moba.
         /// </summary>
-        public void AtakMoba(Timer timerMob, int numerMoba, int wartośćAtakuMin, int wartośćAtakuMax)
+        internal void AtakMoba(Timer timerMob, int numerMoba, int wartośćAtakuMin, int wartośćAtakuMax)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             Walka metodaWalka = new Walka(daneLauncher);
@@ -376,6 +335,48 @@ namespace Unstable
                 }
                 daneLauncher.daneMob[numerMoba].attack = false;
             }
+        }
+
+        /// <summary>
+        /// Metoda sprawdza, czy gracz zginął
+        /// </summary>
+        /// <returns></returns>
+        internal bool śmierćGracza()
+        {
+            if (daneLauncher.daneGracz.hp <= 0)
+            {
+                daneLauncher.daneGracz.hp = 0;
+                return true;
+            }
+            return false;
+        }
+        /// <summary>
+        /// Metoda sprawdza, czy mob został zabity. Jeśli tak, to wykonuje ustalone operacje
+        /// </summary>
+        /// <returns></returns>
+        internal Tuple<bool, int> śmierćMoba()
+        {
+            int i = 0;
+            bool zabity = false;
+            Tuple<bool, int> wynik = new Tuple<bool, int>(zabity, i);
+            for (i = 0; i < 4; i++)
+            {
+                if (daneLauncher.daneMob[i].exists == true)
+                {
+                    if (daneLauncher.daneMob[i].hp <= 0)
+                    {
+                        daneLauncher.daneMob[i].hp = 0;
+                        zabity = true;
+                        daneLauncher.hitLog.Text = "Mob zostaje zabity!\n" + daneLauncher.hitLog.Text;
+                        if (daneLauncher.daneGracz.lv == daneLauncher.daneMob[i].lv) daneLauncher.daneGracz.exp += 5;
+                        daneLauncher.daneMob[i].obraz.Visible = false;
+                        daneLauncher.daneMob[i].labelhp.Visible = false;
+                        wynik = new Tuple<bool, int>(zabity, i);
+                        return wynik;
+                    }
+                }
+            }
+            return wynik;
         }
     }
 }

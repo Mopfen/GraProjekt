@@ -34,6 +34,7 @@ namespace Unstable
             daneLauncher.poleGry = poleGry;
             daneLauncher.daneMob[0].exists = true;
             daneLauncher.daneMob[0].antyRozmycie = underMob;
+            daneLauncher.daneMob[0].bazowyObraz.Image = daneLauncher.whiteBrownStand.Image;
             daneLauncher.daneMob[0].obraz = mob;
             daneLauncher.daneMob[0].labelhp = labelHpMob0;
             daneLauncher.hitLog = hitLog;
@@ -46,7 +47,13 @@ namespace Unstable
 
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
 
+            daneLauncher.timerGracz = timerGracz;
+            daneLauncher.timerAtakGracz = timerAtakGracz;
+            daneLauncher.timerMob = timerMob;
+            daneLauncher.timerAtakMob = timerAtakMob;
+            daneLauncher.timerNPC = timerNPC;
             daneLauncher.timerStatystyki = timerStatystyki;
+            daneLauncher.timerStrzałaGracz = timerStrzałaGracz;
 
             Muzyka metodaMuzyka = new Muzyka(daneLauncher);
             metodaMuzyka.Soundtrack("BossSoundtrack.mp3");
@@ -78,7 +85,7 @@ namespace Unstable
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
+            metodaMap.timerAtakGraczMetoda(daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
         private void timerStatystyki_Tick(object sender, EventArgs e)
         {

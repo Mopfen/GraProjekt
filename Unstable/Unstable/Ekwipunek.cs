@@ -106,6 +106,7 @@ namespace Unstable
                 ruchPlecakSlot[i] = false;
             }
             daneLauncher.statystykiPrzedmiotu = labelStatystykiPrzedmiotu;
+            labelStanZłota.Text = Convert.ToString(daneLauncher.daneGracz.złoto) + " złota";
 
             daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
 
@@ -151,10 +152,10 @@ namespace Unstable
             }
             if (daneLauncher.komenda == "squadak")
             {
-                zapiszDane();
+                Komendy.MieczProgramisty metodaKomendy = new Komendy.MieczProgramisty(daneLauncher);
+                metodaKomendy.WykonajKomendę();
+                zamknijFormę();
             }
-            Komendy.MieczProgramisty metodaKomendy = new Komendy.MieczProgramisty(daneLauncher);
-            metodaKomendy.WykonajKomendę(this);
         }
 
         private void akcjaNaSlocie(int numerSlotu)

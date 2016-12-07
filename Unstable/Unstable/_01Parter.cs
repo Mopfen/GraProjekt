@@ -21,6 +21,7 @@ namespace Unstable
         bool cutScena = false;
         bool cutScenaBegin = false;
         bool dostępNaPierwszePiętro = false;
+        bool pokazSamouczekNoweZadanie = false;
 
         Thread wątekCutScena;
 
@@ -48,9 +49,11 @@ namespace Unstable
             daneLauncher.daneGracz.antyRozmycie = underGracz;
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
+            daneLauncher.używanaBroń = używanaBroń;
 
             if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[1] == false)
             {
+                daneLauncher.daneNPC[0].bazowyObraz.Image = daneLauncher.PerqunStand.Image;
                 daneLauncher.daneNPC[0].obraz = Perqun;
                 daneLauncher.daneNPC[0].antyRozmycie = underPerqun;
                 daneLauncher.daneNPC[0].exists = true;
@@ -280,7 +283,7 @@ namespace Unstable
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
+            metodaMap.timerAtakGraczMetoda(daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
         private void timerNPC_Tick(object sender, EventArgs e)
@@ -335,6 +338,21 @@ namespace Unstable
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerNPC, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
+
+            if(pokazSamouczekNoweZadanie == true & daneLauncher.samouczek == true)
+            {
+                pokazSamouczekNoweZadanie = false;
+                Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                metodaUniwersalne.zatrzymajTimery();
+
+                daneLauncher.samouczekObrazDemonstracyjny.Image = global::Unstable.Properties.Resources.SamouczekNoweZadanie;
+                daneLauncher.samouczekObrazKlawiszy.Image = global::Unstable.Properties.Resources.MyszSamouczekNoweZadanie;
+                daneLauncher.samouczekInstrukcja = "Aby zobaczyć zaaktualizowaną listę misji, wciśnij wykrzynik w prawym dolnym rogu (lub \"Q\").";
+                daneLauncher.samouczekInfo = "Gdy otrzymasz nowe zadanie lub zaaktualizujesz bierzące, pojawi się o tym informacja w postaci wykrzyknika w prawym dolnym rogu. Kliknięcie go pokaże Ci, o jakie zadanie konkretnie chodzi.";
+
+                Samouczek formaSamouczek = new Samouczek(daneLauncher);
+                formaSamouczek.ShowDialog();
+            }
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
@@ -447,6 +465,7 @@ namespace Unstable
             daneLauncher.daneQuest[1].opisEtapu[1] = "Wyjdź na dziedziniec";
             daneLauncher.noweGlowneZadanie = true;
             cutScena = false;
+            pokazSamouczekNoweZadanie = true;
         }
 
     }

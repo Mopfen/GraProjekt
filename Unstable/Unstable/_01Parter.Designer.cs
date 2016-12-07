@@ -37,12 +37,6 @@
             this.timerAtakMob = new System.Windows.Forms.Timer(this.components);
             this.timerMob = new System.Windows.Forms.Timer(this.components);
             this.timerNPC = new System.Windows.Forms.Timer(this.components);
-            this.panelStatystyk = new System.Windows.Forms.Panel();
-            this.labelExpGracz = new System.Windows.Forms.Label();
-            this.labelLvGracz = new System.Windows.Forms.Label();
-            this.labelManaGracz = new System.Windows.Forms.Label();
-            this.hitLog = new System.Windows.Forms.Label();
-            this.labelHpGracz = new System.Windows.Forms.Label();
             this.poleGry = new System.Windows.Forms.Panel();
             this.pokazNoweZadanie = new System.Windows.Forms.PictureBox();
             this.strzałaGracz = new System.Windows.Forms.PictureBox();
@@ -73,7 +67,14 @@
             this.alaButtonOdpowiedź1 = new System.Windows.Forms.PictureBox();
             this.avatar = new System.Windows.Forms.PictureBox();
             this.labelDialogNPC = new System.Windows.Forms.Label();
-            this.panelStatystyk.SuspendLayout();
+            this.panelStatystyk = new System.Windows.Forms.Panel();
+            this.labelRodzajAtaku = new System.Windows.Forms.Label();
+            this.używanaBroń = new System.Windows.Forms.PictureBox();
+            this.labelExpGracz = new System.Windows.Forms.Label();
+            this.labelLvGracz = new System.Windows.Forms.Label();
+            this.labelManaGracz = new System.Windows.Forms.Label();
+            this.hitLog = new System.Windows.Forms.Label();
+            this.labelHpGracz = new System.Windows.Forms.Label();
             this.poleGry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).BeginInit();
@@ -100,6 +101,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
+            this.panelStatystyk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.używanaBroń)).BeginInit();
             this.SuspendLayout();
             // 
             // timerGracz
@@ -135,77 +138,6 @@
             this.timerNPC.Interval = 1;
             this.timerNPC.Tick += new System.EventHandler(this.timerNPC_Tick);
             // 
-            // panelStatystyk
-            // 
-            this.panelStatystyk.BackColor = System.Drawing.Color.Snow;
-            this.panelStatystyk.BackgroundImage = global::Unstable.Properties.Resources.PanelStatystyk;
-            this.panelStatystyk.Controls.Add(this.labelExpGracz);
-            this.panelStatystyk.Controls.Add(this.labelLvGracz);
-            this.panelStatystyk.Controls.Add(this.labelManaGracz);
-            this.panelStatystyk.Controls.Add(this.hitLog);
-            this.panelStatystyk.Controls.Add(this.labelHpGracz);
-            this.panelStatystyk.Location = new System.Drawing.Point(3, 431);
-            this.panelStatystyk.Name = "panelStatystyk";
-            this.panelStatystyk.Size = new System.Drawing.Size(780, 115);
-            this.panelStatystyk.TabIndex = 35;
-            // 
-            // labelExpGracz
-            // 
-            this.labelExpGracz.AutoSize = true;
-            this.labelExpGracz.BackColor = System.Drawing.Color.Transparent;
-            this.labelExpGracz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelExpGracz.Location = new System.Drawing.Point(12, 88);
-            this.labelExpGracz.Name = "labelExpGracz";
-            this.labelExpGracz.Size = new System.Drawing.Size(112, 25);
-            this.labelExpGracz.TabIndex = 11;
-            this.labelExpGracz.Text = "expGracz";
-            // 
-            // labelLvGracz
-            // 
-            this.labelLvGracz.AutoSize = true;
-            this.labelLvGracz.BackColor = System.Drawing.Color.Transparent;
-            this.labelLvGracz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelLvGracz.Location = new System.Drawing.Point(12, 63);
-            this.labelLvGracz.Name = "labelLvGracz";
-            this.labelLvGracz.Size = new System.Drawing.Size(92, 25);
-            this.labelLvGracz.TabIndex = 10;
-            this.labelLvGracz.Text = "lvGracz";
-            // 
-            // labelManaGracz
-            // 
-            this.labelManaGracz.AutoSize = true;
-            this.labelManaGracz.BackColor = System.Drawing.Color.Transparent;
-            this.labelManaGracz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelManaGracz.Location = new System.Drawing.Point(12, 38);
-            this.labelManaGracz.Name = "labelManaGracz";
-            this.labelManaGracz.Size = new System.Drawing.Size(131, 25);
-            this.labelManaGracz.TabIndex = 9;
-            this.labelManaGracz.Text = "manaGracz";
-            // 
-            // hitLog
-            // 
-            this.hitLog.AutoSize = true;
-            this.hitLog.BackColor = System.Drawing.Color.Tomato;
-            this.hitLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hitLog.ForeColor = System.Drawing.Color.Gold;
-            this.hitLog.Location = new System.Drawing.Point(533, 8);
-            this.hitLog.MaximumSize = new System.Drawing.Size(240, 100);
-            this.hitLog.MinimumSize = new System.Drawing.Size(240, 100);
-            this.hitLog.Name = "hitLog";
-            this.hitLog.Size = new System.Drawing.Size(240, 100);
-            this.hitLog.TabIndex = 5;
-            // 
-            // labelHpGracz
-            // 
-            this.labelHpGracz.AutoSize = true;
-            this.labelHpGracz.BackColor = System.Drawing.Color.Transparent;
-            this.labelHpGracz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelHpGracz.Location = new System.Drawing.Point(12, 13);
-            this.labelHpGracz.Name = "labelHpGracz";
-            this.labelHpGracz.Size = new System.Drawing.Size(100, 25);
-            this.labelHpGracz.TabIndex = 4;
-            this.labelHpGracz.Text = "hpGracz";
-            // 
             // poleGry
             // 
             this.poleGry.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -234,7 +166,7 @@
             this.poleGry.Controls.Add(this.wyjściePiętroPierwsze);
             this.poleGry.Controls.Add(this.wyjścieDziedziniec);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -25);
+            this.poleGry.Location = new System.Drawing.Point(3, -3);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
@@ -293,7 +225,7 @@
             // 
             this.Perqun.BackColor = System.Drawing.Color.Transparent;
             this.Perqun.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Perqun.Image = global::Unstable.Properties.Resources.whiteBrownStand;
+            this.Perqun.Image = global::Unstable.Properties.Resources.PerqunStand;
             this.Perqun.Location = new System.Drawing.Point(519, 262);
             this.Perqun.Margin = new System.Windows.Forms.Padding(10);
             this.Perqun.MaximumSize = new System.Drawing.Size(64, 64);
@@ -535,7 +467,7 @@
             // 
             // avatar
             // 
-            this.avatar.Image = global::Unstable.Properties.Resources.AvatarTest;
+            this.avatar.Image = global::Unstable.Properties.Resources.PerqunAvatar;
             this.avatar.Location = new System.Drawing.Point(9, 8);
             this.avatar.Name = "avatar";
             this.avatar.Size = new System.Drawing.Size(100, 100);
@@ -554,6 +486,100 @@
             this.labelDialogNPC.Size = new System.Drawing.Size(600, 100);
             this.labelDialogNPC.TabIndex = 0;
             this.labelDialogNPC.Text = "TekstNPC";
+            // 
+            // panelStatystyk
+            // 
+            this.panelStatystyk.BackColor = System.Drawing.Color.Snow;
+            this.panelStatystyk.BackgroundImage = global::Unstable.Properties.Resources.PanelStatystyk;
+            this.panelStatystyk.Controls.Add(this.labelRodzajAtaku);
+            this.panelStatystyk.Controls.Add(this.używanaBroń);
+            this.panelStatystyk.Controls.Add(this.labelExpGracz);
+            this.panelStatystyk.Controls.Add(this.labelLvGracz);
+            this.panelStatystyk.Controls.Add(this.labelManaGracz);
+            this.panelStatystyk.Controls.Add(this.hitLog);
+            this.panelStatystyk.Controls.Add(this.labelHpGracz);
+            this.panelStatystyk.Location = new System.Drawing.Point(3, 400);
+            this.panelStatystyk.Name = "panelStatystyk";
+            this.panelStatystyk.Size = new System.Drawing.Size(780, 115);
+            this.panelStatystyk.TabIndex = 40;
+            // 
+            // labelRodzajAtaku
+            // 
+            this.labelRodzajAtaku.AutoSize = true;
+            this.labelRodzajAtaku.BackColor = System.Drawing.Color.Transparent;
+            this.labelRodzajAtaku.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelRodzajAtaku.Location = new System.Drawing.Point(296, 63);
+            this.labelRodzajAtaku.Name = "labelRodzajAtaku";
+            this.labelRodzajAtaku.Size = new System.Drawing.Size(168, 25);
+            this.labelRodzajAtaku.TabIndex = 13;
+            this.labelRodzajAtaku.Text = "Używana broń:";
+            // 
+            // używanaBroń
+            // 
+            this.używanaBroń.BackColor = System.Drawing.Color.Transparent;
+            this.używanaBroń.Image = global::Unstable.Properties.Resources.ZarysMiecza;
+            this.używanaBroń.Location = new System.Drawing.Point(468, 49);
+            this.używanaBroń.Name = "używanaBroń";
+            this.używanaBroń.Size = new System.Drawing.Size(48, 48);
+            this.używanaBroń.TabIndex = 12;
+            this.używanaBroń.TabStop = false;
+            // 
+            // labelExpGracz
+            // 
+            this.labelExpGracz.AutoSize = true;
+            this.labelExpGracz.BackColor = System.Drawing.Color.Transparent;
+            this.labelExpGracz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelExpGracz.Location = new System.Drawing.Point(12, 88);
+            this.labelExpGracz.Name = "labelExpGracz";
+            this.labelExpGracz.Size = new System.Drawing.Size(112, 25);
+            this.labelExpGracz.TabIndex = 11;
+            this.labelExpGracz.Text = "expGracz";
+            // 
+            // labelLvGracz
+            // 
+            this.labelLvGracz.AutoSize = true;
+            this.labelLvGracz.BackColor = System.Drawing.Color.Transparent;
+            this.labelLvGracz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelLvGracz.Location = new System.Drawing.Point(12, 63);
+            this.labelLvGracz.Name = "labelLvGracz";
+            this.labelLvGracz.Size = new System.Drawing.Size(92, 25);
+            this.labelLvGracz.TabIndex = 10;
+            this.labelLvGracz.Text = "lvGracz";
+            // 
+            // labelManaGracz
+            // 
+            this.labelManaGracz.AutoSize = true;
+            this.labelManaGracz.BackColor = System.Drawing.Color.Transparent;
+            this.labelManaGracz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelManaGracz.Location = new System.Drawing.Point(12, 38);
+            this.labelManaGracz.Name = "labelManaGracz";
+            this.labelManaGracz.Size = new System.Drawing.Size(131, 25);
+            this.labelManaGracz.TabIndex = 9;
+            this.labelManaGracz.Text = "manaGracz";
+            // 
+            // hitLog
+            // 
+            this.hitLog.AutoSize = true;
+            this.hitLog.BackColor = System.Drawing.Color.Tomato;
+            this.hitLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.hitLog.ForeColor = System.Drawing.Color.Gold;
+            this.hitLog.Location = new System.Drawing.Point(533, 8);
+            this.hitLog.MaximumSize = new System.Drawing.Size(240, 100);
+            this.hitLog.MinimumSize = new System.Drawing.Size(240, 100);
+            this.hitLog.Name = "hitLog";
+            this.hitLog.Size = new System.Drawing.Size(240, 100);
+            this.hitLog.TabIndex = 5;
+            // 
+            // labelHpGracz
+            // 
+            this.labelHpGracz.AutoSize = true;
+            this.labelHpGracz.BackColor = System.Drawing.Color.Transparent;
+            this.labelHpGracz.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelHpGracz.Location = new System.Drawing.Point(12, 13);
+            this.labelHpGracz.Name = "labelHpGracz";
+            this.labelHpGracz.Size = new System.Drawing.Size(100, 25);
+            this.labelHpGracz.TabIndex = 4;
+            this.labelHpGracz.Text = "hpGracz";
             // 
             // _01Parter
             // 
@@ -574,8 +600,6 @@
             this.Text = "_01PietroPierwsze";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TheKeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TheKeyUp);
-            this.panelStatystyk.ResumeLayout(false);
-            this.panelStatystyk.PerformLayout();
             this.poleGry.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pokazNoweZadanie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.strzałaGracz)).EndInit();
@@ -603,6 +627,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alaButtonOdpowiedź1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
+            this.panelStatystyk.ResumeLayout(false);
+            this.panelStatystyk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.używanaBroń)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -626,12 +653,6 @@
         private System.Windows.Forms.PictureBox gracz;
         private System.Windows.Forms.PictureBox rozdajStatystyki;
         private System.Windows.Forms.Panel poleGry;
-        private System.Windows.Forms.Panel panelStatystyk;
-        private System.Windows.Forms.Label labelExpGracz;
-        private System.Windows.Forms.Label labelLvGracz;
-        private System.Windows.Forms.Label labelManaGracz;
-        private System.Windows.Forms.Label hitLog;
-        private System.Windows.Forms.Label labelHpGracz;
         private System.Windows.Forms.PictureBox ściana3;
         private System.Windows.Forms.PictureBox stolik;
         private System.Windows.Forms.PictureBox wyjściePiwnica;
@@ -651,5 +672,13 @@
         private System.Windows.Forms.PictureBox drzwiRightOpened;
         private System.Windows.Forms.PictureBox wyjścieDziedziniec;
         private System.Windows.Forms.PictureBox pokazNoweZadanie;
+        private System.Windows.Forms.Panel panelStatystyk;
+        private System.Windows.Forms.Label labelRodzajAtaku;
+        private System.Windows.Forms.PictureBox używanaBroń;
+        private System.Windows.Forms.Label labelExpGracz;
+        private System.Windows.Forms.Label labelLvGracz;
+        private System.Windows.Forms.Label labelManaGracz;
+        private System.Windows.Forms.Label hitLog;
+        private System.Windows.Forms.Label labelHpGracz;
     }
 }
