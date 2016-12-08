@@ -42,7 +42,7 @@ namespace Unstable
             daneLauncher.numerMapy = 1;
 
             #region Test
-            timerGracz.Interval = 1;
+            //timerGracz.Interval = 1;
 
             #endregion
             #region WczytajDane
@@ -186,13 +186,17 @@ namespace Unstable
 
         private void rozdajStatystyki_Click(object sender, EventArgs e)
         {
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
+            metodaUniwersalne.zatrzymajTimery();
             formaStatystyki.ShowDialog();
         }
 
         private void pokazNoweZadanie_Click(object sender, EventArgs e)
         {
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             Zadania formaZadania = new Zadania(daneLauncher);
+            metodaUniwersalne.zatrzymajTimery();
             formaZadania.ShowDialog();
         }
 

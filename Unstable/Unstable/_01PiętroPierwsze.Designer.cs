@@ -74,7 +74,7 @@
             // timerGracz
             // 
             this.timerGracz.Enabled = true;
-            this.timerGracz.Interval = 50;
+            this.timerGracz.Interval = 30;
             this.timerGracz.Tick += new System.EventHandler(this.timerGracz_Tick);
             // 
             // timerAtakGracz
@@ -121,7 +121,7 @@
             this.poleGry.Controls.Add(this.wyjścieParter);
             this.poleGry.Controls.Add(this.drop0);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.poleGry.Location = new System.Drawing.Point(3, -3);
+            this.poleGry.Location = new System.Drawing.Point(3, -14);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
