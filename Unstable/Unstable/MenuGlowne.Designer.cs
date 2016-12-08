@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuGlowne));
             this.buttonNowaGra = new System.Windows.Forms.Button();
             this.buttonWyjście = new System.Windows.Forms.Button();
-            this.buttonWczytajGrę = new System.Windows.Forms.Button();
-            this.aktualizator = new System.Windows.Forms.Timer(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.buttonOpcjeGry = new System.Windows.Forms.Button();
             this.wersjaGry = new System.Windows.Forms.Label();
             this.labelTerrorOfDragons = new System.Windows.Forms.Label();
+            this.buttonWczytajGrę = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonNowaGra
             // 
+            this.buttonNowaGra.BackColor = System.Drawing.Color.White;
             this.buttonNowaGra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNowaGra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNowaGra.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonNowaGra.ForeColor = System.Drawing.Color.Gold;
+            this.buttonNowaGra.Image = global::Unstable.Properties.Resources.Button;
             this.buttonNowaGra.Location = new System.Drawing.Point(351, 136);
             this.buttonNowaGra.MaximumSize = new System.Drawing.Size(128, 64);
             this.buttonNowaGra.MinimumSize = new System.Drawing.Size(128, 64);
@@ -48,13 +52,17 @@
             this.buttonNowaGra.Size = new System.Drawing.Size(128, 64);
             this.buttonNowaGra.TabIndex = 0;
             this.buttonNowaGra.Text = "Nowa Gra";
-            this.buttonNowaGra.UseVisualStyleBackColor = true;
+            this.buttonNowaGra.UseVisualStyleBackColor = false;
             this.buttonNowaGra.Click += new System.EventHandler(this.buttonNowaGra_Click);
             // 
             // buttonWyjście
             // 
             this.buttonWyjście.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonWyjście.Location = new System.Drawing.Point(351, 317);
+            this.buttonWyjście.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWyjście.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold);
+            this.buttonWyjście.ForeColor = System.Drawing.Color.Gold;
+            this.buttonWyjście.Image = global::Unstable.Properties.Resources.Button;
+            this.buttonWyjście.Location = new System.Drawing.Point(351, 411);
             this.buttonWyjście.MaximumSize = new System.Drawing.Size(128, 64);
             this.buttonWyjście.MinimumSize = new System.Drawing.Size(128, 64);
             this.buttonWyjście.Name = "buttonWyjście";
@@ -64,22 +72,22 @@
             this.buttonWyjście.UseVisualStyleBackColor = true;
             this.buttonWyjście.Click += new System.EventHandler(this.buttonWyjście_Click);
             // 
-            // buttonWczytajGrę
+            // buttonOpcjeGry
             // 
-            this.buttonWczytajGrę.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonWczytajGrę.Location = new System.Drawing.Point(351, 225);
-            this.buttonWczytajGrę.MaximumSize = new System.Drawing.Size(128, 64);
-            this.buttonWczytajGrę.MinimumSize = new System.Drawing.Size(128, 64);
-            this.buttonWczytajGrę.Name = "buttonWczytajGrę";
-            this.buttonWczytajGrę.Size = new System.Drawing.Size(128, 64);
-            this.buttonWczytajGrę.TabIndex = 3;
-            this.buttonWczytajGrę.Text = "Wczytaj Grę";
-            this.buttonWczytajGrę.UseVisualStyleBackColor = true;
-            this.buttonWczytajGrę.Click += new System.EventHandler(this.buttonWczytajGrę_Click);
-            // 
-            // aktualizator
-            // 
-            this.aktualizator.Tick += new System.EventHandler(this.aktualizator_Tick);
+            this.buttonOpcjeGry.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOpcjeGry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOpcjeGry.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold);
+            this.buttonOpcjeGry.ForeColor = System.Drawing.Color.Gold;
+            this.buttonOpcjeGry.Image = global::Unstable.Properties.Resources.Button;
+            this.buttonOpcjeGry.Location = new System.Drawing.Point(351, 319);
+            this.buttonOpcjeGry.MaximumSize = new System.Drawing.Size(128, 64);
+            this.buttonOpcjeGry.MinimumSize = new System.Drawing.Size(128, 64);
+            this.buttonOpcjeGry.Name = "buttonOpcjeGry";
+            this.buttonOpcjeGry.Size = new System.Drawing.Size(128, 64);
+            this.buttonOpcjeGry.TabIndex = 3;
+            this.buttonOpcjeGry.Text = "Opcje Gry";
+            this.buttonOpcjeGry.UseVisualStyleBackColor = true;
+            this.buttonOpcjeGry.Click += new System.EventHandler(this.buttonOpcjeGry_Click);
             // 
             // wersjaGry
             // 
@@ -107,6 +115,23 @@
             this.labelTerrorOfDragons.TabIndex = 5;
             this.labelTerrorOfDragons.Text = "Terror Of Dragons";
             // 
+            // buttonWczytajGrę
+            // 
+            this.buttonWczytajGrę.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonWczytajGrę.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWczytajGrę.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold);
+            this.buttonWczytajGrę.ForeColor = System.Drawing.Color.Gold;
+            this.buttonWczytajGrę.Image = global::Unstable.Properties.Resources.Button;
+            this.buttonWczytajGrę.Location = new System.Drawing.Point(351, 227);
+            this.buttonWczytajGrę.MaximumSize = new System.Drawing.Size(128, 64);
+            this.buttonWczytajGrę.MinimumSize = new System.Drawing.Size(128, 64);
+            this.buttonWczytajGrę.Name = "buttonWczytajGrę";
+            this.buttonWczytajGrę.Size = new System.Drawing.Size(128, 64);
+            this.buttonWczytajGrę.TabIndex = 6;
+            this.buttonWczytajGrę.Text = "Wczytaj Grę";
+            this.buttonWczytajGrę.UseVisualStyleBackColor = true;
+            this.buttonWczytajGrę.Click += new System.EventHandler(this.buttonWczytajGrę_Click);
+            // 
             // MenuGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,9 +139,10 @@
             this.BackgroundImage = global::Unstable.Properties.Resources.TłoNowaGra;
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.ControlBox = false;
+            this.Controls.Add(this.buttonWczytajGrę);
             this.Controls.Add(this.labelTerrorOfDragons);
             this.Controls.Add(this.wersjaGry);
-            this.Controls.Add(this.buttonWczytajGrę);
+            this.Controls.Add(this.buttonOpcjeGry);
             this.Controls.Add(this.buttonWyjście);
             this.Controls.Add(this.buttonNowaGra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -125,7 +151,6 @@
             this.Name = "MenuGlowne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuGlowne";
-            this.Load += new System.EventHandler(this.MenuGlowne_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,10 +160,9 @@
 
         private System.Windows.Forms.Button buttonNowaGra;
         private System.Windows.Forms.Button buttonWyjście;
-        private System.Windows.Forms.Button buttonWczytajGrę;
-        private System.Windows.Forms.Timer aktualizator;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button buttonOpcjeGry;
         private System.Windows.Forms.Label wersjaGry;
         private System.Windows.Forms.Label labelTerrorOfDragons;
+        private System.Windows.Forms.Button buttonWczytajGrę;
     }
 }

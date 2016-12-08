@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie panelu ekwipunku
+    /// </summary>
     public partial class Ekwipunek : Form
     {
         private bool[] ruchPlecakSlot = new bool[47];
         List<PictureBox> Sloty = new List<PictureBox>();
-   
+
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public Ekwipunek(Launcher dane)
@@ -23,7 +29,7 @@ namespace Unstable
 
             daneLauncher = dane;
 
-            #region przypisanieSlotówDoTablicy
+            #region PrzypisanieSlotówDoTablicy
             Sloty.Add(staraLokacja);
             Sloty.Add(plecakSlot1);
             Sloty.Add(plecakSlot2);
@@ -79,9 +85,17 @@ namespace Unstable
                 {
                     daneLauncher.danePlecakSlot[i].obraz.Image = daneLauncher.ZardzewiałyMiecz.Image;
                 }
-                if(daneLauncher.danePlecakSlot[i].id==1000)
+                if (daneLauncher.danePlecakSlot[i].id == 2)
+                {
+                    daneLauncher.danePlecakSlot[i].obraz.Image = daneLauncher.ZbutwiałyŁuk.Image;
+                }
+                if (daneLauncher.danePlecakSlot[i].id==1000)
                 {
                     daneLauncher.danePlecakSlot[i].obraz.Image = daneLauncher.MieczSquadaka.Image;
+                }
+                if (daneLauncher.danePlecakSlot[i].id == 1001)
+                {
+                    daneLauncher.danePlecakSlot[i].obraz.Image = daneLauncher.ŁukSquadaka.Image;
                 }
             }
 
@@ -98,24 +112,20 @@ namespace Unstable
                 ruchPlecakSlot[i] = false;
             }
             daneLauncher.statystykiPrzedmiotu = labelStatystykiPrzedmiotu;
+            labelStanZłota.Text = Convert.ToString(daneLauncher.daneGracz.złoto) + " złota";
+
+            daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
 
             zapiszDane();
 
             #region Test
             daneLauncher.danePlecakSlot[2].exists = true;
-            daneLauncher.danePlecakSlot[2].id = 2;
-<<<<<<< HEAD
-            daneLauncher.danePlecakSlot[46].exists = true; // łuk
-            daneLauncher.danePlecakSlot[2].id = 2; // łuk
-=======
-            /*daneLauncher.danePlecakSlot[46].exists = true; // łuk
-            daneLauncher.danePlecakSlot[2].id = 2; // łuk*/
->>>>>>> refs/remotes/origin/Unstable1.1
+            daneLauncher.danePlecakSlot[2].id = 3;
 
             #endregion
         }
 
-        private void Statystyki_KeyDown(object sender, KeyEventArgs e)
+        private void Ekwipunek_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.I | e.KeyCode == Keys.Escape)
             {
@@ -148,10 +158,10 @@ namespace Unstable
             }
             if (daneLauncher.komenda == "squadak")
             {
-                zapiszDane();
+                Komendy.MieczProgramisty metodaKomendy = new Komendy.MieczProgramisty(daneLauncher);
+                metodaKomendy.WykonajKomendę();
+                zamknijFormę();
             }
-            Komendy.MieczProgramisty metodaKomendy = new Komendy.MieczProgramisty(daneLauncher);
-            metodaKomendy.WykonajKomendę(this);
         }
 
         private void akcjaNaSlocie(int numerSlotu)
@@ -210,22 +220,21 @@ namespace Unstable
             string obrażenia="";
 
             if (daneLauncher.danePlecakSlot[numerSlotu].id == 1) nazwa = "Zardzewiały Miecz";
-            if (daneLauncher.danePlecakSlot[numerSlotu].id == 2) nazwa = "Czerwona Mikstura(M)";
+            if (daneLauncher.danePlecakSlot[numerSlotu].id == 2) nazwa = "Zbutwiały Łuk";
+            if (daneLauncher.danePlecakSlot[numerSlotu].id == 3) nazwa = "Czerwona Mikstura(M)";
             if (daneLauncher.danePlecakSlot[numerSlotu].id == 1000) nazwa = "Miecz Squadaka";
+            if (daneLauncher.danePlecakSlot[numerSlotu].id == 1001) nazwa = "Łuk Squadaka";
 
             if (daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[0] != 0 & daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[1] != 0) obrażenia = Convert.ToString(daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[0] + "-" + daneLauncher.danePlecakSlot[numerSlotu].dmgZwarcie[1]);
+            if (daneLauncher.danePlecakSlot[numerSlotu].dmgDystans[0] != 0 & daneLauncher.danePlecakSlot[numerSlotu].dmgDystans[1] != 0) obrażenia = Convert.ToString(daneLauncher.danePlecakSlot[numerSlotu].dmgDystans[0] + "-" + daneLauncher.danePlecakSlot[numerSlotu].dmgDystans[1]);
 
-            if(daneLauncher.danePlecakSlot[numerSlotu].exists==true)
+            if (daneLauncher.danePlecakSlot[numerSlotu].exists==true)
             {
                 daneLauncher.statystykiPrzedmiotu.Text += nazwa+"\n";
                 if (obrażenia != "") daneLauncher.statystykiPrzedmiotu.Text +="Obrażenia: " + obrażenia + "\n";
             }
             daneLauncher.statystykiPokazywane = true;
         }
-
-        
-
-        
 
         private void zapiszDane()
         {
@@ -249,13 +258,20 @@ namespace Unstable
                 }
             }
             zapiszDane();
-            daneLauncher.timerStatystyki.Enabled = true;
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            metodaUniwersalne.uruchomTimery();
             timerRuch.Enabled = false;
             Sloty.Clear();
             this.Close();
         }
 
-        #region KlikanieNaPrzedmioty
+        #region KursorNaPrzedmiotach
+        private void przedmiotyFabularne_Click(object sender, EventArgs e)
+        {
+            PrzedmiotyFabularne formaPrzedmiotyFabularne = new PrzedmiotyFabularne(daneLauncher);
+            formaPrzedmiotyFabularne.ShowDialog();
+        }
+
         private void plecakSlot1_Click(object sender, EventArgs e)
         {
             akcjaNaSlocie(1);

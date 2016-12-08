@@ -50,10 +50,7 @@
             this.underGracz = new System.Windows.Forms.PictureBox();
             this.underMob = new System.Windows.Forms.PictureBox();
             this.timerStrzałaGracz = new System.Windows.Forms.Timer(this.components);
-<<<<<<< HEAD
-=======
             this.timerNPC = new System.Windows.Forms.Timer(this.components);
->>>>>>> refs/remotes/origin/Unstable1.1
             this.panelStatystyk.SuspendLayout();
             this.poleGry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rozdajStatystyki)).BeginInit();
@@ -178,11 +175,7 @@
             this.poleGry.Controls.Add(this.underGracz);
             this.poleGry.Controls.Add(this.underMob);
             this.poleGry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-<<<<<<< HEAD
-            this.poleGry.Location = new System.Drawing.Point(3, -47);
-=======
-            this.poleGry.Location = new System.Drawing.Point(3, -91);
->>>>>>> refs/remotes/origin/Unstable1.1
+            this.poleGry.Location = new System.Drawing.Point(3, -3);
             this.poleGry.Name = "poleGry";
             this.poleGry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.poleGry.Size = new System.Drawing.Size(780, 450);
@@ -279,14 +272,11 @@
             this.timerStrzałaGracz.Interval = 1;
             this.timerStrzałaGracz.Tick += new System.EventHandler(this.timerStrzałaGracz_Tick);
             // 
-<<<<<<< HEAD
-=======
             // timerNPC
             // 
             this.timerNPC.Enabled = true;
             this.timerNPC.Interval = 1;
             // 
->>>>>>> refs/remotes/origin/Unstable1.1
             // MapaTestowa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,10 +286,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.panelStatystyk);
             this.Controls.Add(this.poleGry);
-<<<<<<< HEAD
-=======
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
->>>>>>> refs/remotes/origin/Unstable1.1
             this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MapaTestowa";
@@ -342,9 +329,6 @@
         private System.Windows.Forms.PictureBox strzałaGracz;
         private System.Windows.Forms.Timer timerStrzałaGracz;
         private System.Windows.Forms.PictureBox rozdajStatystyki;
-<<<<<<< HEAD
-=======
         private System.Windows.Forms.Timer timerNPC;
->>>>>>> refs/remotes/origin/Unstable1.1
     }
 }

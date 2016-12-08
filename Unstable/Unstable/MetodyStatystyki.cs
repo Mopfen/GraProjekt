@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Przechowuje metody wykorzystywane głównie w klasie Statystyki
+    /// </summary>
     class MetodyStatystyki
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public MetodyStatystyki(Launcher dane)
@@ -44,11 +50,8 @@ namespace Unstable
         {
             while (daneLauncher.daneGracz.exp >= daneLauncher.daneGracz.expMax)
             {
-                daneLauncher.soundGracz.URL = "lvUp.wav";
-<<<<<<< HEAD
-                daneLauncher.soundGracz.Ctlcontrols.play();
-=======
->>>>>>> refs/remotes/origin/Unstable1.1
+                Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+                metodaMuzyka.SoundEffect(daneLauncher.soundGracz, "lvUp.wav");
                 daneLauncher.daneGracz.lv++;
                 daneLauncher.daneGracz.exp -= daneLauncher.daneGracz.expMax;
                 daneLauncher.daneGracz.expMax += 5;
@@ -65,10 +68,8 @@ namespace Unstable
         {
             Walka metodaWalka = new Walka(daneLauncher);
 
-            metodaWalka.dmgZwarcieGracz1();
-            metodaWalka.dmgZwarcieGracz2();
-            metodaWalka.dmgDystansGracz1();
-            metodaWalka.dmgDystansGracz2();
+            metodaWalka.dmgZwarcie();
+            metodaWalka.dmgDystans();
             hpMaxGracz();
             manaMaxGracz();
             szansaKrytykGracz();

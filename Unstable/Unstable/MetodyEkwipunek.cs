@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Przechowuje metody wykorzystywane głównie w klasie Ekwipunek
+    /// </summary>
     class MetodyEkwipunek
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public MetodyEkwipunek(Launcher dane)
@@ -19,26 +25,34 @@ namespace Unstable
             daneLauncher = dane;
         }
 
+        /// <summary>
+        /// Metoda aktualizuje statystyki przedmiotów w ekwipunku
+        /// </summary>
         internal void aktualizujDaneWyposażenia()
         {
             for (int i = 1; i <= 46; i++)
             {
+                //Hełm:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 40) & daneLauncher.danePlecakSlot[i].exists == true)
                 {
                     // statystyki hełmu
                 }
+                //Zbroja:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 106) & daneLauncher.danePlecakSlot[i].exists == true)
                 {
                     // statystyki zbroji
                 }
+                //Spodnie:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 170) & daneLauncher.danePlecakSlot[i].exists == true)
                 {
                     // statystyki spodni
                 }
+                //Buty:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(311, 236) & daneLauncher.danePlecakSlot[i].exists == true)
                 {
                     // statystyki butów
                 }
+                //Miecz:
                 if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(247, 170))
                 {
                     if (daneLauncher.danePlecakSlot[i].exists == true)
@@ -55,18 +69,31 @@ namespace Unstable
 
                         daneLauncher.daneGracz.posiadaMiecz = false;
                     }
-
                 }
-                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(380, 170) & daneLauncher.danePlecakSlot[i].exists == true)
+                //Łuk:
+                if (daneLauncher.danePlecakSlot[i].obraz.Location == new Point(380, 170))
                 {
+                    if (daneLauncher.danePlecakSlot[i].exists == true)
+                    {
+                        daneLauncher.daneBonusyGracz.dmgDystans[0] = daneLauncher.danePlecakSlot[i].dmgDystans[0];
+                        daneLauncher.daneBonusyGracz.dmgDystans[1] = daneLauncher.danePlecakSlot[i].dmgDystans[1];
 
-                    // statystyki łuku
+                        daneLauncher.daneGracz.posiadaŁuk = true;
+                    }
+                    else
+                    {
+                        daneLauncher.daneBonusyGracz.dmgDystans[0] = 0;
+                        daneLauncher.daneBonusyGracz.dmgDystans[1] = 0;
 
-                    daneLauncher.daneGracz.posiadaŁuk = true;
+                        daneLauncher.daneGracz.posiadaŁuk = false;
+                    }
                 }
             }
         }
 
+        /// <summary>
+        /// Metoda sprawdza, czy przestawienie przedmiotu w ekwipunku jest możliwe
+        /// </summary>
         internal bool czyPrzestawienieMożliwe(int numerSlotu, int i, int LocationX, int LocationY, PictureBox staraLokacja, bool przestaw, bool elementWyposażenia1, bool elementWyposażenia2)
         {
             if (przestaw == true & daneLauncher.danePlecakSlot[i].obraz.Location == new Point(LocationX, LocationY))
@@ -144,6 +171,35 @@ namespace Unstable
         }
 
         /// <summary>
+        /// Metoda dodaje przedmiot fabularny do ekwipunku
+        /// </summary>
+        internal void DodajFabularnyItem()
+        {
+            bool podniesiono = false;
+            while (true)
+            {
+                podniesiono = sprawdzDostepnySlotFabularny(21, 90); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(73, 90); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(125, 90); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(177, 90); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(229, 90); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(281, 90); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(333, 90); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(385, 90); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(21, 142); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(73, 142); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(125, 142); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(177, 142); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(229, 142); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(281, 142); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(333, 142); if (podniesiono == true) break;
+                podniesiono = sprawdzDostepnySlotFabularny(385, 142); if (podniesiono == true) break;
+                // komunikat brak miejsca w eq
+                break;
+            }
+        }
+
+        /// <summary>
         /// Metoda wyposaża automatycznie gracza w przedmiot, który został wywołałny komendą.
         /// </summary>
         /// <param name="LokacjaX"></param>
@@ -163,6 +219,22 @@ namespace Unstable
                     daneLauncher.danePlecakSlot[i].Lokacja = kopiaLokacji;
                 }
             }
+        }
+
+        /// <summary>
+        /// Metoda sprawdza, czy gracz posiada wymgany przedmiot fabularny. Jeśli tak, używa go.
+        /// </summary>
+        internal bool użyjFabularnegoItemu(int id)
+        {
+            for(int i=1; i<=16; i++)
+            {
+                if(daneLauncher.daneFabularnyItem[i].id==id)
+                {
+                    daneLauncher.daneFabularnyItem[i] = new Launcher.ZmienneEkwipunku();
+                    return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>
@@ -188,6 +260,33 @@ namespace Unstable
                                 daneLauncher.danePlecakSlot[j].Lokacja = kopiaLokacji;
                                 return true;
                             }
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Metoda sprawdza, czy w ekwipunku jest wolne miejsce na przedmiot fabularny. Jest używana w metodzie DodajFabularnyItem(int id).
+        /// </summary>
+        private bool sprawdzDostepnySlotFabularny(int LokacjaX, int LokacjaY)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if (daneLauncher.daneDrop[i].exists == true & daneLauncher.daneDrop[i].fabularny == true)
+                {                
+                    for (int j = 1; j <= 16; j++)
+                    {
+                        if (daneLauncher.daneFabularnyItem[j].Lokacja == new System.Drawing.Point(LokacjaX, LokacjaY) & daneLauncher.daneFabularnyItem[j].exists == false)
+                        {
+                            Point kopiaLokacji = new Point();
+                            kopiaLokacji = daneLauncher.daneFabularnyItem[j].Lokacja;
+                            daneLauncher.daneFabularnyItem[j] = daneLauncher.daneDrop[i];
+                            daneLauncher.daneDrop[i].obraz.Visible = false;
+                            daneLauncher.daneDrop[i] = new Launcher.ZmienneEkwipunku();
+                            daneLauncher.daneFabularnyItem[j].Lokacja = kopiaLokacji;
+                            return true;
                         }
                     }
                 }

@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za wyświetlenie informacji po wściśnięciu przycisku Start w Launcherze
+    /// </summary>
     public partial class OkienkoInformacji : Form
     {
         public OkienkoInformacji()
@@ -18,6 +21,11 @@ namespace Unstable
         }
 
         private void alaButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void OkienkoInformacji_KeyDown(object sender, KeyEventArgs e)
         {
             this.Close();
         }

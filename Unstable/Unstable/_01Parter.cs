@@ -13,17 +13,24 @@ using System.Linq.Expressions;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie lokacji Parter (mapa1)
+    /// </summary>
     public partial class _01Parter : Form
     {
-        List<PictureBox> przeszkody = new List<PictureBox>();
         List<PictureBox> alaButtons = new List<PictureBox>();
         List<Label> odpowiedzi = new List<Label>();
         bool[] koniecDialogu = new bool[20];
         bool cutScena = false;
         bool cutScenaBegin = false;
+        bool dostępNaPierwszePiętro = false;
+        bool pokazSamouczekNoweZadanie = false;
 
         Thread wątekCutScena;
 
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public _01Parter(Launcher dane)
@@ -34,13 +41,10 @@ namespace Unstable
 
             DoubleBuffered = true;
 
-<<<<<<< HEAD
-=======
             this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
 
->>>>>>> refs/remotes/origin/Unstable1.1
             #region Test
-            timerGracz.Interval = 1;
+            //timerGracz.Interval = 1;
 
             #endregion
             #region WczytajDane
@@ -51,18 +55,28 @@ namespace Unstable
             daneLauncher.daneGracz.antyRozmycie = underGracz;
             daneLauncher.poleGry = poleGry;
             daneLauncher.hitLog = hitLog;
+            daneLauncher.używanaBroń = używanaBroń;
 
             if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[1] == false)
             {
+                daneLauncher.daneNPC[0].bazowyObraz.Image = daneLauncher.PerqunStand.Image;
                 daneLauncher.daneNPC[0].obraz = Perqun;
                 daneLauncher.daneNPC[0].antyRozmycie = underPerqun;
                 daneLauncher.daneNPC[0].exists = true;
+
+                daneLauncher.daneMapa[1].misjaFabularnaWykonana.Add(false);
             }
             else
             {
                 Perqun.Visible = false;
                 Launcher.ZmiennePostaci resetuj = new Launcher.ZmiennePostaci();
                 daneLauncher.daneNPC[0] = resetuj;
+
+                if(daneLauncher.daneMapa[1].misjaFabularnaWykonana[0]==true)
+                {
+                    poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Parter;
+                    dostępNaPierwszePiętro = true;
+                }
             }
 
             #region cutScena
@@ -102,45 +116,67 @@ namespace Unstable
             {
                 daneLauncher.daneGracz.obraz.Location = new Point(198, 40);
             }
-<<<<<<< HEAD
-
-=======
             if (daneLauncher.daneMapa[1].gdzieOstatnio == 2)
             {
                 daneLauncher.daneGracz.obraz.Location = new Point(700, 315);
             }
->>>>>>> refs/remotes/origin/Unstable1.1
+            if (daneLauncher.daneMapa[1].gdzieOstatnio == 3)
+            {
+                daneLauncher.daneGracz.obraz.Location = new Point(110, 40);
+            }
             #endregion
             #region Przeszkody
-            przeszkody.Add(beczka1);
-            przeszkody.Add(beczka2);
-            przeszkody.Add(beczka3);
-            przeszkody.Add(beczki);
-            przeszkody.Add(drzwiRightOpened);
-            przeszkody.Add(ściana1);
-            przeszkody.Add(ściana2);
-            przeszkody.Add(ściana3);
-            przeszkody.Add(stolik);
-
-            for (int i = 12, j = 0; i <= 21; i++, j++)
+            if (daneLauncher.daneMapa[daneLauncher.numerMapy].częśćMapyOdwiedzona[daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] == false)
             {
-                if (j > 8) j = 8;
-                if (daneLauncher.daneMapa[1].częśćMapyOdwiedzona[1] == false)
-                {
-                    daneLauncher.danePrzeszkoda[i].exists = true;
-                }
-                daneLauncher.danePrzeszkoda[i].obraz = przeszkody[j];
-                if (daneLauncher.danePrzeszkoda[i].exists == false)
-                {
-                    daneLauncher.danePrzeszkoda[i].obraz.Visible = false;
-                }
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, false, beczka1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,1));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, beczka2, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,2));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, beczka3, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,3));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, beczki, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,4));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, drzwiRightOpened, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,5));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, ściana1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,6));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, ściana2, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,7));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, ściana3, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,8));
+                daneLauncher.danePrzeszkoda.Add(new Launcher.ZmienneObiektów(true, true, stolik, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji,9));
             }
-            daneLauncher.daneMapa[1].częśćMapyOdwiedzona[1] = true;
-            daneLauncher.daneMapa[1].gdzieOstatnio = 1;
+            else
+            {
+                #region PonownePrzypisanieObrazków
+                foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerMapy == daneLauncher.numerMapy & x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
+                {
+                    switch (daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].numerObiektu)
+                    {
+                        case 1: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka1; break;
+                        case 2: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka2; break;
+                        case 3: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczka3; break;
+                        case 4: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = beczki; break;
+                        case 5: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = drzwiRightOpened; break;
+                        case 6: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = ściana1; break;
+                        case 7: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = ściana2; break;
+                        case 8: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = ściana3; break;
+                        case 9: daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz = stolik; break;
+                    }
+                }
+
+                #endregion
+            }
+            foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerMapy == daneLauncher.numerMapy & x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji & x.exists == false))
+            {
+                daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)].obraz.Visible = false;
+            }
 
             #endregion
             #region ZatrzymajGracza
             daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = false;
+
+            #endregion
+            #region PrzypisanieTimerów
+            daneLauncher.timerGracz = timerGracz;
+            daneLauncher.timerAtakGracz = timerAtakGracz;
+            daneLauncher.timerMob = timerMob;
+            daneLauncher.timerAtakMob = timerAtakMob;
+            daneLauncher.timerNPC = timerNPC;
+            daneLauncher.timerStatystyki = timerStatystyki;
+            daneLauncher.timerStrzałaGracz = timerStrzałaGracz;
 
             #endregion
 
@@ -148,7 +184,10 @@ namespace Unstable
             daneLauncher.daneStrzała[0].obraz.Visible = false;
 
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
-            daneLauncher.timerStatystyki = timerStatystyki;
+            daneLauncher.pokazNoweZadanie = pokazNoweZadanie;
+
+            daneLauncher.daneMapa[1].częśćMapyOdwiedzona[daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji] = true;
+            daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[1].gdzieOstatnio = daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji;
 
             #endregion
 
@@ -156,8 +195,18 @@ namespace Unstable
 
         private void rozdajStatystyki_Click(object sender, EventArgs e)
         {
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
+            metodaUniwersalne.zatrzymajTimery();
             formaStatystyki.ShowDialog();
+        }
+
+        private void pokazNoweZadanie_Click(object sender, EventArgs e)
+        {
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            Zadania formaZadania = new Zadania(daneLauncher);
+            metodaUniwersalne.zatrzymajTimery();
+            formaZadania.ShowDialog();
         }
 
         private void TheKeyDown(object sender, KeyEventArgs e)
@@ -173,29 +222,40 @@ namespace Unstable
                         daneLauncher.daneStrzała[0].obraz.Visible = false;
                         daneLauncher.daneStrzała[0].exists = false;
                         _01Piwnica map_01Piwnica = new _01Piwnica(daneLauncher);
-                        przeszkody.Clear();
                         alaButtons.Clear();
                         odpowiedzi.Clear();
                         this.Close();
                         map_01Piwnica.Show();
                     }
                     if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(wyjściePiętroPierwsze.Bounds))
-                    {
-                        daneLauncher.daneStrzała[0].obraz.Visible = false;
-                        daneLauncher.daneStrzała[0].exists = false;
-                        MapaTestowa map_01PiętroPierwsze = new MapaTestowa(daneLauncher);
-                        przeszkody.Clear();
-                        alaButtons.Clear();
-                        odpowiedzi.Clear();
-                        this.Close();
-                        map_01PiętroPierwsze.Show();
+                    { 
+                        if (dostępNaPierwszePiętro == true)
+                        {
+                            daneLauncher.daneStrzała[0].obraz.Visible = false;
+                            daneLauncher.daneStrzała[0].exists = false;
+                            _01PiętroPierwsze map_01PiętroPierwsze = new _01PiętroPierwsze(daneLauncher);
+                            alaButtons.Clear();
+                            odpowiedzi.Clear();
+                            this.Close();
+                            map_01PiętroPierwsze.Show();
+                        }
+                        else
+                        {
+                            MetodyEkwipunek metodaEkwipunek = new MetodyEkwipunek(daneLauncher);
+                            if(metodaEkwipunek.użyjFabularnegoItemu(9)==true)
+                            {
+                                poleGry.BackgroundImage = global::Unstable.Properties.Resources._01Parter;
+                                daneLauncher.daneMapa[1].misjaFabularnaWykonana[0] = true;
+                                dostępNaPierwszePiętro = true;
+                            }
+                        }
+                        
                     }
                     if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(wyjścieDziedziniec.Bounds))
                     {
                         daneLauncher.daneStrzała[0].obraz.Visible = false;
                         daneLauncher.daneStrzała[0].exists = false;
                         _01Dziedziniec map_01Dziedziniec = new _01Dziedziniec(daneLauncher);
-                        przeszkody.Clear();
                         alaButtons.Clear();
                         odpowiedzi.Clear();
                         this.Close();
@@ -203,7 +263,6 @@ namespace Unstable
                     }
                 }
             }
-
         }
 
         private void TheKeyUp(object sender, KeyEventArgs e)
@@ -224,9 +283,9 @@ namespace Unstable
             }
 
             metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneNPC[0]);
-            for (int i = 12; i <= 21; i++)
+            foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
             {
-                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[i]);
+                metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)]);
             }
             metodaMap.timerGraczMetoda();
         }
@@ -234,7 +293,7 @@ namespace Unstable
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz);
+            metodaMap.timerAtakGraczMetoda(daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
         private void timerNPC_Tick(object sender, EventArgs e)
@@ -276,31 +335,40 @@ namespace Unstable
                 }
 
                 metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.daneGracz);
-                for (int j = 0; j < 1; j++)
+                
+                foreach (var indeks in daneLauncher.danePrzeszkoda.Where(x => x.numerLokacji == daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji))
                 {
-                    for (int i = 12; i <= 21; i++)
-                    {
-                        metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.danePrzeszkoda[i]);
-                    }
-                    metodaMap.timerNPCMetoda(j);
+                    metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneNPC[0], daneLauncher.danePrzeszkoda[daneLauncher.danePrzeszkoda.IndexOf(indeks)]);
                 }
+                metodaMap.timerNPCMetoda(0);
             }
         }
 
         private void timerStatystyki_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-<<<<<<< HEAD
-            metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
-=======
             metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerNPC, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
->>>>>>> refs/remotes/origin/Unstable1.1
+
+            if(pokazSamouczekNoweZadanie == true & daneLauncher.samouczek == true)
+            {
+                pokazSamouczekNoweZadanie = false;
+                Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                metodaUniwersalne.zatrzymajTimery();
+
+                daneLauncher.samouczekObrazDemonstracyjny.Image = global::Unstable.Properties.Resources.SamouczekNoweZadanie;
+                daneLauncher.samouczekObrazKlawiszy.Image = global::Unstable.Properties.Resources.MyszSamouczekNoweZadanie;
+                daneLauncher.samouczekInstrukcja = "Aby zobaczyć zaaktualizowaną listę misji, wciśnij wykrzynik w prawym dolnym rogu (lub \"Q\").";
+                daneLauncher.samouczekInfo = "Gdy otrzymasz nowe zadanie lub zaaktualizujesz bierzące, pojawi się o tym informacja w postaci wykrzyknika w prawym dolnym rogu. Kliknięcie go pokaże Ci, o jakie zadanie konkretnie chodzi.";
+
+                Samouczek formaSamouczek = new Samouczek(daneLauncher);
+                formaSamouczek.ShowDialog();
+            }
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerStrzałaGraczMetoda(0, 1, 12, 4, 16);
+            metodaMap.timerStrzałaGraczMetoda(0, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
 
 
@@ -328,10 +396,10 @@ namespace Unstable
 
             Wątki.editInThread(this, true, value => labelDialogNPC.Visible = value);
 
-            string Tekst = "Co to za hałasy w piwnicy?! Kim jesteś i skąd się tu wziąłeś?! A z resztą,\nnie obchodzi mnie to. Powiedz mi tylko, czy nie uszkodziłeś moich beczek?";
+            string Tekst = "Co to za hałasy w piwnicy?! Kim jesteś i skąd się tu wziąłeś?! A z resztą, nie obchodzi mnie to. Powiedz mi tylko, czy nie uszkodziłeś moich beczek?";
             for (int i = 0; i < Tekst.Length; i++)
             {
-                metodaUniwersalne.wait(0.03);
+                metodaUniwersalne.wait(0.02);
                 Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
             }
             while(daneLauncher.danoOdpowiedź1==false & daneLauncher.danoOdpowiedź2 == false & daneLauncher.danoOdpowiedź3 == false)
@@ -353,30 +421,42 @@ namespace Unstable
             if (daneLauncher.danoOdpowiedź2 == true)
             {
                 daneLauncher.danoOdpowiedź2 = false;
-                Tekst = "Widzę już w Twoim spojrzeniu, że kłamiesz! Wynoś się stąd, ale już!\nZaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała:\n\"Pewnego dnia pojawi się wśród twych beczek ten, którego\nmusisz wyprawić na wielką podróż\".";
+                Tekst = "Widzę już w Twoim spojrzeniu, że kłamiesz! Wynoś się stąd, ale już! Zaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała: \"Pewnego dnia pojawi się wśród twych beczek ten, którego musisz wyprawić na wielką podróż\".";
                 for (int i = 0; i < Tekst.Length; i++)
                 {
-                    metodaUniwersalne.wait(0.03);
+                    metodaUniwersalne.wait(0.02);
                     Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
                 }
             }
             if (daneLauncher.danoOdpowiedź3 == true)
             {
                 daneLauncher.danoOdpowiedź3 = false;
-                Tekst = "A niech Cię szlag parszywcu! Wynoś się stąd, ale już!\nZaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała:\n\"Pewnego dnia pojawi się wśród twych beczek ten, którego\nmusisz wyprawić na wielką podróż\".";
+                Tekst = "A niech Cię szlag parszywcu! Wynoś się stąd, ale już! Zaraz... Chwila. Wieszczka mi to przepowiedziała! Powiedziała: \"Pewnego dnia pojawi się wśród twych beczek ten, którego musisz wyprawić na wielką podróż\".";
                 for (int i = 0; i < Tekst.Length; i++)
                 {
-                    metodaUniwersalne.wait(0.03);
+                    metodaUniwersalne.wait(0.02);
                     Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
                 }
             }
-            metodaUniwersalne.wait(5);
+            while (daneLauncher.danoOdpowiedź3 == false)
+            {
+                Wątki.editInThread(this, "Dalej", value => odpowiedź3.Text = value);
+                Wątki.editInThread(this, true, value => alaButtons[3].Visible = value);
+                Wątki.editInThread(this, true, value => odpowiedzi[3].Visible = value);
+                Wątki.editInThread(this, new Point(600, 87), value => alaButtons[3].Location = value);
+                Wątki.editInThread(this, new Point(626, 87), value => odpowiedzi[3].Location = value);
+            }
+            Wątki.editInThread(this, false, value => alaButtons[3].Visible = value);
+            Wątki.editInThread(this, false, value => odpowiedzi[3].Visible = value);
+            Wątki.editInThread(this, new Point(157, 87), value => alaButtons[3].Location = value);
+            Wątki.editInThread(this, new Point(183, 84), value => odpowiedzi[3].Location = value);
+            daneLauncher.danoOdpowiedź3 = false;
             Wątki.editInThread(this, "", value => labelDialogNPC.Text = value);
             daneLauncher.danoOdpowiedź3 = false;
             Tekst = "Ona się nigdy nie myli... No chodź, rozruszasz się trochę przed wyprawą.";
             for (int i = 0; i < Tekst.Length; i++)
             {
-                metodaUniwersalne.wait(0.03);
+                metodaUniwersalne.wait(0.02);
                 Wątki.editInThread(this, Convert.ToString(Tekst[i]), value => labelDialogNPC.Text += value);
             }
             Wątki.editInThread(this, "Wyjdź", value => odpowiedź1.Text = value);
@@ -388,12 +468,14 @@ namespace Unstable
             Wątki.editInThread(this, false, value => panelDialogu.Visible = value);
             Wątki.editInThread(this, true, value => panelStatystyk.Visible = value);
             daneLauncher.daneGracz.down = daneLauncher.daneGracz.up = false;
-            daneLauncher.daneQuest[1].nazwa = "Pomoc winiarza";
+            daneLauncher.daneQuest[1].nazwa = "Pomoc Winiarza";
             daneLauncher.daneQuest[1].exp = 5;
             daneLauncher.daneQuest[1].stan = 1;
             daneLauncher.daneQuest[1].etap = 1;
             daneLauncher.daneQuest[1].opisEtapu[1] = "Wyjdź na dziedziniec";
+            daneLauncher.noweGlowneZadanie = true;
             cutScena = false;
+            pokazSamouczekNoweZadanie = true;
         }
 
     }

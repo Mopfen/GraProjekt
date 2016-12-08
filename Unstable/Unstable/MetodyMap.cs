@@ -8,16 +8,20 @@ using System.Windows.Forms;
 namespace Unstable
 {
     /// <summary>
-    /// Zawiera główne polecenia wykonywane w formach podczas gry
+    /// Przechowuje metody wykorzystywane głównie w klasach lokacji
     /// </summary>
     class MetodyMap
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public MetodyMap(Launcher dane)
         {
             daneLauncher = dane;
         }
+        
         /// <summary>
         /// Metoda wykonująca czynności po wciśnięciu ustalonych klawiszy
         /// </summary>
@@ -37,18 +41,40 @@ namespace Unstable
             }
             if (e.KeyCode == Keys.X)
             {
-                if (daneLauncher.daneGracz.rodzajAtaku == true) daneLauncher.daneGracz.rodzajAtaku = false;
-                else daneLauncher.daneGracz.rodzajAtaku = true;
+                if (daneLauncher.daneGracz.rodzajAtaku == true & daneLauncher.daneGracz.posiadaŁuk == true)
+                {
+                    daneLauncher.używanaBroń.Image = global::Unstable.Properties.Resources.ZarysŁuku;
+                    daneLauncher.daneGracz.rodzajAtaku = false;
+                }
+                else
+                {
+                    if(daneLauncher.daneGracz.posiadaMiecz == true)
+                    {
+                        daneLauncher.używanaBroń.Image = global::Unstable.Properties.Resources.ZarysMiecza;
+                        daneLauncher.daneGracz.rodzajAtaku = true;
+                    }
+                }       
             }
             if (e.KeyCode == Keys.C)
             {
+                Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
                 Statystyki formaStatystyki = new Statystyki(daneLauncher);
+                metodaUniwersalne.zatrzymajTimery();
                 formaStatystyki.ShowDialog();
             }
             if (e.KeyCode == Keys.I)
             {
+                Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
                 Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
+                metodaUniwersalne.zatrzymajTimery();
                 formaEkwipunek.ShowDialog();
+            }
+            if(e.KeyCode == Keys.Q)
+            {
+                Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                Zadania formaZadanie = new Unstable.Zadania(daneLauncher);
+                metodaUniwersalne.zatrzymajTimery();
+                formaZadanie.ShowDialog();
             }
             if (e.KeyCode == Keys.Z)
             {
@@ -57,6 +83,7 @@ namespace Unstable
             }
 
         }
+        
         /// <summary>
         /// Metoda wykonująca czynności po puszczeniu ustalonych klawiszy
         /// </summary>
@@ -67,6 +94,7 @@ namespace Unstable
             if (e.KeyCode == Keys.Left) { daneLauncher.daneGracz.left = false; daneLauncher.daneGracz.zmianaKierunkuLeft = false; }
             if (e.KeyCode == Keys.Right) { daneLauncher.daneGracz.right = false; daneLauncher.daneGracz.zmianaKierunkuRight = false; }
         } 
+        
         /// <summary>
         /// Metoda wykonująca czynności w timerGracz
         /// </summary>
@@ -79,15 +107,19 @@ namespace Unstable
             metodaZmianaWygladu.ZmieńWygląd(daneLauncher.daneGracz);
             metodaPoruszanieSię.RuchPostaci(daneLauncher.daneGracz);
         }
+        
         /// <summary>
         /// Metoda wykonująca czynności w timerAtakGracz
         /// </summary>
-        internal void timerAtakGraczMetoda(Timer timerGracz)
+        internal void timerAtakGraczMetoda(int numerMapy, int numerLokacji)
         {
             Walka metodaWalka = new Walka(daneLauncher);
-            metodaWalka.AtakGracza(timerGracz);
+            metodaWalka.AtakGracza(numerMapy,numerLokacji);
         }
-
+        
+        /// <summary>
+        /// Metoda wykonująca czynności w timerMob
+        /// </summary>
         internal void timerMobMetoda(int indeks)
         {
             PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
@@ -98,10 +130,14 @@ namespace Unstable
             metodaPoruszanieSię.RuchPostaci(daneLauncher.daneMob[indeks]);
         }
 
+        /// <summary>
+        /// Metoda wykonująca czynności w timerMobAtak
+        /// </summary>
         internal void timerAtakMobMetoda()
         {
 
         }
+        
         /// <summary>
         /// Metoda wykonująca czynności w timerNPC
         /// </summary>
@@ -117,6 +153,9 @@ namespace Unstable
             metodaPoruszanieSię.RuchPostaci(daneLauncher.daneNPC[indeks]);
         }
 
+        /// <summary>
+        /// Planowane
+        /// </summary>
         internal void timerAtakNPCMetoda()
         {
 
@@ -125,21 +164,11 @@ namespace Unstable
         /// <summary>
         /// Metoda wykonująca czynności w timerStatystyki
         /// </summary>
-<<<<<<< HEAD
-        internal void timerStatystykiMetoda(Form forma, Timer timerGracz, Timer timerAtakGracz, Timer timerMob, Timer timerAtakMob, Timer timerStatystyki, Label labelHpGracz, Label labelManaGracz, Label labelLvGracz, Label labelExpGracz)
-=======
         internal void timerStatystykiMetoda(Form forma, Timer timerGracz, Timer timerAtakGracz, Timer timerMob, Timer timerAtakMob, Timer timerNPC, Timer timerStatystyki, Label labelHpGracz, Label labelManaGracz, Label labelLvGracz, Label labelExpGracz)
->>>>>>> refs/remotes/origin/Unstable1.1
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             MetodyStatystyki metodaStatystyki = new MetodyStatystyki(daneLauncher);
             Walka metodaWalka = new Unstable.Walka(daneLauncher);
-            Statystyki formaStatystyki = new Statystyki(daneLauncher);
-<<<<<<< HEAD
-            //Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher); // - BUG
-=======
->>>>>>> refs/remotes/origin/Unstable1.1
-            GameOver formaGameOver = new GameOver(daneLauncher, forma);
             labelHpGracz.Text = Convert.ToString("PŻ: " + daneLauncher.daneGracz.hp + "/" + daneLauncher.daneGracz.hpMax);
             labelManaGracz.Text = Convert.ToString("Mana: " + daneLauncher.daneGracz.mana + "/" + daneLauncher.daneGracz.manaMax);
             labelLvGracz.Text = Convert.ToString("Poziom: " + daneLauncher.daneGracz.lv);
@@ -154,6 +183,14 @@ namespace Unstable
             {
                 daneLauncher.rozdajStatystyki.Visible = false;
             }
+            if (daneLauncher.noweGlowneZadanie == true | daneLauncher.nowePoboczneZadanie == true)
+            {
+                daneLauncher.pokazNoweZadanie.Visible = true;
+            }
+            else
+            {
+                daneLauncher.pokazNoweZadanie.Visible = false;
+            }
             Tuple<bool, int> czyMobZabity = metodaWalka.śmierćMoba();
             if (czyMobZabity.Item1 == true)
             {
@@ -161,48 +198,32 @@ namespace Unstable
             }
             if (metodaWalka.śmierćGracza() == true)
             {
+                GameOver formaGameOver = new GameOver(daneLauncher, forma);
                 daneLauncher.daneGracz.exists = false;
-<<<<<<< HEAD
-                //daneLauncher.music.SoundLocation = "GameOver.wav";
-                //daneLauncher.music.Play();
-                formaGameOver.Show();
-                timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerStatystyki.Enabled = false;
-            }
-            if (metodaUniwersalne.CheckOpened(formaStatystyki.Name) /*| metodaUniwersalne.CheckOpened(formaEkwipunek.Name)*/)
-            {
-                daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
-                timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerStatystyki.Enabled = false;
-=======
                 daneLauncher.music.Ctlcontrols.stop();
                 daneLauncher.soundGracz.URL = "GameOver.wav";
                 timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerNPC.Enabled = timerStatystyki.Enabled = false;
                 formaGameOver.ShowDialog();
             }
-            if (metodaUniwersalne.CheckOpened(formaStatystyki.Name))
+            if (daneLauncher.wpisanoKomendę == true)
             {
-                daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
-                timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerNPC.Enabled = timerStatystyki.Enabled = false;
->>>>>>> refs/remotes/origin/Unstable1.1
-            }
-            else
-            {
-                if (daneLauncher.daneGracz.exists == true)
-                {
-                    if (daneLauncher.daneGracz.wykonanoAtak == false) timerGracz.Enabled = true;
-                    if (daneLauncher.daneMob[0].wykonanoAtak == false) timerMob.Enabled = true;
-<<<<<<< HEAD
-=======
-                    timerNPC.Enabled = true;
->>>>>>> refs/remotes/origin/Unstable1.1
-                    timerAtakGracz.Enabled = timerAtakMob.Enabled = true;
-                }
+                daneLauncher.wpisanoKomendę = false;
+                Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
+                metodaUniwersalne.wait(0.5);
+                formaEkwipunek.ShowDialog();
             }
         }
 
-        internal void timerStrzałaGraczMetoda(int ilośćMobow, int ilośćPrzeszkod, int indeksPierwszejPrzeszkody, int ilośćŚcian, int indeksPierwszejŚciany)
+        /// <summary>
+        /// Metoda wykonująca czynności w timerStrzałaGracz
+        /// </summary>
+        /// <param name="ilośćMobow"></param>
+        /// <param name="numerMapy"></param>
+        /// <param name="numerLokacji"></param>
+        internal void timerStrzałaGraczMetoda(int ilośćMobow, int numerMapy, int numerLokacji)
         {
             Walka metodaWalka = new Walka(daneLauncher);
-            metodaWalka.StrzalaGracz(ilośćMobow, ilośćPrzeszkod, indeksPierwszejPrzeszkody, ilośćŚcian,indeksPierwszejŚciany);
+            metodaWalka.StrzalaGracz(ilośćMobow, numerMapy, numerLokacji);
         }
     }
 }

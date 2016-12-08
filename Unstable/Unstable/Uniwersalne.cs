@@ -11,10 +11,14 @@ using System.Linq.Expressions;
 
 namespace Unstable
 {
-    /// <summary> Zawiera uniwersalne metody, których można użyć w całym programie.</summary>
+    /// <summary>
+    /// Zawiera uniwersalne metody, których można użyć w całym programie.
+    /// </summary>
     class Uniwersalne
     {
-        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public Uniwersalne(Launcher dane)
@@ -44,23 +48,19 @@ namespace Unstable
             return random.Next(min, max+1);
         }      
         /// <summary>
-        /// Metoda sprawdza czy forma jest aktualnie otwarta
-        /// (Zaczerpnięta ze strony http://stackoverflow.com/questions/3861602/how-to-check-if-a-windows-form-is-already-open-and-close-it-if-it-is)
+        /// Metoda zatrzymuje timery na mapie
         /// </summary>
-        /// <param name="name">Nazwa formy do sprawdzenia</param>
-        /// <returns></returns>
-        internal bool CheckOpened(string name)
+        internal void zatrzymajTimery()
         {
-            FormCollection fc = Application.OpenForms;
-
-            foreach (Form frm in fc)
-            {
-                if (frm.Text == name)
-                {
-                    return true;
-                }
-            }
-            return false;
+            daneLauncher.daneGracz.up = daneLauncher.daneGracz.down = daneLauncher.daneGracz.left = daneLauncher.daneGracz.right = daneLauncher.daneGracz.zmianaKierunkuUp = daneLauncher.daneGracz.zmianaKierunkuDown = daneLauncher.daneGracz.zmianaKierunkuLeft = daneLauncher.daneGracz.zmianaKierunkuRight = false;
+            daneLauncher.timerGracz.Enabled = daneLauncher.timerAtakGracz.Enabled = daneLauncher.timerMob.Enabled = daneLauncher.timerAtakMob.Enabled = daneLauncher.timerNPC.Enabled = daneLauncher.timerStatystyki.Enabled = daneLauncher.timerStrzałaGracz.Enabled = false;
+        }
+        /// <summary>
+        /// Metoda uruchamia timery na mapie
+        /// </summary>
+        internal void uruchomTimery()
+        {
+            daneLauncher.timerGracz.Enabled = daneLauncher.timerAtakGracz.Enabled = daneLauncher.timerMob.Enabled = daneLauncher.timerAtakMob.Enabled = daneLauncher.timerNPC.Enabled = daneLauncher.timerStatystyki.Enabled = daneLauncher.timerStrzałaGracz.Enabled = true;
         }
         /// <summary>
         /// Metoda wstrzymuje wszelkie akcje w wątku na okresloną liczbę sekund
@@ -71,9 +71,5 @@ namespace Unstable
             double miliseconds = seconds * 1000;
             Thread.Sleep(Convert.ToInt32(miliseconds));
         }
-
-        
-
-        
     }
 }

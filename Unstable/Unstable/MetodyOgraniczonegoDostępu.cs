@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Zawiera metody, do których dostęp powinna mieć tylko nieliczna częsć klas
+    /// </summary>
     public partial class MetodyOgraniczonegoDostępu: Form
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         protected MetodyOgraniczonegoDostępu() { }
@@ -39,12 +45,15 @@ namespace Unstable
 
                     daneLauncher.daneDrop[i] = new Launcher.ZmienneEkwipunku();
                 }
+                if (i < 17)
+                {
+                    daneLauncher.daneFabularnyItem[i] = new Launcher.ZmienneEkwipunku();
+                }
                 if (i < 47)
                 {
                     daneLauncher.danePlecakSlot[i] = new Launcher.ZmienneEkwipunku();
                 }
 
-                daneLauncher.danePrzeszkoda[i] = new Launcher.ZmienneObiektów();
                 daneLauncher.daneQuest[i] = new Launcher.ZmienneMisji();
                 daneLauncher.daneMapa[i] = new Launcher.ZmienneMap();
 
@@ -56,9 +65,11 @@ namespace Unstable
                         daneLauncher.daneNPC[i].dotartoDoY[j] = false;
                     }
                     daneLauncher.daneMapa[i].częśćMapyOdwiedzona[j] = false;
+                    daneLauncher.daneMapa[i].drop[j] = false;
                 }
             }
             daneLauncher.daneGracz.exists = true;
+            daneLauncher.daneQuest[0].nazwa = "Przeznaczenie";
             daneLauncher.daneQuest[0].stan = 1;
             daneLauncher.daneQuest[0].etap = 1;
             daneLauncher.daneQuest[0].exp = 100;

@@ -11,7 +11,9 @@ using System.Threading;
 
 namespace Unstable
 {
-    /// <summary> Odpowiada za uruchomienie i działanie programu. Przechowuje większość zmiennych, na których pracuje program. </summary>
+    /// <summary> 
+    /// Odpowiada za uruchomienie i działanie programu. Przechowuje większość zmiennych, na których pracuje program.
+    /// </summary>
     public partial class Launcher : MetodyOgraniczonegoDostępu
     {
         /// <summary>
@@ -19,6 +21,7 @@ namespace Unstable
         /// </summary>
         internal class ZmiennePostaci
         {
+            internal PictureBox bazowyObraz = new PictureBox(); // zmienna przechowująca bazowy wygląd postaci
             internal PictureBox obraz; // zmienna odpowiadająca za wygląd postaci
             internal PictureBox antyRozmycie; // zmienna niwelująca rozmycie podczas poruszania się obiektu
 
@@ -27,8 +30,8 @@ namespace Unstable
             internal int hp=25; //
             internal int hpMax=25; // zmienne odpowiadające za ilość punktów życia postaci
 
-            internal int mana=25; //
-            internal int manaMax=25; // zmienne odpowiadają za ilość punktów many postaci
+            internal int mana=15; //
+            internal int manaMax=15; // zmienne odpowiadają za ilość punktów many postaci
 
             internal short szansaKryta=0; // zmienna opowiada za procentową szansę na krytyczne uderzenie postaci
 
@@ -50,8 +53,8 @@ namespace Unstable
             internal int inteligencja = 1; //
             internal int wytrzymałość = 1; //
             internal int szczęście = 1; //
-            internal int obronaGracz = 0; //
-            internal int odpornośćGracz = 0; // statystyki gracza
+            internal int obrona = 0; //
+            internal int odporność = 0; // statystyki postaci
 
             internal bool up = false; //
             internal bool down = false; //
@@ -75,13 +78,32 @@ namespace Unstable
             internal bool[] dotartoDoY = new bool[10]; // zmienne określają, czy potać dotarła do danego punktu
 
             internal Label labelhp; // pokazuje stan zdrowia postaci
+
+            internal int złoto = 0; // zmienna określa, ile złota ma przy sobie postać
         }
         /// <summary>
         /// Klasa przechowuje zmienne, na których opiera się każdy obiekt
         /// </summary>
         internal class ZmienneObiektów
         {
+            internal ZmienneObiektów() { }
+            internal ZmienneObiektów(bool exists, bool ściana, PictureBox obraz, int numerMapy, int numerLokacji, int numerObiektu)
+            {
+                this.exists = exists;
+                this.ściana = ściana;
+                this.obraz = obraz;
+                this.numerMapy = numerMapy;
+                this.numerLokacji = numerLokacji;
+                this.numerObiektu = numerObiektu;
+            }
+
             internal PictureBox obraz; // zmienna odpowiadająca za wygląd obiektu
+
+            internal int numerMapy = 0; // zmienna określa, na jakiej mapie znajduje się obiekt
+            internal int numerLokacji = 0; // zmienna określa, w której częsci mapy znajduję się obiekt
+            internal int numerObiektu = 0; // zmienna okresla, jaki numer ma obiekt na mapie
+
+            internal bool ściana = false; // zmienna określa, czy obiekt jest ścianą
 
             internal bool exists = false; // zmienna określa, czy obiekt istnieje
         }
@@ -112,7 +134,9 @@ namespace Unstable
             internal int mana = 0; // zmienna przechowuje dane o statystyce przedmiotu: Punkty Many
             internal short szansaKryta = 0; // zmienna przechowuje dane o statystyce przedmiotu: Szansa na krytyczne uderzenie
 
-            internal short id = 0; // określa id przedmiotu
+            internal short id = 0; // zmienna określa id przedmiotu
+
+            internal bool fabularny = false; // zmienna określa, czy przedmiot jest fabularny
 
             internal int numerLokacji = 0; // określa numer lokacji, w której znajduje się przedmiot
         }
@@ -140,6 +164,8 @@ namespace Unstable
             internal short etap = 0; // zmienna określa etap, na którym znajduje się misja
             internal string []opisEtapu = new string[10]; // tablica przechowująca opisy etapów poszczególnych misji
 
+            internal bool poboczna = false; // zmienna okresla, czy zadanie jest misją poboczną
+
             internal string nazwa; // zmienna przechowująca nazwę misji
 
             internal int exp = 0; // zmienna określa, ile punktów doświadczenia dostaje się za pomyślne ukończenie misji
@@ -150,12 +176,16 @@ namespace Unstable
         /// </summary>
         internal class ZmienneMap
         {
-            internal bool[] częśćMapyOdwiedzona = new bool[20]; // tablica przechowuje informacje o tym, czy dana część mapy została już odwiedzona
+            internal bool []częśćMapyOdwiedzona = new bool[20]; // tablica przechowuje informacje o tym, czy dana część mapy została już odwiedzona
             internal short numerLokacji = 0; // zmienna określa, w której częsci mapy gracz aktualnie się znajduje
             internal short gdzieOstatnio = 0; // zmienna określa, w której częsci mapy gracz był ostatnio
+
+            internal bool []drop = new bool[20]; // zamienna określa, czy na mapie jest drop
+            internal List<bool> misjaFabularnaWykonana = new List<bool>();
         }
 
-        #region zmienneWygląduObiektów
+        #region ZmienneWygląduObiektów
+        #region Gracz
         internal PictureBox whiteBrownStand = new PictureBox();
         internal PictureBox whiteBrownMovingUp = new PictureBox();
         internal PictureBox whiteBrownMovingDown = new PictureBox();
@@ -192,51 +222,87 @@ namespace Unstable
         internal PictureBox redBlondeStand = new PictureBox();
         internal PictureBox redRedStand = new PictureBox();
 
+        #endregion
+        #region NPC
+        internal PictureBox PerqunStand = new PictureBox();
+        internal PictureBox PerqunMovingUp = new PictureBox();
+        internal PictureBox PerqunMovingDown = new PictureBox();
+        internal PictureBox PerqunMovingLeft = new PictureBox();
+        internal PictureBox PerqunMovingRight = new PictureBox();
+
+        #endregion
+
 
         internal PictureBox strzałaLeft = new PictureBox();
         internal PictureBox strzałaRight = new PictureBox();
 
         internal PictureBox BrakItemu = new PictureBox();
         internal PictureBox ZardzewiałyMiecz = new PictureBox();
+        internal PictureBox ZbutwiałyŁuk = new PictureBox();
         internal PictureBox MieczSquadaka = new PictureBox();
+        internal PictureBox ŁukSquadaka = new PictureBox();
+
+        internal PictureBox KluczNaPierwszePiętroWieżyPerquna = new PictureBox();
 
         #endregion
         #region zmiennePozostałe
-<<<<<<< HEAD
-=======
-        internal string gameVersion = "Unstable1.1"; // zmienna przechowuje informacje o wersji gry
+        internal string gameVersion = "Unstable1.5"; // zmienna przechowuje informacje o wersji gry
 
->>>>>>> refs/remotes/origin/Unstable1.1
         internal Panel poleGry; // zmienna odpowiadająca za właściwości pola gry
         internal Label hitLog; // zmienna odpowiadająca za wyświetlanie informacji przez hitLog
         internal Label statystykiPrzedmiotu; // zmienna odpowiadająca za wyświetlanie informacji o statystykach przedmiotów
-        internal PictureBox rozdajStatystyki; // zmienna odpowiadająca za przechowywanie ilości statystyk do rozdania
+        internal Label nazwaPrzedmiotuFabularnego; // zmienna odpowiadająca za wyświetlanie nazwy przedmiotu fabularnego
+        internal PictureBox rozdajStatystyki; // zmienna odpowiadająca za informowanie gracza, że ma punkty statystyk do rozdania
+        internal PictureBox pokazNoweZadanie; // zmienna odpowiadająca za informowanie gracza, że otrzymał nowe zadanie
+        internal PictureBox używanaBroń; // zmienna odpowiadająca za informowanie gracza, jakiego rodzaju broni aktualnie używa
 
         internal bool statystykiPokazywane = false; // zmienna odpowiadająca za sprawdzenie, czy statystyki przedmiotu w ekwipunku są aktualnie wyświetlane
 
-        internal System.Windows.Forms.Timer timerStatystyki; // zmienna odpowiadająca za działanie timera
+        internal System.Windows.Forms.Timer timerGracz; //
+        internal System.Windows.Forms.Timer timerAtakGracz; //
+        internal System.Windows.Forms.Timer timerMob; //
+        internal System.Windows.Forms.Timer timerAtakMob; //
+        internal System.Windows.Forms.Timer timerNPC; //
+        internal System.Windows.Forms.Timer timerStatystyki;
+        internal System.Windows.Forms.Timer timerStrzałaGracz; // zmienne odpowiadająca za działanie timerów
 
         internal string komenda = ""; // zmienna przechowująca dane komendy
         internal bool komendaOK = true; // zmienna sprawdza, czy iżytkownik podaje poprawny ciąg znaków komendy
+        internal bool wpisanoKomendę = false; // zmienna sprawdza, czy komenda zostałą poprawnie wpisana
 
         internal int numerMapy = 0; // zmienna określa na jakiej mapie znajduje się gracz
-
-        internal bool muzykaMenu = false; // zmienna sprawdza, czy muzka w menu jest odtwarzana
 
         internal bool danoOdpowiedź1 = false; //
         internal bool danoOdpowiedź2 = false; //
         internal bool danoOdpowiedź3 = false; // zmiene sprawdzają, której odpowiedzi dokonał gracz
 
-        internal Thread wątekMuzyka; // zmienna umozliwia wykonywanie wątku odtwarzającego muzykę w tle
-        
+        internal string opcjeMuzykaText = "Włączona"; //
+        internal string opcjeEfektyDźwiękoweText = "Włączone"; //
+        internal string opcjeSamouczekText = "Włączony"; //
+        internal bool muzykaOn = true; // 
+        internal bool efektyDźwiękoweOn = true; //
+        internal bool samouczek = true; // zmienne odpowiedzialne za zmianę opcji gry
+
+        internal PictureBox samouczekObrazDemonstracyjny = new PictureBox(); //
+        internal PictureBox samouczekObrazKlawiszy = new PictureBox(); // zmienne odpowiadające za wyświetlanie obrazków w samouczku
+
+        internal string samouczekInstrukcja; //
+        internal string samouczekInfo; // zmienne określają, jaki tekst zostanie wyświetlony w samouczku
+
+        internal bool noweGlowneZadanie = false; //
+        internal bool nowePoboczneZadanie = false; // zmienne sprawdzają, czy zostało dodane nowe zadanie do listy misji
+
+        internal bool muzykaMenu = false; // zmienna sprawdza, czy muzka w menu jest odtwarzana
+
         #endregion
 
         internal ZmiennePostaci daneGracz = new ZmiennePostaci(); // obiekt przechowująca informacje o graczu
         internal ZmiennePostaci []daneMob = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o mobach
-        internal ZmiennePostaci[] daneNPC = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o NPC
-        internal ZmienneObiektów []danePrzeszkoda = new ZmienneObiektów[100]; // tablica obiektów przechowujących informacje o przeszkodach
+        internal ZmiennePostaci []daneNPC = new ZmiennePostaci[5]; // tablica obiektów przechowujących informacje o NPC
+        internal List<ZmienneObiektów> danePrzeszkoda = new List<ZmienneObiektów>(); // lista obiektów przechowujących informacje o przeszkodach
         internal ZmienneObiektów []daneStrzała = new ZmienneObiektów[2]; // tablica obiekótw przechowujących informacje o strzałach wystrzelonych przez postać
         internal ZmienneEkwipunku []danePlecakSlot = new ZmienneEkwipunku[47]; // tablica obiektów przechowujących informacje o przedmiocie na danym slocie w ekwipunku
+        internal ZmienneEkwipunku[] daneFabularnyItem = new ZmienneEkwipunku[17]; // tablica obiektów przechowujących informacje o przedmiocie fabularnym na danym slocie w ekwipunku
         internal ZmienneEkwipunku[] daneDrop = new ZmienneEkwipunku[5]; // tablica obiektów przechowujących infromacje o przedmiocie do podniesienia
         internal ZmienneEkwipunku daneDropKomenda = new ZmienneEkwipunku(); // obiekt przechowuje informacje o przedmiocie wygenerowanym przez komendę
         internal ZmienneBonusów daneBonusyGracz = new ZmienneBonusów(); // obiekt przechowujący informacje o bonusach gracza
@@ -250,30 +316,22 @@ namespace Unstable
 
             DoubleBuffered = true;
 
-<<<<<<< HEAD
-            music.settings.setMode("loop", true);
-            music.Ctlcontrols.play();
-=======
             this.Text = "TerrorOfDragons - "+gameVersion;
 
             music.settings.setMode("loop", true);
             music.Ctlcontrols.play();
             soundGracz.Ctlcontrols.play();
->>>>>>> refs/remotes/origin/Unstable1.1
-        }
+            soundInterface.Ctlcontrols.play();
 
-        private void Launcher_Load(object sender, EventArgs e)
-        {
-
+            music.settings.volume = 20;
+            soundGracz.settings.volume = 80;
+            soundGracz.settings.volume = 80;
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
             MenuGlowne formaMenuGlowne = new MenuGlowne(this);
-<<<<<<< HEAD
-=======
             OkienkoInformacji formaOkienkoInformacji = new OkienkoInformacji();
->>>>>>> refs/remotes/origin/Unstable1.1
             WczytajDaneOdNowa(this);
 
             wczytajDaneObrazkiWhiteBrownHuman();
@@ -296,20 +354,20 @@ namespace Unstable
             wczytajDaneObrazkiRedBlackHuman();
             wczytajDaneObrazkiRedBlondeHuman();
             wczytajDaneObrazkiRedRedHuman();
+            wczytajDaneObrazkiPerqun();
             wczytajDaneObrazkiInne();
 
             this.Hide();
             formaMenuGlowne.Show();
-<<<<<<< HEAD
-=======
             formaOkienkoInformacji.ShowDialog();
->>>>>>> refs/remotes/origin/Unstable1.1
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+        #region WczytywanieGrafiki
 
         private void wczytajDaneObrazkiWhiteBrownHuman()
         {
@@ -426,6 +484,15 @@ namespace Unstable
             redRedStand.Image = global::Unstable.Properties.Resources.redRedStand;
         }
 
+        private void wczytajDaneObrazkiPerqun()
+        {
+            PerqunStand.Image = global::Unstable.Properties.Resources.PerqunStand;
+            PerqunMovingUp.Image = global::Unstable.Properties.Resources.PerqunMovingUp;
+            PerqunMovingDown.Image = global::Unstable.Properties.Resources.PerqunMovingDown;
+            PerqunMovingLeft.Image = global::Unstable.Properties.Resources.PerqunMovingLeft;
+            PerqunMovingRight.Image = global::Unstable.Properties.Resources.PerqunMovingRight;
+        }
+
         private void wczytajDaneObrazkiInne()
         {
             strzałaLeft.Image = global::Unstable.Properties.Resources.StrzałaLeft;
@@ -433,9 +500,13 @@ namespace Unstable
 
             BrakItemu.Image = global::Unstable.Properties.Resources.BrakItemu;
             ZardzewiałyMiecz.Image = global::Unstable.Properties.Resources.ZardzewiałyMiecz;
+            ZbutwiałyŁuk.Image = global::Unstable.Properties.Resources.ZbutwiałyŁuk;
             MieczSquadaka.Image = global::Unstable.Properties.Resources.MieczSquadaka;
+            ŁukSquadaka.Image = global::Unstable.Properties.Resources.ŁukSquadaka;
+
+            KluczNaPierwszePiętroWieżyPerquna.Image = global::Unstable.Properties.Resources.KeyPerqun1st ;
         }
 
-
+        #endregion
     }
 }

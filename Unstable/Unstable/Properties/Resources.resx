@@ -118,279 +118,271 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-<<<<<<< HEAD
-  <data name="redRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\redRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lvUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\lvUp.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="whiteBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PanelStatystyk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Backgrounds\PanelStatystyk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Beczka" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Objekty\Beczka.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pinkBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\pinkBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rozdajStatystyki" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\rozdajStatystyki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="whiteBrownShotingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownShotingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="blackBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\blackBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="blackRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\blackRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StrzałaRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\StrzałaRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StrzałaLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\StrzałaLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="whiteBrownMovingDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownMovingDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="01Parter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Backgrounds\01Parter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="whiteRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pinkBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\pinkBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="AvatarTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Avatars\AvatarTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="redRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\redRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lvUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\lvUp.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="whiteBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PanelStatystyk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Backgrounds\PanelStatystyk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Beczka" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Objekty\Beczka.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pinkBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\pinkBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StrzałkaLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\StrzałkaLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rozdajStatystyki" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\rozdajStatystyki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="whiteBrownShotingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownShotingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="blackBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\blackBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="blackRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\blackRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StrzałaRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\StrzałaRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StrzałaLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\StrzałaLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="whiteBrownMovingDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownMovingDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="whiteRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> refs/remotes/origin/Unstable1.1
-  </data>
   <data name="redBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\redBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
-=======
-  <data name="whiteBrownShotingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownShotingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
->>>>>>> refs/remotes/origin/Unstable1.1
-  <data name="Plus16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\Plus16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OkienkoStatystyki" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Backgrounds\OkienkoStatystyki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PanelDialogu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Backgrounds\PanelDialogu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="redBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\redBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-<<<<<<< HEAD
-  <data name="Kukła" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Objekty\Kukła.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="StrzałkaRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\StrzałkaRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> refs/remotes/origin/Unstable1.1
-  </data>
-  <data name="whiteBrownMovingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownMovingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-<<<<<<< HEAD
-  <data name="blackBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\blackBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="whiteBrownShotingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownShotingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BrakItemu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Items\BrakItemu.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="pinkBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\pinkBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Kukła" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Objekty\Kukła.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="yellowBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\yellowBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> refs/remotes/origin/Unstable1.1
-  </data>
-  <data name="yellowRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\yellowRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="redBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\redBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="blackBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\blackBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="01Dziedziniec" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Backgrounds\01Dziedziniec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MieczSquadaka" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Items\MieczSquadaka.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CzerwonaMiksturaMała" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Items\CzerwonaMiksturaMała.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-<<<<<<< HEAD
-  <data name="whiteBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-=======
->>>>>>> refs/remotes/origin/Unstable1.1
-  <data name="yellowBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\yellowBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GameOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\GameOver.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="TłoNowaGra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Backgrounds\TłoNowaGra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Drzwi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Objekty\Drzwi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="01PiętroPierwsze" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\01PiętroPierwsze.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PanelDialogu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Backgrounds\PanelDialogu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
-  <data name="whiteBrownAttackingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownAttackingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="whiteBrownMovingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownMovingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Drogowskaz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Objekty\Drogowskaz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blackBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\blackBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> refs/remotes/origin/Unstable1.1
+  <data name="redBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\redBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SoundtrackMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\SoundtrackMenu.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PerqunAvatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Avatars\PerqunAvatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
-  <data name="whiteBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="yellowBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\yellowBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="whiteBrownShotingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownShotingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="whiteBrownMovingUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\whiteBrownMovingUp.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="whiteBrownAttackingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownAttackingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Zamknij24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\Zamknij24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PanelStatystyk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\PanelStatystyk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="whiteBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PerqunStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\NPC\PerqunStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Soundtrack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Soundtrack1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="zobaczNoweZadanie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\zobaczNoweZadanie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BrakItemu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Items\BrakItemu.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> refs/remotes/origin/Unstable1.1
+  <data name="blackBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\blackBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StrzałkaLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\StrzałkaLeft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kukła" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Objekty\Kukła.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZarysŁuku" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\ZarysŁuku.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yellowBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\yellowBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blackRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\blackRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZbutwiałyŁuk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Items\ZbutwiałyŁuk.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blackBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\blackBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\Button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Blokada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Objekty\Blokada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="whiteBrownAttackingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\whiteBrownAttackingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="OkienkoPrzedmiotyFabularne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\OkienkoPrzedmiotyFabularne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PerqunMovingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\NPC\PerqunMovingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pinkBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\pinkBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BrakItemu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Items\BrakItemu.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MyszSamouczekNoweZadanie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\MyszSamouczekNoweZadanie.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OkienkoSamouczek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\OkienkoSamouczek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SamouczekOtwieraniePanelów" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\SamouczekOtwieraniePanelów.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ZarysMiecza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\ZarysMiecza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PerqunMovingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\NPC\PerqunMovingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PerqunMovingUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\NPC\PerqunMovingUp.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KeyPerqun1st" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Items\KeyPerqun1st.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AvatarTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Avatars\AvatarTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plus16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\Plus16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SamouczekZbieranieItemów" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\SamouczekZbieranieItemów.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pinkBrownStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\pinkBrownStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blackBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\blackBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KlawiszeSamouczekOtwieraniePanelów" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\KlawiszeSamouczekOtwieraniePanelów.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StrzałkaRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\StrzałkaRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="yellowBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\yellowBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="01PiętroPierwsze+Krata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\01PiętroPierwsze+Krata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yellowRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\yellowRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\Quest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ŁukSquadaka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Items\ŁukSquadaka.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="01Parter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\01Parter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PerqunMovingDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\NPC\PerqunMovingDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteBrownAttackingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownAttackingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteBrownShotingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownShotingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SamouczekZmianaBroni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\SamouczekZmianaBroni.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteBrownMovingDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownMovingDown.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Soundtrack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Soundtrack1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="yellowBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\yellowBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SamouczekStatystykiDoRozdania" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\SamouczekStatystykiDoRozdania.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="redBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\redBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SamouczekAtakMieczem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\SamouczekAtakMieczem.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zamknij24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\Zamknij24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KlawiszeSamouczekAtakMieczem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\KlawiszeSamouczekAtakMieczem.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SamouczekChodzenie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\SamouczekChodzenie.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="01Parter+Krata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\01Parter+Krata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StrzałaRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\StrzałaRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pinkRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Player\pinkRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="01Dziedziniec" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\01Dziedziniec.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteBrownMovingRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownMovingRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteBrownMovingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBrownMovingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pinkBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\pinkBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StrzałaLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\StrzałaLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KlawiszeSamouczekChodzenie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\KlawiszeSamouczekChodzenie.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ZardzewiałyMiecz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Items\ZardzewiałyMiecz.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
-  <data name="Zamknij24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Others\Zamknij24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MieczSquadaka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Items\MieczSquadaka.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="whiteBrownMovingLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownMovingLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="01Parter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Backgrounds\01Parter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lvUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\lvUp.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="whiteBlondeStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBlondeStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> refs/remotes/origin/Unstable1.1
+  <data name="SoundtrackMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\SoundtrackMenu.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OkienkoStatystyki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\OkienkoStatystyki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="01Dziedziniec+Blokada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\01Dziedziniec+Blokada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Drzwi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Objekty\Drzwi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GameOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\GameOver.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rozdajStatystyki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Others\rozdajStatystyki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TłoNowaGra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Backgrounds\TłoNowaGra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whiteBlackStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\whiteBlackStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CzerwonaMiksturaMała" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Items\CzerwonaMiksturaMała.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KlawiszeSamouczekZbieranieItemów" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\KlawiszeSamouczekZbieranieItemów.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="redRedStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Player\redRedStand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Beczka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Objekty\Beczka.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SamouczekNoweZadanie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\SamouczekNoweZadanie.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OkienkoEkwipunek" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Models\Backgrounds\OkienkoEkwipunek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< HEAD
-  <data name="Soundtrack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\Soundtrack1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="AvatarTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Avatars\AvatarTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="whiteBrownMovingUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Player\whiteBrownMovingUp.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Drogowskaz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Models\Objekty\Drogowskaz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> refs/remotes/origin/Unstable1.1
+  <data name="KlawiszeSamouczekZmianaBroni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Models\Samouczek\KlawiszeSamouczekZmianaBroni.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Zawiera metody, które zmieniają wygląd postaci
+    /// </summary>
     class ZmianaWygladu
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public ZmianaWygladu(Launcher dane)
@@ -21,14 +27,25 @@ namespace Unstable
         /// <param name="postać"></param>
         internal void ZmieńWygląd(Launcher.ZmiennePostaci postać)
         {
-            if ((postać.up == false & postać.down == false & postać.left == false & postać.right == false)) { postać.obraz.Image = daneLauncher.whiteBrownStand.Image; } // obraz postaci, gdy się nie rusza
+            if ((postać.up == false & postać.down == false & postać.left == false & postać.right == false)) { postać.obraz.Image = postać.bazowyObraz.Image; } // obraz postaci, gdy się nie rusza
             if (postać.antyRozmycie.Location != postać.obraz.Location & postać.przeszkoda==false) { postać.antyRozmycie.Location = postać.obraz.Location; } // niweluje rozmycie tła podczas poruszania się postaci
 
             if (postać.up == true & postać.down != true)
             {
                 if (postać.zmianaKierunkuUp == false)
                 {
-                    postać.obraz.Image = daneLauncher.whiteBrownMovingUp.Image; postać.zmianaKierunkuUp = true;
+                    #region WyglądMovingUp
+                    if(postać.bazowyObraz.Image == daneLauncher.whiteBrownStand.Image)
+                    {
+                        postać.obraz.Image = daneLauncher.whiteBrownMovingUp.Image;
+                    }
+                    if(postać.bazowyObraz.Image == daneLauncher.PerqunStand.Image)
+                    {
+                        postać.obraz.Image = daneLauncher.PerqunMovingUp.Image;
+                    }
+
+                    #endregion
+                    postać.zmianaKierunkuUp = true;
                 }
                 if (postać.left == true | postać.right == true)
                 {
@@ -41,7 +58,18 @@ namespace Unstable
                 {
                     if (postać.zmianaKierunkuDown == false)
                     {
-                        postać.obraz.Image = daneLauncher.whiteBrownMovingDown.Image; postać.zmianaKierunkuDown = true;
+                        #region WyglądMovingDown
+                        if (postać.bazowyObraz.Image == daneLauncher.whiteBrownStand.Image)
+                        {
+                            postać.obraz.Image = daneLauncher.whiteBrownMovingDown.Image;
+                        }
+                        if (postać.bazowyObraz.Image == daneLauncher.PerqunStand.Image)
+                        {
+                            postać.obraz.Image = daneLauncher.PerqunMovingDown.Image;
+                        }
+
+                        #endregion
+                        postać.zmianaKierunkuDown = true;
                     }
                     if (postać.left == true | postać.right == true)
                     {
@@ -54,7 +82,18 @@ namespace Unstable
                     {
                         if (postać.zmianaKierunkuLeft == false)
                         {
-                            postać.obraz.Image = daneLauncher.whiteBrownMovingLeft.Image; postać.zmianaKierunkuLeft = true;
+                            #region WyglądMovingLeft
+                            if (postać.bazowyObraz.Image == daneLauncher.whiteBrownStand.Image)
+                            {
+                                postać.obraz.Image = daneLauncher.whiteBrownMovingLeft.Image;
+                            }
+                            if (postać.bazowyObraz.Image == daneLauncher.PerqunStand.Image)
+                            {
+                                postać.obraz.Image = daneLauncher.PerqunMovingLeft.Image;
+                            }
+
+                            #endregion
+                            postać.zmianaKierunkuLeft = true;
                         }
                         if (postać.up == true | postać.down == true)
                         {
@@ -67,7 +106,18 @@ namespace Unstable
                         {
                             if (postać.zmianaKierunkuRight == false)
                             {
-                                postać.obraz.Image = daneLauncher.whiteBrownMovingRight.Image; postać.zmianaKierunkuRight = true;
+                                #region WyglądMovingRight
+                                if (postać.bazowyObraz.Image == daneLauncher.whiteBrownStand.Image)
+                                {
+                                    postać.obraz.Image = daneLauncher.whiteBrownMovingRight.Image;
+                                }
+                                if (postać.bazowyObraz.Image == daneLauncher.PerqunStand.Image)
+                                {
+                                    postać.obraz.Image = daneLauncher.PerqunMovingRight.Image;
+                                }
+
+                                #endregion
+                                postać.zmianaKierunkuRight = true;
                             }
                             if (postać.up == true | postać.down == true)
                             {
@@ -78,7 +128,7 @@ namespace Unstable
                         {
                             if ((postać.up == true & postać.down == true) | (postać.left == true & postać.right == true))
                             {
-                                postać.obraz.Image = daneLauncher.whiteBrownStand.Image;
+                                postać.obraz.Image = postać.bazowyObraz.Image;
                                 postać.zmianaKierunkuUp = postać.zmianaKierunkuDown = postać.zmianaKierunkuLeft = postać.zmianaKierunkuRight = false;
                             }
                         }

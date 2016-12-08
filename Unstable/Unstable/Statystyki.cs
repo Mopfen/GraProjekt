@@ -10,9 +10,16 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie panelu statystyk.
+    /// </summary>
     public partial class Statystyki : Form
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
+
         public Statystyki(Launcher dane)
         {
             InitializeComponent();
@@ -27,14 +34,16 @@ namespace Unstable
         {
             if (e.KeyCode == Keys.C | e.KeyCode == Keys.Escape)
             {
-                daneLauncher.timerStatystyki.Enabled = true;
+                Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+                metodaUniwersalne.uruchomTimery();
                 this.Close();
             }
         }
 
         private void alaButtonExit_Click(object sender, EventArgs e)
         {
-            daneLauncher.timerStatystyki.Enabled = true;
+            Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
+            metodaUniwersalne.uruchomTimery();
             this.Close();
         }
 
@@ -94,6 +103,7 @@ namespace Unstable
             labelManaGracz.Text = Convert.ToString(daneLauncher.daneGracz.mana + "/" + daneLauncher.daneGracz.manaMax);
             labelKrytykGracz.Text = Convert.ToString(daneLauncher.daneGracz.szansaKryta + "%");
         }
+
         private void sprawdzPrzyciski()
         {
             if (daneLauncher.daneGracz.statystykiDoRozdania > 0)

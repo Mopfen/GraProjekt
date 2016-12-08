@@ -11,10 +11,15 @@ using System.Threading;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie menu głównego
+    /// </summary>
     public partial class MenuGlowne : Form
     {
-        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
-        Launcher daneLauncher; // 
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
+        Launcher daneLauncher;
 
         public MenuGlowne(Launcher dane)
         {
@@ -22,25 +27,16 @@ namespace Unstable
 
             daneLauncher = dane;
 
-<<<<<<< HEAD
-            if(daneLauncher.muzykaMenu==false)
-=======
             this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
             wersjaGry.Text += daneLauncher.gameVersion;
 
             if (daneLauncher.muzykaMenu==false)
->>>>>>> refs/remotes/origin/Unstable1.1
             {
                 Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+                metodaMuzyka.Soundtrack("SoundtrackMenu.wav");
 
-                daneLauncher.wątekMuzyka = new Thread(metodaMuzyka.SoundtrackMenu);
-                daneLauncher.wątekMuzyka.Start();
                 daneLauncher.muzykaMenu = true;
             }
-            
-
-            //aktualizator.Enabled = true;
-
         }
 
         private void buttonNowaGra_Click(object sender, EventArgs e)
@@ -64,14 +60,13 @@ namespace Unstable
             Application.Exit();
         }
 
-        private void aktualizator_Tick(object sender, EventArgs e)
+        private void buttonOpcjeGry_Click(object sender, EventArgs e)
         {
-            
+            Opcje formaOpcje = new Opcje(daneLauncher);
+
+            this.Close();
+            formaOpcje.Show();
         }
 
-        private void MenuGlowne_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

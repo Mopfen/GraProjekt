@@ -10,10 +10,21 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za wyświetlenie komunikatu o zakończeniu testów w danej wersji gry
+    /// </summary>
     public partial class KoniecTestu : Form
     {
-        Launcher daneLauncher;
+        /// <summary>
+        /// Pole daje dostęp do formy, która ma być zamknięta po zakończeniu testów w danej wersji gry
+        /// </summary>
         Form daneForma;
+
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
+        Launcher daneLauncher;
+
         public KoniecTestu(Launcher dane, Form forma)
         {
             InitializeComponent();

@@ -121,19 +121,22 @@
     <value>23, 15</value>
   </metadata>
   <metadata name="timerAtakGracz.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>351, 18</value>
+    <value>123, 18</value>
   </metadata>
   <metadata name="timerStatystyki.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>522, 16</value>
+    <value>253, 16</value>
   </metadata>
   <metadata name="timerMob.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>152, 15</value>
+    <value>839, 4</value>
   </metadata>
   <metadata name="timerAtakMob.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>252, 26</value>
+    <value>917, 40</value>
   </metadata>
   <metadata name="timerStrzałaGracz.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>654, 16</value>
+    <value>385, 16</value>
+  </metadata>
+  <metadata name="timerNPC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>942, 7</value>
   </metadata>
   <metadata name="panelStatystyk.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -4920,11 +4923,6 @@
         WgpIxXqc8WRsLj+etPHy4UnbfhtCm1BI5RQUvM39eAr/P8GO4tm/rtpsAAAAAElFTkSuQmCC
 </value>
   </data>
-<<<<<<< HEAD
-=======
-  <metadata name="timerNPC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>805, 18</value>
-  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAQAEBAAAAAAIABoBAAARgAAACAgAAAAACAAqBAAAK4EAAAwMAAAAAAgAKglAABWFQAAQEAAAAAA
@@ -5463,5 +5461,4 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
   </data>
->>>>>>> refs/remotes/origin/Unstable1.1
 </root>

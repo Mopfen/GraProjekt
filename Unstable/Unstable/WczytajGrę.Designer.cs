@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WczytajGrę));
             this.buttonWróć = new System.Windows.Forms.Button();
             this.wersjaGry = new System.Windows.Forms.Label();
             this.info = new System.Windows.Forms.Label();

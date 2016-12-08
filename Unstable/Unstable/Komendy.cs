@@ -10,10 +10,16 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie komend wpisywanych przez gracza
+    /// </summary>
     public class Komendy
     {
         internal class MieczProgramisty
         {
+            /// <summary> 
+            /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+            /// </summary>
             Launcher daneLauncher;
 
             public MieczProgramisty(Launcher dane)
@@ -80,7 +86,7 @@ namespace Unstable
             /// Metoda wykonuje komendę: MieczProgramisty
             /// </summary>
             /// <param name="forma"></param>
-            internal void WykonajKomendę(Form forma)
+            internal void WykonajKomendę()
             {
                 if (daneLauncher.komendaOK == false)
                 {
@@ -90,6 +96,7 @@ namespace Unstable
                 if (daneLauncher.komenda == "squadak")
                 {
                     MetodyEkwipunek metodaEkwipunek = new MetodyEkwipunek(daneLauncher);
+                    daneLauncher.wpisanoKomendę = true;
                     daneLauncher.daneDropKomenda.exists = true;
                     daneLauncher.daneDropKomenda.miecz = true;
                     daneLauncher.daneDropKomenda.id = 1000;
@@ -97,8 +104,14 @@ namespace Unstable
                     daneLauncher.daneDropKomenda.dmgZwarcie[0] = 9240;
                     daneLauncher.daneDropKomenda.dmgZwarcie[1] = 9480;
                     metodaEkwipunek.NałóżPrzedmiotKomendy(247, 170);
-                    daneLauncher.komenda = "";
-                    forma.Close();
+                    daneLauncher.daneDropKomenda.exists = true;
+                    daneLauncher.daneDropKomenda.łuk = true;
+                    daneLauncher.daneDropKomenda.id = 1001;
+                    daneLauncher.daneDropKomenda.obraz = daneLauncher.ŁukSquadaka;
+                    daneLauncher.daneDropKomenda.dmgDystans[0] = 9240;
+                    daneLauncher.daneDropKomenda.dmgDystans[1] = 9480;
+                    metodaEkwipunek.NałóżPrzedmiotKomendy(380, 170);
+                    daneLauncher.komenda = "";                   
                 }
             }
         }

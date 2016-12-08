@@ -59,15 +59,12 @@
       <DependentUpon>GameOver.cs</DependentUpon>
     </Compile>
     <Compile Include="Komendy.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="KoniecTestu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="KoniecTestu.Designer.cs">
       <DependentUpon>KoniecTestu.cs</DependentUpon>
     </Compile>
->>>>>>> refs/remotes/origin/Unstable1.1
     <Compile Include="Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,18 +84,44 @@
     <Compile Include="MetodyStatystyki.cs" />
     <Compile Include="Muzyka.cs" />
     <Compile Include="NPC.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="OkienkoInformacji.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OkienkoInformacji.Designer.cs">
       <DependentUpon>OkienkoInformacji.cs</DependentUpon>
     </Compile>
->>>>>>> refs/remotes/origin/Unstable1.1
+    <Compile Include="Opcje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opcje.Designer.cs">
+      <DependentUpon>Opcje.cs</DependentUpon>
+    </Compile>
     <Compile Include="PoruszanieSię.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PrzedmiotyFabularne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrzedmiotyFabularne.Designer.cs">
+      <DependentUpon>PrzedmiotyFabularne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Samouczek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Samouczek.Designer.cs">
+      <DependentUpon>Samouczek.cs</DependentUpon>
+    </Compile>
     <Compile Include="Walka.cs" />
     <Compile Include="Wątki.cs" />
+    <Compile Include="Zadania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zadania.Designer.cs">
+      <DependentUpon>Zadania.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZmianaWygladu.cs" />
     <Compile Include="_01Dziedziniec.cs">
       <SubType>Form</SubType>
@@ -125,7 +148,6 @@
       <DependentUpon>MenuGlowne.cs</DependentUpon>
     </Compile>
     <Compile Include="MetodyMap.cs" />
-    <Compile Include="Mob.cs" />
     <Compile Include="NowaGra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,11 +156,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Statystyki.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,18 +169,21 @@
     <Compile Include="WczytajGrę.Designer.cs">
       <DependentUpon>WczytajGrę.cs</DependentUpon>
     </Compile>
+    <Compile Include="_01PiętroPierwsze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_01PiętroPierwsze.Designer.cs">
+      <DependentUpon>_01PiętroPierwsze.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Ekwipunek.resx">
       <DependentUpon>Ekwipunek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameOver.resx">
       <DependentUpon>GameOver.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="KoniecTestu.resx">
       <DependentUpon>KoniecTestu.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> refs/remotes/origin/Unstable1.1
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,12 +193,21 @@
     <EmbeddedResource Include="MetodyEkwipunek.resx">
       <DependentUpon>MetodyEkwipunek.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="OkienkoInformacji.resx">
       <DependentUpon>OkienkoInformacji.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> refs/remotes/origin/Unstable1.1
+    <EmbeddedResource Include="Opcje.resx">
+      <DependentUpon>Opcje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrzedmiotyFabularne.resx">
+      <DependentUpon>PrzedmiotyFabularne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Samouczek.resx">
+      <DependentUpon>Samouczek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zadania.resx">
+      <DependentUpon>Zadania.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_01Dziedziniec.resx">
       <DependentUpon>_01Dziedziniec.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WczytajGrę.resx">
       <DependentUpon>WczytajGrę.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_01PiętroPierwsze.resx">
+      <DependentUpon>_01PiętroPierwsze.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -267,6 +299,19 @@
     <None Include="Models\Player\MovingUpWhiteManBrownHair.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Models\Samouczek\KlawiszeSamouczekZmianaBroni.gif" />
+    <None Include="Models\Samouczek\SamouczekZmianaBroni.gif" />
+    <None Include="Models\Samouczek\SamouczekStatystykiDoRozdania.gif" />
+    <None Include="Models\Samouczek\MyszSamouczekNoweZadanie.gif" />
+    <None Include="Models\Samouczek\SamouczekNoweZadanie.gif" />
+    <None Include="Models\Samouczek\KlawiszeSamouczekOtwieraniePanelów.gif" />
+    <None Include="Models\Samouczek\SamouczekOtwieraniePanelów.gif" />
+    <None Include="Models\Samouczek\KlawiszeSamouczekZbieranieItemów.gif" />
+    <None Include="Models\Samouczek\SamouczekZbieranieItemów.gif" />
+    <None Include="Models\Samouczek\KlawiszeSamouczekAtakMieczem.gif" />
+    <None Include="Models\Samouczek\SamouczekAtakMieczem.gif" />
+    <None Include="Models\Samouczek\KlawiszeSamouczekChodzenie.gif" />
+    <None Include="Models\Samouczek\SamouczekChodzenie.gif" />
     <None Include="Models\Player\whiteRedStand.gif" />
     <None Include="Models\Player\yellowRedStand.gif" />
     <None Include="Models\Player\yellowBlondeStand.gif" />
@@ -312,12 +357,31 @@
     <None Include="Models\Backgrounds\01Dziedziniec.png" />
     <None Include="Models\Objekty\Kukła.gif" />
     <None Include="Models\Avatars\AvatarTest.png" />
-<<<<<<< HEAD
-=======
     <None Include="Models\Others\StrzałkaRight.png" />
     <None Include="Models\Others\StrzałkaLeft.png" />
     <None Include="Models\Objekty\Drogowskaz.png" />
->>>>>>> refs/remotes/origin/Unstable1.1
+    <None Include="Models\Backgrounds\01PiętroPierwsze.png" />
+    <None Include="Models\Items\ŁukSquadaka.gif" />
+    <None Include="Models\Items\ZbutwiałyŁuk.gif" />
+    <None Include="Models\Others\Button.png" />
+    <None Include="Models\Objekty\Krata.png" />
+    <None Include="Models\Backgrounds\01Parter+Krata.png" />
+    <None Include="Models\Backgrounds\OkienkoSamouczek.png" />
+    <None Include="Models\Backgrounds\OkienkoPrzedmiotyFabularne.png" />
+    <None Include="Models\Items\KeyPerqun1st.gif" />
+    <None Include="Models\Others\Quest.png" />
+    <None Include="Models\Others\zobaczNoweZadanie.png" />
+    <None Include="Models\Backgrounds\01PiętroPierwsze+Krata.png" />
+    <None Include="Models\Backgrounds\01Dziedziniec+Blokada.png" />
+    <None Include="Models\Objekty\Blokada.png" />
+    <None Include="Models\NPC\PerqunMovingDown.gif" />
+    <None Include="Models\NPC\PerqunMovingLeft.gif" />
+    <None Include="Models\NPC\PerqunMovingRight.gif" />
+    <None Include="Models\NPC\PerqunMovingUp.gif" />
+    <None Include="Models\NPC\PerqunStand.gif" />
+    <None Include="Models\Avatars\PerqunAvatar.png" />
+    <None Include="Models\Others\ZarysMiecza.png" />
+    <None Include="Models\Others\ZarysŁuku.png" />
     <Content Include="Models\Player\whiteBrownMovingDown.gif" />
     <Content Include="Models\Player\whiteBrownMovingLeft.gif" />
     <Content Include="Models\Player\whiteBrownMovingRight.gif" />

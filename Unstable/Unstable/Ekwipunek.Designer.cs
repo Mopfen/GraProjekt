@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
-=======
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ekwipunek));
->>>>>>> refs/remotes/origin/Unstable1.1
             this.plecakSlot1 = new System.Windows.Forms.PictureBox();
             this.plecakSlot2 = new System.Windows.Forms.PictureBox();
             this.plecakSlot8 = new System.Windows.Forms.PictureBox();
@@ -73,7 +70,7 @@
             this.plecakSlot37 = new System.Windows.Forms.PictureBox();
             this.plecakSlot40 = new System.Windows.Forms.PictureBox();
             this.plecakSlot39 = new System.Windows.Forms.PictureBox();
-            this.stanZłota = new System.Windows.Forms.Label();
+            this.labelStanZłota = new System.Windows.Forms.Label();
             this.alaButtonExit = new System.Windows.Forms.PictureBox();
             this.timerRuch = new System.Windows.Forms.Timer(this.components);
             this.staraLokacja = new System.Windows.Forms.PictureBox();
@@ -86,6 +83,8 @@
             this.PlecakSlot46 = new System.Windows.Forms.PictureBox();
             this.labelStatystykiPrzedmiotu = new System.Windows.Forms.Label();
             this.antyRozmycie = new System.Windows.Forms.PictureBox();
+            this.labelNazwa = new System.Windows.Forms.Label();
+            this.przedmiotyFabularne = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot8)).BeginInit();
@@ -136,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlecakSlot46)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.antyRozmycie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.przedmiotyFabularne)).BeginInit();
             this.SuspendLayout();
             // 
             // plecakSlot1
@@ -738,17 +738,17 @@
             this.plecakSlot39.MouseLeave += new System.EventHandler(this.plecakSlot_MouseLeave);
             this.plecakSlot39.MouseHover += new System.EventHandler(this.plecakSlot39_MouseHover);
             // 
-            // stanZłota
+            // labelStanZłota
             // 
-            this.stanZłota.AutoSize = true;
-            this.stanZłota.BackColor = System.Drawing.Color.Transparent;
-            this.stanZłota.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.stanZłota.ForeColor = System.Drawing.Color.White;
-            this.stanZłota.Location = new System.Drawing.Point(252, 300);
-            this.stanZłota.Name = "stanZłota";
-            this.stanZłota.Size = new System.Drawing.Size(165, 23);
-            this.stanZłota.TabIndex = 40;
-            this.stanZłota.Text = "XXXXXXXXX złota";
+            this.labelStanZłota.AutoSize = true;
+            this.labelStanZłota.BackColor = System.Drawing.Color.Transparent;
+            this.labelStanZłota.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelStanZłota.ForeColor = System.Drawing.Color.White;
+            this.labelStanZłota.Location = new System.Drawing.Point(252, 300);
+            this.labelStanZłota.Name = "labelStanZłota";
+            this.labelStanZłota.Size = new System.Drawing.Size(165, 23);
+            this.labelStanZłota.TabIndex = 40;
+            this.labelStanZłota.Text = "XXXXXXXXX złota";
             // 
             // alaButtonExit
             // 
@@ -898,6 +898,33 @@
             this.antyRozmycie.TabIndex = 51;
             this.antyRozmycie.TabStop = false;
             // 
+            // labelNazwa
+            // 
+            this.labelNazwa.AutoSize = true;
+            this.labelNazwa.BackColor = System.Drawing.Color.Transparent;
+            this.labelNazwa.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNazwa.Location = new System.Drawing.Point(1, 1);
+            this.labelNazwa.MaximumSize = new System.Drawing.Size(300, 32);
+            this.labelNazwa.MinimumSize = new System.Drawing.Size(300, 32);
+            this.labelNazwa.Name = "labelNazwa";
+            this.labelNazwa.Size = new System.Drawing.Size(300, 32);
+            this.labelNazwa.TabIndex = 52;
+            this.labelNazwa.Text = "Ekwipunek";
+            // 
+            // przedmiotyFabularne
+            // 
+            this.przedmiotyFabularne.BackColor = System.Drawing.Color.Transparent;
+            this.przedmiotyFabularne.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.przedmiotyFabularne.Image = global::Unstable.Properties.Resources.Quest;
+            this.przedmiotyFabularne.Location = new System.Drawing.Point(228, 36);
+            this.przedmiotyFabularne.MaximumSize = new System.Drawing.Size(48, 48);
+            this.przedmiotyFabularne.MinimumSize = new System.Drawing.Size(48, 48);
+            this.przedmiotyFabularne.Name = "przedmiotyFabularne";
+            this.przedmiotyFabularne.Size = new System.Drawing.Size(48, 48);
+            this.przedmiotyFabularne.TabIndex = 53;
+            this.przedmiotyFabularne.TabStop = false;
+            this.przedmiotyFabularne.Click += new System.EventHandler(this.przedmiotyFabularne_Click);
+            // 
             // Ekwipunek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -905,20 +932,15 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.BackgroundImage = global::Unstable.Properties.Resources.OkienkoEkwipunek;
             this.ClientSize = new System.Drawing.Size(450, 600);
-<<<<<<< HEAD
-=======
             this.ControlBox = false;
->>>>>>> refs/remotes/origin/Unstable1.1
-            this.Controls.Add(this.labelStatystykiPrzedmiotu);
+            this.Controls.Add(this.przedmiotyFabularne);
+            this.Controls.Add(this.labelNazwa);
             this.Controls.Add(this.PlecakSlot46);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.PlecakSlot45);
             this.Controls.Add(this.PlecakSlot44);
             this.Controls.Add(this.PlecakSlot43);
             this.Controls.Add(this.PlecakSlot42);
             this.Controls.Add(this.PlecakSlot41);
-            this.Controls.Add(this.alaButtonExit);
-            this.Controls.Add(this.stanZłota);
             this.Controls.Add(this.plecakSlot40);
             this.Controls.Add(this.plecakSlot39);
             this.Controls.Add(this.plecakSlot38);
@@ -931,45 +953,48 @@
             this.Controls.Add(this.plecakSlot31);
             this.Controls.Add(this.plecakSlot30);
             this.Controls.Add(this.plecakSlot29);
+            this.Controls.Add(this.plecakSlot28);
+            this.Controls.Add(this.plecakSlot27);
+            this.Controls.Add(this.plecakSlot26);
+            this.Controls.Add(this.plecakSlot25);
             this.Controls.Add(this.plecakSlot24);
             this.Controls.Add(this.plecakSlot23);
+            this.Controls.Add(this.plecakSlot22);
+            this.Controls.Add(this.plecakSlot21);
             this.Controls.Add(this.plecakSlot20);
             this.Controls.Add(this.plecakSlot19);
+            this.Controls.Add(this.plecakSlot18);
+            this.Controls.Add(this.plecakSlot17);
             this.Controls.Add(this.plecakSlot16);
             this.Controls.Add(this.plecakSlot15);
             this.Controls.Add(this.plecakSlot14);
             this.Controls.Add(this.plecakSlot13);
-            this.Controls.Add(this.plecakSlot26);
-            this.Controls.Add(this.plecakSlot25);
-            this.Controls.Add(this.plecakSlot28);
-            this.Controls.Add(this.plecakSlot27);
-            this.Controls.Add(this.plecakSlot18);
-            this.Controls.Add(this.plecakSlot17);
+            this.Controls.Add(this.plecakSlot12);
+            this.Controls.Add(this.plecakSlot11);
             this.Controls.Add(this.plecakSlot10);
             this.Controls.Add(this.plecakSlot9);
+            this.Controls.Add(this.plecakSlot8);
+            this.Controls.Add(this.plecakSlot7);
             this.Controls.Add(this.plecakSlot6);
             this.Controls.Add(this.plecakSlot5);
             this.Controls.Add(this.plecakSlot4);
             this.Controls.Add(this.plecakSlot3);
-            this.Controls.Add(this.plecakSlot22);
-            this.Controls.Add(this.plecakSlot21);
-            this.Controls.Add(this.plecakSlot12);
-            this.Controls.Add(this.plecakSlot11);
-            this.Controls.Add(this.plecakSlot8);
-            this.Controls.Add(this.plecakSlot7);
-            this.Controls.Add(this.plecakSlot1);
             this.Controls.Add(this.plecakSlot2);
+            this.Controls.Add(this.plecakSlot1);
+            this.Controls.Add(this.labelStatystykiPrzedmiotu);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.alaButtonExit);
+            this.Controls.Add(this.labelStanZłota);
             this.Controls.Add(this.staraLokacja);
             this.Controls.Add(this.antyRozmycie);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-<<<<<<< HEAD
-=======
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
->>>>>>> refs/remotes/origin/Unstable1.1
+            this.MaximumSize = new System.Drawing.Size(450, 600);
+            this.MinimumSize = new System.Drawing.Size(450, 600);
             this.Name = "Ekwipunek";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ekwipunek";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Statystyki_KeyDown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Ekwipunek_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecakSlot8)).EndInit();
@@ -1020,6 +1045,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlecakSlot46)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.antyRozmycie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.przedmiotyFabularne)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1069,7 +1095,7 @@
         private System.Windows.Forms.PictureBox plecakSlot37;
         private System.Windows.Forms.PictureBox plecakSlot40;
         private System.Windows.Forms.PictureBox plecakSlot39;
-        private System.Windows.Forms.Label stanZłota;
+        private System.Windows.Forms.Label labelStanZłota;
         private System.Windows.Forms.PictureBox alaButtonExit;
         private System.Windows.Forms.Timer timerRuch;
         private System.Windows.Forms.PictureBox staraLokacja;
@@ -1082,5 +1108,7 @@
         private System.Windows.Forms.PictureBox PlecakSlot46;
         private System.Windows.Forms.Label labelStatystykiPrzedmiotu;
         private System.Windows.Forms.PictureBox antyRozmycie;
+        private System.Windows.Forms.Label labelNazwa;
+        private System.Windows.Forms.PictureBox przedmiotyFabularne;
     }
 }

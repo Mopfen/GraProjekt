@@ -11,9 +11,14 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie mapy testowej
+    /// </summary>
     public partial class MapaTestowa : Form
     {
-        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public MapaTestowa(Launcher dane)
@@ -22,20 +27,19 @@ namespace Unstable
 
             daneLauncher = dane;
 
-<<<<<<< HEAD
-=======
             this.Text = "TerrorOfDragons - " + daneLauncher.gameVersion;
 
->>>>>>> refs/remotes/origin/Unstable1.1
             this.poleGry.Location = new System.Drawing.Point(3, -3);
 
             DoubleBuffered = true;
 
+            daneLauncher.daneMapa[1].numerLokacji = 10;
             daneLauncher.daneGracz.obraz=gracz;
             daneLauncher.daneGracz.antyRozmycie = underGracz;
             daneLauncher.poleGry = poleGry;
             daneLauncher.daneMob[0].exists = true;
             daneLauncher.daneMob[0].antyRozmycie = underMob;
+            daneLauncher.daneMob[0].bazowyObraz.Image = daneLauncher.whiteBrownStand.Image;
             daneLauncher.daneMob[0].obraz = mob;
             daneLauncher.daneMob[0].labelhp = labelHpMob0;
             daneLauncher.hitLog = hitLog;
@@ -48,10 +52,16 @@ namespace Unstable
 
             daneLauncher.rozdajStatystyki = rozdajStatystyki;
 
+            daneLauncher.timerGracz = timerGracz;
+            daneLauncher.timerAtakGracz = timerAtakGracz;
+            daneLauncher.timerMob = timerMob;
+            daneLauncher.timerAtakMob = timerAtakMob;
+            daneLauncher.timerNPC = timerNPC;
             daneLauncher.timerStatystyki = timerStatystyki;
+            daneLauncher.timerStrzałaGracz = timerStrzałaGracz;
 
-            //daneLauncher.music.SoundLocation = "Soundtrack1.wav";
-            //daneLauncher.music.PlayLooping();
+            Muzyka metodaMuzyka = new Muzyka(daneLauncher);
+            metodaMuzyka.Soundtrack("BossSoundtrack.mp3");
         }
 
         private void rozdajStatystyki_Click(object sender, EventArgs e)
@@ -59,16 +69,19 @@ namespace Unstable
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
             formaStatystyki.ShowDialog();
         }
+
         private void Mapa1_KeyDown(object sender, KeyEventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.KeyDownMetoda(this, e);
         }
+
         private void Mapa1_KeyUp(object sender, KeyEventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.KeyUpMetoda(e);
         }
+
         private void timerGracz_Tick(object sender, EventArgs e)
         {
             PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
@@ -77,44 +90,41 @@ namespace Unstable
             metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneMob[0]);
             metodaMap.timerGraczMetoda();
         }
+
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerAtakGraczMetoda(timerGracz);
+            metodaMap.timerAtakGraczMetoda(daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
+
         private void timerStatystyki_Tick(object sender, EventArgs e)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             labelHpMob0.Text = Convert.ToString(metodaUniwersalne.wyliczProcent(daneLauncher.daneMob[0].hp, daneLauncher.daneMob[0].hpMax)+"%");
-<<<<<<< HEAD
-            metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
-=======
             metodaMap.timerStatystykiMetoda(this, timerGracz, timerAtakGracz, timerMob, timerAtakMob, timerNPC, timerStatystyki, labelHpGracz, labelManaGracz, labelLvGracz, labelExpGracz);
->>>>>>> refs/remotes/origin/Unstable1.1
         }
 
         private void timerMob_Tick(object sender, EventArgs e)
         {
-            Mob metodaMob = new Mob(daneLauncher);
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
 
-            metodaMob.RuchMobaDoGracza(0);
+            metodaPoruszanieSię.RuchMobaDoGracza(0);
             metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneMob[0], daneLauncher.daneGracz);
             metodaMap.timerMobMetoda(0);
         }
 
         private void timerAtakMob_Tick(object sender, EventArgs e)
         {
-            Mob metodaMob = new Mob(daneLauncher);
-            metodaMob.AtakMoba(timerMob, 0,1);
+            Walka metodaWalka = new Walka(daneLauncher);
+            metodaWalka.AtakMoba(timerMob, 0, 1, 5);
         }
 
         private void timerStrzałaGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
-            metodaMap.timerStrzałaGraczMetoda(1,0,0,0,0);
+            metodaMap.timerStrzałaGraczMetoda(1, daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
     }
 }

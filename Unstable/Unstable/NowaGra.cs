@@ -10,12 +10,17 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za wyświetlanie formy NowaGra
+    /// </summary>
     public partial class NowaGra : MetodyOgraniczonegoDostępu
     {
         private int włosy = 0; //
         private int skóra = 0; // zmienne odpowiadające za zmianę wyglądu gracza
 
-        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public NowaGra(Launcher dane)
@@ -51,9 +56,9 @@ namespace Unstable
             WczytajDaneOdNowa(daneLauncher);
             MetodyStatystyki metodaStatystyki = new MetodyStatystyki(daneLauncher);
             Ekwipunek formaEkwipunek = new Ekwipunek(daneLauncher);
+            PrzedmiotyFabularne formaPrzedmiotyFabularne = new PrzedmiotyFabularne(daneLauncher);
             metodaStatystyki.liczStatystyki();
-            formaEkwipunek.Show();
-            formaEkwipunek.Close();
+            daneLauncher.daneGracz.bazowyObraz.Image = daneLauncher.whiteBrownStand.Image;
             daneLauncher.muzykaMenu = false;
             _01Piwnica forma_01Piwnica = new _01Piwnica(daneLauncher);
             this.Close();
