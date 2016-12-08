@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Przechowuje metody wykorzystywane głównie w klasie Statystyki
+    /// </summary>
     class MetodyStatystyki
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public MetodyStatystyki(Launcher dane)

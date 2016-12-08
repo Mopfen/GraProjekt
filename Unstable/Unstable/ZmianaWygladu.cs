@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Zawiera metody, które zmieniają wygląd postaci
+    /// </summary>
     class ZmianaWygladu
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public ZmianaWygladu(Launcher dane)

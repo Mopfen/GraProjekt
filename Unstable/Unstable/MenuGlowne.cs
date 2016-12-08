@@ -11,10 +11,15 @@ using System.Threading;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie menu głównego
+    /// </summary>
     public partial class MenuGlowne : Form
     {
-        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
-        Launcher daneLauncher; // 
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
+        Launcher daneLauncher;
 
         public MenuGlowne(Launcher dane)
         {

@@ -10,12 +10,17 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za wyświetlanie formy NowaGra
+    /// </summary>
     public partial class NowaGra : MetodyOgraniczonegoDostępu
     {
         private int włosy = 0; //
         private int skóra = 0; // zmienne odpowiadające za zmianę wyglądu gracza
 
-        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public NowaGra(Launcher dane)

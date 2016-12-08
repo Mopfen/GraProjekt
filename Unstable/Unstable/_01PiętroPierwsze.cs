@@ -10,10 +10,16 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie lokacji PiętroPierwsze (mapa1)
+    /// </summary>
     public partial class _01PiętroPierwsze : Form
     {
         List<PictureBox> przeszkody = new List<PictureBox>();
 
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public _01PiętroPierwsze(Launcher dane)

@@ -328,11 +328,6 @@ namespace Unstable
             soundGracz.settings.volume = 80;
         }
 
-        private void Launcher_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonStart_Click(object sender, EventArgs e)
         {
             MenuGlowne formaMenuGlowne = new MenuGlowne(this);

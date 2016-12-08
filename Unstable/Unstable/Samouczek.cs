@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie panelu Samouczka
+    /// </summary>
     public partial class Samouczek : Form
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public Samouczek(Launcher dane)

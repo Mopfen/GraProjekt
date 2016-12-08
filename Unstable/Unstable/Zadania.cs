@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie panelu zadań.
+    /// </summary>
     public partial class Zadania : Form
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public Zadania(Launcher dane)

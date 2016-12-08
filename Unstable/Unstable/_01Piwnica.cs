@@ -11,10 +11,16 @@ using System.Threading;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie lokacji Piwnica (mapa1)
+    /// </summary>
     public partial class _01Piwnica : Form
     {
         bool samouczekChodzenie = false;
 
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public _01Piwnica(Launcher dane)

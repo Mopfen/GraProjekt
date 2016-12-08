@@ -8,7 +8,9 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
-    /// <summary> Zawiera metody używane w wątkach </summary>
+    /// <summary>
+    /// Zawiera metody używane w wątkach. 
+    /// </summary>
     class Wątki
     {
         public Wątki() { }

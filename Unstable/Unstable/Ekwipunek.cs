@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie panelu ekwipunku
+    /// </summary>
     public partial class Ekwipunek : Form
     {
         private bool[] ruchPlecakSlot = new bool[47];
         List<PictureBox> Sloty = new List<PictureBox>();
-   
+
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public Ekwipunek(Launcher dane)
@@ -259,7 +265,7 @@ namespace Unstable
             this.Close();
         }
 
-        #region KlikanieNaPrzedmioty
+        #region KursorNaPrzedmiotach
         private void przedmiotyFabularne_Click(object sender, EventArgs e)
         {
             PrzedmiotyFabularne formaPrzedmiotyFabularne = new PrzedmiotyFabularne(daneLauncher);
