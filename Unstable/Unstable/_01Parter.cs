@@ -13,6 +13,9 @@ using System.Linq.Expressions;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie lokacji Parter (mapa1)
+    /// </summary>
     public partial class _01Parter : Form
     {
         List<PictureBox> alaButtons = new List<PictureBox>();
@@ -25,6 +28,9 @@ namespace Unstable
 
         Thread wątekCutScena;
 
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public _01Parter(Launcher dane)

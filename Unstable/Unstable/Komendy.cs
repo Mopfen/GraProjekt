@@ -10,10 +10,16 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie komend wpisywanych przez gracza
+    /// </summary>
     public class Komendy
     {
         internal class MieczProgramisty
         {
+            /// <summary> 
+            /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+            /// </summary>
             Launcher daneLauncher;
 
             public MieczProgramisty(Launcher dane)

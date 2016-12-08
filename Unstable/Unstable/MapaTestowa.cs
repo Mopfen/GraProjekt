@@ -11,9 +11,14 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie mapy testowej
+    /// </summary>
     public partial class MapaTestowa : Form
     {
-        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public MapaTestowa(Launcher dane)
@@ -64,16 +69,19 @@ namespace Unstable
             Statystyki formaStatystyki = new Statystyki(daneLauncher);
             formaStatystyki.ShowDialog();
         }
+
         private void Mapa1_KeyDown(object sender, KeyEventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.KeyDownMetoda(this, e);
         }
+
         private void Mapa1_KeyUp(object sender, KeyEventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.KeyUpMetoda(e);
         }
+
         private void timerGracz_Tick(object sender, EventArgs e)
         {
             PoruszanieSię metodaPoruszanieSię = new PoruszanieSię(daneLauncher);
@@ -82,11 +90,13 @@ namespace Unstable
             metodaPoruszanieSię.przeszkodaNaDrodze(daneLauncher.daneGracz, daneLauncher.daneMob[0]);
             metodaMap.timerGraczMetoda();
         }
+
         private void timerAtakGracz_Tick(object sender, EventArgs e)
         {
             MetodyMap metodaMap = new MetodyMap(daneLauncher);
             metodaMap.timerAtakGraczMetoda(daneLauncher.numerMapy, daneLauncher.daneMapa[daneLauncher.numerMapy].numerLokacji);
         }
+
         private void timerStatystyki_Tick(object sender, EventArgs e)
         {
             Uniwersalne metodaUniwersalne = new Uniwersalne(daneLauncher);

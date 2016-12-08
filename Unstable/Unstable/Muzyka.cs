@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Przechowuje metody używane do odtwarzania muzyki i efektów dźwiękowych
+    /// </summary>
     class Muzyka
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public Muzyka(Launcher dane)
@@ -15,7 +21,11 @@ namespace Unstable
             daneLauncher = dane;
         }
 
-        public void Soundtrack(string nazwa)
+        /// <summary>
+        /// Metoda odtwarza muzykę
+        /// </summary>
+        /// <param name="nazwa">Nazwa utworu</param>
+        internal void Soundtrack(string nazwa)
         {
             if(daneLauncher.muzykaOn==true)
             {
@@ -23,7 +33,12 @@ namespace Unstable
             }
         }
 
-        public void SoundEffect(AxWMPLib.AxWindowsMediaPlayer soundEffect, string nazwa)
+        /// <summary>
+        /// Metoda odtwarza efekty dźwiękowe
+        /// </summary>
+        /// <param name="soundEffect">Player, który ma odtworzyć dany efekt dźwiękowy</param>
+        /// <param name="nazwa">Nazwa efektu dźwiękowego</param>
+        internal void SoundEffect(AxWMPLib.AxWindowsMediaPlayer soundEffect, string nazwa)
         {
             if (daneLauncher.efektyDźwiękoweOn == true)
             {
@@ -32,6 +47,5 @@ namespace Unstable
                 soundEffect.Ctlcontrols.play();
             }
         }
-
     }
 }

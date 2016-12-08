@@ -11,10 +11,15 @@ using System.Threading;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za wyświetlanie formy Opcje, w której można modyfikować opcje gry.
+    /// </summary>
     public partial class Opcje : Form
     {
-        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
-        Launcher daneLauncher; // 
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
+        Launcher daneLauncher;
 
         public Opcje(Launcher dane)
         {

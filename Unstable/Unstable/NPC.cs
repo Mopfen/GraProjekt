@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Zawiera metody wykorzystywane głównie przez NPC (mogą z nich korzystać również moby i postać gracza podczas cut sceny)
+    /// </summary>
     class NPC
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public NPC(Launcher dane)

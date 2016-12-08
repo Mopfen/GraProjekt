@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za wyświetlenie informacji po wściśnięciu przycisku Start w Launcherze
+    /// </summary>
     public partial class OkienkoInformacji : Form
     {
         public OkienkoInformacji()

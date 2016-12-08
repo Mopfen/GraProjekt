@@ -11,10 +11,14 @@ using System.Linq.Expressions;
 
 namespace Unstable
 {
-    /// <summary> Zawiera uniwersalne metody, których można użyć w całym programie.</summary>
+    /// <summary>
+    /// Zawiera uniwersalne metody, których można użyć w całym programie.
+    /// </summary>
     class Uniwersalne
     {
-        /// <summary> Umożliwia dostęp do danych zawartych w klasie Launcher.</summary>
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public Uniwersalne(Launcher dane)

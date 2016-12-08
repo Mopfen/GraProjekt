@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Zawiera metody odpowiadające za poruszanie się postaci.
+    /// </summary>
     class PoruszanieSię
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public PoruszanieSię(Launcher dane)
@@ -98,7 +104,7 @@ namespace Unstable
         }
 
         /// <summary>
-        /// Metoda odpowiedzialna za ruch moba w kierunku gracza.
+        /// (W fazie testów) Metoda odpowiedzialna za ruch moba w kierunku gracza.
         /// </summary>
         public void RuchMobaDoGracza(int numerMoba)
         {

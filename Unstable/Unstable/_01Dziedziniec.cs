@@ -11,6 +11,9 @@ using System.Threading;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie lokacji Dziedziniec (mapa1)
+    /// </summary>
     public partial class _01Dziedziniec : Form
     {
         List<PictureBox> alaButtons = new List<PictureBox>();
@@ -21,6 +24,9 @@ namespace Unstable
 
         Thread wątekCutScena;
 
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public _01Dziedziniec(Launcher dane)
@@ -213,16 +219,15 @@ namespace Unstable
                 {
                     if (daneLauncher.daneGracz.obraz.Bounds.IntersectsWith(drogowskaz.Bounds) & this.Visible==true)
                     {
-                        MapaTestowa mapMapaTestowa = new MapaTestowa(daneLauncher);
-                        mapMapaTestowa.Show();
-                        this.Close();
-                        /*
+                        /* MapaTestowa mapMapaTestowa = new MapaTestowa(daneLauncher);
+                        mapMapaTestowa.Show(); */
+                        // Aby uzyskać dostęp do mapy testowej, należy odkomentować powyższy kod
                         KoniecTestu formaKoniecTestu = new KoniecTestu(daneLauncher, this);
                         daneLauncher.daneGracz.exists = false;
                         daneLauncher.music.Ctlcontrols.stop();
                         daneLauncher.soundGracz.URL = "lvUp.wav";
                         timerGracz.Enabled = timerAtakGracz.Enabled = timerMob.Enabled = timerAtakMob.Enabled = timerNPC.Enabled = timerStatystyki.Enabled = false;
-                        formaKoniecTestu.ShowDialog(); */
+                        formaKoniecTestu.ShowDialog();
                     }
                 }
             }

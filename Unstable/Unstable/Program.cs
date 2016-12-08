@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Klasa rozruchowa programu.
+    /// </summary>
     static class Program
     {
         /// <summary>
@@ -14,7 +17,6 @@ namespace Unstable
         [STAThread]
         static void Main()
         {
-     
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Launcher());

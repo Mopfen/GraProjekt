@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Przechowuje metody wykorzystywane głównie w klasie Ekwipunek
+    /// </summary>
     class MetodyEkwipunek
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public MetodyEkwipunek(Launcher dane)
@@ -19,6 +25,9 @@ namespace Unstable
             daneLauncher = dane;
         }
 
+        /// <summary>
+        /// Metoda aktualizuje statystyki przedmiotów w ekwipunku
+        /// </summary>
         internal void aktualizujDaneWyposażenia()
         {
             for (int i = 1; i <= 46; i++)
@@ -82,6 +91,9 @@ namespace Unstable
             }
         }
 
+        /// <summary>
+        /// Metoda sprawdza, czy przestawienie przedmiotu w ekwipunku jest możliwe
+        /// </summary>
         internal bool czyPrzestawienieMożliwe(int numerSlotu, int i, int LocationX, int LocationY, PictureBox staraLokacja, bool przestaw, bool elementWyposażenia1, bool elementWyposażenia2)
         {
             if (przestaw == true & daneLauncher.danePlecakSlot[i].obraz.Location == new Point(LocationX, LocationY))

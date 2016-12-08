@@ -10,10 +10,21 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za wyświetlanie komunikatu "GameOver" po smierci gracza
+    /// </summary>
     public partial class GameOver : Form
     {
-        Launcher daneLauncher;
+        /// <summary>
+        /// Pole odpowiada za dostęp do formy, która ma być zamknięta po śmierci gracza
+        /// </summary>
         Form daneForma;
+
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
+        Launcher daneLauncher;
+
         public GameOver(Launcher dane, Form forma)
         {
             InitializeComponent();

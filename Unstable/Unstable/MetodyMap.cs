@@ -8,10 +8,13 @@ using System.Windows.Forms;
 namespace Unstable
 {
     /// <summary>
-    /// Zawiera główne polecenia wykonywane w formach podczas gry
+    /// Przechowuje metody wykorzystywane głównie w klasach lokacji
     /// </summary>
     class MetodyMap
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public MetodyMap(Launcher dane)

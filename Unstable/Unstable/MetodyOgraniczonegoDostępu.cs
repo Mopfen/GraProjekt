@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Zawiera metody, do których dostęp powinna mieć tylko nieliczna częsć klas
+    /// </summary>
     public partial class MetodyOgraniczonegoDostępu: Form
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         protected MetodyOgraniczonegoDostępu() { }

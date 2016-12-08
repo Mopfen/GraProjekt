@@ -10,9 +10,16 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie panelu statystyk.
+    /// </summary>
     public partial class Statystyki : Form
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
+
         public Statystyki(Launcher dane)
         {
             InitializeComponent();

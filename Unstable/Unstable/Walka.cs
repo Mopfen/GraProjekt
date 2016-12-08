@@ -7,8 +7,14 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Zawiera metody, na których bazuje walka
+    /// </summary>
     class Walka
     {
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public Walka(Launcher dane)

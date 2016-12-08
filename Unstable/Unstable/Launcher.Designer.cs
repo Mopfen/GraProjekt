@@ -128,7 +128,6 @@
             this.Name = "Launcher";
             this.Text = "Launcher";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Launcher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.obrazek)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.music)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soundGracz)).EndInit();

@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Unstable
 {
+    /// <summary>
+    /// Odpowiada za działanie podpanelu Ekwipunku: PrzedmiotyFabularne
+    /// </summary>
     public partial class PrzedmiotyFabularne : Form
     {
         private bool[] ruchfabularnyItem = new bool[47];
         List<PictureBox> Sloty = new List<PictureBox>();
 
+        /// <summary> 
+        /// Pole umożliwia dostęp do danych zawartych w klasie Launcher.
+        /// </summary>
         Launcher daneLauncher;
 
         public PrzedmiotyFabularne(Launcher dane)
