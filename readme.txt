@@ -6,6 +6,7 @@ Minimalne wymagania do poprawnego działania programu
 Pamięć RAM 128MB
 Procesor 3,6GHz
 
+Optymalna rozdzielczość ekreanu: 1600x800
 Zalecany system operacyjny: Windows7
 Wymagane miejsce na dysku: 103MB
 
